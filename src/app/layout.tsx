@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import LiquidEther from "@/components/LiquidEther";
+import GridPlus from "@/components/GridPlus";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +30,81 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <header className="fixed inset-x-0 top-0 z-40 border-b border-white/10 backdrop-blur">
+          <div className="mx-auto flex h-16 w-full max-w-[1200px] items-center justify-between px-4">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2"
+              aria-label="MERAI Home"
+            >
+              <span>logo</span>
+            </Link>
+
+            <nav aria-label="Primary" className="hidden md:block">
+              <ul className="flex items-center gap-6">
+                <li>
+                  <Link
+                    href="/works"
+                    className="inline-flex items-center py-2 hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white/50 rounded"
+                  >
+                    Works
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/about"
+                    className="inline-flex items-center py-2 hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white/50 rounded"
+                  >
+                    About Us
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+
+            <div className="flex items-center gap-3">
+              <Link
+                href="/contact"
+                className="border border-foreground/20 px-4 py-2 hover:opacity-50 duration-300"
+              >
+                Contact
+              </Link>
+            </div>
+          </div>
+        </header>
+
+        <main id="content" className="mt-10">
+          {children}
+        </main>
+
+        <footer className="mx-auto w-full max-w-[1200px] px-4 py-10 opacity-70">
+          © {new Date().getFullYear()} MERAI. All rights reserved.
+        </footer>
+
+        {/* Background  */}
+        <div
+          className="fixed inset-0 -z-10 pointer-events-none opacity-30 "
+          aria-hidden="true"
+          role="presentation"
+        >
+          <GridPlus />
+          <LiquidEther
+            colors={["#fff", "#fff", "#fff"]}
+            mouseForce={10}
+            cursorSize={100}
+            isViscous={false}
+            viscous={30}
+            iterationsViscous={32}
+            iterationsPoisson={32}
+            resolution={0.5}
+            isBounce={true}
+            autoDemo={false}
+            autoSpeed={0.2}
+            autoIntensity={1.2}
+            takeoverDuration={0.25}
+            autoResumeDelay={2000}
+            autoRampDuration={0.6}
+          />
+        </div>
       </body>
     </html>
   );
