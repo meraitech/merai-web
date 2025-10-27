@@ -24,3 +24,46 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.project-perspective {
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  perspective: 25rem;
+}
+
+.project-perspective-left {
+  position: absolute;
+  width: 20%;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 29.5%;
+  transition: 0.1s;
+  /* padding-left: 32px; */
+}
+
+.project-perspective-inner {
+  transform-style: preserve-3d;
+  position: relative;
+  height: 100%;
+}
+
+.project-perspective-right {
+  position: absolute;
+  width: 20%;
+  transform: translateY(-50%) translate3d(0px, 0px, -10rem);
+  top: 50%;
+  right: 29.5%;
+  transition: 0.1s;
+  /* padding-right: 32px; */
+}
+
+.project-perspective-inner img {
+  display: inline;
+  width: 100%;
+}
+
+.third {
+  transform: translate3d(0px, 0px, -20rem) translateY(-50%);
+}
