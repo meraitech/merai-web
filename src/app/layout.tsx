@@ -31,7 +31,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header className="fixed inset-x-0 top-0 z-40">
+        <header className="fixed inset-x-0 top-0 z-40 text-sm">
           <div className="flex w-full items-center justify-between py-4 px-8">
             <Link
               href="/"
@@ -59,7 +59,7 @@ export default function RootLayout({
                 </li>
                 <li>
                   <Link
-                    href="/about"
+                    href="/about-us"
                     className="inline-flex items-center hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white/50 rounded"
                   >
                     About Us

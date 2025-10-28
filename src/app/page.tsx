@@ -56,7 +56,6 @@ export default function Home() {
 
       <section id="manifesto" className="relative">
         <QuotesDepth />
-        {/* <div style={{ height: "1000px" }} aria-hidden="true"></div> */}
       </section>
 
       <ScrollSwapSection />

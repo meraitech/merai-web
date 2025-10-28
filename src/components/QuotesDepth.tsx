@@ -9,25 +9,25 @@ export default function QuotesDepth() {
   const perspectiveRef = useRef<HTMLDivElement | null>(null);
   const data = [
     {
-      quotes: "Built from Nothing. Crafted from Code.",
+      title: "Kode Murni, Bukan Template",
+      description:
+        "Setiap komponen dirancang khusus dengan Next.js & TypeScript untuk performa, aksesibilitas, dan SEO sejak fondasi.",
+      points: "Next.js + TypeScript + Design System kustom",
       className: "quotes-perspective-left",
-      founderName: "Ranaufal Muha",
-      profileImage: "/img/contents/Merai_Team_01-2200x1650.jpg",
-      alt: "alt",
     },
     {
-      quotes: "Design that Breathes. Interfaces that Feel Alive.",
+      title: "Motion & 3D yang Hidup",
+      description:
+        "GSAP & Three.js menghadirkan interaksi sinematik yang meningkatkan engagement dan brand recall.",
+      points: "GSAP timelines, Three.js/WebGL",
       className: "quotes-perspective-right",
-      founderName: "Ahmad Rayhan",
-      profileImage: "/img/contents/Merai_Team_01-2200x1650.jpg",
-      alt: "alt",
     },
     {
-      quotes: "Tomorrow is Not Coming. We`re Building It.",
+      title: "Skalabilitas & AI-Ready",
+      description:
+        "Arsitektur modular siap integrasi AI: chatbot, rekomendasi, automasi—aman, terukur, dan mudah dirawat.",
+      points: "Modular monorepo, API, CI/CD, AI/LLM",
       className: "quotes-perspective-left third",
-      founderName: "Iqbal Muhakim",
-      profileImage: "/img/contents/Merai_Team_01-2200x1650.jpg",
-      alt: "alt",
     },
   ];
   const itemRefs = useRef<HTMLDivElement[]>([]);
@@ -72,31 +72,35 @@ export default function QuotesDepth() {
     <div>
       <div ref={triggerRef} className="quotes-perspective">
         <div ref={perspectiveRef} className="quotes-perspective-inner">
-          {data.map((project, index) => (
+          {data.map((wcu, index) => (
             <div
               key={index}
               className={
-                project.className +
-                " backdrop-blur-sm border border-foreground/10 p-5 sm:p-6 flex flex-col gap-2"
+                wcu.className +
+                " backdrop-blur-sm border pointer-events-none border-foreground/10 p-5 sm:p-6 flex flex-col gap-20"
               }
               ref={(el) => {
                 if (el) itemRefs.current[index] = el;
               }}
             >
-              <h2 className="font-bold sm:text-xl lg:text-3xl ">
-                {project.quotes}
-              </h2>
-              <div className="flex gap-3 max-md:gap-2 items-center mt-3">
+              <span className="text-muted text-xs">
+                {"[ " + wcu.points + " ]"}
+              </span>
+              <div className="grid gap-2">
+                <h2 className="sm:text-lg lg:text-xl ">{wcu.title}</h2>
+                <p className="text-foreground/80 text-sm">{wcu.description}</p>
+              </div>
+              {/* <div className="flex gap-3 max-md:gap-2 items-center mt-3">
                 <img
-                  src={project.profileImage}
-                  alt={project.alt}
+                  src={"/"}
+                  alt={wcu.alt}
                   draggable={false}
                   className="w-8 max-md:w-6 aspect-square object-cover rounded-full border border-white/20"
                 />
                 <span className="text-sm max-md:text-xs text-muted">
-                  {project.founderName}
+                  {wcu.title}
                 </span>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>

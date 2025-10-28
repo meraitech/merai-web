@@ -5,12 +5,46 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { H2HeaderUI } from "./ui/h2-header.ui";
 import GridPlus from "./GridPlus";
+import FlowingMenu from "./FlowingMenu";
 
 export default function ScrollSwapSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const theCoreRef = useRef<HTMLDivElement>(null);
   const futureRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
+
+  const servicesItems = [
+    {
+      link: "#",
+      text: "Web Development",
+      image: "https://picsum.photos/600/400?random=1",
+    },
+    {
+      link: "#",
+      text: "SEO",
+      image: "https://picsum.photos/600/400?random=2",
+    },
+    {
+      link: "#",
+      text: "API Integration",
+      image: "https://picsum.photos/600/400?random=3",
+    },
+    {
+      link: "#",
+      text: "System Design",
+      image: "https://picsum.photos/600/400?random=4",
+    },
+    {
+      link: "#",
+      text: "AI Integration",
+      image: "https://picsum.photos/600/400?random=4",
+    },
+    {
+      link: "#",
+      text: "Blockchain Integration",
+      image: "https://picsum.photos/600/400?random=4",
+    },
+  ];
 
   useEffect(() => {
     const container = containerRef.current;
@@ -67,18 +101,25 @@ export default function ScrollSwapSection() {
   return (
     <div
       ref={containerRef}
-      className="relative text-black min-h-screen flex flex-col justify-center items-center px-4 py-16 sm:px-8 sm:py-24 lg:py-32 overflow-hidden"
+      className="relative text-black min-h-screen flex flex-col justify-center items-center  py-16  sm:py-24 lg:py-32 overflow-hidden"
     >
       {/* Section Awal - Akan di-pin dan fade out */}
-      <section id="the-core" ref={theCoreRef} className="z-10 opacity-100">
-        <div className="w-full max-w-[1200px] flex flex-col gap-12 md:gap-20 lg:gap-28">
+      <section
+        id="services"
+        ref={theCoreRef}
+        className="z-10 opacity-100 w-full"
+      >
+        <div className="w-full flex flex-col gap-12">
           <H2HeaderUI
-            className="leading-tight text-balance"
-            text="At MERAI, we combine the precision of engineering with the intuition of design. Every website, app, and interface we create is crafted to perform beautifully and feel alive."
+            className="leading-tight text-balance px-4 md:px-8 mx-auto max-w-[1200px] w-full"
+            text="Services"
           />
-          <p className="text-base text-muted sm:text-lg md:text-xl max-w-xl">
-            We Build Digital Experiences That Move
-          </p>
+          <div
+            style={{ height: "500px", position: "relative" }}
+            className="w-full"
+          >
+            <FlowingMenu items={servicesItems} />
+          </div>
         </div>
       </section>
 
@@ -86,12 +127,11 @@ export default function ScrollSwapSection() {
       <section
         id="future-in-motion"
         ref={futureRef}
-        className="z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 w-full max-w-[1200px] px-8"
+        className="z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 w-full max-w-[1200px] px-8 pointer-events-none"
       >
         <H2HeaderUI
           className="leading-tight text-balance text-center sm:text-left"
-          text="The future isn`t something we wait for.
-It`s something we build - line by line, pixel by pixel."
+          text="Masa depan bukanlah sesuatu yang kita tunggu-tunggu. Itu adalah sesuatu yang kita bangun - baris demi baris, piksel demi piksel."
         />
       </section>
 
