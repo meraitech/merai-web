@@ -1,6 +1,8 @@
 // components/CalmGridPlus.tsx
 "use client";
 
+import { useId, useMemo } from "react";
+
 export default function GridPlus({
   grid = 50, // jarak antar garis (px)
   plusGap = 200, // jarak antar tanda plus (px)
@@ -16,13 +18,23 @@ export default function GridPlus({
   plusStroke?: string;
   bg?: string;
 }) {
+  const rawId = useId();
+  const prefix = useMemo(() => {
+    const sanitized = rawId.replace(/[^a-zA-Z0-9_-]/g, "");
+    return sanitized.length > 0 ? sanitized : "gridplus";
+  }, [rawId]);
+
+  const gridId = `${prefix}-grid`;
+  const plusesId = `${prefix}-pluses`;
+  const vignetteId = `${prefix}-vignette`;
+
   return (
     <div className="absolute inset-0 -z-10">
       <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
         <defs>
           {/* GRID tipis */}
           <pattern
-            id="grid"
+            id={gridId}
             width={grid}
             height={grid}
             patternUnits="userSpaceOnUse"
@@ -35,7 +47,7 @@ export default function GridPlus({
 
           {/* PLUS di jarak lebih lebar */}
           <pattern
-            id="pluses"
+            id={plusesId}
             width={plusGap}
             height={plusGap}
             patternUnits="userSpaceOnUse"
@@ -66,18 +78,18 @@ export default function GridPlus({
           </pattern>
 
           {/* vignette halus biar calm */}
-          <radialGradient id="vignette" cx="50%" cy="40%" r="65%">
+          <radialGradient id={vignetteId} cx="50%" cy="40%" r="65%">
             <stop offset="0%" stopColor="rgba(255,255,255,0.0)" />
             <stop offset="100%" stopColor="rgba(0,0,0,0.12)" />
           </radialGradient>
         </defs>
 
         {/* layer bg + grid */}
-        <rect width="100%" height="100%" fill="url(#grid)" />
+        <rect width="100%" height="100%" fill={`url(#${gridId})`} />
         {/* layer plus */}
-        <rect width="100%" height="100%" fill="url(#pluses)" opacity="0.9" />
+        <rect width="100%" height="100%" fill={`url(#${plusesId})`} opacity="0.9" />
         {/* vignette halus */}
-        <rect width="100%" height="100%" fill="url(#vignette)" />
+        <rect width="100%" height="100%" fill={`url(#${vignetteId})`} />
       </svg>
     </div>
   );

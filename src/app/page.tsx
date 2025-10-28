@@ -2,7 +2,9 @@ import { LogoLoop } from "@/components/LogoLoop";
 import { ImageWithAlt } from "@/types/image.type";
 import HeroScene from "@/components/HeroSection";
 import QuotesDepth from "@/components/QuotesDepth";
-import StackSheet from "@/components/StackSheet";
+import SmoothScroll from "@/components/SmoothScroll";
+import ScrollSwapSection from "@/components/ScrollSwap";
+import WorksShowcase from "@/components/WorksShowcase";
 
 export default function Home() {
   const listLogo: ImageWithAlt[] = [
@@ -30,6 +32,7 @@ export default function Home() {
 
   return (
     <main id="content">
+      <SmoothScroll />
       {/* Hero Section  */}
       <section
         id="hero"
@@ -56,22 +59,9 @@ export default function Home() {
         {/* <div style={{ height: "1000px" }} aria-hidden="true"></div> */}
       </section>
 
-      {/* StackSheet */}
-      <StackSheet backgroundClassName="bg-white">
-        <section id="the-core">
-          <h2>The Core</h2>
-          <p>Fondasi sistem kami...</p>
-        </section>
-        <section id="future-in-motion">
-          <h2>Future in Motion</h2>
-          <p>AI-native workflow...</p>
-        </section>
-      </StackSheet>
+      <ScrollSwapSection />
 
-      <section id="after-stack" className="h-screen">
-        {/* isi konten lanjut */}
-        <div className="">sad</div>
-      </section>
+      <WorksShowcase />
     </main>
   );
 }

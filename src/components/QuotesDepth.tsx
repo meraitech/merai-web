@@ -10,21 +10,21 @@ export default function QuotesDepth() {
   const data = [
     {
       quotes: "Built from Nothing. Crafted from Code.",
-      className: "project-perspective-left",
+      className: "quotes-perspective-left",
       founderName: "Ranaufal Muha",
       profileImage: "/img/contents/Merai_Team_01-2200x1650.jpg",
       alt: "alt",
     },
     {
       quotes: "Design that Breathes. Interfaces that Feel Alive.",
-      className: "project-perspective-right",
+      className: "quotes-perspective-right",
       founderName: "Ahmad Rayhan",
       profileImage: "/img/contents/Merai_Team_01-2200x1650.jpg",
       alt: "alt",
     },
     {
       quotes: "Tomorrow is Not Coming. We`re Building It.",
-      className: "project-perspective-left third",
+      className: "quotes-perspective-left third",
       founderName: "Iqbal Muhakim",
       profileImage: "/img/contents/Merai_Team_01-2200x1650.jpg",
       alt: "alt",
@@ -70,8 +70,8 @@ export default function QuotesDepth() {
 
   return (
     <div>
-      <div ref={triggerRef} className="project-perspective">
-        <div ref={perspectiveRef} className="project-perspective-inner">
+      <div ref={triggerRef} className="quotes-perspective">
+        <div ref={perspectiveRef} className="quotes-perspective-inner">
           {data.map((project, index) => (
             <div
               key={index}
