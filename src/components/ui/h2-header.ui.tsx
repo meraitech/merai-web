@@ -8,7 +8,7 @@ export const H2HeaderUI = ({
   className?: string;
 }) => {
   return (
-    <h2 className={"text-4xl w-full font-bold " + className}>
+    <h2 className={"text-5xl w-full font-bold " + className}>
       <BlurText text={text} delay={150} animateBy="words" direction="top" />
     </h2>
   );

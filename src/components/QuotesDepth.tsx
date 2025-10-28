@@ -2,30 +2,32 @@
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Link from "next/link";
 import { useEffect, useRef } from "react";
 
-export default function ProjectShowcase() {
+export default function QuotesDepth() {
   const triggerRef = useRef<HTMLDivElement | null>(null);
   const perspectiveRef = useRef<HTMLDivElement | null>(null);
   const data = [
     {
-      text: "adsasd",
-      image: "/img/contents/Merai_Team_01-2200x1650.jpg",
-      alt: "alt",
+      quotes: "Built from Nothing. Crafted from Code.",
       className: "project-perspective-left",
+      founderName: "Ranaufal Muha",
+      profileImage: "/img/contents/Merai_Team_01-2200x1650.jpg",
+      alt: "alt",
     },
     {
-      text: "adsasd",
-      image: "/img/contents/Merai_Team_01-2200x1650.jpg",
-      alt: "alt",
+      quotes: "Design that Breathes. Interfaces that Feel Alive.",
       className: "project-perspective-right",
+      founderName: "Ahmad Rayhan",
+      profileImage: "/img/contents/Merai_Team_01-2200x1650.jpg",
+      alt: "alt",
     },
     {
-      text: "adsasd",
-      image: "/img/contents/Merai_Team_01-2200x1650.jpg",
-      alt: "alt",
+      quotes: "Tomorrow is Not Coming. We`re Building It.",
       className: "project-perspective-left third",
+      founderName: "Iqbal Muhakim",
+      profileImage: "/img/contents/Merai_Team_01-2200x1650.jpg",
+      alt: "alt",
     },
   ];
   const itemRefs = useRef<HTMLDivElement[]>([]);
@@ -43,7 +45,11 @@ export default function ProjectShowcase() {
           end: "+=2000", // lebih simpel
           scrub: 1,
           pin: true,
-          snap: 1 / data.length,
+          snap: {
+            snapTo: [0, 0.33, 0.66, 1],
+            duration: { min: 0.2, max: 0.4 },
+            ease: "power2.inOut",
+          },
           // markers: true,       // ⬅️ debugging
         },
       });
@@ -69,17 +75,25 @@ export default function ProjectShowcase() {
           {data.map((project, index) => (
             <div
               key={index}
-              className={project.className}
+              className={
+                project.className +
+                " backdrop-blur-sm border border-foreground/10 p-6 flex flex-col gap-1"
+              }
               ref={(el) => {
                 if (el) itemRefs.current[index] = el;
               }}
             >
-              <img src={project.image} alt={project.alt} />
-              <div className="">
-                <h2>{project.text}</h2>
-                <Link href={"/#"}>
-                  <span>Discover</span>
-                </Link>
+              <h2 className="font-bold text-3xl">{project.quotes}</h2>
+              <div className="flex gap-2 items-center mt-3">
+                <img
+                  src={project.profileImage}
+                  alt={project.alt}
+                  draggable={false}
+                  className="w-5 aspect-square object-cover rounded-full"
+                />
+                <span className="text-xs text-muted">
+                  {project.founderName}
+                </span>
               </div>
             </div>
           ))}

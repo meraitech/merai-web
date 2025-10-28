@@ -86,14 +86,14 @@ export default function Model() {
   }, [nodes, size.width, centerOffset]);
 
   // Leva controls
-  const materialProps = useControls({
-    thickness: { value: 0.5, min: 0, max: 3, step: 0.05 },
-    roughness: { value: 0.1, min: 0, max: 1, step: 0.1 },
-    transmission: { value: 0.98, min: 0, max: 1, step: 0.01 },
-    ior: { value: 2.5, min: 0, max: 3, step: 0.1 },
-    chromaticAberration: { value: 0.6, min: 0, max: 1, step: 0.01 },
-    backside: { value: true },
-  });
+  const materialProps = {
+    thickness: 0.5,
+    roughness: 0.1,
+    transmission: 0.98,
+    ior: 2.5,
+    chromaticAberration: 0.6,
+    backside: true,
+  };
 
   return (
     <group ref={groupRef} position={[0, 0.2, 0]}>
