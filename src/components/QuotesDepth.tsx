@@ -77,21 +77,23 @@ export default function QuotesDepth() {
               key={index}
               className={
                 project.className +
-                " backdrop-blur-sm border border-foreground/10 p-6 flex flex-col gap-1"
+                " backdrop-blur-sm border border-foreground/10 p-5 sm:p-6 flex flex-col gap-2"
               }
               ref={(el) => {
                 if (el) itemRefs.current[index] = el;
               }}
             >
-              <h2 className="font-bold text-3xl">{project.quotes}</h2>
-              <div className="flex gap-2 items-center mt-3">
+              <h2 className="font-bold sm:text-xl lg:text-3xl ">
+                {project.quotes}
+              </h2>
+              <div className="flex gap-3 max-md:gap-2 items-center mt-3">
                 <img
                   src={project.profileImage}
                   alt={project.alt}
                   draggable={false}
-                  className="w-5 aspect-square object-cover rounded-full"
+                  className="w-8 max-md:w-6 aspect-square object-cover rounded-full border border-white/20"
                 />
-                <span className="text-xs text-muted">
+                <span className="text-sm max-md:text-xs text-muted">
                   {project.founderName}
                 </span>
               </div>

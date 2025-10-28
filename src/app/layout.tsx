@@ -31,7 +31,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header className="fixed inset-x-0 top-0 z-40 text-sm">
+        <header className="fixed inset-x-0 top-0 z-40">
           <div className="flex w-full items-center justify-between py-4 px-8">
             <Link
               href="/"
@@ -81,7 +81,7 @@ export default function RootLayout({
 
         {children}
 
-        <footer className="mx-auto w-full max-w-[1200px] px-4 py-10 opacity-70">
+        <footer className="mx-auto bg-linear-to-t from-background w-full text-center py-10 opacity-70">
           © {new Date().getFullYear()} MERAI. All rights reserved.
         </footer>
 

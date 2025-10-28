@@ -36,7 +36,7 @@ export default function Home() {
       {/* Hero Section  */}
       <section
         id="hero"
-        className="flex flex-col min-h-screen items-center justify-end relative overflow-hidden"
+        className="flex flex-col min-h-screen items-center justify-end relative overflow-hidden px-4 sm:px-0"
       >
         <HeroScene />
         <LogoLoop

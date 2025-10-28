@@ -67,16 +67,16 @@ export default function ScrollSwapSection() {
   return (
     <div
       ref={containerRef}
-      className="relative bg-white text-black min-h-screen flex flex-col justify-center items-center p-8 overflow-hidden"
+      className="relative text-black min-h-screen flex flex-col justify-center items-center px-4 py-16 sm:px-8 sm:py-24 lg:py-32 overflow-hidden"
     >
       {/* Section Awal - Akan di-pin dan fade out */}
       <section id="the-core" ref={theCoreRef} className="z-10 opacity-100">
-        <div className="w-full max-w-[1200px] flex flex-col gap-28">
+        <div className="w-full max-w-[1200px] flex flex-col gap-12 md:gap-20 lg:gap-28">
           <H2HeaderUI
-            className="leading-tight"
+            className="leading-tight text-balance"
             text="At MERAI, we combine the precision of engineering with the intuition of design. Every website, app, and interface we create is crafted to perform beautifully and feel alive."
           />
-          <p className="text-xl text-muted">
+          <p className="text-base text-muted sm:text-lg md:text-xl max-w-xl">
             We Build Digital Experiences That Move
           </p>
         </div>
@@ -86,10 +86,10 @@ export default function ScrollSwapSection() {
       <section
         id="future-in-motion"
         ref={futureRef}
-        className="z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 w-full max-w-[1200px]"
+        className="z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 w-full max-w-[1200px] px-8"
       >
         <H2HeaderUI
-          className="leading-tight"
+          className="leading-tight text-balance text-center sm:text-left"
           text="The future isn`t something we wait for.
 It`s something we build - line by line, pixel by pixel."
         />
@@ -98,13 +98,12 @@ It`s something we build - line by line, pixel by pixel."
       {/* Background Grid */}
       <div
         ref={gridRef}
-        className="absolute left-0 right-0 z-0 pointer-events-none opacity-80"
-        style={{ top: "-40%", bottom: "-40%" }}
+        className="scrollswap-grid absolute left-0 right-0 z-0 pointer-events-none"
       >
         <GridPlus
           stroke="rgba(0,0,0,0.25)"
           plusStroke="rgba(0,0,0,0.6)"
-          bg="white"
+          bg="#FFFDFA"
         />
       </div>
     </div>

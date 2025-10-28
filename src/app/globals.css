@@ -65,3 +65,25 @@ body {
 .third {
   transform: translate3d(0px, 0px, -20rem) translateY(-50%);
 }
+
+.scrollswap-grid {
+  top: -40%;
+  bottom: -40%;
+}
+
+@media (max-width: 768px) {
+  .scrollswap-grid {
+    top: -24%;
+    bottom: -24%;
+  }
+
+  .quotes-perspective-left {
+    width: 50%;
+    left: 25%;
+  }
+
+  .quotes-perspective-right {
+    width: 50%;
+    right: 25%;
+  }
+}
