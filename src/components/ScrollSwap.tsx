@@ -101,7 +101,7 @@ export default function ScrollSwapSection() {
   return (
     <div
       ref={containerRef}
-      className="relative text-black min-h-screen flex flex-col justify-center items-center  py-16  sm:py-24 lg:py-32 overflow-hidden"
+      className="relative bg-[#FFFDFA] text-black min-h-screen flex flex-col justify-center items-center  py-16  sm:py-24 lg:py-32 overflow-hidden"
     >
       {/* Section Awal - Akan di-pin dan fade out */}
       <section
@@ -111,8 +111,9 @@ export default function ScrollSwapSection() {
       >
         <div className="w-full flex flex-col gap-12">
           <H2HeaderUI
-            className="leading-tight text-balance px-4 md:px-8 mx-auto max-w-[1200px] w-full"
-            text="Services"
+            headerText="Services"
+            p="Transform your data and expertise into agentic solutions that
+            continuously improve with human interaction."
           />
           <div
             style={{ height: "500px", position: "relative" }}
@@ -127,18 +128,18 @@ export default function ScrollSwapSection() {
       <section
         id="future-in-motion"
         ref={futureRef}
-        className="z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 w-full max-w-[1200px] px-8 pointer-events-none"
+        className="z-10 absolute transform opacity-0 w-full max-w-[1200px] px-8 pointer-events-none"
       >
-        <H2HeaderUI
-          className="leading-tight text-balance text-center sm:text-left"
-          text="Masa depan bukanlah sesuatu yang kita tunggu-tunggu. Itu adalah sesuatu yang kita bangun - baris demi baris, piksel demi piksel."
-        />
+        <p className="leading-tight text-balance text-center text-3xl sm:text-4xl lg:text-5xl">
+          Masa depan bukanlah sesuatu yang kita tunggu-tunggu. Itu adalah
+          sesuatu yang kita bangun - baris demi baris, piksel demi piksel.
+        </p>
       </section>
 
       {/* Background Grid */}
       <div
         ref={gridRef}
-        className="scrollswap-grid absolute left-0 right-0 z-0 pointer-events-none"
+        className="scrollswap-grid absolute left-0 right-0 z-0 pointer-events-none opacity-40"
       >
         <GridPlus
           stroke="rgba(0,0,0,0.25)"

@@ -8,7 +8,7 @@ export const H1HeaderUI = ({
   return (
     <h1
       className={
-        "text-5xl lg:text-7xl w-full max-w-[1200px] font-bold duration-300 " +
+        "text-5xl lg:text-7xl w-full max-w-[1200px] font-bold duration-300 text-center " +
         className
       }
     >

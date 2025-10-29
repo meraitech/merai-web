@@ -70,8 +70,8 @@ export default function QuotesDepth() {
 
   return (
     <div>
-      <div ref={triggerRef} className="quotes-perspective">
-        <div ref={perspectiveRef} className="quotes-perspective-inner">
+      <div ref={triggerRef} className="quotes-perspective ">
+        <div ref={perspectiveRef} className="quotes-perspective-inner ">
           {data.map((wcu, index) => (
             <div
               key={index}

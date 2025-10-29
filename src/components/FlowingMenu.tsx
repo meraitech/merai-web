@@ -99,7 +99,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text, image }) => {
       ref={itemRef}
     >
       <a
-        className="flex items-center h-full relative cursor-pointer no-underline text-black/60 text-3xl hover:text-white focus:text-black focus-visible:text-white mx-auto max-w-[1200px]"
+        className="flex items-center h-full relative cursor-pointer no-underline text-black/60 text-3xl hover:text-white focus:text-black focus-visible:text-white mx-auto max-w-[1200px] px-8"
         href={link}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -107,7 +107,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text, image }) => {
         {text}
       </a>
       <div
-        className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none bg-black translate-y-[101%]"
+        className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none bg-black translate-y-101"
         ref={marqueeRef}
       >
         <div className="h-full w-[200%] flex" ref={marqueeInnerRef}>

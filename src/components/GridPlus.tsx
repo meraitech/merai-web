@@ -87,7 +87,12 @@ export default function GridPlus({
         {/* layer bg + grid */}
         <rect width="100%" height="100%" fill={`url(#${gridId})`} />
         {/* layer plus */}
-        <rect width="100%" height="100%" fill={`url(#${plusesId})`} opacity="0.9" />
+        <rect
+          width="100%"
+          height="100%"
+          fill={`url(#${plusesId})`}
+          opacity="0.9"
+        />
         {/* vignette halus */}
         <rect width="100%" height="100%" fill={`url(#${vignetteId})`} />
       </svg>
