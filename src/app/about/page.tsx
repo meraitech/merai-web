@@ -25,10 +25,10 @@ export default function Works() {
     >
       <H1HeaderUI text="Tentang" className="w-full max-w-[1200px]" />
 
-      <section className="w-full max-w-[1200px] grid duration-300 gap-12">
+      <section className="w-full max-w-[1200px] flex  flex-col duration-300 gap-12">
         <div className="flex flex-col gap-6 text-center">
           <h2 className="text-muted hidden">{data.vision.title}</h2>
-          <p className="text-balance text-3xl leading-snug">
+          <p className="text-balance text-xl md:text-2xl lg:text-3xl leading-snug duration-300">
             {data.vision.content}
           </p>
         </div>

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { H1HeaderUI } from "@/components/ui/h1-header.ui";
-import WorkDetailContent from "@/components/work/WorkDetailContent";
+import WorkDetailContent from "@/features/works/components/WorkDetailContent";
 
 import { workProjects } from "../../projects";
 
@@ -65,7 +65,7 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
     workProjects.find((item) => item.id === numericId) ?? notFound();
 
   return (
-    <article className="animate-fade-in-up flex w-full flex-col gap-8 max-w-[1200px] mx-auto min-h-screen">
+    <article className="flex w-full flex-col gap-8 max-w-[1200px] mx-auto min-h-screen">
       <header className="flex flex-col gap-12">
         <H1HeaderUI text={project.companyName} className="w-full text-start" />
         <div className="flex flex-wrap items-center justify-between gap-3 text-sm text-muted">

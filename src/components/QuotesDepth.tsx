@@ -9,24 +9,24 @@ export default function QuotesDepth() {
   const perspectiveRef = useRef<HTMLDivElement | null>(null);
   const data = [
     {
-      title: "Kode Murni, Bukan Template",
+      span: "KODE MURNI",
+      title: "Dibangun dari Kode, Bukan Template.",
       description:
-        "Setiap komponen dirancang khusus dengan Next.js & TypeScript untuk performa, aksesibilitas, dan SEO sejak fondasi.",
-      points: "Next.js + TypeScript + Design System kustom",
+        "Next.js & TypeScript dari nol—cepat, aman, dan sepenuhnya milik Anda.",
       className: "quotes-perspective-left",
     },
     {
-      title: "Motion & 3D yang Hidup",
+      span: "MOTION & 3D",
+      title: "Desain yang Bergerak, Pengalaman Bernyawa.",
       description:
-        "GSAP & Three.js menghadirkan interaksi sinematik yang meningkatkan engagement dan brand recall.",
-      points: "GSAP timelines, Three.js/WebGL",
+        "GSAP + Three.js menghadirkan interaksi halus yang melekat di ingatan.",
       className: "quotes-perspective-right",
     },
     {
-      title: "Skalabilitas & AI-Ready",
+      span: "SIAP MASA DEPAN",
+      title: "Arsitektur Skalabel, AI-Ready",
       description:
-        "Arsitektur modular siap integrasi AI: chatbot, rekomendasi, automasi—aman, terukur, dan mudah dirawat.",
-      points: "Modular monorepo, API, CI/CD, AI/LLM",
+        "Modular, SEO-first, siap integrasi AI & blockchain saat Anda butuh.",
       className: "quotes-perspective-left third",
     },
   ];
@@ -77,15 +77,13 @@ export default function QuotesDepth() {
               key={index}
               className={
                 wcu.className +
-                " backdrop-blur-sm border pointer-events-none border-foreground/10 p-5 sm:p-6 flex flex-col gap-20"
+                " backdrop-blur-sm border pointer-events-none border-foreground/10 p-(--p-container-sm) sm:p-(--p-container) aspect-4/5 flex flex-col justify-between"
               }
               ref={(el) => {
                 if (el) itemRefs.current[index] = el;
               }}
             >
-              <span className="text-muted text-xs">
-                {"[ " + wcu.points + " ]"}
-              </span>
+              <span className="text-muted text-xs uppercase">{wcu.span}</span>
               <div className="grid gap-2">
                 <h2 className="sm:text-lg lg:text-xl ">{wcu.title}</h2>
                 <p className="text-foreground/80 text-sm">{wcu.description}</p>

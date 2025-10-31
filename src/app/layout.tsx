@@ -6,6 +6,7 @@ import GridPlus from "@/components/GridPlus";
 import Link from "next/link";
 import Image from "next/image";
 import { ViewTransition } from "react";
+import Navbar from "./_components/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -65,54 +66,7 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          <header className="fixed inset-x-0 top-0 z-40 text-sm">
-            <div className="flex w-full items-center justify-between py-4 px-8">
-              <Link
-                href="/"
-                className="inline-flex items-center gap-2"
-                aria-label="Beranda MERAI"
-              >
-                <Image
-                  src={"/__merai__/logo.webp"}
-                  alt="Logo Merai"
-                  width={45}
-                  height={45}
-                  draggable={false}
-                />
-              </Link>
-
-              <nav aria-label="Navigasi utama" className="hidden md:block">
-                <ul className="flex items-center gap-6">
-                  <li>
-                    <Link
-                      href="/works"
-                      className="inline-flex items-center text-muted hover:text-white focus:scale-105 focus:text-white duration-300"
-                    >
-                      Karya
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/about"
-                      className="inline-flex items-center text-muted hover:text-white focus:scale-105 focus:text-white duration-300"
-                    >
-                      Tentang
-                    </Link>
-                  </li>
-                </ul>
-              </nav>
-
-              <div className="flex items-center">
-                <Link
-                  href="/contact"
-                  className="border border-foreground/20 px-4 py-2 hover:opacity-50 duration-300 backdrop-blur-xs"
-                >
-                  Hubungi Kami
-                </Link>
-              </div>
-            </div>
-          </header>
-
+          <Navbar />
           {children}
 
           <footer className="mx-auto bg-linear-to-t from-background w-full text-center py-10 opacity-70">

@@ -38,21 +38,21 @@ export default function Works() {
             <Link
               key={item.id}
               href={`/works/project/${item.id}`}
-              className="group flex flex-col gap-4"
+              className="group flex flex-col gap-4 "
               // View Transition Name untuk shared element animation
               style={{
                 // @ts-ignore - View Transitions API
                 viewTransitionName: `work-card-${item.id}`,
               }}
             >
-              <div className="relative overflow-hidden">
+              <div className="relative overflow-hidden opacity-60 group-hover:opacity-100 duration-300">
                 <Image
                   src={item.imageUrl}
                   alt={`${item.companyName} Project`}
                   width={1920}
                   height={1080}
                   priority={item.id <= 2}
-                  className="aspect-video w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="aspect-video w-full object-cover transition-transform duration-300 group-hover:scale-105"
                   style={{
                     // @ts-ignore - View Transitions API
                     viewTransitionName: `work-image-${item.id}`,
@@ -65,7 +65,7 @@ export default function Works() {
 
               <div className="flex flex-col gap-3">
                 <h3
-                  className="text-xl font-bold transition-colors duration-300 group-hover:text-white/80 md:text-2xl order-2"
+                  className="text-xl font-bold transition-colors duration-300 group-hover:text-white text-white/60 md:text-2xl order-2"
                   style={{
                     viewTransitionName: `work-title-${item.id}`,
                   }}

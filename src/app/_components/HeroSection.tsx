@@ -10,7 +10,6 @@ export default function HeroScene() {
   return (
     <div className="absolute inset-0 z-0">
       {" "}
-      {/* ← Tambahkan z-0 */}
       <Scene />
     </div>
   );

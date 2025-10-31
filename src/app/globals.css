@@ -5,6 +5,9 @@
   --background-invert: #bfbfbb;
   --foreground: #0a0a0a;
   --muted: gray;
+
+  --p-container: 2rem;
+  --p-container-sm: 1.5rem;
 }
 
 @theme inline {

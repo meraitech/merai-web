@@ -156,7 +156,7 @@ export default function WorksLayout({ children }: WorksLayoutProps) {
   }, []);
 
   return (
-    <div className="mt-40 flex flex-col gap-12 pb-16">
+    <div className="mt-32 md:mt-40 flex flex-col gap-12 pb-16">
       {/* Navigation - TIDAK akan re-render */}
       <aside className="w-full">
         <div className="w-full">
@@ -184,19 +184,17 @@ export default function WorksLayout({ children }: WorksLayoutProps) {
                       <Link
                         href={`/works/project/${project.id}`}
                         prefetch={true}
-                        className={`group/card relative block h-48 aspect-video overflow-visible rounded-3xl border border-white/10 bg-background/40 transition-all duration-300 ${
+                        className={`group/card relative block aspect-video overflow-visible rounded-3xl border border-white/10 bg-background/40 transition-all duration-300 ${
                           isActive
-                            ? "scale-110 opacity-100"
-                            : "opacity-50 hover:opacity-60"
+                            ? "md:h-60 h-40 opacity-95"
+                            : "md:h-40 h-28 opacity-40 hover:opacity-60"
                         }`}
                         aria-current={isActive ? "page" : undefined}
                         onClick={(event) => {
-                          // Cegah klik saat sedang drag
                           if (dragStateRef.current.isDragging) {
                             event.preventDefault();
                             return;
                           }
-                          // Biarkan Next.js Link handle navigation secara natural
                         }}
                       >
                         <Image
@@ -209,18 +207,15 @@ export default function WorksLayout({ children }: WorksLayoutProps) {
                           className="h-full w-full object-cover pointer-events-none transition-transform duration-500"
                         />
 
-                        <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-background opacity-90 transition-opacity duration-300 group-hover/card:opacity-100" />
-
-                        <span
-                          className={`pointer-events-none absolute bottom-4 left-4 right-4 text-sm font-medium text-white drop-shadow md:text-base transition-opacity duration-300 ${
-                            isActive
-                              ? "opacity-100"
-                              : "opacity-0 group-hover/card:opacity-100"
-                          }`}
+                        {/* <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-background opacity-90 transition-opacity duration-300 group-hover/card:opacity-100" /> */}
+                      </Link>
+                      {!isActive && (
+                        <p
+                          className={`pointer-events-none text-sm text-white/50 drop-shadow mt-4 md:text-base transition-opacity duration-300`}
                         >
                           {project.companyName}
-                        </span>
-                      </Link>
+                        </p>
+                      )}
                     </li>
                   );
                 })}
@@ -231,7 +226,7 @@ export default function WorksLayout({ children }: WorksLayoutProps) {
       </aside>
 
       {/* Children - HANYA ini yang berubah */}
-      <div className="mx-auto w-full max-w-[1200px] px-6 md:px-0">
+      <div className="mx-auto w-full max-w-[1200px] px-6 md:px-8">
         {children}
       </div>
     </div>
