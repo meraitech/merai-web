@@ -56,7 +56,6 @@ export default function Home() {
     "SEO",
     "API Integration",
     "System Design",
-    "System Design",
     "AI Integration",
     "Blockchain Integration",
   ];
