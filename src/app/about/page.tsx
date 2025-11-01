@@ -33,13 +33,13 @@ export default function Works() {
           </p>
         </div>
 
-        <div className="aspect-video bg-muted/40  ">
+        <div className="aspect-5/3 max-w-[1000px] mx-auto bg-muted/40  overflow-hidden">
           <Image
-            src={"/"}
+            src={"/img/contents/about/team.webp"}
             alt=""
             width={1280}
             height={720}
-            className="w-full h-full"
+            className="w-full h-full grayscale hover:scale-105 duration-300 object-cover"
           />
         </div>
 
