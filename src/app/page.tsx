@@ -94,7 +94,7 @@ export default function Home() {
         <div className="flex max-md:flex-col gap-8">
           <div className="backdrop-blur-xs border border-foreground/20 w-full  aspect-8/7 md:aspect-7/8 duration-300 relative overflow-hidden flex">
             <div className="p-8 flex flex-col justify-between gap-8 z-10 pointer-events-none">
-              <span className="uppercase text-sm tracking-widest ">
+              <span className="uppercase text-sm tracking-widest font-epicpro">
                 Small Business (UMKM)
               </span>
               <div className="flex flex-col gap-3">
@@ -121,7 +121,7 @@ export default function Home() {
           </div>
           <div className="backdrop-blur-xs border border-foreground/20 w-full  aspect-8/7 md:aspect-7/8 duration-300 relative overflow-hidden flex">
             <div className="p-8 flex flex-col justify-between gap-8 z-10 pointer-events-none">
-              <span className="uppercase text-sm tracking-widest ">
+              <span className="uppercase text-sm tracking-widest font-epicpro">
                 ENTERPRISE
               </span>
               <div className="flex flex-col gap-3">

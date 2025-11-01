@@ -11,13 +11,14 @@ export default function Navbar() {
           className="inline-flex items-center gap-2"
           aria-label="Beranda MERAI"
         >
-          <Image
+          <span className="font-epicpro text-2xl">MERAI</span>
+          {/* <Image
             src={"/__merai__/logo.webp"}
             alt="Logo Merai"
             width={45}
             height={45}
             draggable={false}
-          />
+          /> */}
         </Link>
 
         {/* Tombol kanan */}

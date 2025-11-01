@@ -83,7 +83,9 @@ export default function QuotesDepth() {
                 if (el) itemRefs.current[index] = el;
               }}
             >
-              <span className="text-muted text-xs uppercase">{wcu.span}</span>
+              <span className="text-muted text-xs uppercase font-epicpro">
+                {wcu.span}
+              </span>
               <div className="grid gap-2">
                 <h2 className="sm:text-lg lg:text-xl ">{wcu.title}</h2>
                 <p className="text-foreground/80 text-sm">{wcu.description}</p>

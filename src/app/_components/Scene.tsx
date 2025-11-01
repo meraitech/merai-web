@@ -137,7 +137,7 @@ function Model() {
           {/* Text Background - Centered */}
           <Text
             fontSize={6}
-            font="/assets/fonts/Montserrat-Bold.ttf"
+            font="/assets/fonts/GC-Epicpro.ttf"
             position={[0, 0, -5]}
             color="#ffffff"
             anchorX="center" // ← Penting untuk center horizontal

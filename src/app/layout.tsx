@@ -7,6 +7,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { ViewTransition } from "react";
 import Navbar from "./_components/Navbar";
+import ChatAssistant from "./_components/ChatAssistant";
+import Footer from "./_components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -68,10 +70,9 @@ export default function RootLayout({
         >
           <Navbar />
           {children}
+          <ChatAssistant />
 
-          <footer className="mx-auto bg-linear-to-t from-background w-full text-center py-10 opacity-70">
-            © {new Date().getFullYear()} MERAI. Seluruh hak cipta dilindungi.
-          </footer>
+          <Footer />
 
           {/* Background  */}
           <div
