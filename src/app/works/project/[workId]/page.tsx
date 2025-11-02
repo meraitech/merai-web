@@ -4,8 +4,7 @@ import { notFound } from "next/navigation";
 
 import { H1HeaderUI } from "@/components/ui/h1-header.ui";
 import WorkDetailContent from "@/features/works/components/WorkDetailContent";
-
-import { workProjects } from "../../projects";
+import workProjects from "@/assets/jsons/works.json";
 
 type ProjectRouteParams = {
   workId: string;
@@ -65,7 +64,7 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
     workProjects.find((item) => item.id === numericId) ?? notFound();
 
   return (
-    <article className="flex w-full flex-col gap-8 max-w-[1200px] mx-auto min-h-screen">
+    <article className="flex w-full flex-col gap-8 max-w-[1200px] mx-auto">
       <header className="flex flex-col gap-12">
         <H1HeaderUI text={project.companyName} className="w-full text-start" />
         <div className="flex flex-wrap items-center justify-between gap-3 text-sm text-muted">
@@ -84,9 +83,10 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
       </header>
 
       <Image
-        src={project.imageUrl}
+        src={project.coverImage}
         alt={`${project.companyName} hero`}
         width={1920}
+        draggable={false}
         height={1080}
         className="aspect-video w-full border border-white/5 object-cover"
       />
@@ -94,6 +94,19 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
       <section className="space-y-6">
         <p className="text-base leading-7 text-muted">{project.overview}</p>
         <WorkDetailContent sections={project.detailSections} />
+        <div className="grid md:grid-cols-2 gap-8">
+          {project.images.map((imgUrl, index) => (
+            <Image
+              key={index}
+              src={imgUrl.url}
+              draggable={false}
+              alt={project.companyName + " Image"}
+              width={1024}
+              height={724}
+              className="w-full h-full"
+            />
+          ))}
+        </div>
       </section>
     </article>
   );

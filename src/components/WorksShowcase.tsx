@@ -4,57 +4,10 @@ import { useEffect, useMemo, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import works from "../assets/jsons/works.json";
+import Link from "next/link";
 
-type WorkItem = {
-  company: string;
-  date: string;
-  imageUrl: string;
-  description: string;
-  accent: string;
-};
-
-const WORKS: WorkItem[] = [
-  {
-    company: "Starbucks Cafe",
-    date: "2025 10.28",
-    imageUrl: "/img/contents/project-company.webp",
-    description:
-      "A kinetic storefront that adapts to customer intent, blending motion design with headless commerce.",
-    accent: "from-[#9f3fff] via-[#5f3dff] to-[#2f9dff]",
-  },
-  {
-    company: "Flux OS",
-    date: "2025 10.28",
-    imageUrl: "/img/contents/project-company.webp",
-    description:
-      "Live data orchestration with volumetric UI depth, crafted for ultra-fast decision loops.",
-    accent: "from-[#ff7c6e] via-[#ff4f9f] to-[#813fff]",
-  },
-  {
-    company: "Nimbus Robotics",
-    date: "2025 10.28",
-    imageUrl: "/img/contents/project-company.webp",
-    description:
-      "Control interfaces engineered for precision robotics - calibrated for clarity in high-pressure teams.",
-    accent: "from-[#42d392] via-[#32a9ff] to-[#3a68ff]",
-  },
-  {
-    company: "Solstice Studio",
-    date: "2025 10.28",
-    imageUrl: "/img/contents/project-company.webp",
-    description:
-      "Interactive narrative that channels sound, light, and motion to express a bold creative identity.",
-    accent: "from-[#ffd65a] via-[#ff9f3f] to-[#ff3f62]",
-  },
-  {
-    company: "Kairo AI",
-    date: "2025 10.28",
-    imageUrl: "/img/contents/project-company.webp",
-    description:
-      "Sensor-fed interface visualizing anomaly detection with confidence shading and adaptive focus.",
-    accent: "from-[#6cffcb] via-[#54c1ff] to-[#3f6bff]",
-  },
-];
+const WORKS = works;
 
 export default function WorksShowcase() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -181,12 +134,13 @@ export default function WorksShowcase() {
             className="relative flex w-full items-center justify-center"
           >
             {works.map((work, index) => (
-              <article
-                key={work.company}
+              <Link
+                key={index}
+                href={`/works/project/${work.id}`}
                 ref={(el) => {
                   cardRefs.current[index] = el;
                 }}
-                className="pointer-events-none absolute flex w-[88vw] sm:w-3/4 max-w-[960px] flex-col gap-8 sm:gap-10 md:gap-12 opacity-0"
+                className="absolute flex sm:w-3/4 max-w-[800px] flex-col gap-8 sm:gap-10 md:gap-12 p-10 opacity-0"
                 style={{
                   transformStyle: "preserve-3d",
                   zIndex: works.length - index,
@@ -194,10 +148,10 @@ export default function WorksShowcase() {
               >
                 <div className="flex flex-col justify-between w-full aspect-video backdrop-blur-sm border border-foreground/10 shadow-[0_35px_80px_rgba(0,0,0,0.45)] overflow-hidden bg-black/40">
                   <Image
-                    src={work.imageUrl}
+                    src={work.coverImage}
                     width={1920}
                     height={1080}
-                    alt={work.company + " Content"}
+                    alt={work.companyName + " Content"}
                   />
                 </div>
 
@@ -206,13 +160,13 @@ export default function WorksShowcase() {
                     {work.date}
                   </span>
                   <h3 className="text-2xl sm:text-3xl md:text-4xl text-balance">
-                    {work.company}
+                    {work.companyName}
                   </h3>
                   <p className="text-sm sm:text-base text-white/70 md:text-lg">
                     {work.description}
                   </p>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </div>

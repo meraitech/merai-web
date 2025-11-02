@@ -77,18 +77,22 @@ export default function QuotesDepth() {
               key={index}
               className={
                 wcu.className +
-                " backdrop-blur-sm border pointer-events-none border-foreground/10 p-(--p-container-sm) sm:p-(--p-container) aspect-4/5 flex flex-col justify-between"
+                " backdrop-blur-sm border pointer-events-none border-foreground/10 p-(--p-container-sm) sm:p-(--p-container) aspect-square md:aspect-7/8 flex flex-col justify-between"
               }
               ref={(el) => {
                 if (el) itemRefs.current[index] = el;
               }}
             >
-              <span className="text-muted text-xs uppercase font-epicpro">
+              <span className="text-muted text-[0.5rem] md:text-xs uppercase font-epicpro">
                 {wcu.span}
               </span>
               <div className="grid gap-2">
-                <h2 className="sm:text-lg lg:text-xl ">{wcu.title}</h2>
-                <p className="text-foreground/80 text-sm">{wcu.description}</p>
+                <h2 className="text-xs sm:text-sm lg:text-base ">
+                  {wcu.title}
+                </h2>
+                <p className="text-foreground/80 text-[0.5rem] md:text-sm">
+                  {wcu.description}
+                </p>
               </div>
               {/* <div className="flex gap-3 max-md:gap-2 items-center mt-3">
                 <img
