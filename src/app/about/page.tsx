@@ -39,6 +39,7 @@ export default function Works() {
             alt=""
             width={1280}
             height={720}
+            draggable={false}
             className="w-full h-full grayscale hover:scale-105 duration-300 object-cover"
           />
         </div>

@@ -166,7 +166,7 @@ export default function ChatAssistant() {
           aria-hidden="true"
           onClick={handleClose}
           className={classNames(
-            "absolute inset-0 bg-foreground/20 backdrop-blur-[1px] transition-opacity duration-500",
+            "absolute inset-0 bg-black/60 backdrop-blur-[1px] transition-opacity duration-500",
             isOpen ? "opacity-100" : "opacity-0"
           )}
         />

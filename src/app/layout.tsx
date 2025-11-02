@@ -101,14 +101,13 @@ export default function RootLayout({
 }>) {
   return (
     <ViewTransition>
-      <html lang="id">
+      <html lang="id" data-theme="dark">
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col justify-between `}
         >
           <Navbar />
           {children}
           <ChatAssistant />
-
           <Footer />
 
           {/* Background  */}

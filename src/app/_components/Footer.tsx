@@ -3,8 +3,8 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <div className="bg-background">
-      <footer className="mx-auto max-w-[1200px] w-full text-center py-10 px-8 flex flex-col justify-between gap-8 border-t border-foreground/20">
+    <div className="bg-background border-t border-foreground/20">
+      <footer className="mx-auto max-w-[1200px] w-full text-center py-10 px-8 flex flex-col justify-between gap-8 ">
         {/* <div className="grid grid-cols-2 text-start">
           <div className="flex flex-col justify-end gap-8">
             <div className="flex flex-col justify-end gap-4">

@@ -1,0 +1,101 @@
+[
+    {
+        "id": 1,
+        "companyName": "Lost Toys Club",
+        "date": "2025.10.28",
+        "coverImage": "/img/contents/works/lct/cover.webp",
+        "description": "Dompet Web3 100% on-chain yang dibangun di atas ekosistem Internet Computer (ICP).",
+        "stack": [
+            "Motoko",
+            "React.js",
+            "Tailwind CSS",
+            "ICP Blockchain"
+        ],
+        "overview": "Kami mengembangkan dompet Web3 100% on-chain untuk Lost Toys Club, perusahaan berbasis di Singapura. Proyek ini menggabungkan performa backend Motoko dengan antarmuka modern berbasis React dan Tailwind di lingkungan blockchain ICP.",
+        "detailSections": [
+            {
+                "type": "heading",
+                "text": "Tantangan"
+            },
+            {
+                "type": "paragraph",
+                "text": "Lost Toys Club ingin menghadirkan dompet Web3 yang sepenuhnya on-chain — bukan sekadar integrasi API tradisional. Mereka membutuhkan sistem yang aman, cepat, dan benar-benar terdesentralisasi di atas Internet Computer."
+            },
+            {
+                "type": "heading",
+                "text": "Solusi"
+            },
+            {
+                "type": "paragraph",
+                "text": "Kami membangun arsitektur backend menggunakan Motoko untuk memastikan logika transaksi dan kepemilikan aset tetap berada di rantai utama. Di sisi frontend, kami mendesain antarmuka bersih dan responsif dengan React.js dan Tailwind, menciptakan pengalaman pengguna Web3 yang mulus."
+            },
+            {
+                "type": "heading",
+                "text": "Hasil"
+            },
+            {
+                "type": "paragraph",
+                "text": "Dompet ini kini beroperasi sepenuhnya di ICP dengan keamanan tingkat tinggi, performa cepat, dan skalabilitas ideal untuk adopsi pengguna global. Proyek ini menjadi salah satu langkah awal menuju masa depan keuangan digital yang sepenuhnya on-chain."
+            }
+        ],
+        "images": [
+            {
+                "url": "/img/contents/works/lct/1.webp"
+            },
+            {
+                "url": "/img/contents/works/lct/2.webp"
+            },
+            {
+                "url": "/img/contents/works/lct/3.webp"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "companyName": "Spin Art Digital",
+        "date": "2025.10.28",
+        "coverImage": "/img/contents/works/spin-art-digital/cover.webp",
+        "description": "Platform digital printing modern dengan layanan cepat, hasil premium, dan pencarian produk berbasis bahasa natural.",
+        "stack": [
+            "Next.js 16",
+            "Tailwind CSS",
+            "Supabase",
+            "Vercel"
+        ],
+        "overview": "Spin Art Digital adalah platform layanan digital printing berkualitas tinggi yang memudahkan pengguna menemukan produk seperti banner, poster, dan kartu nama hanya dengan menggunakan bahasa natural. Kami menghadirkan pengalaman pencetakan yang modern, cepat, dan efisien dengan antarmuka intuitif.",
+        "detailSections": [
+            {
+                "type": "heading",
+                "text": "Tantangan"
+            },
+            {
+                "type": "paragraph",
+                "text": "Banyak pelanggan kesulitan menavigasi katalog produk digital printing yang rumit. Spin Art Digital ingin menghadirkan cara baru yang lebih intuitif — pengguna cukup mengetik permintaan mereka dengan bahasa natural tanpa harus memahami kategori teknis printing."
+            },
+            {
+                "type": "heading",
+                "text": "Solusi"
+            },
+            {
+                "type": "paragraph",
+                "text": "Kami membangun sistem pencarian cerdas berbasis bahasa natural yang terintegrasi dengan database produk di Supabase. Antarmuka web dikembangkan menggunakan Next.js 16 dan Tailwind CSS untuk menghadirkan performa tinggi dan tampilan modern. Semua halaman dioptimalkan untuk SEO agar mudah ditemukan di mesin pencari."
+            },
+            {
+                "type": "heading",
+                "text": "Hasil"
+            },
+            {
+                "type": "paragraph",
+                "text": "Spin Art Digital kini menjadi salah satu penyedia layanan digital printing terkemuka dengan pengalaman pengguna yang cepat, responsif, dan menyenangkan. Teknologi modern yang digunakan memastikan kualitas cetak premium dan kemudahan pemesanan yang efisien untuk pelanggan di seluruh Indonesia."
+            }
+        ],
+        "images": [
+            {
+                "url": "/img/contents/works/spin-art-digital/1.webp"
+            },
+            {
+                "url": "/img/contents/works/spin-art-digital/2.webp"
+            }
+        ]
+    }
+]

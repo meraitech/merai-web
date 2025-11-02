@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { H1HeaderUI } from "@/components/ui/h1-header.ui";
 
-import { workProjects } from "./projects";
+import workProjects from "@/assets/jsons/works.json";
 
 export const metadata: Metadata = {
   title: "Karya",
@@ -26,10 +26,7 @@ export const metadata: Metadata = {
 
 export default function Works() {
   return (
-    <main
-      id="content"
-      className="flex w-full flex-col gap-8 p-8 mt-40 min-h-screen"
-    >
+    <main id="content" className="flex w-full flex-col gap-8 p-8 mt-40">
       <div className="mx-auto flex w-full max-w-[1200px] flex-col gap-12">
         <H1HeaderUI text="Karya" className="w-full" />
 
@@ -47,7 +44,7 @@ export default function Works() {
             >
               <div className="relative overflow-hidden opacity-60 group-hover:opacity-100 duration-300">
                 <Image
-                  src={item.imageUrl}
+                  src={item.coverImage}
                   alt={`${item.companyName} Project`}
                   width={1920}
                   height={1080}

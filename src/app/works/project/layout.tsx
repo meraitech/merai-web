@@ -5,8 +5,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import type { ReactNode } from "react";
 import { useEffect, useMemo, useRef, useState } from "react";
-
-import { workProjects } from "../projects";
+import workProjects from "@/assets/jsons/works.json";
 
 type WorksLayoutProps = {
   children: ReactNode;
@@ -199,7 +198,7 @@ export default function WorksLayout({ children }: WorksLayoutProps) {
                       >
                         <Image
                           alt={project.companyName}
-                          src={project.imageUrl}
+                          src={project.coverImage}
                           width={1280}
                           height={720}
                           draggable={false}

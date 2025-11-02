@@ -90,9 +90,9 @@ export default function ScrollSwapSection() {
           {howWeWork.map((content, index) => (
             <li
               key={index}
-              className="backdrop-blur-xs border border-foreground/20 w-full aspect-2/1 lg:aspect-square p-(--p-container-sm) md:p-(--p-container) duration-300 flex flex-col gap-10 justify-between"
+              className="backdrop-blur-xs border border-foreground/20 w-full max-md:aspect-3/1 md:aspect-2/1 lg:aspect-square p-(--p-container-sm) md:p-(--p-container) duration-300 flex flex-col gap-4 md:gap-10 justify-between"
             >
-              <span className="text-7xl">{index + 1}</span>
+              <span className="text-3xl md:text-7xl">{index + 1}</span>
               <p className="md:text-xl">{content}</p>
             </li>
           ))}
@@ -119,11 +119,11 @@ export default function ScrollSwapSection() {
 
             <div className="absolute bottom-0 border border-foreground/20 w-full h-4/5 max-md:h-full z-0 backdrop-blur-xs flex justify-end">
               <blockquote className="w-1/2 flex flex-col z-10 my-auto gap-6 max-md:gap-4 pr-6">
-                <span className="italic leading-tight sm:text-2xl lg:text-3xl">
+                <span className="italic leading-tight text-xs sm:text-2xl lg:text-3xl">
                   "Logic will get you from A to B. Imagination will take you
                   everywhere"
                 </span>
-                <cite className="not-italic max-md:text-sm text-lg">
+                <cite className="not-italic max-sm:text-xs max-md:text-sm text-lg">
                   Albert Einstein
                 </cite>
               </blockquote>
