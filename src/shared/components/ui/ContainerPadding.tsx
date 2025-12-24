@@ -1,7 +1,9 @@
-export default function ContainerPadding({
+import React from "react";
+
+export const ContainerPadding = ({
   children,
 }: {
   children: React.ReactNode;
-}) {
-  return <div className="py-20">{children}</div>;
-}
+}) => {
+  return <div className="py-28">{children}</div>;
+};

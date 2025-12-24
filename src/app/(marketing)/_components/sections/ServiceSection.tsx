@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import HeaderSection from "@/shared/components/HeaderSection";
-import Card from "@/shared/components/ui/Card";
-import Container from "@/shared/components/ui/Container";
-import ContainerPadding from "@/shared/components/ui/ContainerPadding";
+import { Card } from "@/shared/components/ui/Card";
+import { Container } from "@/shared/components/ui/Container";
+import { ContainerPadding } from "@/shared/components/ui/ContainerPadding";
 import { TypographyH3 } from "@/shared/components/ui/TypographyH3";
 import { IMAGE_SERVICE_1 } from "@/shared/constants/image";
 
@@ -25,7 +25,7 @@ export default function ServiceSection() {
     <section className="px-4 lg:px-8">
       <ContainerPadding>
         <Container>
-          <div className="flex flex-col gap-4 md:gap-8 lg:gap-12">
+          <div className="flex flex-col gap-8 lg:gap-12">
             <HeaderSection
               title="Our Services"
               subtitle="Lorem ipsum dolor sit amet consectetur adipisicing elit. Non inventore

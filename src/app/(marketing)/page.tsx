@@ -6,8 +6,10 @@ export default function page() {
   return (
     <div className="flex flex-col">
       <HeroSection />
-      <ServiceSection />
-      <WhyChooseUsSection />
+      <div className="py-28 flex flex-col">
+        <ServiceSection />
+        <WhyChooseUsSection />
+      </div>
     </div>
   );
 }
