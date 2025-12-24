@@ -1,4 +1,5 @@
 import HeroSection from "./_components/sections/HeroSection";
+import { ProcessSection } from "./_components/sections/ProcessSection";
 import ServiceSection from "./_components/sections/ServiceSection";
 import WhyChooseUsSection from "./_components/sections/WhyChooseUsSection";
 import { WorkSection } from "./_components/sections/WorkSection";
@@ -11,6 +12,7 @@ export default function page() {
         <ServiceSection />
         <WhyChooseUsSection />
         <WorkSection />
+        <ProcessSection />
       </div>
     </div>
   );
