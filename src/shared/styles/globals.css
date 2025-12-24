@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: HafferXH-Light;
+  font-style: normal;
+  src: url("/assets/fonts/HafferXH-TRIAL-Light.otf");
+}
+@font-face {
+  font-family: HafferXH-Regular;
+  font-style: normal;
+  src: url("/assets/fonts/HafferXH-TRIAL-Regular.otf");
+}
+@font-face {
+  font-family: HafferXH-Medium;
+  font-style: normal;
+  src: url("/assets/fonts/HafferXH-TRIAL-Medium.otf");
+}
+
+@font-face {
+  font-family: HafferXHMono-Light;
+  font-style: normal;
+  src: url("/assets/fonts/HafferXHMono-TRIAL-Light.otf");
+}
+@font-face {
+  font-family: HafferXHMono-Regular;
+  font-style: normal;
+  src: url("/assets/fonts/HafferXHMono-TRIAL-Regular.otf");
+}
+@font-face {
+  font-family: HafferXHMono-Medium;
+  font-style: normal;
+  src: url("/assets/fonts/HafferXHMono-TRIAL-Medium.otf");
+}
+
+:root {
+  --background: #ffffff;
+  --background-invert: #bfbfbb;
+  --foreground: #0a0a0a;
+  --muted: gray;
+  --paragraph: rgb(100, 100, 100);
+
+  --p-container: 2rem;
+  --p-container-sm: 1.5rem;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --background-invert: #bfbfbb;
+    --muted: gray;
+  }
+} */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-background-invert: var(--background-invert);
+  --color-muted: var(--muted);
+  --color-paragraph: var(--paragraph);
+
+  /* font  */
+  --font-haffer-light: "HafferXH-Light";
+  --font-haffer-regular: "HafferXH-Regular";
+  --font-haffer-medium: "HafferXH-Medium";
+  --font-haffer-mono-light: "HafferXHMono-Light";
+  --font-haffer-mono-regular: "HafferXHMono-Regular";
+  --font-haffer-mono-medium: "HafferXHMono-Medium";
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
