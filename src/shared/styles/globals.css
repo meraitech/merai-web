@@ -1,8 +1,35 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: Epicpro;
-  src: url("/assets/fonts/GC-Epicpro.ttf");
+  font-family: HafferXH-Light;
+  font-style: normal;
+  src: url("/assets/fonts/HafferXH-TRIAL-Light.otf");
+}
+@font-face {
+  font-family: HafferXH-Regular;
+  font-style: normal;
+  src: url("/assets/fonts/HafferXH-TRIAL-Regular.otf");
+}
+@font-face {
+  font-family: HafferXH-Medium;
+  font-style: normal;
+  src: url("/assets/fonts/HafferXH-TRIAL-Medium.otf");
+}
+
+@font-face {
+  font-family: HafferXHMono-Light;
+  font-style: normal;
+  src: url("/assets/fonts/HafferXHMono-TRIAL-Light.otf");
+}
+@font-face {
+  font-family: HafferXHMono-Regular;
+  font-style: normal;
+  src: url("/assets/fonts/HafferXHMono-TRIAL-Regular.otf");
+}
+@font-face {
+  font-family: HafferXHMono-Medium;
+  font-style: normal;
+  src: url("/assets/fonts/HafferXHMono-TRIAL-Medium.otf");
 }
 
 :root {
@@ -10,174 +37,39 @@
   --background-invert: #bfbfbb;
   --foreground: #0a0a0a;
   --muted: gray;
+  --paragraph: rgb(100, 100, 100);
 
   --p-container: 2rem;
   --p-container-sm: 1.5rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-background-invert: var(--background-invert);
-  --color-muted: var(--muted);
-
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-epicpro: "Epicpro", sans-serif;
-}
-
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
     --background-invert: #bfbfbb;
     --muted: gray;
   }
+} */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-background-invert: var(--background-invert);
+  --color-muted: var(--muted);
+  --color-paragraph: var(--paragraph);
+
+  /* font  */
+  --font-haffer-light: "HafferXH-Light";
+  --font-haffer-regular: "HafferXH-Regular";
+  --font-haffer-medium: "HafferXH-Medium";
+  --font-haffer-mono-light: "HafferXHMono-Light";
+  --font-haffer-mono-regular: "HafferXHMono-Regular";
+  --font-haffer-mono-medium: "HafferXHMono-Medium";
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-}
-
-.quotes-perspective {
-  overflow: hidden;
-  height: 100vh;
-  width: 100%;
-  position: relative;
-  perspective: 25rem;
-}
-
-.quotes-perspective-left {
-  position: absolute;
-  width: 28%;
-  transform: translateY(-50%);
-  top: 50%;
-  left: 29.5%;
-  transition: 0.1s;
-  /* padding-left: 32px; */
-}
-
-.quotes-perspective-inner {
-  transform-style: preserve-3d;
-  position: relative;
-  height: 100%;
-}
-
-.quotes-perspective-right {
-  position: absolute;
-  width: 28%;
-  transform: translateY(-50%) translate3d(0px, 0px, -10rem);
-  top: 50%;
-  right: 29.5%;
-  transition: 0.1s;
-  /* padding-right: 32px; */
-}
-
-.third {
-  transform: translate3d(0px, 0px, -20rem) translateY(-50%);
-}
-
-.scrollswap-grid {
-  top: -40%;
-  bottom: -40%;
-}
-
-@media (max-width: 768px) {
-  .scrollswap-grid {
-    top: -24%;
-    bottom: -24%;
-  }
-
-  .quotes-perspective-left {
-    width: 50%;
-    left: 25%;
-  }
-
-  .quotes-perspective-right {
-    width: 50%;
-    right: 25%;
-  }
-}
-
-@layer utilities {
-  @keyframes marquee {
-    from {
-      transform: translateX(0%);
-    }
-
-    to {
-      transform: translateX(-50%);
-    }
-  }
-
-  .animate-marquee {
-    animation: marquee 15s linear infinite;
-  }
-
-  .translate-y-101 {
-    transform: translateY(101%);
-  }
-
-  .-translate-y-101 {
-    transform: translateY(-101%);
-  }
-
-  @keyframes fade-in-up {
-    from {
-      opacity: 0;
-      transform: translateY(24px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .animate-fade-in-up {
-    animation: fade-in-up 0.5s cubic-bezier(0.33, 1, 0.68, 1) both;
-  }
-}
-
-@layer utilities {
-  @supports (view-transition-name: none) {
-    /* Smooth page transitions */
-    ::view-transition-old(root),
-    ::view-transition-new(root) {
-      animation-duration: 0.3s;
-      animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    /* Card morph animations */
-    ::view-transition-old(work-card),
-    ::view-transition-new(work-card) {
-      animation-duration: 0.5s;
-      animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      mix-blend-mode: normal;
-    }
-
-    /* Image transitions with scale */
-    ::view-transition-old(work-image),
-    ::view-transition-new(work-image) {
-      animation-duration: 0.6s;
-      animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      object-fit: cover;
-    }
-
-    /* Title fade transitions */
-    ::view-transition-old(work-title),
-    ::view-transition-new(work-title) {
-      animation-duration: 0.4s;
-      animation-timing-function: ease-in-out;
-    }
-  }
-}
-
-/* Fallback for browsers without view transitions support */
-@supports not (view-transition-name: none) {
-  * {
-    transition: opacity 0.2s ease-in-out;
-  }
 }
