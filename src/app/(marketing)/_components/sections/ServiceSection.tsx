@@ -32,7 +32,7 @@ export default function ServiceSection() {
           accusantium minus quisquam natus error! Vero dolor totam nostrum
           laborum."
             />
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 duration-300">
+            <ul className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 duration-300">
               {listServices.map((item, index) => (
                 <Card key={index}>
                   <div className="flex flex-col gap-4 text-center aspect-3/4 justify-between items-center relative">
@@ -65,7 +65,7 @@ export default function ServiceSection() {
                   </div>
                 </Card>
               ))}
-            </div>
+            </ul>
           </div>
         </Container>
       </ContainerPadding>

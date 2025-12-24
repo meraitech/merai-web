@@ -41,9 +41,9 @@ export const ProcessSection = () => {
         </Container>
 
         {/* Content  */}
-        <div className="flex flex-col">
+        <ul className="flex flex-col">
           {process.map((item, index) => (
-            <div
+            <li
               key={index}
               className="border-t border-foreground/20 rounded-t-4xl p-4 md:p-8 lg:p-12 h-[60dvh] flex items-center justify-center relative overflow-hidden"
             >
@@ -68,9 +68,9 @@ export const ProcessSection = () => {
                 </div>
               </Container>
               <GlassBackground />
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </ContainerPadding>
     </div>
   );

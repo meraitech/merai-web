@@ -32,7 +32,7 @@ export const WorkSection = () => {
             />
 
             {/* Content  */}
-            <div className="flex gap-4 lg:gap-8">
+            <ul className="flex gap-4 lg:gap-8">
               {listWork.map((item, index) => (
                 <div key={index} className="aspect-square  h-90 lg:h-130">
                   <Card>
@@ -50,7 +50,7 @@ export const WorkSection = () => {
                   </Card>
                 </div>
               ))}
-            </div>
+            </ul>
           </div>
         </Container>
       </ContainerPadding>

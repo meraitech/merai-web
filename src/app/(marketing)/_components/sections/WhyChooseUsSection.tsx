@@ -56,7 +56,7 @@ export default function WhyChooseUsSection() {
             laborum."
             />
             {/* Content  */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-8">
+            <ul className="grid md:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-8">
               {listContent.map((item, index) => (
                 <div key={index} className={`${item.class}`}>
                   <Card>
@@ -72,7 +72,7 @@ export default function WhyChooseUsSection() {
                   </Card>
                 </div>
               ))}
-            </div>
+            </ul>
           </div>
         </Container>
       </ContainerPadding>
