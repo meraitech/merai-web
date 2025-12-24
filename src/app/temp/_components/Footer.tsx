@@ -1,4 +1,4 @@
-import IconInstagram from "@/assets/icons/instagram.icon";
+import IconInstagram from "@/shared/assets/icons/instagram.icon";
 import React from "react";
 
 export default function Footer() {

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-import { H1HeaderUI } from "@/components/ui/h1-header.ui";
+import { H1HeaderUI } from "@/shared/temp/components/ui/h1-header.ui";
 
-import workProjects from "@/assets/jsons/works.json";
+import workProjects from "@/shared/assets/jsons/works.json";
 
 export const metadata: Metadata = {
   title: "Karya",

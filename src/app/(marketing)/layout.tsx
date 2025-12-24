@@ -1,12 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import LiquidEther from "@/components/LiquidEther";
-import GridPlus from "@/components/GridPlus";
-import { ViewTransition } from "react";
-import Navbar from "./_components/Navbar";
-import ChatAssistant from "./_components/ChatAssistant";
-import Footer from "./_components/Footer";
+import "@/shared/styles/globals.css";
 
 const SITE_URL = "https://merai.tech";
 
@@ -100,43 +94,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ViewTransition>
-      <html lang="id" data-theme="dark">
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col justify-between `}
-        >
-          <Navbar />
-          {children}
-          <ChatAssistant />
-          <Footer />
-
-          {/* Background  */}
-          <div
-            className="fixed inset-0 -z-10 pointer-events-none opacity-30 "
-            aria-hidden="true"
-            role="presentation"
-          >
-            <GridPlus />
-            <LiquidEther
-              colors={["#fff", "#fff", "#fff"]}
-              mouseForce={10}
-              cursorSize={100}
-              isViscous={false}
-              viscous={30}
-              iterationsViscous={32}
-              iterationsPoisson={32}
-              resolution={0.5}
-              isBounce={true}
-              autoDemo={false}
-              autoSpeed={0.2}
-              autoIntensity={1.2}
-              takeoverDuration={0.25}
-              autoResumeDelay={2000}
-              autoRampDuration={0.6}
-            />
-          </div>
-        </body>
-      </html>
-    </ViewTransition>
+    <html lang="id" data-theme="dark">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col justify-between `}
+      >
+        {/* <Navbar /> */}
+        {children}
+        {/* <Footer /> */}
+      </body>
+    </html>
   );
 }

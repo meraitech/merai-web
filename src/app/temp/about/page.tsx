@@ -1,5 +1,5 @@
-import { H1HeaderUI } from "@/components/ui/h1-header.ui";
-import { H2HeaderUI } from "@/components/ui/h2-header.ui";
+import { H1HeaderUI } from "@/shared/temp/components/ui/h1-header.ui";
+import { H2HeaderUI } from "@/shared/temp/components/ui/h2-header.ui";
 import Image from "next/image";
 
 export default function Works() {

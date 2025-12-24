@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import type { ReactNode } from "react";
 import { useEffect, useMemo, useRef, useState } from "react";
-import workProjects from "@/assets/jsons/works.json";
+import workProjects from "@/shared/assets/jsons/works.json";
 
 type WorksLayoutProps = {
   children: ReactNode;

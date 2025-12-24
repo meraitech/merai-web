@@ -2,9 +2,9 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import { H1HeaderUI } from "@/components/ui/h1-header.ui";
+import { H1HeaderUI } from "@/shared/temp/components/ui/h1-header.ui";
 import WorkDetailContent from "@/features/works/components/WorkDetailContent";
-import workProjects from "@/assets/jsons/works.json";
+import workProjects from "@/shared/assets/jsons/works.json";
 
 type ProjectRouteParams = {
   workId: string;

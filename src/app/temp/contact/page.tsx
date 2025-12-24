@@ -1,4 +1,4 @@
-import { H2HeaderUI } from "@/components/ui/h2-header.ui";
+import { H2HeaderUI } from "@/shared/temp/components/ui/h2-header.ui";
 
 export default function Contact() {
   return (

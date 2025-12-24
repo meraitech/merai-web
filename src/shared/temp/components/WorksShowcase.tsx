@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import works from "../assets/jsons/works.json";
+import works from "../../assets/jsons/works.json";
 import Link from "next/link";
 
 const WORKS = works;
