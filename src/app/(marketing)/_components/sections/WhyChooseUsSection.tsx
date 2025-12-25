@@ -45,7 +45,7 @@ export default function WhyChooseUsSection() {
     },
   ];
   return (
-    <div className="px-4 lg:px-8">
+    <div className="px-4 lg:px-8 z-2 bg-background rounded-t-4xl border-t border-foreground/20">
       <ContainerPadding>
         <Container>
           <div className="flex flex-col gap-8 lg:gap-12">
@@ -58,7 +58,7 @@ export default function WhyChooseUsSection() {
             {/* Content  */}
             <ul className="grid md:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-8">
               {listContent.map((item, index) => (
-                <div key={index} className={`${item.class}`}>
+                <li key={index} className={`${item.class}`}>
                   <Card>
                     <div className="flex flex-col gap-4 text-center items-center relative h-90 lg:h-130">
                       {/* title  */}
@@ -70,7 +70,7 @@ export default function WhyChooseUsSection() {
                       </div>
                     </div>
                   </Card>
-                </div>
+                </li>
               ))}
             </ul>
           </div>
