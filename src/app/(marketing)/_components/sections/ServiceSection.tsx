@@ -12,6 +12,7 @@ import { useLayoutEffect } from "react";
 import { gsap } from "@/shared/lib/gsap";
 
 export default function ServiceSection() {
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const listServices = [
     {
       title: "Landing Page",
@@ -27,7 +28,6 @@ export default function ServiceSection() {
     },
   ];
 
-  const containerRef = useRef<HTMLDivElement | null>(null);
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       const cards = gsap.utils.toArray<HTMLElement>(".service-card");
@@ -46,7 +46,6 @@ export default function ServiceSection() {
           transformStyle: "preserve-3d",
           transformOrigin: "50% 100%",
           force3D: true,
-          // stack: depan besar, belakang kecil
           scale: 1 - i * scaleStep,
           z: 0,
           rotateX: 0,
@@ -65,7 +64,6 @@ export default function ServiceSection() {
           end: `+=${cards.length * 120}%`,
           scrub: true,
           pin: true,
-          markers: true,
           invalidateOnRefresh: true,
         },
       });

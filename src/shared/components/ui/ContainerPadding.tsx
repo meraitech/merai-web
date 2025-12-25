@@ -5,5 +5,5 @@ export const ContainerPadding = ({
 }: {
   children: React.ReactNode;
 }) => {
-  return <div className="py-28">{children}</div>;
+  return <div className="py-28 w-full h-full">{children}</div>;
 };

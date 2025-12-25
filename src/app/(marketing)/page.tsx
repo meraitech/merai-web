@@ -6,7 +6,7 @@ import { WorkSection } from "./_components/sections/WorkSection";
 
 export default function page() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col overflow-hidden">
       <HeroSection />
       <div className="py-28 flex flex-col">
         <ServiceSection />
