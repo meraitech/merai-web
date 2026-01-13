@@ -12,38 +12,39 @@ export const WorkSection = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const trackRef = useRef<HTMLDivElement | null>(null);
   const rowRef = useRef<HTMLUListElement | null>(null);
+  const viewportRef = useRef<HTMLDivElement | null>(null);
 
   const listWork = [
     {
-      title: "Blackcore",
+      title: "Blackcore 1",
       list: ["Web Development", "UI/UX Design"],
     },
     {
-      title: "Blackcore",
+      title: "Blackcore 2",
       list: ["Web Development", "UI/UX Design"],
     },
     {
-      title: "Blackcore",
+      title: "Blackcore 3",
       list: ["Web Development", "UI/UX Design"],
     },
     {
-      title: "Blackcore",
+      title: "Blackcore 4",
       list: ["Web Development", "UI/UX Design"],
     },
     {
-      title: "Blackcore",
+      title: "Blackcore 5",
       list: ["Web Development", "UI/UX Design"],
     },
     {
-      title: "Blackcore",
+      title: "Blackcore 6",
       list: ["Web Development", "UI/UX Design"],
     },
     {
-      title: "Blackcore",
+      title: "Blackcore 7",
       list: ["Web Development", "UI/UX Design"],
     },
     {
-      title: "Blackcore",
+      title: "Blackcore 8",
       list: ["Web Development", "UI/UX Design"],
     },
   ];
@@ -52,13 +53,14 @@ export const WorkSection = () => {
     const ctx = gsap.context(() => {
       const containerEl = containerRef.current;
       const trackEl = trackRef.current;
+      const viewportEl = viewportRef.current;
       const rowEl = rowRef.current;
 
-      if (!containerEl || !trackEl || !rowEl) return;
+      if (!containerEl || !trackEl || !rowEl || !viewportEl) return;
 
       const tween = gsap.to(trackEl, {
         x: () => {
-          const distance = rowEl.scrollWidth - containerEl.clientWidth;
+          const distance = rowEl.scrollWidth - viewportEl.clientWidth;
           return -Math.max(0, distance);
         },
         ease: "none",
@@ -89,7 +91,7 @@ export const WorkSection = () => {
     >
       <ContainerPadding>
         <div className="w-full h-screen absolute top-0 left-0 flex items-center">
-          <div className="max-w-7xl mx-auto w-full relative">
+          <div ref={viewportRef} className="max-w-6xl mx-auto w-full relative">
             <div
               ref={trackRef}
               className="work-container w-full flex flex-col gap-8 lg:gap-12"
@@ -123,6 +125,16 @@ export const WorkSection = () => {
                     </Card>
                   </li>
                 ))}
+
+                <li className="flex flex-col items-center justify-center p-4 lg:p-8 gap-2 lg:gap-4">
+                  <TypographyH3 text={"View More"} />
+                  <a
+                    href=""
+                    className="px-6 py-3 border border-foreground/10 rounded-full"
+                  >
+                    Case Studies
+                  </a>
+                </li>
               </ul>
             </div>
           </div>

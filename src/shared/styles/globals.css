@@ -36,6 +36,8 @@
   --background: #ffffff;
   --background-invert: #bfbfbb;
   --foreground: #0a0a0a;
+  --accent: #a922da;
+
   --muted: gray;
   --paragraph: rgb(100, 100, 100);
 
@@ -56,6 +58,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-background-invert: var(--background-invert);
+  --color-accent: var(--accent);
   --color-muted: var(--muted);
   --color-paragraph: var(--paragraph);
 
