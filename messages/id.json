@@ -1,0 +1,383 @@
+{
+  "Metadata": {
+    "title": "Merai — Agensi Pengembangan Perangkat Lunak",
+    "description": "Merai adalah agensi perangkat lunak Indonesia yang membangun aplikasi web, solusi mobile, dan produk digital berkinerja tinggi yang mendorong pertumbuhan bisnis.",
+    "siteName": "Merai",
+    "ogTitle": "Merai — Agensi Pengembangan Perangkat Lunak",
+    "ogDescription": "Kami menggabungkan presisi teknis dengan intuisi desain untuk menghadirkan pengalaman digital yang menggerakkan orang dan mengembangkan bisnis.",
+    "twitterTitle": "Merai — Agensi Pengembangan Perangkat Lunak",
+    "twitterDescription": "Agensi perangkat lunak Indonesia yang menciptakan website, aplikasi mobile, dan antarmuka yang mengubah cara brand terhubung dengan audiens mereka."
+  },
+  "Nav": {
+    "works": "Karya",
+    "about": "Tentang",
+    "contact": "Kontak",
+    "contactUs": "Hubungi Kami",
+    "language": "ID",
+    "openMenu": "Buka menu",
+    "closeMenu": "Tutup menu"
+  },
+  "Home": {
+    "hero": {
+      "line1": "Kami Membangun",
+      "line2": "Perangkat Lunak Berkualitas",
+      "description": "Dari konsep hingga peluncuran, kami merekayasa solusi web dan mobile khusus yang membantu bisnis berkembang lebih cepat, bekerja lebih cerdas, dan menjangkau lebih jauh.",
+      "cta": "Mulai Proyek Anda"
+    },
+    "services": {
+      "label": "Layanan Kami",
+      "heading": "Pengembangan perangkat lunak end-to-end yang disesuaikan dengan bisnis Anda",
+      "service1": {
+        "title": "Pengembangan Web",
+        "description": "Website dan aplikasi web berkinerja tinggi yang dibangun dengan framework modern. Responsif, aksesibel, dan dioptimalkan untuk konversi."
+      },
+      "service2": {
+        "title": "Aplikasi Mobile",
+        "description": "Aplikasi mobile native dan cross-platform untuk iOS dan Android. UX yang mulus, siap offline, dan dibangun untuk skala besar."
+      },
+      "service3": {
+        "title": "Desain UI/UX",
+        "description": "Desain antarmuka yang berpusat pada pengguna, mengubah alur kerja kompleks menjadi pengalaman intuitif. Riset, wireframe, prototyping, dan design system."
+      },
+      "service4": {
+        "title": "Perangkat Lunak Kustom",
+        "description": "Solusi yang dibuat khusus untuk tantangan bisnis unik Anda. Platform SaaS, alat internal, API, dan integrasi sistem — dibangun dari nol."
+      }
+    },
+    "works": {
+      "label": "Karya Kami",
+      "heading": "Karya Pilihan Kami,\ndari kanvas, diwujudkan",
+      "tabs": {
+        "studios": "Web",
+        "creators": "Mobile",
+        "teams": "Desain"
+      }
+    },
+    "stats": {
+      "heading": "Hasil terbukti, disampaikan secara konsisten",
+      "description": "Kami mengukur kesuksesan dari dampak yang kami ciptakan untuk klien.",
+      "stat1": {
+        "value": "50+",
+        "label": "Proyek Selesai"
+      },
+      "stat2": {
+        "value": "98%",
+        "label": "Kepuasan Klien"
+      },
+      "stat3": {
+        "value": "5+",
+        "label": "Tahun Pengalaman"
+      },
+      "stat4": {
+        "value": "15+",
+        "label": "Anggota Tim"
+      }
+    },
+    "howItWorks": {
+      "label": "Cara Kami Bekerja",
+      "heading": "Dari ide hingga peluncuran dalam empat tahap",
+      "description": "Proses terbukti yang membuat Anda tetap terlibat di setiap langkah sementara kami menangani pekerjaan teknis.",
+      "step1": {
+        "title": "Discovery",
+        "description": "Kami menggali tujuan, audiens, dan kebutuhan Anda. Riset, analisis kompetitor, dan perencanaan strategis menjadi fondasi."
+      },
+      "step2": {
+        "title": "Desain",
+        "description": "Wireframe, prototipe, dan desain visual dibuat dengan mempertimbangkan brand dan pengguna Anda. Iterasi hingga setiap piksel terasa tepat."
+      },
+      "step3": {
+        "title": "Pengembangan",
+        "description": "Kode bersih, arsitektur modern, dan pengujian ketat. Kami membangun perangkat lunak yang cepat, aman, dan mudah dipelihara jangka panjang."
+      },
+      "step4": {
+        "title": "Peluncuran & Tumbuh",
+        "description": "Deploy dengan percaya diri. Kami menangani infrastruktur, monitoring, dan menyediakan dukungan berkelanjutan agar produk Anda terus berkembang."
+      }
+    },
+    "testimonials": {
+      "label": "Testimoni Klien",
+      "heading": "Apa kata klien kami",
+      "cta": "Kerja sama dengan kami",
+      "quote1": {
+        "quote": "Merai mengubah platform kami yang sudah ketinggalan zaman menjadi aplikasi web modern dan skalabel. Keahlian teknis dan perhatian terhadap detail tim melebihi ekspektasi kami.",
+        "name": "Andi Pratama",
+        "role": "CEO, TechCorp Indonesia"
+      },
+      "quote2": {
+        "quote": "Bekerja dengan Merai sangat menyegarkan. Mereka langsung memahami visi kami dan menghadirkan aplikasi mobile yang disukai pengguna kami.",
+        "name": "Sarah Wijaya",
+        "role": "Product Manager, FinPal"
+      },
+      "quote3": {
+        "quote": "Redesain UI/UX yang dilakukan Merai untuk dashboard SaaS kami meningkatkan engagement pengguna sebesar 40%. Sangat merekomendasikan tim desain mereka.",
+        "name": "Budi Santoso",
+        "role": "CTO, GrowX"
+      },
+      "quote4": {
+        "quote": "Profesional, responsif, dan luar biasa secara teknis. Merai membangun sistem ERP kustom kami tepat waktu dan sesuai anggaran.",
+        "name": "Dian Kusuma",
+        "role": "Direktur Operasional, LogisTech"
+      },
+      "quote5": {
+        "quote": "Platform e-commerce yang Merai kembangkan untuk kami mampu menangani 10x lipat traffic sebelumnya tanpa kendala. Benar-benar engineering kelas enterprise.",
+        "name": "Rachel Thompson",
+        "role": "CTO, RetailNova"
+      },
+      "quote6": {
+        "quote": "Pengalaman pengembangan terbaik yang pernah kami dapatkan. Mereka memperlakukan startup kami seperti produk mereka sendiri dan memberikan hasil melampaui ekspektasi.",
+        "name": "Marcus Liu",
+        "role": "Founder, LaunchKit"
+      },
+      "quote7": {
+        "quote": "Tim mereka memberi kami ketenangan selama transformasi digital. Setiap milestone terpenuhi tepat waktu dengan komunikasi yang jelas.",
+        "name": "Sophia Patel",
+        "role": "VP Engineering, MedCore"
+      },
+      "quote8": {
+        "quote": "Merai menyelamatkan proyek kami ketika agensi sebelumnya gagal. Selamanya berterima kasih atas keahlian dan komitmen mereka terhadap kualitas.",
+        "name": "David Chen",
+        "role": "CEO, ScaleUp Solutions"
+      },
+      "quote9": {
+        "quote": "Aplikasi mobile yang mereka bangun seperti pengalaman bintang lima. Pengguna kami benar-benar meninggalkan ulasan positif setiap hari.",
+        "name": "Emma Rodriguez",
+        "role": "Product Owner, SwiftPay"
+      },
+      "quote10": {
+        "quote": "Akhirnya menemukan mitra pengembangan yang meluangkan waktu untuk memahami bisnis kami dan benar-benar peduli dengan kesuksesan kami.",
+        "name": "Tyler Joseph",
+        "role": "Managing Director, CoreSys"
+      },
+      "quote11": {
+        "quote": "Dashboard kustom yang Merai buat mengubah alur kerja data kami. Produktivitas tim kami berlipat ganda dalam bulan pertama.",
+        "name": "Jennifer Walsh",
+        "role": "Head of Operations, DataFlow"
+      },
+      "quote12": {
+        "quote": "Kolaborasi jarak jauh dengan Merai berjalan mulus. Tiga microservice kompleks selesai tepat waktu, melintasi tiga zona waktu.",
+        "name": "Alex Kim",
+        "role": "Tech Lead, GlobalTech"
+      }
+    },
+    "faq": {
+      "heading": "Pertanyaan Umum",
+      "description": "Semua yang perlu Anda ketahui tentang bekerja dengan kami.",
+      "q1": {
+        "question": "Teknologi apa yang Anda gunakan?",
+        "answer": "Kami mengkhususkan diri dalam teknologi web modern termasuk React, Next.js, TypeScript, Node.js, dan Python. Untuk mobile, kami menggunakan React Native dan Flutter. Kami memilih stack terbaik berdasarkan kebutuhan proyek Anda."
+      },
+      "q2": {
+        "question": "Berapa lama proyek biasanya berlangsung?",
+        "answer": "Timeline proyek bervariasi tergantung ruang lingkup dan kompleksitas. Website sederhana membutuhkan 4-6 minggu, sementara aplikasi web kompleks atau aplikasi mobile biasanya 3-6 bulan. Kami akan memberikan timeline yang jelas selama fase proposal."
+      },
+      "q3": {
+        "question": "Bagaimana model harga Anda?",
+        "answer": "Kami menawarkan model harga tetap dan tim khusus. Harga tetap cocok untuk proyek yang terdefinisi dengan baik, sementara tim khusus ideal untuk pengembangan berkelanjutan. Setiap proyek dimulai dengan konsultasi gratis dan proposal terperinci."
+      },
+      "q4": {
+        "question": "Apakah Anda menyediakan dukungan pasca-peluncuran?",
+        "answer": "Ya, kami menawarkan paket pemeliharaan dan dukungan berkelanjutan untuk menjaga perangkat lunak Anda berjalan lancar. Ini mencakup perbaikan bug, pemantauan kinerja, pembaruan keamanan, dan peningkatan fitur."
+      },
+      "q5": {
+        "question": "Bagaimana Anda menangani komunikasi proyek?",
+        "answer": "Kami menggunakan kombinasi update async dan panggilan terjadwal. Anda akan memiliki manajer proyek khusus, akses ke alat manajemen proyek kami, dan laporan kemajuan mingguan. Kami menyesuaikan dengan gaya komunikasi yang Anda pilih."
+      },
+      "q6": {
+        "question": "Bisakah Anda bekerja dengan codebase atau tim kami yang sudah ada?",
+        "answer": "Tentu saja. Kami secara rutin bergabung dengan tim yang sudah ada atau mengambil alih proyek yang sedang berjalan. Insinyur kami berpengalaman dalam onboarding codebase dan pengembangan kolaboratif di berbagai alur kerja dan stack teknologi."
+      },
+      "q7": {
+        "question": "Seperti apa proses pengembangan Anda?",
+        "answer": "Kami mengikuti metodologi agile dengan sprint dua minggu. Setiap sprint mencakup perencanaan, pengembangan, pengujian, dan demo review. Anda akan melihat perangkat lunak yang berfungsi lebih awal dan sering, dengan kesempatan untuk menyempurnakan di setiap tahap."
+      }
+    }
+  },
+  "About": {
+    "hero": {
+      "line1": "Mewujudkan",
+      "line2": "Keunggulan Digital",
+      "description": "Kami adalah tim insinyur, desainer, dan pemecah masalah yang bersemangat membangun perangkat lunak yang membuat perbedaan. Berbasis di Indonesia, melayani klien di seluruh dunia."
+    },
+    "team": {
+      "heading": "Tim Kami",
+      "description": "Orang-orang di balik kode",
+      "member1": {
+        "name": "Yusuf Hidral",
+        "role": "CEO & Co-Founder"
+      },
+      "member2": {
+        "name": "Ranaufal Muha",
+        "role": "CTO & Co-Founder"
+      },
+      "member3": {
+        "name": "Setya",
+        "role": "Head of Product"
+      },
+      "member4": {
+        "name": "Fajri",
+        "role": "Lead Designer"
+      }
+    },
+    "timeline": {
+      "heading": "Perjalanan Kami",
+      "entry1": {
+        "title": "Didirikan",
+        "date": "Jan 2021",
+        "description": "Merai didirikan dengan misi membantu bisnis di Indonesia dan sekitarnya membangun produk digital kelas dunia."
+      },
+      "entry2": {
+        "title": "Klien Besar Pertama",
+        "date": "Agu 2021",
+        "description": "Menyelesaikan platform web lengkap untuk perusahaan terkemuka Indonesia, membangun reputasi kami untuk kualitas dan keandalan."
+      },
+      "entry3": {
+        "title": "Ekspansi Tim",
+        "date": "Mar 2022",
+        "description": "Menggandakan ukuran tim untuk memenuhi permintaan yang meningkat. Menambahkan spesialis mobile dan desain ke inti engineering kami."
+      },
+      "entry4": {
+        "title": "Proyek Internasional",
+        "date": "Okt 2022",
+        "description": "Memperluas jangkauan di luar Indonesia, mengerjakan proyek dari klien di Singapura, Australia, dan Eropa."
+      },
+      "entry5": {
+        "title": "Peluncuran Product Studio",
+        "date": "Jun 2023",
+        "description": "Meluncurkan divisi product studio, membantu startup dari ide ke MVP dengan pengembangan end-to-end."
+      },
+      "entry6": {
+        "title": "50+ Proyek",
+        "date": "Des 2024",
+        "description": "Melampaui 50 proyek yang diselesaikan di bidang web, mobile, dan perangkat lunak kustom — melayani klien di 5 benua."
+      }
+    }
+  },
+  "Works": {
+    "heading": "Karya Pilihan",
+    "subheading": "Proyek yang kami banggakan",
+    "filterLabel": "Filter",
+    "all": "Semua",
+    "projectsCount": "{count, plural, other {# proyek}}",
+    "categories": {
+      "Identity": "Web App",
+      "Campaign": "Mobile",
+      "Product": "Produk",
+      "Web App": "Web App",
+      "Mobile": "Mobile"
+    },
+    "projects": {
+      "halcyon-type-foundry": {
+        "title": "Redesain Platform E-Commerce",
+        "client": "RetailCorp",
+        "year": "2025",
+        "tags": ["Web App"],
+        "image": "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&q=80"
+      },
+      "bloom-cold-brew": {
+        "title": "Aplikasi Mobile FinTech",
+        "client": "PayFlow",
+        "year": "2025",
+        "tags": ["Mobile"],
+        "image": "https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?w=800&q=80"
+      },
+      "polaris-navigation-kit": {
+        "title": "Dashboard SaaS UI",
+        "client": "DataVista",
+        "year": "2024",
+        "tags": ["Web App", "Produk"],
+        "image": "https://images.unsplash.com/photo-1618004652321-13a63e576b80?w=800&q=80"
+      },
+      "northwind-commerce": {
+        "title": "Sistem Manajemen Logistik",
+        "client": "ShipPro",
+        "year": "2024",
+        "tags": ["Web App", "Mobile"],
+        "image": "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&q=80"
+      },
+      "quanta-dashboard": {
+        "title": "Platform Kesehatan",
+        "client": "MediCare",
+        "year": "2024",
+        "tags": ["Produk"],
+        "image": "https://images.unsplash.com/photo-1617791160505-6f00504e3519?w=800&q=80"
+      },
+      "drift-outerwear": {
+        "title": "Website Brand & CMS",
+        "client": "UrbanStyle",
+        "year": "2024",
+        "tags": ["Web App"],
+        "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80"
+      },
+      "orbital-summer-drop": {
+        "title": "Aplikasi Pemesanan Acara",
+        "client": "EventPro",
+        "year": "2023",
+        "tags": ["Mobile", "Produk"],
+        "image": "https://images.unsplash.com/photo-1618220179428-22790b461013?w=800&q=80"
+      },
+      "parsec-mobile-os": {
+        "title": "Suite Alat Internal",
+        "client": "CorpWare",
+        "year": "2023",
+        "tags": ["Produk"],
+        "image": "https://images.unsplash.com/photo-1618220252344-8ec99ec624b1?w=800&q=80"
+      }
+    }
+  },
+  "Contact": {
+    "hero": {
+      "title": "Mari Bangun",
+      "subtitle": "Sesuatu yang Hebat",
+      "description": "Punya proyek dalam pikiran? Kami ingin mendengarnya. Bagikan visi Anda dan kami akan membantu mewujudkannya."
+    },
+    "form": {
+      "heading": "Hubungi Kami",
+      "description": "Siap memulai proyek berikutnya? Isi formulir dan kami akan merespons dalam 24 jam.",
+      "firstName": "Nama depan",
+      "lastName": "Nama belakang",
+      "email": "Email",
+      "company": "Perusahaan",
+      "message": "Ceritakan tentang proyek Anda...",
+      "privacy": "Saya telah membaca dan memahami",
+      "privacyLink": "kebijakan privasi",
+      "submit": "Kirim Pesan"
+    }
+  },
+  "Footer": {
+    "services": "Layanan",
+    "servicesList": ["Pengembangan Web", "Aplikasi Mobile", "Desain UI/UX", "Software Kustom"],
+    "company": "Perusahaan",
+    "companyList": ["Tentang", "Karya", "Kontak"],
+    "connect": "Hubungi",
+    "email": "hello@merai.tech",
+    "copyright": "© 2025 Merai. Seluruh hak cipta dilindungi.",
+    "tagline": "Agensi perangkat lunak berbasis di Indonesia"
+  },
+  "CTA": {
+    "heading": "Siap Memulai Proyek Anda?",
+    "description": "Mari diskusikan ide Anda dan wujudkan menjadi kenyataan. Tim kami siap membantu Anda membangun sesuatu yang hebat.",
+    "button": "Hubungi Kami"
+  },
+  "WorkDetail": {
+    "notFound": "Proyek tidak ditemukan",
+    "backToWorks": "Kembali ke Karya",
+    "clientLabel": "Klien",
+    "yearLabel": "Tahun",
+    "caseStudyComing": "Studi kasus detail segera hadir",
+    "photoCredit": "Kredit foto"
+  },
+  "NotFound": {
+    "title": "Halaman Tidak Ditemukan",
+    "description": "Halaman yang Anda cari tidak ada atau telah dipindahkan.",
+    "backHome": "Kembali ke Beranda"
+  },
+  "Common": {
+    "aria": {
+      "github": "{name} GitHub",
+      "email": "{name} Email",
+      "teamMember": "Ke anggota tim {n}",
+      "previous": "Sebelumnya",
+      "next": "Berikutnya"
+    }
+  }
+}
