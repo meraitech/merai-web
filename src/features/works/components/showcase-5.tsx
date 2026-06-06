@@ -48,7 +48,7 @@ export default function Showcase5() {
   const headingParts = th("heading").split("\n");
 
   return (
-    <section className="relative min-h-screen w-full flex flex-col justify-center items-center py-12 sm:py-16  bg-white dark:bg-neutral-950 overflow-hidden">
+    <section className="relative min-h-screen w-full flex flex-col justify-center items-center py-12 sm:py-16 overflow-hidden">
       <div
         className="absolute inset-0 opacity-[0.25] dark:opacity-[0.08] pointer-events-none"
         style={{

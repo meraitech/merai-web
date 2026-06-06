@@ -44,7 +44,7 @@ export default function Features6() {
   }));
 
   return (
-    <section className="w-full flex items-start py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-neutral-950">
+    <section className="w-full flex items-start py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-[1400px] mx-auto w-full">
         <motion.h2
           initial={{ opacity: 0, y: 14 }}

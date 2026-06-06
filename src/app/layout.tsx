@@ -45,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen cursor-none`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen cursor-none bg-white dark:bg-neutral-950`}
       >
         <CursorProvider>{children}</CursorProvider>
       </body>

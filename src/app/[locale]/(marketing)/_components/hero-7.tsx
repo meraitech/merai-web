@@ -488,7 +488,7 @@ export function Hero7() {
   const t = useTranslations("Home.hero");
 
   return (
-    <section className="relative w-full min-h-screen bg-white dark:bg-neutral-950 overflow-hidden">
+    <section className="relative w-full min-h-screen overflow-hidden">
       <div className="absolute top-0 left-0 right-0 z-20 flex flex-col items-start sm:items-center text-left sm:text-center pt-12 sm:pt-16 md:pt-20 px-4">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}

@@ -10,7 +10,7 @@ export default function CTA() {
   const t = useTranslations("CTA");
 
   return (
-    <section className="w-full flex items-center justify-center py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-neutral-950">
+    <section className="w-full flex items-center justify-center py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-[1400px] mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 18 }}

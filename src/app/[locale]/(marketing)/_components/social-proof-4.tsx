@@ -24,7 +24,20 @@ const testimonialAvatars = [
 export default function SocialProof4() {
   const t = useTranslations("Home.testimonials");
 
-  const quoteKeys = ["quote1", "quote2", "quote3", "quote4", "quote5", "quote6", "quote7", "quote8", "quote9", "quote10", "quote11", "quote12"] as const;
+  const quoteKeys = [
+    "quote1",
+    "quote2",
+    "quote3",
+    "quote4",
+    "quote5",
+    "quote6",
+    "quote7",
+    "quote8",
+    "quote9",
+    "quote10",
+    "quote11",
+    "quote12",
+  ] as const;
 
   const allTestimonials = quoteKeys.map((key, i) => ({
     quote: t(`${key}.quote`),
@@ -101,7 +114,7 @@ export default function SocialProof4() {
   }, []);
 
   return (
-    <section className="relative w-full overflow-hidden bg-white py-16 dark:bg-neutral-950 sm:py-24">
+    <section className="relative w-full overflow-hidden py-16 sm:py-24">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-12 flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end lg:mb-16">

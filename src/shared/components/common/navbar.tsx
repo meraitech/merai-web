@@ -33,7 +33,11 @@ export function Navbar() {
                   href="/"
                   className="flex items-center text-xl font-medium text-tighter text-neutral-900 dark:text-white mr-6"
                 >
-                  Merai
+                  <img
+                    src="/__merai__/logo.webp"
+                    alt="Merai"
+                    className="h-7 w-auto dark:invert invert-0"
+                  />
                 </Link>
 
                 <div className="flex items-center gap-1">
@@ -95,9 +99,7 @@ export function Navbar() {
                 <button
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                   className="flex h-10 w-10 items-center justify-center rounded-lg bg-black dark:bg-white text-white dark:text-black"
-                  aria-label={
-                    mobileMenuOpen ? t("closeMenu") : t("openMenu")
-                  }
+                  aria-label={mobileMenuOpen ? t("closeMenu") : t("openMenu")}
                 >
                   {mobileMenuOpen ? (
                     <X className="h-5 w-5" />

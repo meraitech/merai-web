@@ -139,7 +139,7 @@ export default function Stats6() {
 
   return (
     <section
-      className="relative w-full min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-white dark:bg-neutral-950 overflow-hidden"
+      className="relative w-full min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 overflow-hidden"
       onMouseMove={handleMouseMove}
     >
       {/* Parallax Stat Balls Background - Desktop */}

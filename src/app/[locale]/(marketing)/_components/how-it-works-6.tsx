@@ -189,7 +189,7 @@ export default function HowItWorks6() {
   const lineScale = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   return (
-    <section className="relative w-full flex items-start py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-neutral-950 overflow-hidden">
+    <section className="relative w-full flex items-start py-16 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="relative max-w-[1200px] mx-auto w-full flex flex-col items-center">
         <motion.p
           initial={{ opacity: 0 }}
