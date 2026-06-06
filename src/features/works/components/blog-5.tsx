@@ -20,17 +20,17 @@ const sources = [
   {
     name: "TechCrunch",
     title: "Breaking: New Platform Launches with AI Integration...",
-    color: "bg-green-500",
+    color: "bg-accent",
   },
   {
     name: "Wired",
     title: "How This Startup is Changing Developer Workflows...",
-    color: "bg-purple-500",
+    color: "bg-accent",
   },
   {
     name: "The Verge",
     title: "Exclusive: Inside the Future of Code Generation...",
-    color: "bg-orange-500",
+    color: "bg-accent",
   },
 ];
 
@@ -131,8 +131,8 @@ export function Blog5({ work }: Props) {
                 ))}
                 <button className="flex items-center gap-1.5 px-3 py-2 bg-neutral-100 dark:bg-neutral-900 rounded-lg hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors cursor-pointer">
                   <div className="flex -space-x-1">
-                    <div className="w-4 h-4 rounded-full bg-blue-500" />
-                    <div className="w-4 h-4 rounded-full bg-red-500" />
+                    <div className="w-4 h-4 rounded-full bg-accent" />
+                    <div className="w-4 h-4 rounded-full bg-accent" />
                   </div>
                   <span className="text-xs text-neutral-500 dark:text-neutral-400">
                     +6 sources

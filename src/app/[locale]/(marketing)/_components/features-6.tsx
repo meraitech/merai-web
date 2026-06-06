@@ -7,20 +7,20 @@ import { Box, Orbit, Workflow, Circle, ArrowRight } from "lucide-react";
 
 const vehicleStyles = [
   {
-    blob: "rgba(168,139,250,0.85)",
-    arrow: "group-hover:bg-violet-400",
+    blob: "rgba(37,99,235,0.85)",
+    arrow: "group-hover:bg-accent",
   },
   {
-    blob: "rgba(56,189,248,0.85)",
-    arrow: "group-hover:bg-sky-400",
+    blob: "rgba(59,130,246,0.85)",
+    arrow: "group-hover:bg-accent",
   },
   {
-    blob: "rgba(251,191,36,0.85)",
-    arrow: "group-hover:bg-amber-400",
+    blob: "rgba(37,99,235,0.85)",
+    arrow: "group-hover:bg-accent",
   },
   {
-    blob: "rgba(52,211,153,0.85)",
-    arrow: "group-hover:bg-emerald-400",
+    blob: "rgba(96,165,250,0.85)",
+    arrow: "group-hover:bg-accent",
   },
 ];
 

@@ -72,7 +72,7 @@ function Node({
       {reached && (
         <motion.span
           aria-hidden
-          className="absolute h-12 w-12 rounded-full bg-orange-500"
+          className="absolute h-12 w-12 rounded-full bg-accent"
           initial={{ scale: 1, opacity: 0.5 }}
           animate={{ scale: 1.8, opacity: 0 }}
           transition={{ duration: 1.6, repeat: Infinity, ease: "easeOut" }}
@@ -82,7 +82,7 @@ function Node({
         style={{ scale, opacity }}
         animate={
           reached
-            ? { backgroundColor: "rgb(249 115 22)", color: "rgb(255 255 255)" }
+            ? { backgroundColor: "rgb(37 99 235)", color: "rgb(255 255 255)" }
             : {}
         }
         transition={{ duration: 0.35 }}

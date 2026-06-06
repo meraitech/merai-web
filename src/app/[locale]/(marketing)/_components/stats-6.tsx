@@ -102,7 +102,7 @@ function StatBall({
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.8, delay: index * 0.1 }}
     >
-      <div className="w-full h-full rounded-full bg-purple-400 dark:bg-purple-500 flex flex-col items-center justify-center text-center p-6">
+      <div className="w-full h-full rounded-full bg-accent dark:bg-accent-dark flex flex-col items-center justify-center text-center p-6">
         <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium tracking-tighter text-neutral-900 dark:text-neutral-900 mb-1">
           {ball.stat}
         </span>
@@ -223,7 +223,7 @@ export default function Stats6() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-              className="aspect-square rounded-full bg-purple-400 dark:bg-purple-500 p-6 flex flex-col items-center justify-center text-center"
+              className="aspect-square rounded-full bg-accent dark:bg-accent-dark p-6 flex flex-col items-center justify-center text-center"
             >
               <span className="text-2xl font-bold text-neutral-900 dark:text-neutral-900 mb-1">
                 {ball.stat}

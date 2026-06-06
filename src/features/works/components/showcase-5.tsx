@@ -130,9 +130,9 @@ export default function Showcase5() {
                 </div>
               </div>
               <div className="relative z-0 flex items-center w-16 sm:w-24 shrink-0">
-                <span className="absolute left-0 -translate-x-1/2 w-3 h-3 rounded-full bg-orange-500" />
+                <span className="absolute left-0 -translate-x-1/2 w-3 h-3 rounded-full bg-accent" />
                 <span className="flex-1 border-t-2 border-dashed border-neutral-300 dark:border-neutral-700" />
-                <span className="absolute right-0 translate-x-1/2 w-3 h-3 rounded-full bg-orange-500" />
+                <span className="absolute right-0 translate-x-1/2 w-3 h-3 rounded-full bg-accent" />
               </div>
             </div>
           ))}

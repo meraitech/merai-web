@@ -49,8 +49,8 @@ const CirclesIcon = () => (
       strokeWidth="1.5"
       className="dark:stroke-neutral-700"
     />
-    <circle cx="120" cy="120" r="40" stroke="#5227FF" strokeWidth="2" />
-    <circle cx="120" cy="120" r="20" fill="#5227FF" />
+    <circle cx="120" cy="120" r="40" stroke="#2563eb" strokeWidth="2" />
+    <circle cx="120" cy="120" r="20" fill="#2563eb" />
   </svg>
 );
 
@@ -76,7 +76,7 @@ const StarburstIcon = () => (
     />
     <path
       d="M 40 140 Q 80 120, 120 140 T 200 140"
-      stroke="#5227FF"
+      stroke="#2563eb"
       strokeWidth="2.5"
     />
     <path
@@ -114,8 +114,8 @@ const SliderIcon = () => (
       strokeWidth="1.5"
       className="dark:stroke-neutral-700"
     />
-    <rect x="140" y="60" width="40" height="40" fill="#5227FF" />
-    <circle cx="200" cy="35" r="20" stroke="#5227FF" strokeWidth="2" />
+    <rect x="140" y="60" width="40" height="40" fill="#2563eb" />
+    <circle cx="200" cy="35" r="20" stroke="#2563eb" strokeWidth="2" />
   </svg>
 );
 
@@ -195,7 +195,7 @@ export default function NotFound() {
                   <span className="text-xl font-medium text-neutral-900 dark:text-white">
                     {card.title}
                   </span>
-                  <span className="text-xs text-purple-600 dark:text-purple-500">
+                  <span className="text-xs text-accent dark:text-accent-dark">
                     {card.count}
                   </span>
                 </div>

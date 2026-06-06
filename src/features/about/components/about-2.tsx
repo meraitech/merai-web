@@ -133,7 +133,7 @@ function ContentCard({ entry }: { entry: TimelineEntry }) {
               transition={{ duration: 0.3 }}
             >
               {/* Date */}
-              <div className="text-sm sm:text-base font-medium text-purple-500">
+              <div className="text-sm sm:text-base font-medium text-accent">
                 {t(`About.timeline.entry${entry.id}.date`)}
               </div>
             </motion.div>

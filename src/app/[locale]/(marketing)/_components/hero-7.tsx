@@ -130,7 +130,7 @@ const glowFragmentShader = `
     float scanLine = sin(vUv.y * 60.0 + uTime * 2.0) * 0.02 + 0.98;
     glow *= scanLine;
 
-    vec3 glowColor = vec3(1.0, 0.624, 0.988);
+    vec3 glowColor = vec3(0.145, 0.388, 0.922);
 
     float edgeDist = abs(vUv.y - 0.5) * 2.0;
     float vertFade = 1.0 - smoothstep(0.2, 0.95, edgeDist);
@@ -266,7 +266,7 @@ function GlowParticles() {
   const shaderMaterial = useMemo(() => {
     return new THREE.ShaderMaterial({
       uniforms: {
-        uColor: { value: new THREE.Color("#FF9FFC") },
+        uColor: { value: new THREE.Color("#2563eb") },
         uFadeDistance: { value: fadeDistance },
       },
       vertexShader: `

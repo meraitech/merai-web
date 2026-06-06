@@ -100,6 +100,8 @@ vec3 StarLayer(vec2 uv) {
       float red = smoothstep(STAR_COLOR_CUTOFF, 1.0, Hash21(si + 1.0)) + STAR_COLOR_CUTOFF;
       float blu = smoothstep(STAR_COLOR_CUTOFF, 1.0, Hash21(si + 3.0)) + STAR_COLOR_CUTOFF;
       float grn = min(red, blu) * seed;
+      red *= 0.3;
+      grn *= 0.5;
       vec3 base = vec3(red, grn, blu);
       
       float hue = atan(base.g - base.r, base.b - base.r) / (2.0 * 3.14159) + 0.5;
@@ -190,7 +192,7 @@ export default function Galaxy({
   transparent = true,
   ...rest
 }) {
-  const ctnDom = useRef(null);
+  const ctnDom = useRef<HTMLDivElement | null>(null);
   const targetMousePos = useRef({ x: 0.5, y: 0.5 });
   const smoothMousePos = useRef({ x: 0.5, y: 0.5 });
   const targetMouseActive = useRef(0.0);
@@ -213,7 +215,7 @@ export default function Galaxy({
       gl.clearColor(0, 0, 0, 1);
     }
 
-    let program;
+    let program: any;
 
     function resize() {
       const scale = 1;
@@ -267,9 +269,9 @@ export default function Galaxy({
     });
 
     const mesh = new Mesh(gl, { geometry, program });
-    let animateId;
+    let animateId: number;
 
-    function update(t) {
+    function update(t: number) {
       animateId = requestAnimationFrame(update);
       if (!disableAnimation) {
         program.uniforms.uTime.value = t * 0.001;
@@ -294,7 +296,7 @@ export default function Galaxy({
     animateId = requestAnimationFrame(update);
     ctn.appendChild(gl.canvas);
 
-    function handleMouseMove(e) {
+    function handleMouseMove(e: MouseEvent) {
       const rect = ctn.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width;
       const y = 1.0 - (e.clientY - rect.top) / rect.height;

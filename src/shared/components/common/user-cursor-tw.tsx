@@ -132,7 +132,7 @@ const UserCursor = forwardRef<HTMLDivElement, UserCursorProps>(
       name = "Sophie",
       arrow,
       label,
-      color = "#F39C2A",
+      color = "#2563eb",
       textColor = "#ffffff",
       size = 28,
       tilt = -14,
