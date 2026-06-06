@@ -20,13 +20,13 @@ export function Footer() {
   };
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col ">
       <CTA />
 
-      <div className="w-full relative flex flex-col">
+      <div className="w-full relative flex flex-col bg-white dark:bg-neutral-950">
         <GlassTiles opacity={0.5} tileDensity={3} />
 
-        <section className="w-full py-20 px-4 sm:px-6 lg:px-8">
+        <section className="w-full py-20 px-4 sm:px-6 lg:px-8 z-10">
           <div className="max-w-[1400px] mx-auto w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
             <div className="flex flex-col space-y-6">
               <h3 className="text-xs font-medium tracking-tight text-neutral-400 uppercase">

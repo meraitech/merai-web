@@ -17,7 +17,7 @@ export function Navbar() {
   const langLabel = locale === "en" ? "ID" : "EN";
 
   return (
-    <div className="w-full relative h-33 bg-white dark:bg-neutral-950">
+    <div className="w-full relative h-33 ">
       <nav className="fixed w-full px-4 sm:px-6 py-6 sm:py-8 z-30">
         <div className="mx-auto w-full max-w-[1400px] ">
           {/* Desktop Navigation */}

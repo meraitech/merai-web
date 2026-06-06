@@ -202,7 +202,7 @@ const GlassTiles: React.FC<GlassTilesProps> = ({
 }) => {
   return (
     <div
-      className={cn("absolute -z-10 overflow-hidden", className)}
+      className={cn("absolute z-0 overflow-hidden", className)}
       style={{ width, height }}
     >
       <Canvas
