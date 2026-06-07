@@ -404,7 +404,7 @@ const UserCursor = forwardRef<HTMLDivElement, UserCursorProps>(
                     scale: pressed ? pressScale : 1,
                   }}
                   exit={{ opacity: 0, scale: 0.6 }}
-                  transition={{ duration: 0.02, ease: [0.02, 1, 0.36, 1] }}
+                  transition={{ duration: 0.005, ease: [0.005, 1, 0.36, 1] }}
                 >
                   <div className={cn("block", classNames?.arrow)}>
                     {renderedArrow}
@@ -429,7 +429,7 @@ const UserCursor = forwardRef<HTMLDivElement, UserCursorProps>(
                       scale: pressed ? pressScale : 1,
                     }}
                     exit={{ opacity: 0, scale: 0.7 }}
-                    transition={{ duration: 0.02, ease: [0.02, 1, 0.36, 1] }}
+                    transition={{ duration: 0.005, ease: [0.005, 1, 0.36, 1] }}
                   >
                     {label ?? (
                       <div

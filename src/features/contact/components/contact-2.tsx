@@ -31,32 +31,6 @@ export default function Contact2() {
                 {t("Contact.form.heading")}
               </motion.h2>
             </div>
-
-            {/* Bottom Section */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.1 }}
-              className="mt-24 space-y-8 lg:mt-0"
-            >
-              {/* Logo */}
-              <div className="flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full border border-neutral-300 dark:border-neutral-700">
-                  <span className="text-sm font-medium text-neutral-900 dark:text-white">
-                    M
-                  </span>
-                </div>
-              </div>
-
-              {/* Address and Social Links */}
-              <div className="space-y-4">
-                <div className="text-sm text-neutral-600 dark:text-neutral-400">
-                  <p>Merai</p>
-                  <p>{t("Footer.tagline")}</p>
-                </div>
-              </div>
-            </motion.div>
           </div>
 
           {/* Right Column - Contact Form */}
