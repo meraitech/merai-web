@@ -377,6 +377,17 @@
       "Contact"
     ],
     "connect": "Connect",
+    "address": "Address",
+    "addressLines": [
+      "Indonesia Stock Exchange, Tower 2",
+      "17th Floor, Jl. Jend. Sudirman Kav. 52-53",
+      "Jakarta 12190",
+      "INDONESIA"
+    ],
+    "fax": "Fax",
+    "faxNumber": "+62 21 515 7799",
+    "parentCompany": "A subsidiary of",
+    "parentCompanyName": "PT Orphic Gavel Corp.",
     "copyright": "© 2025 Merai. All rights reserved.",
     "tagline": "Software agency based in Indonesia"
   },

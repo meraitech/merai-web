@@ -80,6 +80,21 @@ export function Footer() {
               >
                 support@merai.tech
               </a>
+              <div className="flex flex-col space-y-2">
+                <h4 className="text-xs font-medium tracking-tight text-neutral-400 uppercase">
+                  {t("address")}
+                </h4>
+                <div className="flex flex-col space-y-1">
+                  {t.raw("addressLines").map((line: string, index: number) => (
+                    <p key={index} className="text-sm text-neutral-700 dark:text-neutral-300">
+                      {line}
+                    </p>
+                  ))}
+                  <p className="text-sm text-neutral-700 dark:text-neutral-300 pt-2">
+                    <span className="text-neutral-400">{t("fax")}:</span> {t("faxNumber")}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -118,6 +133,23 @@ export function Footer() {
                 >
                   <SquarePen className="w-5 h-5" strokeWidth={2.5} />
                 </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="max-w-[1400px] mx-auto w-full mt-8 pt-8 border-t border-neutral-200 dark:border-neutral-800">
+            <div className="flex flex-col items-center space-y-2">
+              <div className="flex items-center gap-3">
+                <span className="text-xs font-medium tracking-tight text-neutral-500 dark:text-neutral-400 uppercase">
+                  {t("parentCompany")}
+                </span>
+                <span className="text-sm font-semibold tracking-tight text-neutral-900 dark:text-white">
+                  {t("parentCompanyName")}
+                </span>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="w-px h-6 bg-gradient-to-b from-neutral-400 to-neutral-300 dark:from-neutral-600 dark:to-neutral-700"></div>
+                <div className="w-2 h-2 rounded-full bg-neutral-400 dark:bg-neutral-600 -mt-1"></div>
               </div>
             </div>
           </div>

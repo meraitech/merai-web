@@ -377,6 +377,17 @@
       "Kontak"
     ],
     "connect": "Hubungi",
+    "address": "Alamat",
+    "addressLines": [
+      "Bursa Efek Indonesia, Tower 2",
+      "Lantai 17, Jl. Jend. Sudirman Kav. 52-53",
+      "Jakarta 12190",
+      "INDONESIA"
+    ],
+    "fax": "Faks",
+    "faxNumber": "+62 21 515 7799",
+    "parentCompany": "Anak perusahaan dari",
+    "parentCompanyName": "PT Orphic Gavel Corp.",
     "copyright": "© 2025 Merai. Seluruh hak cipta dilindungi.",
     "tagline": "Agensi perangkat lunak berbasis di Indonesia"
   },

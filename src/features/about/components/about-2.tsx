@@ -109,9 +109,9 @@ function Header() {
       transition={{ duration: 0.5 }}
       className="mb-8 sm:mb-12"
     >
-      <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight text-neutral-900 dark:text-white">
+      <h2 className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight text-neutral-900 dark:text-white">
         {t("About.timeline.heading")}
-      </h1>
+      </h2>
     </motion.div>
   );
 }

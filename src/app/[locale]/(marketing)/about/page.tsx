@@ -3,6 +3,7 @@ import About2 from "@/features/about/components/about-2";
 import { Hero8 } from "@/features/about/components/hero-8";
 import React from "react";
 import { setRequestLocale, getTranslations } from "next-intl/server";
+import About6 from "@/features/about/components/about-6";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -23,7 +24,8 @@ export default async function AboutPage({ params }: Props) {
   return (
     <div>
       <Hero8 />
-      <About1 />
+      <About6 />
+      {/*  <About1 />  */}
       {/* <Features5 /> */}
       <About2 />
     </div>
