@@ -1,12 +1,12 @@
 {
   "Metadata": {
     "title": "Merai — Software Development Agency",
-    "description": "Merai is an Indonesian software agency crafting high-performance web apps, mobile solutions, and digital products that drive business growth.",
+    "description": "Merai is an Indonesian software company crafting high-performance web apps, mobile solutions, and digital products that drive business growth.",
     "siteName": "Merai",
     "ogTitle": "Merai — Software Development Agency",
     "ogDescription": "We combine engineering precision with design intuition to deliver digital experiences that move people and grow businesses.",
     "twitterTitle": "Merai — Software Development Agency",
-    "twitterDescription": "Indonesian software agency creating websites, mobile apps, and interfaces that transform how brands connect with their audiences."
+    "twitterDescription": "Indonesian software company creating websites, mobile apps, and interfaces that transform how brands connect with their audiences."
   },
   "Nav": {
     "works": "Works",
@@ -201,21 +201,18 @@
     "team": {
       "heading": "Meet the Team",
       "description": "The people behind the code",
+      "foundersLabel": "Founders",
+      "foundersDescription": "Two operators turned builders, shipping product with the taste and tempo that earned our earliest customers their next decade of trust.",
+      "viewProfile": "View Profile",
       "member1": {
         "name": "Yusuf Hidral",
-        "role": "CEO & Co-Founder"
+        "role": "CEO",
+        "image": "/img/founders/ceo.jpeg"
       },
       "member2": {
         "name": "Ranaufal Muha",
-        "role": "CTO & Co-Founder"
-      },
-      "member3": {
-        "name": "Setya",
-        "role": "Head of Product"
-      },
-      "member4": {
-        "name": "Fajri",
-        "role": "Lead Designer"
+        "role": "CTO",
+        "image": "/img/founders/cto.webp"
       }
     },
     "timeline": {
@@ -388,8 +385,8 @@
     "faxNumber": "+62 21 515 7799",
     "parentCompany": "A subsidiary of",
     "parentCompanyName": "PT Orphic Gavel Corp.",
-    "copyright": "© 2025 Merai. All rights reserved.",
-    "tagline": "Software agency based in Indonesia"
+    "copyright": "© 2025 Orphic Gavel. All rights reserved.",
+    "tagline": "Software Company based in Indonesia"
   },
   "CTA": {
     "heading": "Ready to Start Your Project?",

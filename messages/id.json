@@ -201,21 +201,18 @@
     "team": {
       "heading": "Tim Kami",
       "description": "Orang-orang di balik kode",
+      "foundersLabel": "Pendiri",
+      "foundersDescription": "Dua operator yang beralih menjadi pembangun, menghadirkan produk dengan cita rasa dan tempo yang membuat pelanggan awal kami mempercayai kami selama satu dekade berikutnya.",
+      "viewProfile": "Lihat Profil",
       "member1": {
         "name": "Yusuf Hidral",
-        "role": "CEO & Co-Founder"
+        "role": "CEO",
+        "image": "/img/founders/ceo.jpeg"
       },
       "member2": {
         "name": "Ranaufal Muha",
-        "role": "CTO & Co-Founder"
-      },
-      "member3": {
-        "name": "Setya",
-        "role": "Head of Product"
-      },
-      "member4": {
-        "name": "Fajri",
-        "role": "Lead Designer"
+        "role": "CTO",
+        "image": "/img/founders/cto.webp"
       }
     },
     "timeline": {
