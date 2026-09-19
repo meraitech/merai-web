@@ -1,150 +1,63 @@
 "use client";
 
-import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { motion } from "motion/react";
-import { Box, Orbit, Workflow, Circle, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { Link as UiLink } from "@/shared/components/ui/link";
+import { Container } from "@/shared/components/ui/container";
+import { SectionHeading } from "@/shared/components/ui/section-heading";
+import { ServiceCard } from "./bulge-card";
 
-const vehicleStyles = [
+const CARDS = [
   {
-    blob: "rgba(37,99,235,0.85)",
-    arrow: "group-hover:bg-accent",
+    image:
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80&auto=format&fit=crop",
   },
   {
-    blob: "rgba(59,130,246,0.85)",
-    arrow: "group-hover:bg-accent",
+    image:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80&auto=format&fit=crop",
   },
   {
-    blob: "rgba(37,99,235,0.85)",
-    arrow: "group-hover:bg-accent",
-  },
-  {
-    blob: "rgba(96,165,250,0.85)",
-    arrow: "group-hover:bg-accent",
+    image:
+      "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=1200&q=80&auto=format&fit=crop",
   },
 ];
-
-const icons = [Box, Orbit, Workflow, Circle];
-
-type Vehicle = {
-  title: string;
-  desc: string;
-  blob: string;
-  arrow: string;
-};
 
 export default function Features6() {
   const t = useTranslations("Home.services");
 
-  const vehicles: Vehicle[] = vehicleStyles.map((style, i) => ({
-    title: t(`service${i + 1}.title`),
-    desc: t(`service${i + 1}.description`),
-    blob: style.blob,
-    arrow: style.arrow,
-  }));
-
   return (
-    <section className="w-full flex items-start py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-[1400px] mx-auto w-full">
-        <motion.h2
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.3 }}
-          className="text-3xl sm:text-4xl md:text-5xl font-medium text-neutral-900 dark:text-white tracking-tight leading-[1.15] max-w-3xl"
-        >
-          {t("heading")}
-        </motion.h2>
+    <section className="w-full scroll-mt-20" id="services">
+      <Container spacing="generous">
+        <SectionHeading
+          title={t("headingLine1")}
+          accent={t("headingLine2")}
+        />
 
-        <div className="mt-10 sm:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {vehicles.map((v, i) => (
-            <Card key={i} vehicle={v} index={i} Icon={icons[i]} />
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {CARDS.map((card, i) => (
+            <ServiceCard
+              key={t(`service${i + 1}.title`)}
+              title={t(`service${i + 1}.title`)}
+              imageSrc={card.image}
+              imageAlt={t(`service${i + 1}.imageAlt`)}
+              index={i}
+            />
           ))}
         </div>
-      </div>
+
+        <div className="mt-16 flex flex-col gap-2 sm:flex-row items-start sm:justify-between">
+          <p className="max-w-md text-base leading-relaxed text-neutral-600 dark:text-neutral-400">
+            {t("description")}
+          </p>
+          <UiLink
+            href="/contact"
+            className="group flex shrink-0 items-center leading-0 gap-2 text-lg font-medium text-neutral-600 dark:text-neutral-400 transition-colors hover:text-neutral-900 dark:hover:text-white"
+          >
+            {t("linkLabel")}
+            <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
+          </UiLink>
+        </div>
+      </Container>
     </section>
-  );
-}
-
-function Card({
-  vehicle,
-  index,
-  Icon,
-}: {
-  vehicle: Vehicle;
-  index: number;
-  Icon: (typeof icons)[number];
-}) {
-  const [hovered, setHovered] = useState(false);
-  const words = vehicle.desc.split(" ");
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.3, delay: 0.05 * index }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      className="relative rounded-2xl bg-neutral-100 dark:bg-neutral-900 p-6 min-h-[360px] flex flex-col overflow-hidden"
-    >
-      <motion.div
-        initial={false}
-        animate={{ opacity: hovered ? 0.7 : 0, scale: hovered ? 1 : 0.75 }}
-        transition={{ duration: 0.3, ease: "easeOut" }}
-        className="absolute left-1/2 -bottom-24 w-64 h-64 rounded-full pointer-events-none blur-md"
-        style={{
-          background: `radial-gradient(circle, ${vehicle.blob} 0%, rgba(255,255,255,0) 70%)`,
-          x: "-50%",
-        }}
-      />
-
-      <Icon className="relative w-5 h-5 text-neutral-900 dark:text-neutral-200" />
-
-      <p className="relative mt-3 text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed max-w-[220px]">
-        {words.map((w, wi) => (
-          <motion.span
-            key={wi}
-            initial={false}
-            animate={{
-              opacity: hovered ? 1 : 0,
-              y: hovered ? 0 : 4,
-              filter: hovered ? "blur(0px)" : "blur(3px)",
-            }}
-            transition={{
-              duration: 0.3,
-              delay: hovered ? wi * 0.03 : 0,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-            className="inline-block mr-[0.25em]"
-          >
-            {w}
-          </motion.span>
-        ))}
-      </p>
-
-      <div className="relative mt-auto flex items-center justify-between pt-8">
-        <span className="text-base sm:text-lg text-neutral-900 dark:text-white">
-          {vehicle.title}
-        </span>
-        <motion.span
-          initial={false}
-          animate={{
-            backgroundColor: hovered ? vehicle.blob : "rgb(229 229 229)",
-            color: hovered ? "#ffffff" : "rgb(64 64 64)",
-          }}
-          transition={{ duration: 0.3 }}
-          className="w-10 h-10 rounded-full flex items-center justify-center dark:bg-neutral-800 dark:text-neutral-300"
-        >
-          <motion.span
-            animate={{ x: hovered ? 2 : 0 }}
-            transition={{ duration: 0.3 }}
-            className="inline-flex"
-          >
-            <ArrowRight className="w-4 h-4" />
-          </motion.span>
-        </motion.span>
-      </div>
-    </motion.div>
   );
 }

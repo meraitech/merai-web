@@ -3,6 +3,8 @@
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import { Container } from "@/shared/components/ui/container";
+import { SectionHeading } from "@/shared/components/ui/section-heading";
 
 const tabs = ["Studios", "Creators", "Teams"] as const;
 
@@ -48,7 +50,7 @@ export default function Showcase5() {
   const headingParts = th("heading").split("\n");
 
   return (
-    <section className="relative min-h-screen w-full flex flex-col justify-center items-center py-12 sm:py-16 overflow-hidden">
+    <section className="relative w-full overflow-hidden">
       <div
         className="absolute inset-0 opacity-[0.25] dark:opacity-[0.08] pointer-events-none"
         style={{
@@ -58,20 +60,14 @@ export default function Showcase5() {
         }}
       />
 
-      <div className="relative max-w-[1400px] px-4 sm:px-6 lg:px-8 mx-auto w-full flex flex-col items-center text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="mt-4 text-3xl sm:text-5xl md:text-6xl font-medium text-neutral-900 dark:text-white tracking-tight leading-[1.05]"
-        >
-          {headingParts[0]}
-          <br />
-          {headingParts[1]}
-        </motion.h2>
+      <Container spacing="none" className="relative flex flex-col items-center text-center pt-24 sm:pt-32">
+        <SectionHeading
+          title={headingParts[0]}
+          accent={headingParts[1]}
+          className="mb-8"
+        />
 
-        <div className="mt-8 relative flex items-center bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-full p-1">
+        <div className="relative flex items-center bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-full p-1">
           {tabs.map((tab) => (
             <button
               key={tab}
@@ -93,9 +89,9 @@ export default function Showcase5() {
             </button>
           ))}
         </div>
-      </div>
+      </Container>
 
-      <div className="relative w-full mt-14 sm:mt-16 overflow-hidden py-6">
+      <div className="relative w-full mt-14 sm:mt-16 mb-16 sm:mb-24 overflow-hidden py-6">
         <motion.div
           animate={{ x: ["0%", "-50%"] }}
           transition={{

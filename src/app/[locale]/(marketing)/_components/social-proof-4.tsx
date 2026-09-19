@@ -1,10 +1,11 @@
 "use client";
 
-import { motion } from "motion/react";
 import { useEffect, useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/shared/components/ui/link";
+import { Container } from "@/shared/components/ui/container";
+import { SectionHeading } from "@/shared/components/ui/section-heading";
 
 const testimonialAvatars = [
   "https://images.unsplash.com/photo-1600481453173-55f6a844a4ea?q=80&w=750&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -114,19 +115,11 @@ export default function SocialProof4() {
   }, []);
 
   return (
-    <section className="relative w-full overflow-hidden py-16 sm:py-24">
-      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
+    <section className="relative w-full overflow-hidden">
+      <Container spacing="generous">
         {/* Header */}
-        <div className="mb-12 flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end lg:mb-16">
-          <motion.h2
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
-            className="text-4xl font-medium leading-tight text-neutral-900 dark:text-neutral-50 sm:text-5xl lg:text-6xl"
-          >
-            {t("heading")}
-          </motion.h2>
+        <div className="mb-16 flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
+          <SectionHeading align="left" title={t("heading")} className="mb-0" />
 
           <Link
             href="/contact"
@@ -297,7 +290,7 @@ export default function SocialProof4() {
             <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-white to-transparent dark:from-neutral-950" />
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

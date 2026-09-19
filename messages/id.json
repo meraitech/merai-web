@@ -13,6 +13,10 @@
     "about": "Tentang",
     "contact": "Kontak",
     "contactUs": "Hubungi Kami",
+    "services": "Layanan",
+    "service1desc": "Web, mobile & perangkat lunak kustom",
+    "service2desc": "Tumbuhkan trafik, pendapatan & operasional",
+    "service3desc": "Kampanye yang menghasilkan konversi",
     "language": "ID",
     "openMenu": "Buka menu",
     "closeMenu": "Tutup menu"
@@ -24,25 +28,66 @@
       "description": "Dari konsep hingga peluncuran, kami merekayasa solusi web dan mobile khusus yang membantu bisnis berkembang lebih cepat, bekerja lebih cerdas, dan menjangkau lebih jauh.",
       "cta": "Mulai Proyek Anda"
     },
+    "brief": {
+      "label": "Brief",
+      "quote": "Anda bawa brief-nya. Kami bawa insinyur, desainer, dan obsesi terhadap detail — dan mengubah ide Anda menjadi perangkat lunak yang disukai pengguna.",
+      "caption": "Dari brief hingga peluncuran. Dalam hitungan minggu, bukan kuartal.",
+      "imageAlt": "Tim produk berkolaborasi di sekitar meja yang dipenuhi sketsa dan laptop."
+    },
+    "trustedBy": {
+      "caption": "Dipercaya oleh 500+ perusahaan"
+    },
+    "standard": {
+      "headingLine1": "Standar baru",
+      "headingLine2": "untuk perbankan modern",
+      "learnMore": "Pelajari lebih lanjut",
+      "tableSpeed": "Kecepatan",
+      "tableFees": "Biaya",
+      "apyLabel": "APY Saat Ini",
+      "vsSavings": "vs rata-rata tabungan",
+      "card1": {
+        "title": "Kirim uang ke seluruh dunia. Seketika.",
+        "description": "Transfer dana ke 160+ negara dengan kurs nyata. Tanpa biaya tersembunyi, tanpa menunggu—uang Anda tiba dalam hitungan detik."
+      },
+      "card2": {
+        "title": "Dapatkan lebih banyak dari tabungan Anda.",
+        "description": "Dapatkan hingga 4,5% APY atas saldo Anda tanpa periode penguncian. Uang Anda bekerja lebih keras namun tetap dapat diakses kapan saja."
+      },
+      "card3": {
+        "title": "Bangun dengan API pengembang kami.",
+        "description": "Akses data pembayaran real-time dan otomatiskan keuangan Anda dengan REST API kami. Dokumentasi lengkap dan SDK tersedia."
+      }
+    },
+    "smartFinance": {
+      "headingLine1": "Buat keputusan",
+      "headingLine2": "finansial yang lebih cerdas",
+      "description": "AI terintegrasi di seluruh pengalaman Finaro Anda. Akses wawasan real-time dan rekomendasi yang dipersonalisasi.",
+      "learnMore": "Pelajari lebih lanjut",
+      "feature1": "Lihat dengan jelas ke mana uang Anda pergi setiap bulan.",
+      "feature2": "Dapatkan peringatan instan untuk pola pengeluaran yang tidak biasa.",
+      "feature3": "Ajukan pertanyaan tentang keuangan Anda dalam bahasa sehari-hari."
+    },
     "services": {
       "label": "Layanan Kami",
-      "heading": "Pengembangan perangkat lunak end-to-end yang disesuaikan dengan bisnis Anda",
+      "headingLine1": "Pengembangan perangkat lunak end-to-end",
+      "headingLine2": "yang disesuaikan dengan bisnis Anda",
       "service1": {
-        "title": "Pengembangan Web",
-        "description": "Website dan aplikasi web berkinerja tinggi yang dibangun dengan framework modern. Responsif, aksesibel, dan dioptimalkan untuk konversi."
+        "title": "Pengembangan Perangkat Lunak",
+        "imageAlt": "Tampilan dekat kode sumber di layar pengembang."
       },
       "service2": {
-        "title": "Aplikasi Mobile",
-        "description": "Aplikasi mobile native dan cross-platform untuk iOS dan Android. UX yang mulus, siap offline, dan dibangun untuk skala besar."
+        "title": "Penskalaan Bisnis",
+        "imageAlt": "Laptop yang menampilkan grafik pertumbuhan dan analitik bisnis."
       },
       "service3": {
-        "title": "Desain UI/UX",
-        "description": "Desain antarmuka yang berpusat pada pengguna, mengubah alur kerja kompleks menjadi pengalaman intuitif. Riset, wireframe, prototyping, dan design system."
+        "title": "Pemasaran Digital",
+        "imageAlt": "Dasbor analitik pemasaran dengan data performa kampanye."
       },
-      "service4": {
-        "title": "Perangkat Lunak Kustom",
-        "description": "Solusi yang dibuat khusus untuk tantangan bisnis unik Anda. Platform SaaS, alat internal, API, dan integrasi sistem — dibangun dari nol."
-      }
+      "description": "Dari sketsa pertama hingga skala besar — satu tim untuk perangkat lunak, pertumbuhan, dan brand Anda.",
+      "linkLabel": "Mulai proyek Anda"
+    },
+    "toolbox": {
+      "gridLabel": "Teknologi yang kami gunakan"
     },
     "works": {
       "label": "Karya Kami",
@@ -53,45 +98,24 @@
         "teams": "Desain"
       }
     },
-    "stats": {
-      "heading": "Hasil terbukti, disampaikan secara konsisten",
-      "description": "Kami mengukur kesuksesan dari dampak yang kami ciptakan untuk klien.",
-      "stat1": {
-        "value": "50+",
-        "label": "Proyek Selesai"
-      },
-      "stat2": {
-        "value": "98%",
-        "label": "Kepuasan Klien"
-      },
-      "stat3": {
-        "value": "5+",
-        "label": "Tahun Pengalaman"
-      },
-      "stat4": {
-        "value": "15+",
-        "label": "Anggota Tim"
-      }
-    },
     "howItWorks": {
-      "label": "Cara Kami Bekerja",
-      "heading": "Dari ide hingga peluncuran dalam empat tahap",
-      "description": "Proses terbukti yang membuat Anda tetap terlibat di setiap langkah sementara kami menangani pekerjaan teknis.",
+      "headingLine1": "Dari ide hingga desain jadi",
+      "headingLine2": "dalam empat langkah sederhana",
       "step1": {
         "title": "Discovery",
-        "description": "Kami menggali tujuan, audiens, dan kebutuhan Anda. Riset, analisis kompetitor, dan perencanaan strategis menjadi fondasi."
+        "description": "Kami menggali tujuan, audiens, dan kebutuhan Anda. Riset dan perencanaan menjadi fondasi."
       },
       "step2": {
         "title": "Desain",
-        "description": "Wireframe, prototipe, dan desain visual dibuat dengan mempertimbangkan brand dan pengguna Anda. Iterasi hingga setiap piksel terasa tepat."
+        "description": "Wireframe dan prototipe dibuat dengan mempertimbangkan brand dan pengguna Anda."
       },
       "step3": {
         "title": "Pengembangan",
-        "description": "Kode bersih, arsitektur modern, dan pengujian ketat. Kami membangun perangkat lunak yang cepat, aman, dan mudah dipelihara jangka panjang."
+        "description": "Kode bersih dan pengujian ketat. Cepat, aman, dan mudah dipelihara."
       },
       "step4": {
         "title": "Peluncuran & Tumbuh",
-        "description": "Deploy dengan percaya diri. Kami menangani infrastruktur, monitoring, dan menyediakan dukungan berkelanjutan agar produk Anda terus berkembang."
+        "description": "Deploy dengan percaya diri, dengan dukungan yang membuat produk Anda terus berkembang."
       }
     },
     "testimonials": {
@@ -362,10 +386,9 @@
   "Footer": {
     "services": "Layanan",
     "servicesList": [
-      "Pengembangan Web",
-      "Aplikasi Mobile",
-      "Desain UI/UX",
-      "Software Kustom"
+      "Pengembangan Perangkat Lunak",
+      "Penskalaan Bisnis",
+      "Pemasaran Digital"
     ],
     "company": "Perusahaan",
     "companyList": [
@@ -386,12 +409,24 @@
     "parentCompany": "Anak perusahaan dari",
     "parentCompanyName": "PT Orphic Gavel Corp.",
     "copyright": "© 2025 Merai. Seluruh hak cipta dilindungi.",
-    "tagline": "Agensi perangkat lunak berbasis di Indonesia"
+    "tagline": "Agensi perangkat lunak berbasis di Indonesia",
+    "newsletterTitle": "Jangan ketinggalan",
+    "newsletterDescription": "Proyek baru, wawasan, dan cerita di balik layar, sebulan sekali.",
+    "newsletterPlaceholder": "Masukkan email Anda",
+    "newsletterSubmit": "Berlangganan",
+    "newsletterSuccess": "Anda sudah terdaftar. Sampai jumpa.",
+    "status": "Semua sistem normal",
+    "legalList": [
+      "Ketentuan",
+      "Privasi",
+      "Kuki"
+    ]
   },
   "CTA": {
     "heading": "Siap Memulai Proyek Anda?",
     "description": "Mari diskusikan ide Anda dan wujudkan menjadi kenyataan. Tim kami siap membantu Anda membangun sesuatu yang hebat.",
-    "button": "Hubungi Kami"
+    "button": "Hubungi Kami",
+    "secondaryButton": "Lihat Karya Kami"
   },
   "WorkDetail": {
     "notFound": "Proyek tidak ditemukan",

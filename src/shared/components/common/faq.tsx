@@ -4,6 +4,8 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import { Container } from "@/shared/components/ui/container";
+import { SectionHeading } from "@/shared/components/ui/section-heading";
 
 export default function FAQ() {
   const t = useTranslations("Home.faq");
@@ -24,27 +26,17 @@ export default function FAQ() {
   };
 
   return (
-    <section className="w-full flex items-start py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-[1400px] mx-auto w-full">
+    <section className="w-full">
+      <Container spacing="generous">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-16 xl:gap-20">
           {/* Left Column - Header */}
-          <div className="flex flex-col space-y-2 lg:sticky lg:top-24 lg:self-start">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-neutral-900 dark:text-white leading-tight"
-            >
-              {t("heading")}
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed max-w-[25ch]"
-            >
-              {t("description")}
-            </motion.p>
+          <div className="flex flex-col lg:sticky lg:top-24 lg:self-start">
+            <SectionHeading
+              align="left"
+              title={t("heading")}
+              description={t("description")}
+              className="mb-0"
+            />
           </div>
 
           {/* Right Column - Accordion */}
@@ -99,7 +91,7 @@ export default function FAQ() {
             ))}
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

@@ -1,18 +1,28 @@
 @import "tailwindcss";
 @import "./tokens/colors.css";
 
-@layer base {
-  a,
-  a *,
-  button,
-  button *,
-  [role="button"],
-  [role="link"],
-  input[type="submit"],
-  input[type="button"],
-  input[type="reset"],
-  select,
-  summary {
-    cursor: none;
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+@keyframes spectrum-drift {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 200% 50%;
   }
 }
