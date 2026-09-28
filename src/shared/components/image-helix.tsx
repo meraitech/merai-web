@@ -1,7 +1,7 @@
 "use client";
 
 import { useReducedMotion } from "motion/react";
-import { useEffect, useRef, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import {
   LinearMipmapLinearFilter,
   Mesh,
@@ -426,12 +426,33 @@ export function ImageHelix({
   const hostRef = useRef<HTMLDivElement>(null);
   const reducedMotion = useReducedMotion() ?? false;
 
+  // Create the three.js context only when the section nears the viewport —
+  // mounting it (plus 8 texture loads) on initial page load is pure cost
+  // for below-fold content.
+  const [ready, setReady] = useState(false);
   useEffect(() => {
+    const host = hostRef.current;
+    if (!host) return;
+    const armer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          setReady(true);
+          armer.disconnect();
+        }
+      },
+      { rootMargin: "400px" }
+    );
+    armer.observe(host);
+    return () => armer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!ready) return;
     const host = hostRef.current;
     const stage = document.getElementById(stageId);
     if (!host || !stage) return;
     return createHelix(host, stage, reducedMotion);
-  }, [stageId, reducedMotion]);
+  }, [stageId, reducedMotion, ready]);
 
   return (
     <div

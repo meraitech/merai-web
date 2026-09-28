@@ -6,6 +6,7 @@ import { motion } from "motion/react";
 import { useTranslations, useLocale } from "next-intl";
 import { Container } from "@/shared/components/ui/container";
 import { SectionHeading } from "@/shared/components/ui/section-heading";
+import { AsciiImage } from "@/shared/components/ui/ascii-effect";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -191,21 +192,11 @@ export function FeatureHighlight(): ReactNode {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2, ease }}
-            className="flex justify-center lg:justify-end h-full"
+            className="flex justify-center lg:justify-end h-full rounded-lg overflow-hidden"
           >
-            <PhoneInCard
-              labels={{
-                balanceLabel: t("balanceLabel"),
-                balanceValue: t("balanceValue"),
-                balanceDelta: t("balanceDelta"),
-                incomeLabel: t("incomeLabel"),
-                incomeSub: t("incomeSub"),
-                incomeValue: t("incomeValue"),
-                expensesLabel: t("expensesLabel"),
-                expensesSub: t("expensesSub"),
-                expensesValue: t("expensesValue"),
-              }}
-            />
+            <AsciiImage
+              imageSrc="https://images.unsplash.com/photo-1593895648907-820e948a94d7?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="" />
           </motion.div>
         </div>
       </Container>

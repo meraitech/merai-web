@@ -85,8 +85,9 @@ export function LogoLoop({
   }, [updateDimensions, logos]);
 
   useEffect(() => {
+    const container = containerRef.current;
     const track = trackRef.current;
-    if (!track) return;
+    if (!container || !track) return;
 
     const prefersReduced = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
@@ -97,7 +98,16 @@ export function LogoLoop({
       return;
     }
 
+    // The loop only runs while the strip is visible: exponential hover-ease
+    // physics can't move to pure CSS, so gate the rAF instead — zero frames
+    // offscreen or on tab-hide, identical motion onscreen.
+    const activeRef = { current: true };
+
     const animate = (timestamp: number) => {
+      if (!activeRef.current || document.hidden) {
+        rafRef.current = null;
+        return;
+      }
       if (lastTimestampRef.current === null) {
         lastTimestampRef.current = timestamp;
       }
@@ -121,13 +131,41 @@ export function LogoLoop({
       rafRef.current = requestAnimationFrame(animate);
     };
 
-    rafRef.current = requestAnimationFrame(animate);
-
-    return () => {
+    const start = (): void => {
+      if (rafRef.current !== null) return;
+      // Fresh timestamp baseline so a restart never injects a huge delta.
+      lastTimestampRef.current = null;
+      rafRef.current = requestAnimationFrame(animate);
+    };
+    const stop = (): void => {
       if (rafRef.current !== null) {
         cancelAnimationFrame(rafRef.current);
         rafRef.current = null;
       }
+    };
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        activeRef.current = entries[0]?.isIntersecting ?? true;
+        if (activeRef.current && !document.hidden) start();
+        else stop();
+      },
+      { rootMargin: "80px" }
+    );
+    io.observe(container);
+
+    const onVis = (): void => {
+      if (document.hidden) stop();
+      else if (activeRef.current) start();
+    };
+    document.addEventListener("visibilitychange", onVis);
+
+    start();
+
+    return () => {
+      io.disconnect();
+      document.removeEventListener("visibilitychange", onVis);
+      stop();
       lastTimestampRef.current = null;
     };
   }, [targetVelocity, pauseOnHover]);

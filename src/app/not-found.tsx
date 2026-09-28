@@ -9,19 +9,19 @@ const cards = [
     title: "Works",
     count: "12",
     icon: "slider",
-    href: "/works",
+    href: "/en/works",
   },
   {
     title: "About",
     count: "118",
     icon: "circles",
-    href: "/about",
+    href: "/en/about",
   },
   {
-    title: "Blog",
+    title: "News",
     count: "32",
     icon: "starburst",
-    href: "/blog",
+    href: "/en/news",
   },
 ];
 

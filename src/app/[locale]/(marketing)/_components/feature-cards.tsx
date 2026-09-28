@@ -67,12 +67,12 @@ function ComparisonVisual({
               </span>
             </div>
             <div
-              className={`text-center ${row.highlight ? "text-accent" : ""}`}
+              className={`text-center ${row.highlight ? "text-foreground" : ""}`}
             >
               {row.speed}
             </div>
             <div
-              className={`text-center ${row.highlight ? "text-accent" : ""}`}
+              className={`text-center ${row.highlight ? "text-foreground" : ""}`}
             >
               {row.fees}
             </div>
@@ -99,7 +99,7 @@ function ChartVisual({
           <div className="text-xs text-neutral-500 dark:text-neutral-400">
             {metricLabel}
           </div>
-          <div className="text-xl sm:text-2xl font-semibold text-accent">
+          <div className="text-xl sm:text-2xl font-semibold text-foreground">
             {metricValue}
           </div>
         </div>
@@ -108,7 +108,7 @@ function ChartVisual({
             (height, i) => (
               <motion.div
                 key={i}
-                className="flex-1 bg-linear-to-t from-accent/80 to-accent/40 rounded-t origin-bottom"
+                className="flex-1 bg-linear-to-t from-foreground/80 to-foreground/40 rounded-t origin-bottom"
                 initial={{ scaleY: 0 }}
                 whileInView={{ scaleY: 1 }}
                 viewport={{ once: true }}
@@ -131,12 +131,12 @@ function ChartVisual({
 function CodeVisual(): ReactNode {
   const codeLines = [
     { text: "--stack '{", style: "text-neutral-500 dark:text-neutral-400" },
-    { text: "  'nextjs-app'", style: "text-accent" },
-    { text: "  'typescript'", style: "text-accent" },
-    { text: "  'api-routes'", style: "text-accent" },
-    { text: "  'ci-cd'", style: "text-accent" },
-    { text: "  'unit-tests'", style: "text-accent" },
-    { text: "  'monitoring'", style: "text-accent" },
+    { text: "  'nextjs-app'", style: "text-foreground" },
+    { text: "  'typescript'", style: "text-foreground" },
+    { text: "  'api-routes'", style: "text-foreground" },
+    { text: "  'ci-cd'", style: "text-foreground" },
+    { text: "  'unit-tests'", style: "text-foreground" },
+    { text: "  'monitoring'", style: "text-foreground" },
     { text: "}'", style: "text-neutral-500 dark:text-neutral-400" },
   ];
 

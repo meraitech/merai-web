@@ -9,11 +9,12 @@ import {
   type MotionValue,
 } from "motion/react";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import { useEffect, useRef, type ReactNode } from "react";
+import { AsciiImage } from "@/shared/components/ui/ascii-image";
 
 const SRC =
-  "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=2400&q=80&auto=format&fit=crop";
+  // "https://images.unsplash.com/photo-1593895648907-820e948a94d7?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+  "https://images.unsplash.com/photo-1696337735820-647a3b274119?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
 const WORDS_END = 0.28;
 const GROW: [number, number] = [0.32, 0.86];
@@ -102,15 +103,9 @@ function Scene({
     <motion.div
       ref={frameRef}
       style={{ scale, borderRadius: radius, opacity: frameOpacity }}
-      className="absolute inset-3 overflow-hidden bg-neutral-100 dark:bg-neutral-900 will-change-transform sm:inset-4"
+      className="absolute inset-0 overflow-hidden bg-neutral-100 dark:bg-neutral-900 will-change-transform"
     >
-      <Image
-        src={SRC}
-        alt={imageAlt}
-        fill
-        sizes="100vw"
-        className="object-cover"
-      />
+      <AsciiImage imageSrc={SRC} alt={imageAlt} />
 
       <motion.span
         aria-hidden="true"
@@ -156,13 +151,7 @@ export function Brief(): ReactNode {
         <div className="mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
           <p className={textClass}>{quote}</p>
           <div className="relative mt-12 aspect-[16/10] overflow-hidden rounded-2xl bg-neutral-100 dark:bg-neutral-900">
-            <Image
-              src={SRC}
-              alt={imageAlt}
-              fill
-              sizes="100vw"
-              className="object-cover"
-            />
+            <AsciiImage imageSrc={SRC} alt={imageAlt} />
             <span
               aria-hidden="true"
               className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/55 to-transparent"

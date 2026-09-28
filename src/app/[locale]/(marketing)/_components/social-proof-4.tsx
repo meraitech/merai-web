@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/shared/components/ui/link";
@@ -57,65 +57,57 @@ export default function SocialProof4() {
   const marquee2Ref = useRef<HTMLDivElement>(null);
   const marquee3Ref = useRef<HTMLDivElement>(null);
   const marqueeMobileRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const [inView, setInView] = useState(true);
+  const [hidden, setHidden] = useState(false);
+  const running = inView && !hidden;
+
+  // Compositor-driven marquees: measure half-height once (content is
+  // duplicated exactly 2x) and let CSS animate translateY. Speeds match the
+  // previous rAF pace (px/frame @60fps → px/s): 0.5/0.5/0.6/0.4 → 30/30/36/24.
+  // Zero JS per frame; the browser throttles offscreen tracks for free.
+  useEffect(() => {
+    const tracks: { el: HTMLDivElement | null; speed: number }[] = [
+      { el: marqueeMobileRef.current, speed: 30 },
+      { el: marquee1Ref.current, speed: 30 },
+      { el: marquee2Ref.current, speed: 36 },
+      { el: marquee3Ref.current, speed: 24 },
+    ];
+    const measure = (): void => {
+      for (const { el, speed } of tracks) {
+        if (!el) continue;
+        const half = el.scrollHeight / 2;
+        if (half <= 0) continue;
+        el.style.setProperty("--mq-translate", `${-half}px`);
+        el.style.setProperty("--mq-dur", `${half / speed}s`);
+      }
+    };
+    measure();
+    const ro = new ResizeObserver(measure);
+    for (const { el } of tracks) if (el) ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
 
   useEffect(() => {
-    const marquee1 = marquee1Ref.current;
-    const marquee2 = marquee2Ref.current;
-    const marquee3 = marquee3Ref.current;
-    const marqueeMobile = marqueeMobileRef.current;
+    const section = sectionRef.current;
+    if (!section) return;
+    const io = new IntersectionObserver(
+      (entries) => setInView(entries[0]?.isIntersecting ?? true),
+      { rootMargin: "80px" }
+    );
+    io.observe(section);
+    return () => io.disconnect();
+  }, []);
 
-    let offset1 = 0;
-    let offset2 = 0;
-    let offset3 = 0;
-    let offsetMobile = 0;
-
-    const animate = () => {
-      if (marqueeMobile) {
-        offsetMobile += 0.5;
-        const heightMobile = marqueeMobile.scrollHeight / 2;
-        if (offsetMobile >= heightMobile) {
-          offsetMobile = 0;
-        }
-        marqueeMobile.style.transform = `translateY(-${offsetMobile}px)`;
-      }
-
-      if (marquee1) {
-        offset1 += 0.5;
-        const height1 = marquee1.scrollHeight / 2;
-        if (offset1 >= height1) {
-          offset1 = 0;
-        }
-        marquee1.style.transform = `translateY(-${offset1}px)`;
-      }
-
-      if (marquee2) {
-        offset2 += 0.6;
-        const height2 = marquee2.scrollHeight / 2;
-        if (offset2 >= height2) {
-          offset2 = 0;
-        }
-        marquee2.style.transform = `translateY(-${offset2}px)`;
-      }
-
-      if (marquee3) {
-        offset3 += 0.4;
-        const height3 = marquee3.scrollHeight / 2;
-        if (offset3 >= height3) {
-          offset3 = 0;
-        }
-        marquee3.style.transform = `translateY(-${offset3}px)`;
-      }
-
-      requestAnimationFrame(animate);
-    };
-
-    const animationId = requestAnimationFrame(animate);
-
-    return () => cancelAnimationFrame(animationId);
+  useEffect(() => {
+    setHidden(document.hidden);
+    const onVis = (): void => setHidden(document.hidden);
+    document.addEventListener("visibilitychange", onVis);
+    return () => document.removeEventListener("visibilitychange", onVis);
   }, []);
 
   return (
-    <section className="relative w-full overflow-hidden">
+    <section ref={sectionRef} className="relative w-full overflow-hidden">
       <Container spacing="generous">
         {/* Header */}
         <div className="mb-16 flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
@@ -133,7 +125,11 @@ export default function SocialProof4() {
         {/* Mobile - Single Marquee */}
         <div className="relative sm:hidden">
           <div className="relative h-[600px] overflow-hidden">
-            <div ref={marqueeMobileRef}>
+            <div
+              ref={marqueeMobileRef}
+              className="marquee-y"
+              data-running={running}
+            >
               {[...allTestimonials, ...allTestimonials].map(
                 (testimonial, index) => (
                   <div
@@ -175,7 +171,11 @@ export default function SocialProof4() {
         <div className="relative hidden gap-4 sm:grid sm:grid-cols-2 lg:grid-cols-3">
           {/* Column 1 */}
           <div className="relative h-[600px] overflow-hidden">
-            <div ref={marquee1Ref}>
+            <div
+              ref={marquee1Ref}
+              className="marquee-y"
+              data-running={running}
+            >
               {[...testimonials[0], ...testimonials[0]].map(
                 (testimonial, index) => (
                   <div
@@ -214,7 +214,11 @@ export default function SocialProof4() {
 
           {/* Column 2 */}
           <div className="relative h-[600px] overflow-hidden">
-            <div ref={marquee2Ref}>
+            <div
+              ref={marquee2Ref}
+              className="marquee-y"
+              data-running={running}
+            >
               {[...testimonials[1], ...testimonials[1]].map(
                 (testimonial, index) => (
                   <div
@@ -253,7 +257,11 @@ export default function SocialProof4() {
 
           {/* Column 3 */}
           <div className="relative h-[600px] overflow-hidden">
-            <div ref={marquee3Ref}>
+            <div
+              ref={marquee3Ref}
+              className="marquee-y"
+              data-running={running}
+            >
               {[...testimonials[2], ...testimonials[2]].map(
                 (testimonial, index) => (
                   <div

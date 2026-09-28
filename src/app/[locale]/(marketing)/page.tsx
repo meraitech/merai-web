@@ -24,14 +24,14 @@ export default async function page({ params }: Props) {
       <Hero7 />
       <TrustedBy />
       <Brief />
+      <Features6 />
       <Showcase5 />
       <FeatureCards />
       <FeatureHighlight />
-      <Features6 />
       <HowItWorksCarousel />
       <SocialProof5 />
-      <FAQ />
       <News />
+      <FAQ />
     </div>
   );
 }

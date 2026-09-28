@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 @import "./tokens/colors.css";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
 html.lenis,
 html.lenis body {
@@ -25,5 +27,32 @@ html.lenis body {
   }
   to {
     background-position: 200% 50%;
+  }
+}
+
+/* Vertical marquee driven by the compositor (no JS per frame). Each track
+   sets --mq-translate (loop distance) and --mq-dur via ResizeObserver;
+   content must be duplicated exactly 2x so the seam is invisible. */
+@keyframes marquee-y {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(var(--mq-translate, -50%));
+  }
+}
+
+.marquee-y {
+  animation: marquee-y var(--mq-dur, 40s) linear infinite;
+  will-change: transform;
+}
+
+.marquee-y[data-running="false"] {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-y {
+    animation: none;
   }
 }
