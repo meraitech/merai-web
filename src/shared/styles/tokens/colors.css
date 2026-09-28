@@ -1,0 +1,30 @@
+@theme {
+  /* Background */
+  --color-background: #ffffff;
+  --color-background-dark: #0a0a0a;
+
+  /* Foreground */
+  --color-foreground: #0a0a0a;
+  --color-foreground-dark: #fafafa;
+
+  /* Inverted surface (CTA buttons, dark sections) */
+  --color-inverted: #0a0a0a;
+  --color-inverted-dark: #fafafa;
+
+  /* Muted text & surfaces */
+  --color-muted: #737373;
+  --color-muted-dark: #a3a3a3;
+  --color-muted-foreground: #525252;
+  --color-muted-foreground-dark: #d4d4d4;
+
+  /* Borders */
+  --color-border: #e5e5e5;
+  --color-border-dark: #404040;
+
+  /* Accent — Blue */
+  --color-accent: #2563eb;
+  --color-accent-dark: #3b82f6;
+  --color-accent-foreground: #ffffff;
+  --color-accent-hover: #1d4ed8;
+  --color-accent-hover-dark: #2563eb;
+}

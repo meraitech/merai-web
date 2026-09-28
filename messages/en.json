@@ -1,0 +1,530 @@
+{
+  "Metadata": {
+    "title": "Merai — Software Development Agency",
+    "description": "Merai is an Indonesian software company crafting high-performance web apps, mobile solutions, and digital products that drive business growth.",
+    "siteName": "Merai",
+    "ogTitle": "Merai — Software Development Agency",
+    "ogDescription": "We combine engineering precision with design intuition to deliver digital experiences that move people and grow businesses.",
+    "twitterTitle": "Merai — Software Development Agency",
+    "twitterDescription": "Indonesian software company creating websites, mobile apps, and interfaces that transform how brands connect with their audiences."
+  },
+  "Nav": {
+    "works": "Works",
+    "about": "About",
+    "news": "News",
+    "contact": "Contact",
+    "contactUs": "Contact Us",
+    "services": "Services",
+    "service1desc": "Web, mobile & custom software",
+    "service2desc": "Grow traffic, revenue & operations",
+    "service3desc": "Campaigns that convert",
+    "language": "EN",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "Home": {
+    "hero": {
+      "line1": "We Build Software",
+      "line2": "That Drives Growth",
+      "description": "From concept to launch, we engineer custom web and mobile solutions that help businesses scale faster, work smarter, and reach further.",
+      "cta": "Start Your Project"
+    },
+    "brief": {
+      "label": "The brief",
+      "quote": "You bring the brief. We bring the engineers, the designers, and the obsession — and turn your idea into software people love to use.",
+      "caption": "From brief to launch. In weeks, not quarters.",
+      "imageAlt": "A product team collaborating around a table covered in sketches and laptops."
+    },
+    "trustedBy": {
+      "caption": "Trusted by over 500+ companies"
+    },
+    "standard": {
+      "headingLine1": "The new standard",
+      "headingLine2": "for shipping software",
+      "learnMore": "Learn more",
+      "tableSpeed": "Delivery",
+      "tableFees": "Pricing",
+      "row1": {
+        "name": "Merai",
+        "speed": "Weeks",
+        "fees": "Fixed"
+      },
+      "row2": {
+        "name": "Agencies",
+        "speed": "Months",
+        "fees": "Opaque"
+      },
+      "row3": {
+        "name": "Freelancers",
+        "speed": "Unpredictable",
+        "fees": "Hourly"
+      },
+      "metricLabel": "Client satisfaction",
+      "metricValue": "98%",
+      "metricNote": "based on 50+ delivered projects",
+      "card1": {
+        "title": "Launch in weeks, not quarters.",
+        "description": "Senior teams that ship working software from the first sprint. Fixed scope, transparent timeline, no bloated process."
+      },
+      "card2": {
+        "title": "Proven teams, real results.",
+        "description": "50+ projects delivered with a 98% client satisfaction rate. You see progress every week, from kickoff to launch."
+      },
+      "card3": {
+        "title": "Clean code you'll love to own.",
+        "description": "A modern stack, fully documented and tested. You own 100% of the code — your team can take over anytime, with handover docs included."
+      }
+    },
+    "smartFinance": {
+      "headingLine1": "Make smarter",
+      "headingLine2": "product decisions",
+      "description": "Senior engineers and designers who think with you — weekly demos, honest estimates, and progress you can always see.",
+      "learnMore": "Learn more",
+      "feature1": "See exactly where your project stands, every week.",
+      "feature2": "Get a working demo every sprint, not slide decks.",
+      "feature3": "Talk directly to the engineers building your product.",
+      "balanceLabel": "Sprint progress",
+      "balanceValue": "87%",
+      "balanceDelta": "+12 tasks this week",
+      "incomeLabel": "Completed",
+      "incomeSub": "This week",
+      "incomeValue": "24",
+      "expensesLabel": "In review",
+      "expensesSub": "Now",
+      "expensesValue": "5"
+    },
+    "services": {
+      "label": "Our Services",
+      "headingLine1": "End-to-end software development",
+      "headingLine2": "tailored to your business",
+      "service1": {
+        "title": "Software Development",
+        "imageAlt": "Close-up of source code on a developer's screen."
+      },
+      "service2": {
+        "title": "Business Scaling",
+        "imageAlt": "Laptop showing business growth charts and analytics."
+      },
+      "service3": {
+        "title": "Digital Marketing",
+        "imageAlt": "Marketing analytics dashboard with campaign performance data."
+      },
+      "description": "From first sketch to scale — one team for your software, your growth, and your brand.",
+      "linkLabel": "Start your project"
+    },
+    "toolbox": {
+      "gridLabel": "Technologies we work with"
+    },
+    "works": {
+      "label": "Our Works",
+      "heading": "Our Selected Works,\nthe canvas, made it to market",
+      "tabs": {
+        "studios": "Web Apps",
+        "creators": "Mobile",
+        "teams": "Design"
+      }
+    },
+    "howItWorks": {
+      "headingLine1": "From idea to finished design",
+      "headingLine2": "in four simple steps",
+      "step1": {
+        "title": "Discovery",
+        "description": "We dig into your goals, audience, and requirements. Research and planning set the foundation."
+      },
+      "step2": {
+        "title": "Design",
+        "description": "Wireframes and prototypes crafted with your brand and users in mind."
+      },
+      "step3": {
+        "title": "Development",
+        "description": "Clean code and rigorous testing. Fast, secure, and maintainable."
+      },
+      "step4": {
+        "title": "Launch & Grow",
+        "description": "Deploy with confidence, with support that keeps your product evolving."
+      }
+    },
+    "testimonials": {
+      "label": "Client Testimonials",
+      "heading": "What our clients say",
+      "cta": "Work with us",
+      "quote1": {
+        "quote": "Merai transformed our outdated platform into a modern, scalable web application. The team's technical expertise and attention to detail exceeded our expectations.",
+        "name": "Andi Pratama",
+        "role": "CEO, TechCorp Indonesia"
+      },
+      "quote2": {
+        "quote": "Working with Merai was a breath of fresh air. They understood our vision immediately and delivered a mobile app that our users love.",
+        "name": "Sarah Wijaya",
+        "role": "Product Manager, FinPal"
+      },
+      "quote3": {
+        "quote": "The UI/UX redesign Merai did for our SaaS dashboard increased our user engagement by 40%. Highly recommend their design team.",
+        "name": "Budi Santoso",
+        "role": "CTO, GrowX"
+      },
+      "quote4": {
+        "quote": "Professional, responsive, and technically outstanding. Merai built our custom ERP system on time and within budget.",
+        "name": "Dian Kusuma",
+        "role": "Operations Director, LogisTech"
+      },
+      "quote5": {
+        "quote": "The e-commerce platform Merai developed for us handled 10x our previous traffic without breaking a sweat. Truly enterprise-grade engineering.",
+        "name": "Rachel Thompson",
+        "role": "CTO, RetailNova"
+      },
+      "quote6": {
+        "quote": "Best development experience we've ever had. They treated our startup like their own product and delivered beyond expectations.",
+        "name": "Marcus Liu",
+        "role": "Founder, LaunchKit"
+      },
+      "quote7": {
+        "quote": "Their team gave us peace of mind during our digital transformation. Every milestone was met on time with clear communication.",
+        "name": "Sophia Patel",
+        "role": "VP Engineering, MedCore"
+      },
+      "quote8": {
+        "quote": "Merai saved our project when our previous agency failed. Forever grateful for their expertise and commitment to quality.",
+        "name": "David Chen",
+        "role": "CEO, ScaleUp Solutions"
+      },
+      "quote9": {
+        "quote": "The mobile app they built is like a five-star experience. Our users literally leave rave reviews every single day.",
+        "name": "Emma Rodriguez",
+        "role": "Product Owner, SwiftPay"
+      },
+      "quote10": {
+        "quote": "Finally found a development partner who takes time to understand our business and genuinely cares about our success.",
+        "name": "Tyler Joseph",
+        "role": "Managing Director, CoreSys"
+      },
+      "quote11": {
+        "quote": "The custom dashboard Merai created transformed our data workflow. Our team's productivity doubled within the first month.",
+        "name": "Jennifer Walsh",
+        "role": "Head of Operations, DataFlow"
+      },
+      "quote12": {
+        "quote": "Remote collaboration with Merai was seamless. Three complex microservices delivered on time, across three time zones.",
+        "name": "Alex Kim",
+        "role": "Tech Lead, GlobalTech"
+      }
+    },
+    "faq": {
+      "heading": "FAQ",
+      "description": "Everything you need to know about working with us.",
+      "q1": {
+        "question": "What technologies do you work with?",
+        "answer": "We specialize in modern web technologies including React, Next.js, TypeScript, Node.js, and Python. For mobile, we work with React Native and Flutter. We choose the best stack based on your project requirements."
+      },
+      "q2": {
+        "question": "How long does a typical project take?",
+        "answer": "Project timelines vary based on scope and complexity. A simple website takes 4-6 weeks, while complex web applications or mobile apps typically take 3-6 months. We'll give you a clear timeline during the proposal phase."
+      },
+      "q3": {
+        "question": "What is your pricing model?",
+        "answer": "We offer both fixed-price and dedicated team models. Fixed-price works best for well-defined projects, while dedicated teams are ideal for ongoing development. Every project starts with a free consultation and detailed proposal."
+      },
+      "q4": {
+        "question": "Do you provide post-launch support?",
+        "answer": "Yes, we offer ongoing maintenance and support packages to keep your software running smoothly. This includes bug fixes, performance monitoring, security updates, and feature enhancements."
+      },
+      "q5": {
+        "question": "How do you handle project communication?",
+        "answer": "We use a combination of async updates and scheduled calls. You'll have a dedicated project manager, access to our project management tools, and weekly progress reports. We adapt to your preferred communication style."
+      },
+      "q6": {
+        "question": "Can you work with our existing codebase or team?",
+        "answer": "Absolutely. We regularly join existing teams or take over ongoing projects. Our engineers are experienced in codebase onboarding and collaborative development across different workflows and tech stacks."
+      },
+      "q7": {
+        "question": "What does your development process look like?",
+        "answer": "We follow an agile methodology with two-week sprints. Each sprint includes planning, development, testing, and a review demo. You'll see working software early and often, with opportunities to refine at every stage."
+      }
+    }
+  },
+  "About": {
+    "hero": {
+      "line1": "Crafting Digital",
+      "line2": "Excellence",
+      "description": "We are a team of engineers, designers, and problem-solvers passionate about building software that makes a difference. Based in Indonesia, serving clients worldwide."
+    },
+    "team": {
+      "heading": "Meet the Team",
+      "description": "The people behind the code",
+      "foundersLabel": "Founders",
+      "foundersDescription": "Two operators turned builders, shipping product with the taste and tempo that earned our earliest customers their next decade of trust.",
+      "viewProfile": "View Profile",
+      "member1": {
+        "name": "Yusuf Hidral",
+        "role": "CEO",
+        "image": "/img/founders/ceo.jpeg"
+      },
+      "member2": {
+        "name": "Ranaufal Muha",
+        "role": "CTO",
+        "image": "/img/founders/cto.webp"
+      }
+    },
+    "timeline": {
+      "heading": "Our Journey",
+      "entry1": {
+        "title": "Founded",
+        "date": "Jan 2021",
+        "description": "Merai was founded with a mission to help businesses in Indonesia and beyond build world-class digital products."
+      },
+      "entry2": {
+        "title": "First Major Client",
+        "date": "Aug 2021",
+        "description": "Delivered a complete web platform for a leading Indonesian enterprise, establishing our reputation for quality and reliability."
+      },
+      "entry3": {
+        "title": "Team Expansion",
+        "date": "Mar 2022",
+        "description": "Doubled the team to meet growing demand. Added dedicated mobile and design specialists to our engineering core."
+      },
+      "entry4": {
+        "title": "International Projects",
+        "date": "Oct 2022",
+        "description": "Expanded beyond Indonesia, taking on projects from clients in Singapore, Australia, and Europe."
+      },
+      "entry5": {
+        "title": "Product Studio Launch",
+        "date": "Jun 2023",
+        "description": "Launched our product studio division, helping startups go from idea to MVP with end-to-end development."
+      },
+      "entry6": {
+        "title": "50+ Projects",
+        "date": "Dec 2024",
+        "description": "Crossed 50 delivered projects across web, mobile, and custom software — serving clients across 5 continents."
+      }
+    }
+  },
+  "Works": {
+    "heading": "Selected Work",
+    "subheading": "Projects we are proud of",
+    "filterLabel": "Filter",
+    "all": "All",
+    "viewCaseStudy": "View case study",
+    "projectsCount": "{count, plural, =1 {# project} other {# projects}}",
+    "categories": {
+      "Identity": "Web App",
+      "Campaign": "Mobile",
+      "Product": "Product",
+      "Web App": "Web App",
+      "Mobile": "Mobile"
+    },
+    "projects": {
+      "halcyon-type-foundry": {
+        "title": "E-Commerce Platform Redesign",
+        "client": "RetailCorp",
+        "year": "2025",
+        "tags": [
+          "Web App"
+        ],
+        "image": "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&q=80"
+      },
+      "bloom-cold-brew": {
+        "title": "FinTech Mobile App",
+        "client": "PayFlow",
+        "year": "2025",
+        "tags": [
+          "Mobile"
+        ],
+        "image": "https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?w=800&q=80"
+      },
+      "polaris-navigation-kit": {
+        "title": "SaaS Dashboard UI",
+        "client": "DataVista",
+        "year": "2024",
+        "tags": [
+          "Web App",
+          "Product"
+        ],
+        "image": "https://images.unsplash.com/photo-1618004652321-13a63e576b80?w=800&q=80"
+      },
+      "northwind-commerce": {
+        "title": "Logistics Management System",
+        "client": "ShipPro",
+        "year": "2024",
+        "tags": [
+          "Web App",
+          "Mobile"
+        ],
+        "image": "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&q=80"
+      },
+      "quanta-dashboard": {
+        "title": "Healthcare Platform",
+        "client": "MediCare",
+        "year": "2024",
+        "tags": [
+          "Product"
+        ],
+        "image": "https://images.unsplash.com/photo-1617791160505-6f00504e3519?w=800&q=80"
+      },
+      "drift-outerwear": {
+        "title": "Brand Website & CMS",
+        "client": "UrbanStyle",
+        "year": "2024",
+        "tags": [
+          "Web App"
+        ],
+        "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80"
+      },
+      "orbital-summer-drop": {
+        "title": "Event Booking App",
+        "client": "EventPro",
+        "year": "2023",
+        "tags": [
+          "Mobile",
+          "Product"
+        ],
+        "image": "https://images.unsplash.com/photo-1618220179428-22790b461013?w=800&q=80"
+      },
+      "parsec-mobile-os": {
+        "title": "Internal Tools Suite",
+        "client": "CorpWare",
+        "year": "2023",
+        "tags": [
+          "Product"
+        ],
+        "image": "https://images.unsplash.com/photo-1618220252344-8ec99ec624b1?w=800&q=80"
+      }
+    }
+  },
+  "Contact": {
+    "hero": {
+      "title": "Let's Build Something",
+      "subtitle": "Great Together",
+      "description": "Have a project in mind? We'd love to hear about it. Share your vision and we'll help you bring it to life."
+    },
+    "form": {
+      "heading": "Get in Touch",
+      "description": "Ready to start your next project? Fill out the form and we'll get back to you within 24 hours.",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email",
+      "company": "Company",
+      "message": "Tell us about your project...",
+      "privacy": "I have read and understood the",
+      "privacyLink": "privacy policy",
+      "submit": "Send Message"
+    }
+  },
+  "Footer": {
+    "services": "Services",
+    "servicesList": [
+      "Software Development",
+      "Business Scaling",
+      "Digital Marketing"
+    ],
+    "company": "Company",
+    "companyList": [
+      "About",
+      "Works",
+      "Contact"
+    ],
+    "connect": "Connect",
+    "address": "Address",
+    "addressLines": [
+      "Indonesia Stock Exchange, Tower 2",
+      "17th Floor, Jl. Jend. Sudirman Kav. 52-53",
+        "Jakarta 12190",
+        "Indonesia"
+    ],
+    "fax": "Fax",
+    "faxNumber": "+62 21 515 7799",
+    "parentCompany": "A subsidiary of",
+    "parentCompanyName": "PT Orphic Gavel Corp.",
+    "copyright": "© 2025 Orphic Gavel. All rights reserved.",
+    "tagline": "Software Company based in Indonesia",
+    "newsletterTitle": "Don't miss out",
+    "newsletterDescription": "New projects, insights and the occasional making-of, once a month.",
+    "newsletterPlaceholder": "Enter your email",
+    "newsletterSubmit": "Subscribe",
+    "newsletterSuccess": "You're on the list. Talk soon.",
+    "status": "All systems normal",
+    "legalList": [
+      "Terms",
+      "Privacy",
+      "Cookies"
+    ]
+  },
+  "CTA": {
+    "heading": "Ready to Start Your Project?",
+    "description": "Let's discuss your ideas and turn them into reality. Our team is ready to help you build something great.",
+    "button": "Get in Touch",
+    "secondaryButton": "See Our Works"
+  },
+  "News": {
+    "heading": "Latest news",
+    "description": "Process notes, engineering takes, and studio updates from the Merai team.",
+    "viewAll": "View all news",
+    "backToNews": "Back to news",
+    "photoCredit": "Photo credit",
+    "posts": {
+      "ship-mvp-in-weeks": {
+        "category": "Process",
+        "title": "How we ship MVPs in weeks, not months",
+        "date": "Jan 12, 2026",
+        "readTime": "4 min read",
+        "body": [
+          "Most MVPs don't fail on technology — they fail on scope. We start every engagement by cutting the idea down to the smallest version that real users can touch, then plan backwards from a launch date measured in weeks.",
+          "Every sprint ends with a working demo, not a status deck. You see the product grow in your hands, give feedback on something real, and we adjust the next sprint around what we learned together.",
+          "Fixed scope, transparent timeline, senior engineers only. That combination is how 50+ products made it from kickoff to launch without the usual agency drama."
+        ]
+      },
+      "why-nextjs": {
+        "category": "Engineering",
+        "title": "Why we build client platforms on Next.js",
+        "date": "Jan 5, 2026",
+        "readTime": "5 min read",
+        "body": [
+          "When clients ask what we'll build on, our answer is boring on purpose: Next.js with TypeScript. One framework covers marketing pages, dashboards, and APIs — which means one team, one deploy pipeline, and no handoff gaps.",
+          "The performance story matters for business too. Server rendering and image optimization come built in, so pages load fast on mid-range phones and rank better from day one.",
+          "Most importantly, your team can hire for it. Choosing mainstream technology is a kindness to whoever maintains the product after us — including us."
+        ]
+      },
+      "design-systems-that-scale": {
+        "category": "Design",
+        "title": "Design systems that scale with your team",
+        "date": "Dec 28, 2025",
+        "readTime": "4 min read",
+        "body": [
+          "Every product starts consistent and drifts. A button here, a shade there — until the interface feels stitched together. A design system is how you stop the drift before it starts.",
+          "We keep ours pragmatic: design tokens for color and type, a small component library, and just enough documentation that a new hire ships on-brand work in week one.",
+          "The payoff compounds. Each release gets faster because the decisions are already made — and the product looks like one team built it, because the system remembers what individuals forget."
+        ]
+      }
+    }
+  },
+  "WorkDetail": {
+    "notFound": "Project not found",
+    "backToWorks": "Back to Works",
+    "clientLabel": "Client",
+    "yearLabel": "Year",
+    "caseStudyComing": "Detailed case study coming soon",
+    "photoCredit": "Photo credit",
+    "moreSources": "+6 sources",
+    "sections": {
+      "introduction": "Introduction",
+      "overview": "Platform Overview",
+      "key-features": "Key Features",
+      "use-cases": "Common Use Cases",
+      "conclusion": "Conclusion"
+    }
+  },
+  "NotFound": {
+    "title": "Page Not Found",
+    "description": "The page you are looking for doesn't exist or has been moved.",
+    "backHome": "Back to Home"
+  },
+  "Common": {
+    "aria": {
+      "github": "{name} GitHub",
+      "email": "{name} Email",
+      "teamMember": "Go to team member {n}",
+      "previous": "Previous",
+      "next": "Next"
+    }
+  }
+}
