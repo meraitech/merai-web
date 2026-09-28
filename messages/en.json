@@ -11,6 +11,7 @@
   "Nav": {
     "works": "Works",
     "about": "About",
+    "news": "News",
     "contact": "Contact",
     "contactUs": "Contact Us",
     "services": "Services",
@@ -39,33 +40,58 @@
     },
     "standard": {
       "headingLine1": "The new standard",
-      "headingLine2": "for modern banking",
+      "headingLine2": "for shipping software",
       "learnMore": "Learn more",
-      "tableSpeed": "Speed",
-      "tableFees": "Fees",
-      "apyLabel": "Current APY",
-      "vsSavings": "vs avg savings",
+      "tableSpeed": "Delivery",
+      "tableFees": "Pricing",
+      "row1": {
+        "name": "Merai",
+        "speed": "Weeks",
+        "fees": "Fixed"
+      },
+      "row2": {
+        "name": "Agencies",
+        "speed": "Months",
+        "fees": "Opaque"
+      },
+      "row3": {
+        "name": "Freelancers",
+        "speed": "Unpredictable",
+        "fees": "Hourly"
+      },
+      "metricLabel": "Client satisfaction",
+      "metricValue": "98%",
+      "metricNote": "based on 50+ delivered projects",
       "card1": {
-        "title": "Send money globally. Instantly.",
-        "description": "Transfer funds to 160+ countries with the real exchange rate. No hidden fees, no waiting—your money arrives in seconds."
+        "title": "Launch in weeks, not quarters.",
+        "description": "Senior teams that ship working software from the first sprint. Fixed scope, transparent timeline, no bloated process."
       },
       "card2": {
-        "title": "Earn more on your savings.",
-        "description": "Get up to 4.5% APY on your balance with no lock-in period. Your money works harder while staying instantly accessible."
+        "title": "Proven teams, real results.",
+        "description": "50+ projects delivered with a 98% client satisfaction rate. You see progress every week, from kickoff to launch."
       },
       "card3": {
-        "title": "Build with our developer API.",
-        "description": "Access real-time payment data and automate your finances with our REST API. Full documentation and SDKs included."
+        "title": "Clean code you'll love to own.",
+        "description": "A modern stack, fully documented and tested. You own 100% of the code — your team can take over anytime, with handover docs included."
       }
     },
     "smartFinance": {
       "headingLine1": "Make smarter",
-      "headingLine2": "financial decisions",
-      "description": "AI is woven throughout your entire Finaro experience. Access real-time insights and personalized recommendations.",
+      "headingLine2": "product decisions",
+      "description": "Senior engineers and designers who think with you — weekly demos, honest estimates, and progress you can always see.",
       "learnMore": "Learn more",
-      "feature1": "See exactly where your money goes each month.",
-      "feature2": "Get instant alerts for unusual spending patterns.",
-      "feature3": "Ask questions about your finances in plain English."
+      "feature1": "See exactly where your project stands, every week.",
+      "feature2": "Get a working demo every sprint, not slide decks.",
+      "feature3": "Talk directly to the engineers building your product.",
+      "balanceLabel": "Sprint progress",
+      "balanceValue": "87%",
+      "balanceDelta": "+12 tasks this week",
+      "incomeLabel": "Completed",
+      "incomeSub": "This week",
+      "incomeValue": "24",
+      "expensesLabel": "In review",
+      "expensesSub": "Now",
+      "expensesValue": "5"
     },
     "services": {
       "label": "Our Services",
@@ -278,6 +304,7 @@
     "subheading": "Projects we are proud of",
     "filterLabel": "Filter",
     "all": "All",
+    "viewCaseStudy": "View case study",
     "projectsCount": "{count, plural, =1 {# project} other {# projects}}",
     "categories": {
       "Identity": "Web App",
@@ -401,8 +428,8 @@
     "addressLines": [
       "Indonesia Stock Exchange, Tower 2",
       "17th Floor, Jl. Jend. Sudirman Kav. 52-53",
-      "Jakarta 12190",
-      "INDONESIA"
+        "Jakarta 12190",
+        "Indonesia"
     ],
     "fax": "Fax",
     "faxNumber": "+62 21 515 7799",
@@ -428,13 +455,63 @@
     "button": "Get in Touch",
     "secondaryButton": "See Our Works"
   },
+  "News": {
+    "heading": "Latest news",
+    "description": "Process notes, engineering takes, and studio updates from the Merai team.",
+    "viewAll": "View all news",
+    "backToNews": "Back to news",
+    "photoCredit": "Photo credit",
+    "posts": {
+      "ship-mvp-in-weeks": {
+        "category": "Process",
+        "title": "How we ship MVPs in weeks, not months",
+        "date": "Jan 12, 2026",
+        "readTime": "4 min read",
+        "body": [
+          "Most MVPs don't fail on technology — they fail on scope. We start every engagement by cutting the idea down to the smallest version that real users can touch, then plan backwards from a launch date measured in weeks.",
+          "Every sprint ends with a working demo, not a status deck. You see the product grow in your hands, give feedback on something real, and we adjust the next sprint around what we learned together.",
+          "Fixed scope, transparent timeline, senior engineers only. That combination is how 50+ products made it from kickoff to launch without the usual agency drama."
+        ]
+      },
+      "why-nextjs": {
+        "category": "Engineering",
+        "title": "Why we build client platforms on Next.js",
+        "date": "Jan 5, 2026",
+        "readTime": "5 min read",
+        "body": [
+          "When clients ask what we'll build on, our answer is boring on purpose: Next.js with TypeScript. One framework covers marketing pages, dashboards, and APIs — which means one team, one deploy pipeline, and no handoff gaps.",
+          "The performance story matters for business too. Server rendering and image optimization come built in, so pages load fast on mid-range phones and rank better from day one.",
+          "Most importantly, your team can hire for it. Choosing mainstream technology is a kindness to whoever maintains the product after us — including us."
+        ]
+      },
+      "design-systems-that-scale": {
+        "category": "Design",
+        "title": "Design systems that scale with your team",
+        "date": "Dec 28, 2025",
+        "readTime": "4 min read",
+        "body": [
+          "Every product starts consistent and drifts. A button here, a shade there — until the interface feels stitched together. A design system is how you stop the drift before it starts.",
+          "We keep ours pragmatic: design tokens for color and type, a small component library, and just enough documentation that a new hire ships on-brand work in week one.",
+          "The payoff compounds. Each release gets faster because the decisions are already made — and the product looks like one team built it, because the system remembers what individuals forget."
+        ]
+      }
+    }
+  },
   "WorkDetail": {
     "notFound": "Project not found",
     "backToWorks": "Back to Works",
     "clientLabel": "Client",
     "yearLabel": "Year",
     "caseStudyComing": "Detailed case study coming soon",
-    "photoCredit": "Photo credit"
+    "photoCredit": "Photo credit",
+    "moreSources": "+6 sources",
+    "sections": {
+      "introduction": "Introduction",
+      "overview": "Platform Overview",
+      "key-features": "Key Features",
+      "use-cases": "Common Use Cases",
+      "conclusion": "Conclusion"
+    }
   },
   "NotFound": {
     "title": "Page Not Found",

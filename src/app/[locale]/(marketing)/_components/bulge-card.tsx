@@ -178,7 +178,7 @@ function StaticCard({
         transition={{ duration: 0.3 }}
       />
       <div className="absolute inset-0 flex items-center justify-center p-6 text-center">
-        <h3 className="text-2xl font-medium tracking-tight text-white md:text-3xl">
+        <h3 className="text-2xl font-medium font-serif text-white md:text-3xl">
           {title}
         </h3>
       </div>
@@ -408,7 +408,7 @@ function BulgeCard({
       />
       <div className="absolute inset-0 bg-black/20" />
       <div className="absolute inset-0 flex items-center justify-center p-6 text-center">
-        <h3 className="text-2xl font-medium tracking-tight text-white md:text-3xl">
+        <h3 className="text-2xl font-medium font-serif text-white md:text-3xl">
           {title}
         </h3>
       </div>

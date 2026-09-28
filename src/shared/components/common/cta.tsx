@@ -14,7 +14,7 @@ export default function CTA() {
   return (
     <section
       aria-labelledby="cta-heading"
-      className="relative overflow-hidden pt-[14rem] pb-24 sm:pt-64 sm:pb-32"
+      className="relative overflow-hidden pt-64 sm:pt-72 max-lg:pb-24"
     >
       <DotField stageId="cta-copy" alpha={0.6} />
       <ImageHelix stageId="cta-heading" />

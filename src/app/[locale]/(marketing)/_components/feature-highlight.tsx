@@ -3,27 +3,44 @@
 import { type ReactNode } from "react";
 import { ArrowRight, TrendingUp, MessageSquare, Zap } from "lucide-react";
 import { motion } from "motion/react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { Container } from "@/shared/components/ui/container";
 import { SectionHeading } from "@/shared/components/ui/section-heading";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
-function PhoneInCard(): ReactNode {
+function PhoneInCard({
+  labels,
+}: {
+  labels: {
+    balanceLabel: string;
+    balanceValue: string;
+    balanceDelta: string;
+    incomeLabel: string;
+    incomeSub: string;
+    incomeValue: string;
+    expensesLabel: string;
+    expensesSub: string;
+    expensesValue: string;
+  };
+}): ReactNode {
   return (
-    <div className="relative bg-accent/5 rounded-md border border-accent/10 pt-10 px-16 overflow-hidden h-full flex flex-col">
+    <div
+      aria-hidden="true"
+      className="relative bg-accent/5 rounded-sm border border-accent/10 pt-10 px-16 overflow-hidden h-full flex flex-col"
+    >
       <div className="relative w-full max-w-70 mx-auto flex-1 flex flex-col">
         <div className="relative bg-neutral-900 rounded-t-4xl pt-1 px-1 flex-1 flex flex-col">
           <div className="bg-white dark:bg-neutral-950 rounded-t-[1.75rem] pt-6 flex-1">
             <div className="px-5 pb-6">
               <p className="text-[10px] text-neutral-500 dark:text-neutral-400 mb-1">
-                Total Balance
+                {labels.balanceLabel}
               </p>
               <p className="text-2xl font-semibold tracking-tight text-neutral-900 dark:text-white mb-1">
-                $12,458.32
+                {labels.balanceValue}
               </p>
               <p className="text-xs text-emerald-500 font-medium mb-6">
-                +$842.50 this month
+                {labels.balanceDelta}
               </p>
 
               <div className="h-20 mb-6">
@@ -65,15 +82,15 @@ function PhoneInCard(): ReactNode {
                     </div>
                     <div>
                       <p className="text-xs font-medium text-neutral-900 dark:text-white">
-                        Income
+                        {labels.incomeLabel}
                       </p>
                       <p className="text-[10px] text-neutral-500 dark:text-neutral-400">
-                        Today
+                        {labels.incomeSub}
                       </p>
                     </div>
                   </div>
                   <p className="text-xs font-medium text-neutral-900 dark:text-white">
-                    +$2,400
+                    {labels.incomeValue}
                   </p>
                 </div>
                 <div className="flex items-center justify-between">
@@ -83,15 +100,15 @@ function PhoneInCard(): ReactNode {
                     </div>
                     <div>
                       <p className="text-xs font-medium text-neutral-900 dark:text-white">
-                        Expenses
+                        {labels.expensesLabel}
                       </p>
                       <p className="text-[10px] text-neutral-500 dark:text-neutral-400">
-                        Yesterday
+                        {labels.expensesSub}
                       </p>
                     </div>
                   </div>
                   <p className="text-xs font-medium text-neutral-900 dark:text-white">
-                    -$180
+                    {labels.expensesValue}
                   </p>
                 </div>
               </div>
@@ -107,6 +124,7 @@ function PhoneInCard(): ReactNode {
 
 export function FeatureHighlight(): ReactNode {
   const t = useTranslations("Home.smartFinance");
+  const locale = useLocale();
 
   const features = [
     {
@@ -156,7 +174,7 @@ export function FeatureHighlight(): ReactNode {
             </motion.ul>
 
             <motion.a
-              href="#"
+              href={`/${locale}/contact`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -175,7 +193,19 @@ export function FeatureHighlight(): ReactNode {
             transition={{ duration: 0.8, delay: 0.2, ease }}
             className="flex justify-center lg:justify-end h-full"
           >
-            <PhoneInCard />
+            <PhoneInCard
+              labels={{
+                balanceLabel: t("balanceLabel"),
+                balanceValue: t("balanceValue"),
+                balanceDelta: t("balanceDelta"),
+                incomeLabel: t("incomeLabel"),
+                incomeSub: t("incomeSub"),
+                incomeValue: t("incomeValue"),
+                expensesLabel: t("expensesLabel"),
+                expensesSub: t("expensesSub"),
+                expensesValue: t("expensesValue"),
+              }}
+            />
           </motion.div>
         </div>
       </Container>

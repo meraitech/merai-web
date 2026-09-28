@@ -11,6 +11,7 @@
   "Nav": {
     "works": "Karya",
     "about": "Tentang",
+    "news": "Berita",
     "contact": "Kontak",
     "contactUs": "Hubungi Kami",
     "services": "Layanan",
@@ -39,33 +40,58 @@
     },
     "standard": {
       "headingLine1": "Standar baru",
-      "headingLine2": "untuk perbankan modern",
+      "headingLine2": "untuk membangun perangkat lunak",
       "learnMore": "Pelajari lebih lanjut",
-      "tableSpeed": "Kecepatan",
+      "tableSpeed": "Waktu",
       "tableFees": "Biaya",
-      "apyLabel": "APY Saat Ini",
-      "vsSavings": "vs rata-rata tabungan",
+      "row1": {
+        "name": "Merai",
+        "speed": "Minggu",
+        "fees": "Tetap"
+      },
+      "row2": {
+        "name": "Agensi",
+        "speed": "Bulan",
+        "fees": "Tak jelas"
+      },
+      "row3": {
+        "name": "Freelancer",
+        "speed": "Tak menentu",
+        "fees": "Per jam"
+      },
+      "metricLabel": "Kepuasan klien",
+      "metricValue": "98%",
+      "metricNote": "dari 50+ proyek yang diselesaikan",
       "card1": {
-        "title": "Kirim uang ke seluruh dunia. Seketika.",
-        "description": "Transfer dana ke 160+ negara dengan kurs nyata. Tanpa biaya tersembunyi, tanpa menunggu—uang Anda tiba dalam hitungan detik."
+        "title": "Rilis dalam minggu, bukan kuartal.",
+        "description": "Tim senior yang merilis perangkat lunak sejak sprint pertama. Lingkup tetap, timeline transparan, tanpa proses berbelit."
       },
       "card2": {
-        "title": "Dapatkan lebih banyak dari tabungan Anda.",
-        "description": "Dapatkan hingga 4,5% APY atas saldo Anda tanpa periode penguncian. Uang Anda bekerja lebih keras namun tetap dapat diakses kapan saja."
+        "title": "Tim yang terbukti, hasil nyata.",
+        "description": "50+ proyek selesai dengan kepuasan klien 98%. Anda melihat progres tiap minggu, dari kickoff hingga peluncuran."
       },
       "card3": {
-        "title": "Bangun dengan API pengembang kami.",
-        "description": "Akses data pembayaran real-time dan otomatiskan keuangan Anda dengan REST API kami. Dokumentasi lengkap dan SDK tersedia."
+        "title": "Kode bersih yang mudah diambil alih.",
+        "description": "Stack modern, terdokumentasi dan teruji. Anda memiliki 100% kode — tim Anda bisa mengambil alih kapan saja, dengan dokumen serah terima."
       }
     },
     "smartFinance": {
       "headingLine1": "Buat keputusan",
-      "headingLine2": "finansial yang lebih cerdas",
-      "description": "AI terintegrasi di seluruh pengalaman Finaro Anda. Akses wawasan real-time dan rekomendasi yang dipersonalisasi.",
+      "headingLine2": "produk yang lebih cerdas",
+      "description": "Insinyur dan desainer senior yang berpikir bersama Anda — demo mingguan, estimasi jujur, dan progres yang selalu terlihat.",
       "learnMore": "Pelajari lebih lanjut",
-      "feature1": "Lihat dengan jelas ke mana uang Anda pergi setiap bulan.",
-      "feature2": "Dapatkan peringatan instan untuk pola pengeluaran yang tidak biasa.",
-      "feature3": "Ajukan pertanyaan tentang keuangan Anda dalam bahasa sehari-hari."
+      "feature1": "Lihat posisi proyek Anda dengan jelas, setiap minggu.",
+      "feature2": "Dapatkan demo yang berfungsi tiap sprint, bukan slide.",
+      "feature3": "Bicara langsung dengan insinyur pembuat produk Anda.",
+      "balanceLabel": "Progres sprint",
+      "balanceValue": "87%",
+      "balanceDelta": "+12 tugas minggu ini",
+      "incomeLabel": "Selesai",
+      "incomeSub": "Minggu ini",
+      "incomeValue": "24",
+      "expensesLabel": "Ditinjau",
+      "expensesSub": "Saat ini",
+      "expensesValue": "5"
     },
     "services": {
       "label": "Layanan Kami",
@@ -278,6 +304,7 @@
     "subheading": "Proyek yang kami banggakan",
     "filterLabel": "Filter",
     "all": "Semua",
+    "viewCaseStudy": "Lihat studi kasus",
     "projectsCount": "{count, plural, other {# proyek}}",
     "categories": {
       "Identity": "Web App",
@@ -401,8 +428,8 @@
     "addressLines": [
       "Bursa Efek Indonesia, Tower 2",
       "Lantai 17, Jl. Jend. Sudirman Kav. 52-53",
-      "Jakarta 12190",
-      "INDONESIA"
+        "Jakarta 12190",
+        "Indonesia"
     ],
     "fax": "Faks",
     "faxNumber": "+62 21 515 7799",
@@ -428,13 +455,63 @@
     "button": "Hubungi Kami",
     "secondaryButton": "Lihat Karya Kami"
   },
+  "News": {
+    "heading": "Berita terbaru",
+    "description": "Catatan proses, sudut pandang engineering, dan kabar studio dari tim Merai.",
+    "viewAll": "Lihat semua berita",
+    "backToNews": "Kembali ke berita",
+    "photoCredit": "Kredit foto",
+    "posts": {
+      "ship-mvp-in-weeks": {
+        "category": "Proses",
+        "title": "Cara kami merilis MVP dalam minggu, bukan bulan",
+        "date": "12 Jan 2026",
+        "readTime": "4 mnt baca",
+        "body": [
+          "Kebanyakan MVP tidak gagal karena teknologi — melainkan karena lingkup. Kami memulai setiap proyek dengan memangkas ide menjadi versi terkecil yang bisa disentuh pengguna, lalu merencanakan mundur dari tanggal peluncuran dalam hitungan minggu.",
+          "Setiap sprint berakhir dengan demo yang berfungsi, bukan slide status. Anda melihat produk tumbuh di tangan Anda, memberi masukan atas sesuatu yang nyata, dan kami menyesuaikan sprint berikutnya dari pelajaran tersebut.",
+          "Lingkup tetap, timeline transparan, hanya insinyur senior. Kombinasi itu membawa 50+ produk dari kickoff hingga peluncuran tanpa drama agensi pada umumnya."
+        ]
+      },
+      "why-nextjs": {
+        "category": "Engineering",
+        "title": "Mengapa kami membangun platform klien di Next.js",
+        "date": "5 Jan 2026",
+        "readTime": "5 mnt baca",
+        "body": [
+          "Saat klien bertanya apa yang akan kami bangun, jawaban kami sengaja membosankan: Next.js dengan TypeScript. Satu framework mencakup halaman marketing, dashboard, dan API — artinya satu tim, satu alur deploy, tanpa celah serah terima.",
+          "Cerita performa penting untuk bisnis. Server rendering dan optimasi gambar sudah bawaan, sehingga halaman cepat dimuat di ponsel kelas menengah dan berperingkat lebih baik sejak hari pertama.",
+          "Yang terpenting, tim Anda bisa merekrut untuk itu. Memilih teknologi arus utama adalah kebaikan bagi siapa pun yang merawat produk setelah kami — termasuk kami."
+        ]
+      },
+      "design-systems-that-scale": {
+        "category": "Desain",
+        "title": "Design system yang tumbuh bersama tim Anda",
+        "date": "28 Des 2025",
+        "readTime": "4 mnt baca",
+        "body": [
+          "Setiap produk bermula konsisten lalu melenceng. Satu tombol di sini, satu warna di sana — hingga antarmuka terasa tambal sulam. Design system menghentikan pergeseran itu sebelum dimulai.",
+          "Kami membuatnya pragmatis: token desain untuk warna dan tipografi, pustaka komponen kecil, dan dokumentasi secukupnya agar anggota baru menghasilkan karya sesuai brand di minggu pertama.",
+          "Hasilnya berlipat. Setiap rilis makin cepat karena keputusan sudah dibuat — dan produk terlihat dibangun satu tim, karena sistem mengingat apa yang dilupakan individu."
+        ]
+      }
+    }
+  },
   "WorkDetail": {
     "notFound": "Proyek tidak ditemukan",
     "backToWorks": "Kembali ke Karya",
     "clientLabel": "Klien",
     "yearLabel": "Tahun",
     "caseStudyComing": "Studi kasus detail segera hadir",
-    "photoCredit": "Kredit foto"
+    "photoCredit": "Kredit foto",
+    "moreSources": "+6 sumber",
+    "sections": {
+      "introduction": "Pendahuluan",
+      "overview": "Gambaran Platform",
+      "key-features": "Fitur Utama",
+      "use-cases": "Kasus Penggunaan Umum",
+      "conclusion": "Kesimpulan"
+    }
   },
   "NotFound": {
     "title": "Halaman Tidak Ditemukan",

@@ -104,8 +104,8 @@ export default function Showcase5() {
         >
           {loop.map((src, i) => (
             <div key={i} className="flex items-center shrink-0">
-              <div className="relative z-10 h-[260px] sm:h-[320px] aspect-16/10 rounded-2xl sm:rounded-3xl p-2 bg-white dark:bg-neutral-900 shadow-[0_10px_40px_-12px_rgba(0,0,0,0.2)] border border-neutral-200 dark:border-neutral-800">
-                <div className="relative w-full h-full rounded-lg sm:rounded-2xl overflow-hidden bg-neutral-100 dark:bg-neutral-800">
+              <div className="relative z-10 h-[260px] sm:h-[320px] aspect-16/10 rounded-xl p-2 bg-white dark:bg-neutral-900 shadow-[0_10px_40px_-12px_rgba(0,0,0,0.2)] border border-neutral-200 dark:border-neutral-800">
+                <div className="relative w-full h-full rounded-lg overflow-hidden bg-neutral-100 dark:bg-neutral-800">
                   <AnimatePresence mode="wait">
                     <motion.img
                       key={`${active}-${i}`}

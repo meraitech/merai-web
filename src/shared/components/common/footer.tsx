@@ -250,6 +250,17 @@ export function Footer() {
                     {t("status")}
                   </span>
                   <span>{t("copyright")}</span>
+                  <span>
+                    {t("parentCompany")}{" "}
+                    <a
+                      href="https://orphicgavel.com"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="rounded-sm underline decoration-neutral-300 dark:decoration-neutral-700 underline-offset-4 transition-colors hover:text-neutral-900 dark:hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-400"
+                    >
+                      {t("parentCompanyName")}
+                    </a>
+                  </span>
                 </div>
                 <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
                   <div className="flex items-center gap-4">

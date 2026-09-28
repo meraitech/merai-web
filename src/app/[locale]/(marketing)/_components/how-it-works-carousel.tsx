@@ -140,10 +140,10 @@ export function HowItWorksCarousel(): ReactNode {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-2xl tracking-tight text-neutral-900 dark:text-white mb-2 transition-colors duration-300 group-hover:text-white dark:group-hover:text-neutral-950">
+              <h3 className="text-2xl font-medium font-serif text-neutral-900 dark:text-white mb-2 transition-colors duration-300 group-hover:text-white dark:group-hover:text-neutral-950">
                 {step.title}
               </h3>
-              <p className="mt-2 leading-relaxed text-neutral-600 dark:text-neutral-400 transition-colors duration-300 group-hover:text-white/70 dark:group-hover:text-neutral-950/70">
+              <p className="mt-2 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400 transition-colors duration-300 group-hover:text-white/70 dark:group-hover:text-neutral-950/70">
                 {step.description}
               </p>
 

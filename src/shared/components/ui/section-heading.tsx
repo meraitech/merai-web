@@ -16,6 +16,8 @@ type SectionHeadingProps = {
   /** Optional supporting copy rendered below the heading. */
   description?: ReactNode;
   align?: "center" | "left";
+  /** One step up in scale for moments that need slightly more presence. */
+  size?: "default" | "lg";
   className?: string;
 };
 
@@ -31,6 +33,7 @@ export function SectionHeading({
   eyebrow,
   description,
   align = "center",
+  size = "default",
   className,
 }: SectionHeadingProps): ReactNode {
   return (
@@ -50,7 +53,14 @@ export function SectionHeading({
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium font-serif text-neutral-900 dark:text-white">
+      <h2
+        className={cn(
+          "font-medium font-serif text-neutral-900 dark:text-white",
+          size === "lg"
+            ? "text-4xl sm:text-5xl md:text-6xl"
+            : "text-3xl sm:text-4xl md:text-5xl"
+        )}
+      >
         {title}
         {accent ? (
           <>

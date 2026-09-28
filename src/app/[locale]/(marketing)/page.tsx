@@ -6,6 +6,7 @@ import { FeatureCards } from "./_components/feature-cards";
 import { FeatureHighlight } from "./_components/feature-highlight";
 import SocialProof5 from "./_components/social-proof-4";
 import FAQ from "@/shared/components/common/faq";
+import { News } from "./_components/news";
 import Showcase5 from "@/features/works/components/showcase-5";
 import Features6 from "./_components/features-6";
 import { HowItWorksCarousel } from "./_components/how-it-works-carousel";
@@ -30,6 +31,7 @@ export default async function page({ params }: Props) {
       <HowItWorksCarousel />
       <SocialProof5 />
       <FAQ />
+      <News />
     </div>
   );
 }

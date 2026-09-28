@@ -3,7 +3,7 @@
 import { type ReactNode } from "react";
 import { ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { Container } from "@/shared/components/ui/container";
 import { SectionHeading } from "@/shared/components/ui/section-heading";
 
@@ -18,18 +18,22 @@ type FeatureCardData = {
   visual: FeatureVisual;
 };
 
+type ComparisonRow = {
+  name: string;
+  speed: string;
+  fees: string;
+  highlight: boolean;
+};
+
 function ComparisonVisual({
   speedLabel,
   feesLabel,
+  rows,
 }: {
   speedLabel: string;
   feesLabel: string;
+  rows: ComparisonRow[];
 }): ReactNode {
-  const rows = [
-    { name: "finaro", speed: "Instant", fees: "$0", highlight: true },
-    { name: "Bank", speed: "3-5 days", fees: "$25-50", highlight: false },
-    { name: "Wire", speed: "1-2 days", fees: "$15-35", highlight: false },
-  ];
 
   return (
     <div className="w-full h-full flex items-end justify-center p-6">
@@ -80,21 +84,23 @@ function ComparisonVisual({
 }
 
 function ChartVisual({
-  apyLabel,
-  vsSavings,
+  metricLabel,
+  metricValue,
+  metricNote,
 }: {
-  apyLabel: string;
-  vsSavings: string;
+  metricLabel: string;
+  metricValue: string;
+  metricNote: string;
 }): ReactNode {
   return (
     <div className="w-full h-full flex items-center justify-center p-8 sm:p-6">
       <div className="relative w-full max-w-xs">
         <div className="mb-3">
           <div className="text-xs text-neutral-500 dark:text-neutral-400">
-            {apyLabel}
+            {metricLabel}
           </div>
           <div className="text-xl sm:text-2xl font-semibold text-accent">
-            4.50%
+            {metricValue}
           </div>
         </div>
         <div className="flex items-end justify-between gap-2 h-24 sm:h-32">
@@ -114,9 +120,8 @@ function ChartVisual({
         </div>
         <div className="flex items-center justify-end gap-1 mt-3">
           <span className="text-xs text-neutral-500 dark:text-neutral-400">
-            {vsSavings}
+            {metricNote}
           </span>
-          <span className="text-xs text-accent">0.5%</span>
         </div>
       </div>
     </div>
@@ -125,13 +130,13 @@ function ChartVisual({
 
 function CodeVisual(): ReactNode {
   const codeLines = [
-    { text: "--data '{", style: "text-neutral-500 dark:text-neutral-400" },
-    { text: "  'account-balance'", style: "text-accent" },
-    { text: "  'portfolio-value'", style: "text-accent" },
-    { text: "  'transaction-history'", style: "text-accent" },
-    { text: "  'pending-transfers'", style: "text-accent" },
-    { text: "  'card-details'", style: "text-accent" },
-    { text: "  'exchange-rates'", style: "text-accent" },
+    { text: "--stack '{", style: "text-neutral-500 dark:text-neutral-400" },
+    { text: "  'nextjs-app'", style: "text-accent" },
+    { text: "  'typescript'", style: "text-accent" },
+    { text: "  'api-routes'", style: "text-accent" },
+    { text: "  'ci-cd'", style: "text-accent" },
+    { text: "  'unit-tests'", style: "text-accent" },
+    { text: "  'monitoring'", style: "text-accent" },
     { text: "}'", style: "text-neutral-500 dark:text-neutral-400" },
   ];
 
@@ -163,16 +168,20 @@ function FeatureCard({
   learnMore,
   speedLabel,
   feesLabel,
-  apyLabel,
-  vsSavings,
+  rows,
+  metricLabel,
+  metricValue,
+  metricNote,
 }: {
   card: FeatureCardData;
   index: number;
   learnMore: string;
   speedLabel: string;
   feesLabel: string;
-  apyLabel: string;
-  vsSavings: string;
+  rows: ComparisonRow[];
+  metricLabel: string;
+  metricValue: string;
+  metricNote: string;
 }): ReactNode {
   return (
     <motion.a
@@ -186,10 +195,18 @@ function FeatureCard({
     >
       <div className="relative h-56 sm:h-64 bg-white dark:bg-neutral-950">
         {card.visual === "comparison" && (
-          <ComparisonVisual speedLabel={speedLabel} feesLabel={feesLabel} />
+          <ComparisonVisual
+            speedLabel={speedLabel}
+            feesLabel={feesLabel}
+            rows={rows}
+          />
         )}
         {card.visual === "chart" && (
-          <ChartVisual apyLabel={apyLabel} vsSavings={vsSavings} />
+          <ChartVisual
+            metricLabel={metricLabel}
+            metricValue={metricValue}
+            metricNote={metricNote}
+          />
         )}
         {card.visual === "code" && <CodeVisual />}
       </div>
@@ -211,24 +228,33 @@ function FeatureCard({
 
 export function FeatureCards(): ReactNode {
   const t = useTranslations("Home.standard");
+  const locale = useLocale();
+  const worksHref = `/${locale}/works`;
+
+  const rows: ComparisonRow[] = [1, 2, 3].map((i) => ({
+    name: t(`row${i}.name`),
+    speed: t(`row${i}.speed`),
+    fees: t(`row${i}.fees`),
+    highlight: i === 1,
+  }));
 
   const features: FeatureCardData[] = [
     {
       title: t("card1.title"),
       description: t("card1.description"),
-      href: "#",
+      href: worksHref,
       visual: "comparison",
     },
     {
       title: t("card2.title"),
       description: t("card2.description"),
-      href: "#",
+      href: worksHref,
       visual: "chart",
     },
     {
       title: t("card3.title"),
       description: t("card3.description"),
-      href: "#",
+      href: worksHref,
       visual: "code",
     },
   ];
@@ -249,8 +275,10 @@ export function FeatureCards(): ReactNode {
               learnMore={t("learnMore")}
               speedLabel={t("tableSpeed")}
               feesLabel={t("tableFees")}
-              apyLabel={t("apyLabel")}
-              vsSavings={t("vsSavings")}
+              rows={rows}
+              metricLabel={t("metricLabel")}
+              metricValue={t("metricValue")}
+              metricNote={t("metricNote")}
             />
           ))}
         </div>

@@ -3,18 +3,19 @@
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import type { Work } from "@/features/works/data/works";
+import { Container } from "@/shared/components/ui/container";
 
 interface Props {
   work: Work;
 }
 
-const sections = [
-  { id: "introduction", title: "Introduction" },
-  { id: "overview", title: "Platform Overview" },
-  { id: "key-features", title: "Key Features" },
-  { id: "use-cases", title: "Common Use Cases" },
-  { id: "conclusion", title: "Conclusion" },
-];
+const sectionIds = [
+  "introduction",
+  "overview",
+  "key-features",
+  "use-cases",
+  "conclusion",
+] as const;
 
 const sources = [
   {
@@ -55,7 +56,7 @@ export function Blog5({ work }: Props) {
         </div>
       </motion.div>
 
-      <div className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <Container className="py-8 sm:py-12">
         <div className="max-w-[1100px] mx-auto">
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
             <div className="flex-1 min-w-0">
@@ -64,7 +65,7 @@ export function Blog5({ work }: Props) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
               >
-                <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-neutral-900 dark:text-white mb-6 leading-tight">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium font-serif text-neutral-900 dark:text-white mb-6 leading-tight">
                   {work.title}
                 </h1>
 
@@ -135,7 +136,7 @@ export function Blog5({ work }: Props) {
                     <div className="w-4 h-4 rounded-full bg-accent" />
                   </div>
                   <span className="text-xs text-neutral-500 dark:text-neutral-400">
-                    +6 sources
+                    {t("moreSources")}
                   </span>
                 </button>
               </motion.div>
@@ -149,13 +150,13 @@ export function Blog5({ work }: Props) {
             >
               <nav className="sticky top-8">
                 <ul className="space-y-1 border-l-2 border-neutral-200 dark:border-neutral-800">
-                  {sections.map((section) => (
-                    <li key={section.id}>
+                  {sectionIds.map((id) => (
+                    <li key={id}>
                       <a
-                        href={`#${section.id}`}
+                        href={`#${id}`}
                         className="block pl-4 py-1.5 text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
                       >
-                        {section.title}
+                        {t(`sections.${id}`)}
                       </a>
                     </li>
                   ))}
@@ -164,7 +165,7 @@ export function Blog5({ work }: Props) {
             </motion.aside>
           </div>
         </div>
-      </div>
+      </Container>
     </article>
   );
 }

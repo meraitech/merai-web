@@ -44,7 +44,7 @@ interface SubLink {
 }
 
 interface NavLink {
-  labelKey: "services" | "works" | "about";
+  labelKey: "services" | "works" | "about" | "news";
   href: string;
   items?: readonly SubLink[];
 }
@@ -79,6 +79,7 @@ const LINKS: readonly NavLink[] = [
   },
   { labelKey: "works", href: "/works" },
   { labelKey: "about", href: "/about" },
+  { labelKey: "news", href: "/news" },
 ];
 
 type Variant = "glass" | "solid";
@@ -88,6 +89,13 @@ const HERO_ID = "hero";
 const DOCKED_COLUMN = "mx-auto max-w-[1400px]";
 const DESKTOP_QUERY = "(min-width: 768px)";
 
+// Named timing constants — no magic numbers in scroll/animation props.
+// Threshold matches the overlay header offset (`top-6`) so the solid bar
+// engages as soon as the page moves, not after the whole hero scrolls away.
+const NAV_TIMING = {
+  dockedThresholdPx: 24,
+} as const;
+
 const CONTROL_RADIUS = "rounded-[0.75rem]";
 const FOCUS_RING =
   "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-400";
@@ -95,8 +103,8 @@ const FOCUS_RING =
 const EASE_OUT: Transition = { duration: 0.4, ease: softEase };
 const EASE_IN: Transition = { duration: 0.25, ease: quickEase };
 
-const LINK_CLASS = `inline-flex h-9 items-center px-3.5 whitespace-nowrap text-sm font-medium text-neutral-600 dark:text-neutral-400 transition-colors hover:text-neutral-900 dark:hover:text-white ${FOCUS_RING} ${CONTROL_RADIUS}`;
-const PRIMARY_CLASS = `inline-flex h-9 items-center bg-neutral-900 dark:bg-white px-4 whitespace-nowrap text-sm font-medium text-white dark:text-neutral-900 transition-opacity hover:opacity-85 ${FOCUS_RING} ${CONTROL_RADIUS}`;
+const LINK_CLASS = `inline-flex h-10 items-center px-3.5 whitespace-nowrap text-sm font-medium text-neutral-600 dark:text-neutral-400 transition-colors hover:text-neutral-900 dark:hover:text-white ${FOCUS_RING} ${CONTROL_RADIUS}`;
+const PRIMARY_CLASS = `inline-flex h-10 items-center bg-neutral-900 dark:bg-white px-4 whitespace-nowrap text-sm font-medium text-white dark:text-neutral-900 transition-opacity hover:opacity-85 ${FOCUS_RING} ${CONTROL_RADIUS}`;
 
 const PANEL_SURFACE: Record<Variant, string> = {
   glass:
@@ -350,6 +358,7 @@ function NavContent({
     services: t("services"),
     works: t("works"),
     about: t("about"),
+    news: t("news"),
   };
   const titles = {
     service1: ts("service1.title"),
@@ -408,7 +417,7 @@ function NavContent({
           aria-expanded={menuOpen}
           aria-controls={panelId}
           aria-label={menuOpen ? t("closeMenu") : t("openMenu")}
-          className={`inline-flex h-9 w-9 items-center justify-center text-neutral-900 dark:text-white transition-colors hover:bg-neutral-900/8 dark:hover:bg-white/8 ${FOCUS_RING} ${CONTROL_RADIUS} md:hidden`}
+          className={`inline-flex h-10 w-10 items-center justify-center text-neutral-900 dark:text-white transition-colors hover:bg-neutral-900/8 dark:hover:bg-white/8 ${FOCUS_RING} ${CONTROL_RADIUS} md:hidden`}
         >
           <BurgerIcon open={menuOpen} />
         </button>
@@ -537,6 +546,7 @@ function MobileList({
     services: t("services"),
     works: t("works"),
     about: t("about"),
+    news: t("news"),
   };
   const titles = {
     service1: ts("service1.title"),
@@ -681,6 +691,8 @@ function MobileMenu({
 }
 
 export function Navbar() {
+  const pathname = usePathname();
+  const locale = useLocale();
   const [docked, setDocked] = useState(false);
   const [hasHero, setHasHero] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -694,23 +706,50 @@ export function Navbar() {
   }, []);
   const toggleMenu = useCallback(() => setMenuOpen((v) => !v), []);
 
+  // Hero presence is route-dependent and the hero can mount after this
+  // component (streaming). Re-check on every route/locale change and watch
+  // the DOM so late mounts / client navigations never leave stale state.
   useEffect(() => {
-    const hero = document.getElementById(HERO_ID);
-    if (!hero) {
-      setHasHero(false);
+    const checkHero = (): void => {
+      setHasHero(document.getElementById(HERO_ID) !== null);
+    };
+    checkHero();
+    const mo = new MutationObserver(checkHero);
+    mo.observe(document.body, { childList: true, subtree: true });
+    return () => mo.disconnect();
+  }, [pathname, locale]);
+
+  // Docked state derives from scroll position, not hero intersection.
+  // Pages without a hero stay docked; pages with a hero undock at the top
+  // so scrolling back to top reliably restores the overlay variant.
+  useEffect(() => {
+    if (!hasHero) {
       setDocked(true);
       return;
     }
-    setHasHero(true);
-    const io = new IntersectionObserver(
-      (entries) => {
-        setDocked(!(entries[0]?.isIntersecting ?? true));
-      },
-      { threshold: 0 }
-    );
-    io.observe(hero);
-    return () => io.disconnect();
-  }, []);
+    let raf = 0;
+    const update = (): void => {
+      raf = 0;
+      setDocked(window.scrollY > NAV_TIMING.dockedThresholdPx);
+    };
+    const onScroll = (): void => {
+      if (raf === 0) raf = window.requestAnimationFrame(update);
+    };
+    // Sync immediately — covers route changes where SmoothScroll already
+    // scrolled to top, and restores overlay when back at scrollY 0.
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (raf !== 0) window.cancelAnimationFrame(raf);
+    };
+  }, [hasHero, pathname, locale]);
+
+  // Close the mobile menu on navigation so it never stays open / locks
+  // body scroll on the next page.
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname, locale]);
 
   useEffect(() => {
     const mq = window.matchMedia(DESKTOP_QUERY);
@@ -725,26 +764,47 @@ export function Navbar() {
     <>
       {!hasHero && <div className="h-16" aria-hidden="true" />}
 
-      {!docked && hasHero && (
-        <header className="absolute inset-x-4 top-6 z-10 h-[3.75rem] px-6">
-          <NavContent
-            variant="glass"
-            menuOpen={menuOpen}
-            panelId={panelId}
-            toggleRef={toggleRef}
-            onToggle={toggleMenu}
-          />
-        </header>
-      )}
+      {/* Single AnimatePresence with mode="wait" so the overlay and docked
+          headers never co-exist during the switch (previously the absolute
+          header mounted instantly while the fixed header was still exiting
+          with y:-100%, perceived as a stuck/flashing navbar). */}
+      <AnimatePresence initial={false} mode="wait">
+        {!docked && hasHero && (
+          <motion.header
+            key="overlay-nav"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={reducedMotion ? { duration: 0.15 } : EASE_IN}
+            className="absolute inset-x-4 top-6 z-10 h-[3.75rem] px-6"
+          >
+            <NavContent
+              variant="glass"
+              menuOpen={menuOpen}
+              panelId={panelId}
+              toggleRef={toggleRef}
+              onToggle={toggleMenu}
+            />
+          </motion.header>
+        )}
 
-      <AnimatePresence>
         {docked && (
           <motion.header
             key="docked-nav"
-            initial={reducedMotion ? { opacity: 0 } : { y: "-100%" }}
-            animate={reducedMotion ? { opacity: 1 } : { y: 0 }}
-            exit={reducedMotion ? { opacity: 0 } : { y: "-100%" }}
-            transition={reducedMotion ? { duration: 0.15 } : EASE_OUT}
+            // Entry takes longer than exit (taste rule): enter EASE_OUT 0.4s,
+            // exit EASE_IN 0.25s so scrolling back to top feels snappy.
+            {...(reducedMotion
+              ? {
+                  initial: { opacity: 0 },
+                  animate: { opacity: 1 },
+                  exit: { opacity: 0 },
+                  transition: { duration: 0.15 },
+                }
+              : {
+                  initial: { y: "-100%" },
+                  animate: { y: 0, transition: EASE_OUT },
+                  exit: { y: "-100%", transition: EASE_IN },
+                })}
             className="fixed inset-x-0 lg:px-8 sm:px-6 px-4 top-0 z-40 h-16 border-b border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950"
           >
             <NavContent
