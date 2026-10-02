@@ -99,15 +99,36 @@
       "headingLine2": "tailored to your business",
       "service1": {
         "title": "Software Development",
-        "imageAlt": "Close-up of source code on a developer's screen."
+        "imageAlt": "Close-up of source code on a developer's screen.",
+        "items": [
+          "Website Development",
+          "Mobile App Development",
+          "Custom Software & SaaS",
+          "AI Solutions & Integration",
+          "Cybersecurity"
+        ]
       },
       "service2": {
         "title": "Business Scaling",
-        "imageAlt": "Laptop showing business growth charts and analytics."
+        "imageAlt": "Laptop showing business growth charts and analytics.",
+        "items": [
+          "Business Consulting",
+          "Process Automation",
+          "Team Augmentation",
+          "Market Expansion Strategy",
+          "Operations & SOP Advisory"
+        ]
       },
       "service3": {
         "title": "Digital Marketing",
-        "imageAlt": "Marketing analytics dashboard with campaign performance data."
+        "imageAlt": "Marketing analytics dashboard with campaign performance data.",
+        "items": [
+          "SEO & SEM",
+          "Social Media Management",
+          "Content & Branding",
+          "Performance Ads",
+          "Email & CRM Marketing"
+        ]
       },
       "description": "From first sketch to scale — one team for your software, your growth, and your brand.",
       "linkLabel": "Start your project"

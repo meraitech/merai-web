@@ -99,15 +99,36 @@
       "headingLine2": "yang disesuaikan dengan bisnis Anda",
       "service1": {
         "title": "Pengembangan Perangkat Lunak",
-        "imageAlt": "Tampilan dekat kode sumber di layar pengembang."
+        "imageAlt": "Tampilan dekat kode sumber di layar pengembang.",
+        "items": [
+          "Pengembangan Website",
+          "Pengembangan Aplikasi Mobile",
+          "Software Kustom & SaaS",
+          "Solusi & Integrasi AI",
+          "Keamanan Siber"
+        ]
       },
       "service2": {
         "title": "Penskalaan Bisnis",
-        "imageAlt": "Laptop yang menampilkan grafik pertumbuhan dan analitik bisnis."
+        "imageAlt": "Laptop yang menampilkan grafik pertumbuhan dan analitik bisnis.",
+        "items": [
+          "Konsultasi Bisnis",
+          "Otomasi Proses",
+          "Augmentasi Tim",
+          "Strategi Ekspansi Pasar",
+          "Penasihat Operasi & SOP"
+        ]
       },
       "service3": {
         "title": "Pemasaran Digital",
-        "imageAlt": "Dasbor analitik pemasaran dengan data performa kampanye."
+        "imageAlt": "Dasbor analitik pemasaran dengan data performa kampanye.",
+        "items": [
+          "SEO & SEM",
+          "Manajemen Media Sosial",
+          "Konten & Branding",
+          "Iklan Performa",
+          "Email & CRM Marketing"
+        ]
       },
       "description": "Dari sketsa pertama hingga skala besar — satu tim untuk perangkat lunak, pertumbuhan, dan brand Anda.",
       "linkLabel": "Mulai proyek Anda"

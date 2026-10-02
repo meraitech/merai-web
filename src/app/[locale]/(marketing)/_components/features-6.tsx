@@ -6,6 +6,7 @@ import { Link as UiLink } from "@/shared/components/ui/link";
 import { Container } from "@/shared/components/ui/container";
 import { SectionHeading } from "@/shared/components/ui/section-heading";
 import { ServiceCard } from "./service-card";
+import { ServiceSubList } from "./service-sub-list";
 
 const CARDS = [
   {
@@ -26,6 +27,27 @@ const CARDS = [
 export default function Features6() {
   const t = useTranslations("Home.services");
 
+  const getItems = (index: number): string[] => {
+    try {
+      const items = t.raw(`service${index + 1}.items`) as unknown;
+      return Array.isArray(items)
+        ? items.filter((item): item is string => typeof item === "string")
+        : [];
+    } catch {
+      return [];
+    }
+  };
+
+  const columns = CARDS.map((card, i) => ({ card, index: i }));
+
+  let runningTotal = 0;
+  const columnsWithOffset = columns.map((col) => {
+    const items = getItems(col.index);
+    const startIndex = runningTotal;
+    runningTotal += items.length;
+    return { ...col, items, startIndex };
+  });
+
   return (
     <section className="w-full scroll-mt-20" id="services">
       <Container spacing="generous">
@@ -35,14 +57,16 @@ export default function Features6() {
         />
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {CARDS.map((card, i) => (
-            <ServiceCard
-              key={t(`service${i + 1}.title`)}
-              title={t(`service${i + 1}.title`)}
-              imageSrc={card.image}
-              imageAlt={t(`service${i + 1}.imageAlt`)}
-              index={i}
-            />
+          {columnsWithOffset.map(({ card, index: i, items, startIndex }) => (
+            <div key={t(`service${i + 1}.title`)}>
+              <ServiceCard
+                title={t(`service${i + 1}.title`)}
+                imageSrc={card.image}
+                imageAlt={t(`service${i + 1}.imageAlt`)}
+                index={i}
+              />
+              <ServiceSubList items={items} startIndex={startIndex} />
+            </div>
           ))}
         </div>
 
