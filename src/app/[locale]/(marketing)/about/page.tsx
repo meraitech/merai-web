@@ -1,5 +1,4 @@
 import About1 from "@/features/about/components/about-1";
-import About2 from "@/features/about/components/about-2";
 import { Hero8 } from "@/features/about/components/hero-8";
 import React from "react";
 import { setRequestLocale, getTranslations } from "next-intl/server";
@@ -27,7 +26,6 @@ export default async function AboutPage({ params }: Props) {
       <About6 />
       {/*  <About1 />  */}
       {/* <Features5 /> */}
-      <About2 />
     </div>
   );
 }

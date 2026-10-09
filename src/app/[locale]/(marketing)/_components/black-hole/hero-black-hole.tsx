@@ -2,7 +2,7 @@
 
 import { useReducedMotion } from "motion/react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import BlackHole from "./black-hole";
+import BlackHole from "@/shared/components/black-hole/black-hole";
 
 // Static stand-in for software-GL clients (same gradient as BlackHole's own
 // no-WebGL2 fallback) — raymarching 240 steps/px on a CPU rasterizer is what
@@ -29,12 +29,12 @@ function isSoftwareGL(): boolean {
   }
 }
 
-// Hero integration for BlackHole: full-bleed cinematic backdrop filling the
-// hero card. Drag-orbit on desktop; touch passthrough on mobile so the
-// fullscreen canvas never swallows page scroll. The raymarcher runs at DPR 1
-// (visually lossless under bloom/grain/vignette, ~55% fewer fragments on
-// retina) and is fully halted offscreen, on tab-hide, under reduced motion,
-// or on software rasterizers.
+// Hero integration for BlackHole: right-half cinematic backdrop (full-bleed
+// behind left-aligned text on mobile). Drag-orbit on desktop; touch
+// passthrough on mobile so the canvas never swallows page scroll. The
+// raymarcher runs at DPR 1 and is fully halted offscreen, on tab-hide, under
+// reduced motion, or on software rasterizers. Narrower container = smaller
+// ASCII grid = cheaper, via the existing resize path.
 export function HeroBlackHole(): ReactNode {
   const hostRef = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(true);
@@ -67,17 +67,23 @@ export function HeroBlackHole(): ReactNode {
     <div
       ref={hostRef}
       aria-hidden="true"
-      className="pointer-events-none absolute inset-0 overflow-hidden sm:pointer-events-auto"
+      className="pointer-events-none absolute inset-0 overflow-hidden sm:pointer-events-auto sm:inset-y-0 sm:left-auto sm:right-0 sm:w-[52%] sm:[mask-image:linear-gradient(to_right,transparent,black_18%)]"
     >
       {softwareGL ? (
         <div className="h-full w-full" style={{ background: FALLBACK_BG }} />
       ) : (
         <BlackHole
           className="h-full w-full"
-          steps={240}
+          steps={160}
           rotationSpeed={1}
           maxDpr={1}
+          diskBrightness={1.3}
+          camRadius={16}
+          camInclination={82}
+          trackMouse
           paused={!inView || reducedMotion || hidden}
+          ascii
+          asciiFontSize={12}
         />
       )}
     </div>

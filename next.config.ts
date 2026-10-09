@@ -27,7 +27,13 @@ const nextConfig: NextConfig = {
           },
           { key: "Cross-Origin-Resource-Policy", value: "same-origin" },
           { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
-          { key: "Cross-Origin-Embedder-Policy", value: "require-corp" },
+          // credentialless (not require-corp) so free third-party embeds
+          // like the OpenStreetMap iframe on /contact can load in dev.
+          // Unknown to old browsers = ignored = embeds still load.
+          {
+            key: "Cross-Origin-Embedder-Policy",
+            value: "credentialless",
+          },
         ],
       },
     ];

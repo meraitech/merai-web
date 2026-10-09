@@ -1,4 +1,4 @@
-import Contact2 from "@/features/contact/components/contact-2";
+import ContactInfo from "@/features/contact/components/contact-info";
 import { Hero12 } from "@/features/contact/components/hero-12";
 import React from "react";
 import FAQ from "@/shared/components/common/faq";
@@ -23,7 +23,7 @@ export default async function ContactPage({ params }: Props) {
   return (
     <div>
       <Hero12 />
-      <Contact2 />
+      <ContactInfo />
       <FAQ />
     </div>
   );

@@ -5,10 +5,12 @@ import { Link } from "@/shared/components/ui/link";
 import { useLocale, useTranslations } from "next-intl";
 import { usePathname } from "@/i18n/navigation";
 import {
+  Building2,
   ChevronDown,
   CodeXml,
   Megaphone,
   TrendingUp,
+  Users,
 } from "lucide-react";
 import { AnimatePresence, motion, type Transition } from "motion/react";
 import { useReducedMotion } from "motion/react";
@@ -36,8 +38,13 @@ const SERVICE_TINTS = {
 } as const;
 
 interface SubLink {
-  titleKey: "service1" | "service2" | "service3";
-  descKey: "service1desc" | "service2desc" | "service3desc";
+  titleKey: "service1" | "service2" | "service3" | "aboutStory" | "aboutTeam";
+  descKey:
+    | "service1desc"
+    | "service2desc"
+    | "service3desc"
+    | "aboutStoryDesc"
+    | "aboutTeamDesc";
   href: string;
   icon: Icon;
   tint: keyof typeof SERVICE_TINTS;
@@ -78,7 +85,26 @@ const LINKS: readonly NavLink[] = [
     ],
   },
   { labelKey: "works", href: "/works" },
-  { labelKey: "about", href: "/about" },
+  {
+    labelKey: "about",
+    href: "/about",
+    items: [
+      {
+        titleKey: "aboutStory",
+        descKey: "aboutStoryDesc",
+        href: "/about",
+        icon: Building2,
+        tint: "sky",
+      },
+      {
+        titleKey: "aboutTeam",
+        descKey: "aboutTeamDesc",
+        href: "/about#team",
+        icon: Users,
+        tint: "mint",
+      },
+    ],
+  },
   { labelKey: "news", href: "/news" },
 ];
 
@@ -364,11 +390,15 @@ function NavContent({
     service1: ts("service1.title"),
     service2: ts("service2.title"),
     service3: ts("service3.title"),
+    aboutStory: t("aboutStory"),
+    aboutTeam: t("aboutTeam"),
   };
   const descriptions = {
     service1desc: t("service1desc"),
     service2desc: t("service2desc"),
     service3desc: t("service3desc"),
+    aboutStoryDesc: t("aboutStoryDesc"),
+    aboutTeamDesc: t("aboutTeamDesc"),
   };
 
   return (
@@ -552,11 +582,15 @@ function MobileList({
     service1: ts("service1.title"),
     service2: ts("service2.title"),
     service3: ts("service3.title"),
+    aboutStory: t("aboutStory"),
+    aboutTeam: t("aboutTeam"),
   };
   const descriptions = {
     service1desc: t("service1desc"),
     service2desc: t("service2desc"),
     service3desc: t("service3desc"),
+    aboutStoryDesc: t("aboutStoryDesc"),
+    aboutTeamDesc: t("aboutTeamDesc"),
   };
 
   return (

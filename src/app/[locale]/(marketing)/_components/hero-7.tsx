@@ -22,7 +22,7 @@ export function Hero7() {
         className="pointer-events-none absolute inset-0 z-[2] rounded-[inherit] border border-white/12"
       />
 
-      <div className="relative z-[1] mx-auto flex w-full max-w-[1400px] flex-1 flex-col items-center justify-center px-4 py-24 text-center sm:px-6 sm:py-28 lg:px-8">
+      <div className="relative z-[1] mx-auto flex w-full max-w-[1400px] flex-1 flex-col items-start justify-center px-4 py-24 text-left sm:mx-0 sm:max-w-[44%] sm:px-6 sm:py-28 lg:px-8">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

@@ -45,6 +45,61 @@ const DEBUG_INDEX: Record<DebugMode, number> = {
 	redshift: 5,
 };
 
+// Same glyph ramp as AsciiEffect's default — reused so hero ASCII matches
+// the Brief/service-card ASCII look instead of inventing a second ramp.
+const DEFAULT_ASCII_CHARS = " .:-=+*#%@";
+const ASCII_THRESHOLD = 0.06;
+const ASCII_MAX_COLS = 180;
+const ASCII_MAX_ROWS = 160;
+// ponytail: the GL buffer renders at grid × this scale; the overlay
+// downsamples to the grid anyway, so full-hero fragments would be thrown
+// away. Upgrade path: raise the scale if glyph edges ever look starved.
+const ASCII_RENDER_SCALE = 2.5;
+// ponytail: luminance buckets for the glyph sprite cache — matches
+// AsciiEffect's posterize habit. Upgrade path: raise for smoother gradients.
+const ASCII_LEVELS = 16;
+
+function asciiGrid(
+	cw: number,
+	ch: number,
+	fontSize: number,
+): { cols: number; rows: number; cellW: number; cellH: number; fs: number } {
+	const fs = Math.max(6, fontSize);
+	// Real monospace advance instead of a 0.6 guess — a wrong ratio squeezes
+	// circles into ellipses through the ASCII stage. Same measureText habit
+	// as AsciiEffect; cached per size.
+	const cellW = fs * measuredAdvance(fs);
+	const cellH = fs;
+	return {
+		cols: Math.max(1, Math.min(ASCII_MAX_COLS, Math.floor(cw / cellW))),
+		rows: Math.max(1, Math.min(ASCII_MAX_ROWS, Math.floor(ch / cellH))),
+		cellW,
+		cellH,
+		fs,
+	};
+}
+
+const advanceCache = new Map<number, number>();
+function measuredAdvance(fs: number): number {
+	const hit = advanceCache.get(fs);
+	if (hit !== undefined) return hit;
+	let ratio = 0.6;
+	if (typeof document !== "undefined") {
+		try {
+			const mc = document.createElement("canvas").getContext("2d");
+			if (mc) {
+				mc.font = `${fs}px ui-monospace, SFMono-Regular, Menlo, monospace`;
+				const w = mc.measureText("M").width;
+				if (w > 0 && Number.isFinite(w)) ratio = w / fs;
+			}
+		} catch {
+			// Keep the 0.6 fallback.
+		}
+	}
+	advanceCache.set(fs, ratio);
+	return ratio;
+}
+
 interface BlackHoleProps {
 	steps?: number;
 	diskInner?: number;
@@ -66,15 +121,39 @@ interface BlackHoleProps {
 	ringColor?: string;
 	paused?: boolean;
 	maxDpr?: number;
+	/** Orbit radius (defaults to ORBIT_R). Larger = hole+disk framed smaller. */
+	camRadius?: number;
+	/** Orbit inclination in degrees (defaults to ORBIT_INC). Lower = more top-down, rounder disk ellipse. */
+	camInclination?: number;
 	fallbackSrc?: string;
 	className?: string;
+	/** White outer-limb intensity on the planet disc (0 = off). */
+	planetLimb?: number;
+	/** Hover tracking: ease orbit azimuth/inclination toward the mouse
+	 * (desktop only). Drag still wins; idle 1s resumes auto-orbit. */
+	trackMouse?: boolean;
+	/** Render the live raymarcher as animated ASCII on a 2D overlay canvas. */
+	ascii?: boolean;
+	/** Glyph ramp, dark → bright (defaults to AsciiEffect's ramp). */
+	asciiChars?: string;
+	/** ASCII cell height in CSS px (width = measured monospace advance). Lower = denser. */
+	asciiFontSize?: number;
 }
 
 const ORBIT_R = 16;
 const ORBIT_INC = 82;
 const BASE_SPIN = 9;
 const IDLE_MS = 1000;
+// ponytail: fixed 20fps render cadence — time-gated so it holds on 60Hz and
+// 120Hz screens alike. Camera/uTime advance every tick on real dt, so speed
+// stays correct and only frame density drops. Upgrade path: raise to 30 or
+// go adaptive if drag steppiness ever bothers.
+const RENDER_INTERVAL_MS = 50;
 const DEG = Math.PI / 180;
+// Hover-track ranges (degrees) around the running orbit — ponytail: fixed
+// and small on purpose; widen only if tracking ever feels unresponsive.
+const TRACK_AZ = 30;
+const TRACK_INC = 16;
 
 function toCartesian(
 	r: number,
@@ -118,6 +197,7 @@ uniform float uSkyFloor;
 uniform float uRotSpeed;
 uniform vec3 uTint;
 uniform vec3 uRingColor;
+uniform float uLimb;
 uniform float uDebug;
 out vec4 fragColor;
 
@@ -319,7 +399,7 @@ void main() {
 				float detail = mix(1.0, turb, smoothstep(18.0, 4.0, rc));
 				float I = flux * 11.0 * mix(0.6, 1.4, turb) * mix(0.7, 1.2, streak) * mix(0.6, 1.0, laneMask) * detail;
 				float ig = (rc - 3.1) * 3.0;
-				I += exp(-ig * ig) * 2.8;
+				I += exp(-ig * ig) * 3.6;
 				I *= smoothstep(uDiskOuter, uDiskOuter - 6.0, rc);
 
 				// Relativity: Doppler beaming + gravitational redshift.
@@ -357,6 +437,20 @@ void main() {
 		bg += uSkyFloor * mix(vec3(0.10, 0.13, 0.28), uTint, 0.4);
 		float dim = clamp((lastR - 1.03) * 0.45, 0.45, 1.0);
 		col += trans * bg * dim;
+	} else {
+		// ponytail: dark-planet shading for captured rays so the disc reads
+		// round on black instead of vanishing. Hardcoded lite constants;
+		// promote to uniforms if the look ever needs tuning.
+		vec3 nrm = normalize(pos);
+		vec3 ldir = normalize(vec3(-0.55, 0.35, 0.75));
+		float ndl = dot(nrm, ldir) * 0.5 + 0.5;
+		float term = smoothstep(0.25, 0.75, ndl);
+		col += mix(vec3(0.015, 0.012, 0.030), vec3(0.100, 0.080, 0.200), term);
+		// Bright outer limb on the sphere itself: grazing view angles are the
+		// visible edge, so this draws white around a dark center. Above the
+		// bloom threshold, so it glows like the disk core.
+		float limb = pow(1.0 - abs(dot(normalize(vel), nrm)), 2.5);
+		col += vec3(1.0, 0.97, 0.92) * limb * uLimb;
 	}
 
 	int dbg = int(uDebug + 0.5);
@@ -467,10 +561,23 @@ const BlackHole: React.FC<BlackHoleProps> = ({
 	ringColor = "#ff9e38",
 	paused = false,
 	maxDpr = 1.5,
+	camRadius = ORBIT_R,
+	camInclination = ORBIT_INC,
+	planetLimb = 1.5,
+	trackMouse = false,
 	fallbackSrc,
 	className,
+	ascii = false,
+	asciiChars = DEFAULT_ASCII_CHARS,
+	asciiFontSize = 10,
 }) => {
 	const containerRef = useRef<HTMLDivElement>(null);
+	const asciiCanvasRef = useRef<HTMLCanvasElement | null>(null);
+	const sampleCanvasRef = useRef<HTMLCanvasElement | null>(null);
+	const spritesRef = useRef<{ key: string; sprites: (HTMLCanvasElement | null)[] }>({
+		key: "",
+		sprites: [],
+	});
 	const drawRef = useRef<((t: number) => void | false) | null>(null);
 	const measureRef = useRef<((m: Metrics) => void) | null>(null);
 	const glRef = useRef<WebGLRenderingContext | WebGL2RenderingContext | null>(
@@ -506,6 +613,12 @@ const BlackHole: React.FC<BlackHoleProps> = ({
 		tint,
 		ringColor,
 		paused,
+		planetLimb,
+		camInclination,
+		trackMouse,
+		ascii,
+		asciiChars,
+		asciiFontSize,
 	});
 	live.current = {
 		steps,
@@ -527,17 +640,23 @@ const BlackHole: React.FC<BlackHoleProps> = ({
 		tint,
 		ringColor,
 		paused,
+		planetLimb,
+		camInclination,
+		trackMouse,
+		ascii,
+		asciiChars,
+		asciiFontSize,
 	};
 
 	const cam = useRef({
-		r: ORBIT_R,
-		inc: ORBIT_INC,
+		r: camRadius,
+		inc: camInclination,
 		az: 0,
 		orbitAz: 0,
 		manualActive: false,
-		manualR: ORBIT_R,
+		manualR: camRadius,
 		targetAz: 0,
-		targetInc: ORBIT_INC,
+		targetInc: camInclination,
 		lastInteract: -1e9,
 		spinDir: 1,
 	});
@@ -617,6 +736,7 @@ const BlackHole: React.FC<BlackHoleProps> = ({
 					uRotSpeed: { value: rotationSpeed },
 					uTint: { value: new Float32Array(hexToRgb01(tint)) },
 					uRingColor: { value: new Float32Array(hexToRgb01(ringColor)) },
+					uLimb: { value: planetLimb },
 					uDebug: { value: DEBUG_INDEX[debug] ?? 0 },
 				},
 			});
@@ -663,10 +783,47 @@ const BlackHole: React.FC<BlackHoleProps> = ({
 			const compMesh = new Mesh(gl, { geometry, program: compProgram });
 
 			glRef.current = gl;
+			// Live-ASCII overlay: a 2D canvas stacked above the WebGL canvas plus
+			// an offscreen sampler. Created once per GL init; visibility is
+			// toggled per frame from live.current.ascii so the prop can flip
+			// without re-creating the GL context.
+			const asciiCanvas = document.createElement("canvas");
+			asciiCanvas.style.position = "absolute";
+			asciiCanvas.style.top = "0";
+			asciiCanvas.style.left = "0";
+			asciiCanvas.style.width = "100%";
+			asciiCanvas.style.height = "100%";
+			asciiCanvas.style.pointerEvents = "none";
+			asciiCanvas.style.display = "none";
+			container.appendChild(asciiCanvas);
+			asciiCanvasRef.current = asciiCanvas;
+			const sampleCanvas = document.createElement("canvas");
+			sampleCanvasRef.current = sampleCanvas;
+			let lastAsciiOn = false;
 			measureRef.current = ({ width, height, dpr }) => {
 				if (width === 0 || height === 0) return;
-				renderer.dpr = dpr;
-				renderer.setSize(width, height);
+				const l = live.current;
+				let rw = width;
+				let rh = height;
+				let rdpr = dpr;
+				if (l.ascii) {
+					// The visible output is only the ASCII grid, so raymarching
+					// more fragments than grid × scale is pure waste (~90% cut
+					// in hero: 1400×800 → ~375×210). Grid aspect is preserved,
+					// so sampling stays distortion-free.
+					const g = asciiGrid(width, height, l.asciiFontSize);
+					rw = Math.max(1, Math.round(g.cols * ASCII_RENDER_SCALE));
+					rh = Math.max(1, Math.round(g.rows * ASCII_RENDER_SCALE));
+					rdpr = 1;
+				}
+				renderer.dpr = rdpr;
+				renderer.setSize(rw, rh);
+				if (l.ascii) {
+					// Buffer is tiny but the canvas stays invisible; keep its
+					// hit-area full-container so desktop drag-orbit still works.
+					gl!.canvas.style.width = "100%";
+					gl!.canvas.style.height = "100%";
+				}
 				const bw = gl!.drawingBufferWidth;
 				const bh = gl!.drawingBufferHeight;
 				const hw = Math.max(1, bw >> 1);
@@ -686,6 +843,7 @@ const BlackHole: React.FC<BlackHoleProps> = ({
 			let accumulatedTime = 0;
 			let lastTimestamp = -1;
 			let timeScale = paused ? 0 : 1;
+			let lastRenderT = -1;
 			let dragging = false;
 			let dragStartX = 0;
 			let dragStartY = 0;
@@ -738,6 +896,7 @@ const BlackHole: React.FC<BlackHoleProps> = ({
 				rayProgram.uniforms.uRotSpeed.value = l.rotationSpeed;
 				rayProgram.uniforms.uFocal.value =
 					1 / Math.tan((l.fov * 0.5 * Math.PI) / 180);
+				rayProgram.uniforms.uLimb.value = l.planetLimb;
 				rayProgram.uniforms.uDebug.value = DEBUG_INDEX[l.debug] ?? 0;
 				const [tr, tg, tb] = hexToRgb01(l.tint);
 				rayProgram.uniforms.uTint.value[0] = tr;
@@ -824,9 +983,129 @@ const BlackHole: React.FC<BlackHoleProps> = ({
 
 				syncUniforms();
 				const restless = updateCamera(cdt, t);
-				renderPasses();
+				if (lastRenderT < 0 || t - lastRenderT >= RENDER_INTERVAL_MS) {
+					lastRenderT = t;
+					renderPasses();
+					// Synchronous readback in the same tick: without
+					// preserveDrawingBuffer the drawing buffer is only valid here.
+					drawAsciiOverlay();
+				}
 
 				if (l.paused && timeScale < 1e-3 && !restless) return false;
+			}
+
+			// Glyph sprites: one pre-rendered tile per luminance bucket, rebuilt
+			// only when ramp/size/dpr change. Per-frame blits replace ~12k
+			// fillText + rgb() strings + fillStyle swaps (the old ceiling).
+			function getSprites(
+				chars: string,
+				fontSize: number,
+				dpr: number,
+			): (HTMLCanvasElement | null)[] {
+				const key = `${chars}|${fontSize}|${dpr}`;
+				const cached = spritesRef.current;
+				if (cached.key === key) return cached.sprites;
+				const g = asciiGrid(8, 8, fontSize);
+				const sprites: (HTMLCanvasElement | null)[] = [];
+				const last = chars.length - 1;
+				for (let b = 0; b < ASCII_LEVELS; b++) {
+					const mid = (b + 0.5) / ASCII_LEVELS;
+					const c = chars[Math.min(last, (mid * last) | 0)];
+					if (!c || c === " ") {
+						sprites.push(null);
+						continue;
+					}
+					const tile = document.createElement("canvas");
+					tile.width = Math.max(1, Math.round(g.cellW * dpr));
+					tile.height = Math.max(1, Math.round(g.cellH * dpr));
+					const tctx = tile.getContext("2d")!;
+					tctx.font = `${fontSize * dpr}px ui-monospace, SFMono-Regular, Menlo, monospace`;
+					tctx.textBaseline = "top";
+					// Brightest buckets read WHITE (warm) instead of gray so the
+					// disk core pops; everything below stays neutral gray.
+					const v = Math.round(mid * 255);
+					let rr = v;
+					let gg = v;
+					let bb = v;
+					if (b >= ASCII_LEVELS - 2) {
+						rr = 255;
+						gg = 246;
+						bb = 235;
+					} else if (b >= ASCII_LEVELS - 4) {
+						rr = Math.min(255, v + 10);
+						gg = Math.min(255, v + 2);
+						bb = Math.max(0, v - 8);
+					}
+					tctx.fillStyle = `rgb(${rr},${gg},${bb})`;
+					tctx.fillText(c, 0, 0);
+					sprites.push(tile);
+				}
+				spritesRef.current = { key, sprites };
+				return sprites;
+			}
+			function drawAsciiOverlay() {
+				const l = live.current;
+				const asciiOn = l.ascii && asciiCanvasRef.current && !useFallback;
+				const glCanvas = gl!.canvas as HTMLCanvasElement;
+				if (lastAsciiOn !== !!asciiOn) {
+					lastAsciiOn = !!asciiOn;
+					glCanvas.style.opacity = asciiOn ? "0" : "";
+					if (asciiCanvasRef.current)
+						asciiCanvasRef.current.style.display = asciiOn ? "block" : "none";
+				}
+				if (!asciiOn) return;
+				const overlay = asciiCanvasRef.current!;
+				const sampler = sampleCanvasRef.current!;
+				const cw = container.clientWidth;
+				const ch = container.clientHeight;
+				if (cw === 0 || ch === 0) return;
+				const chars = l.asciiChars.length > 0 ? l.asciiChars : DEFAULT_ASCII_CHARS;
+				const { cols, rows, cellW, cellH, fs } = asciiGrid(
+					cw,
+					ch,
+					l.asciiFontSize,
+				);
+				const sctx = sampler.getContext("2d", { willReadFrequently: true });
+				if (!sctx) return;
+				if (sampler.width !== cols || sampler.height !== rows) {
+					sampler.width = cols;
+					sampler.height = rows;
+				}
+				sctx.drawImage(glCanvas, 0, 0, cols, rows);
+				let pixels: Uint8ClampedArray;
+				try {
+					pixels = sctx.getImageData(0, 0, cols, rows).data;
+				} catch {
+					return;
+				}
+				const dpr = Math.min(window.devicePixelRatio || 1, maxDpr);
+				const bw = Math.round(cw * dpr);
+				const bh = Math.round(ch * dpr);
+				if (overlay.width !== bw || overlay.height !== bh) {
+					overlay.width = bw;
+					overlay.height = bh;
+				}
+				const actx = overlay.getContext("2d");
+				if (!actx) return;
+				actx.setTransform(dpr, 0, 0, dpr, 0, 0);
+				actx.fillStyle = "#000";
+				actx.fillRect(0, 0, cw, ch);
+				const sprites = getSprites(chars, fs, dpr);
+				for (let row = 0; row < rows; row++) {
+					for (let col = 0; col < cols; col++) {
+						const i = (row * cols + col) * 4;
+						const lum =
+							(pixels[i]! * 0.2126 +
+								pixels[i + 1]! * 0.7152 +
+								pixels[i + 2]! * 0.0722) /
+							255;
+						if (lum <= ASCII_THRESHOLD) continue;
+						const sprite =
+							sprites[Math.min(ASCII_LEVELS - 1, (lum * ASCII_LEVELS) | 0)];
+						if (!sprite) continue;
+						actx.drawImage(sprite, col * cellW, row * cellH, cellW, cellH);
+					}
+				}
 			}
 			drawRef.current = update;
 
@@ -881,7 +1160,41 @@ const BlackHole: React.FC<BlackHoleProps> = ({
 				} catch {
 				}
 			}
+			// Hover tracking: steer the orbit toward the mouse without a drag.
+			// Writes targets only — the existing lerp + IDLE_MS return-to-orbit
+			// do the rest, so this stays a few cheap assignments per event.
+			function onHoverMove(e: PointerEvent) {
+				const l = live.current;
+				if (!l.trackMouse || dragging) return;
+				if (e.pointerType !== "mouse" || l.paused) return;
+				const rect = canvas.getBoundingClientRect();
+				if (rect.width === 0 || rect.height === 0) return;
+				const nx = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+				const ny = ((e.clientY - rect.top) / rect.height) * 2 - 1;
+				const c = cam.current;
+				if (!c.manualActive) {
+					c.manualR = c.r;
+					c.manualActive = true;
+				}
+				const newAz = c.orbitAz + nx * TRACK_AZ;
+				if (Math.abs(newAz - prevTargetAz) > 0.01) {
+					c.spinDir = Math.sign(newAz - prevTargetAz);
+				}
+				prevTargetAz = newAz;
+				c.targetAz = newAz;
+				c.targetInc = Math.min(
+					168,
+					Math.max(12, l.camInclination - ny * TRACK_INC),
+				);
+				c.lastInteract = performance.now();
+				loop.start();
+			}
+			function onHoverLeave() {
+				cam.current.lastInteract = performance.now();
+			}
 			canvas.addEventListener("pointerdown", onPointerDown);
+			canvas.addEventListener("pointermove", onHoverMove);
+			canvas.addEventListener("pointerleave", onHoverLeave);
 			window.addEventListener("pointermove", onPointerMove);
 			window.addEventListener("pointerup", onPointerUp);
 			window.addEventListener("pointercancel", onPointerUp);
@@ -890,9 +1203,16 @@ const BlackHole: React.FC<BlackHoleProps> = ({
 				drawRef.current = null;
 				measureRef.current = null;
 				canvas.removeEventListener("pointerdown", onPointerDown);
+				canvas.removeEventListener("pointermove", onHoverMove);
+				canvas.removeEventListener("pointerleave", onHoverLeave);
 				window.removeEventListener("pointermove", onPointerMove);
 				window.removeEventListener("pointerup", onPointerUp);
 				window.removeEventListener("pointercancel", onPointerUp);
+				if (asciiCanvasRef.current && container.contains(asciiCanvasRef.current))
+					container.removeChild(asciiCanvasRef.current);
+				asciiCanvasRef.current = null;
+				sampleCanvasRef.current = null;
+				spritesRef.current = { key: "", sprites: [] };
 				if (container.contains(gl!.canvas)) container.removeChild(gl!.canvas);
 			};
 		} catch (err) {
@@ -912,6 +1232,12 @@ const BlackHole: React.FC<BlackHoleProps> = ({
 	useEffect(() => {
 		if (!paused) loop.start();
 	}, [paused, loop]);
+
+	// ASCII render size derives from the ascii props, which don't re-run the
+	// GL init effect above — re-measure so the tiny buffer tracks prop flips.
+	useEffect(() => {
+		loop.resize();
+	}, [ascii, asciiFontSize, asciiChars, loop]);
 
 	useEffect(() => {
 		if (autoOrbit) cam.current.manualActive = false;

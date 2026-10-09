@@ -18,6 +18,10 @@
     "service1desc": "Web, mobile & custom software",
     "service2desc": "Grow traffic, revenue & operations",
     "service3desc": "Campaigns that convert",
+    "aboutStory": "Our Story",
+    "aboutStoryDesc": "Who we are and what we do",
+    "aboutTeam": "Our Team",
+    "aboutTeamDesc": "The people behind the code",
     "language": "EN",
     "openMenu": "Open menu",
     "closeMenu": "Close menu"
@@ -271,19 +275,33 @@
     },
     "team": {
       "heading": "Meet the Team",
-      "description": "The people behind the code",
+      "description": "A compact senior studio. Whoever you meet on the first call is who designs, builds, and ships your work.",
       "foundersLabel": "Founders",
       "foundersDescription": "Two operators turned builders, shipping product with the taste and tempo that earned our earliest customers their next decade of trust.",
       "viewProfile": "View Profile",
       "member1": {
         "name": "Yusuf Hidral",
         "role": "CEO",
-        "image": "/img/founders/ceo.jpeg"
+        "image": "/img/founders/ceo.jpeg",
+        "city": "Jakarta",
+        "bio": "Operator turned builder, leading product vision and partnerships.",
+        "tags": ["Strategy", "Leadership"]
       },
       "member2": {
         "name": "Ranaufal Muha",
         "role": "CTO",
-        "image": "/img/founders/cto.webp"
+        "image": "/img/founders/cto.webp",
+        "city": "Padang",
+        "bio": "Leads engineering with a taste for clean architecture and fast shipping.",
+        "tags": ["Engineering", "Architecture"]
+      },
+      "member3": {
+        "name": "Fajri Annafi",
+        "role": "COO",
+        "image": "/img/founders/coo.jpeg",
+        "city": "Jakarta",
+        "bio": "Runs operations so product and engineering can ship without friction.",
+        "tags": ["Operations", "Growth"]
       }
     },
     "timeline": {
@@ -418,17 +436,23 @@
       "subtitle": "Great Together",
       "description": "Have a project in mind? We'd love to hear about it. Share your vision and we'll help you bring it to life."
     },
-    "form": {
+    "info": {
       "heading": "Get in Touch",
-      "description": "Ready to start your next project? Fill out the form and we'll get back to you within 24 hours.",
-      "firstName": "First name",
-      "lastName": "Last name",
-      "email": "Email",
-      "company": "Company",
-      "message": "Tell us about your project...",
-      "privacy": "I have read and understood the",
-      "privacyLink": "privacy policy",
-      "submit": "Send Message"
+      "description": "Reach us through any of these channels — we'll get back to you within 24 hours.",
+      "email": "info@orphicgavel.com",
+      "locationLabel": "Visit Us",
+      "locationLines": [
+        "Indonesia Stock Exchange, Tower 2",
+        "17th Floor, Jl. Jend. Sudirman Kav. 52-53",
+        "Jakarta 12190, Indonesia"
+      ],
+      "directions": "Get Directions",
+      "emailLabel": "Email Us",
+      "emailNote": "For projects, partnerships & press",
+      "socialsLabel": "Follow Us",
+      "hoursLabel": "Office Hours",
+      "hoursLines": ["Monday – Friday", "09.00 – 18.00 WIB"],
+      "responseNote": "We usually reply within one business day."
     }
   },
   "Footer": {

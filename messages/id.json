@@ -18,6 +18,10 @@
     "service1desc": "Web, mobile & perangkat lunak kustom",
     "service2desc": "Tumbuhkan trafik, pendapatan & operasional",
     "service3desc": "Kampanye yang menghasilkan konversi",
+    "aboutStory": "Cerita Kami",
+    "aboutStoryDesc": "Siapa kami dan apa yang kami lakukan",
+    "aboutTeam": "Tim Kami",
+    "aboutTeamDesc": "Orang-orang di balik kode",
     "language": "ID",
     "openMenu": "Buka menu",
     "closeMenu": "Tutup menu"
@@ -271,19 +275,33 @@
     },
     "team": {
       "heading": "Tim Kami",
-      "description": "Orang-orang di balik kode",
+      "description": "Studio senior yang ramping. Siapa pun yang Anda temui di panggilan pertama adalah yang merancang, membangun, dan mengirimkan karya Anda.",
       "foundersLabel": "Pendiri",
       "foundersDescription": "Dua operator yang beralih menjadi pembangun, menghadirkan produk dengan cita rasa dan tempo yang membuat pelanggan awal kami mempercayai kami selama satu dekade berikutnya.",
       "viewProfile": "Lihat Profil",
       "member1": {
         "name": "Yusuf Hidral",
         "role": "CEO",
-        "image": "/img/founders/ceo.jpeg"
+        "image": "/img/founders/ceo.jpeg",
+        "city": "Jakarta",
+        "bio": "Operator yang menjadi pembangun, memimpin visi produk dan kemitraan.",
+        "tags": ["Strategi", "Kepemimpinan"]
       },
       "member2": {
         "name": "Ranaufal Muha",
         "role": "CTO",
-        "image": "/img/founders/cto.webp"
+        "image": "/img/founders/cto.webp",
+        "city": "Padang",
+        "bio": "Memimpin engineering dengan arsitektur bersih dan pengiriman cepat.",
+        "tags": ["Engineering", "Arsitektur"]
+      },
+      "member3": {
+        "name": "Fajri Annafi",
+        "role": "COO",
+        "image": "/img/founders/coo.jpeg",
+        "city": "Jakarta",
+        "bio": "Menjalankan operasional agar produk dan engineering bisa mengirim tanpa hambatan.",
+        "tags": ["Operasional", "Growth"]
       }
     },
     "timeline": {
@@ -418,17 +436,23 @@
       "subtitle": "Sesuatu yang Hebat",
       "description": "Punya proyek dalam pikiran? Kami ingin mendengarnya. Bagikan visi Anda dan kami akan membantu mewujudkannya."
     },
-    "form": {
+    "info": {
       "heading": "Hubungi Kami",
-      "description": "Siap memulai proyek berikutnya? Isi formulir dan kami akan merespons dalam 24 jam.",
-      "firstName": "Nama depan",
-      "lastName": "Nama belakang",
-      "email": "Email",
-      "company": "Perusahaan",
-      "message": "Ceritakan tentang proyek Anda...",
-      "privacy": "Saya telah membaca dan memahami",
-      "privacyLink": "kebijakan privasi",
-      "submit": "Kirim Pesan"
+      "description": "Hubungi kami melalui kanal mana pun — kami akan merespons dalam 24 jam.",
+      "email": "info@orphicgavel.com",
+      "locationLabel": "Kunjungi Kami",
+      "locationLines": [
+        "Bursa Efek Indonesia, Tower 2",
+        "Lantai 17, Jl. Jend. Sudirman Kav. 52-53",
+        "Jakarta 12190, Indonesia"
+      ],
+      "directions": "Lihat Rute",
+      "emailLabel": "Email Kami",
+      "emailNote": "Untuk proyek, kemitraan & pers",
+      "socialsLabel": "Ikuti Kami",
+      "hoursLabel": "Jam Operasional",
+      "hoursLines": ["Senin – Jumat", "09.00 – 18.00 WIB"],
+      "responseNote": "Kami biasanya membalas dalam satu hari kerja."
     }
   },
   "Footer": {
