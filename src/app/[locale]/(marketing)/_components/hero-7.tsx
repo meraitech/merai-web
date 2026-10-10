@@ -3,26 +3,40 @@
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { useEffect, useRef } from "react";
 import { Link } from "@/shared/components/ui/link";
-import { HeroBlackHole } from "./black-hole/hero-black-hole";
+import { createSea } from "./sea";
 
 export function Hero7() {
   const t = useTranslations("Home.hero");
+  const sectionRef = useRef<HTMLElement>(null);
+  const stageRef = useRef<HTMLDivElement>(null);
+  const phraseRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const stage = stageRef.current;
+    const phrase = phraseRef.current;
+    if (!section || !stage || !phrase) return;
+    const sea = createSea(section, stage, phrase);
+    return () => sea?.destroy();
+  }, []);
 
   return (
     <section
+      ref={sectionRef}
       id="hero"
       aria-label="Hero"
-      className="relative isolate m-4 flex h-[80dvh] min-h-[700px] max-h-[900px] flex-col overflow-hidden rounded-[1.5rem] bg-black shadow-[0_1px_2px_rgba(0,0,0,0.04),0_12px_32px_-12px_rgba(0,0,0,0.14),0_40px_80px_-32px_rgba(0,0,0,0.18)] dark:shadow-[0_40px_80px_-32px_rgba(0,0,0,0.6)]"
+      className="relative isolate m-4 flex h-[80dvh] min-h-[700px] max-h-[900px] touch-pan-y flex-col overflow-hidden rounded-[1.5rem] bg-black shadow-[0_1px_2px_rgba(0,0,0,0.04),0_12px_32px_-12px_rgba(0,0,0,0.14),0_40px_80px_-32px_rgba(0,0,0,0.18)] dark:shadow-[0_40px_80px_-32px_rgba(0,0,0,0.6)]"
     >
-      <HeroBlackHole />
+      <div ref={stageRef} aria-hidden="true" className="pointer-events-none absolute inset-0" />
 
       <span
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 z-[2] rounded-[inherit] border border-white/12"
       />
 
-      <div className="relative z-[1] mx-auto flex w-full max-w-[1400px] flex-1 flex-col items-start justify-center px-4 py-24 text-left sm:mx-0 sm:max-w-[44%] sm:px-6 sm:py-28 lg:px-8">
+      <div className="relative z-[1] mx-auto flex w-full max-w-[1400px] flex-1 -translate-y-8 flex-col items-center justify-center px-4 py-24 text-center sm:px-6 sm:py-28 lg:px-8">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -31,7 +45,7 @@ export function Hero7() {
         >
           {t("line1")}
           <br />
-          {t("line2")}
+          <span ref={phraseRef}>{t("line2")}</span>
         </motion.h1>
 
         <motion.p

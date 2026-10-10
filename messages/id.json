@@ -28,14 +28,14 @@
   },
   "Home": {
     "hero": {
-      "line1": "Kami Membangun",
-      "line2": "Perangkat Lunak Berkualitas",
-      "description": "Dari konsep hingga peluncuran, kami merekayasa solusi web dan mobile khusus yang membantu bisnis berkembang lebih cepat, bekerja lebih cerdas, dan menjangkau lebih jauh.",
+      "line1": "Perangkat lunak, direkayasa",
+      "line2": "untuk menumbuhkan bisnis Anda.",
+      "description": "Aplikasi web dan mobile kustom, dirancang dan dibangun untuk berkembang bersama Anda.",
       "cta": "Mulai Proyek Anda"
     },
     "brief": {
       "label": "Brief",
-      "quote": "Anda bawa brief-nya. Kami bawa insinyur, desainer, dan obsesi terhadap detail — dan mengubah ide Anda menjadi perangkat lunak yang disukai pengguna.",
+      "quote": "Anda bawa brief-nya. Kami merancang, membangun, dan meluncurkan perangkat lunak kustom.",
       "caption": "Dari brief hingga peluncuran. Dalam hitungan minggu, bukan kuartal.",
       "imageAlt": "Tim produk berkolaborasi di sekitar meja yang dipenuhi sketsa dan laptop."
     },
@@ -273,6 +273,31 @@
       "line2": "Keunggulan Digital",
       "description": "Kami adalah tim insinyur, desainer, dan pemecah masalah yang bersemangat membangun perangkat lunak yang membuat perbedaan. Berbasis di Indonesia, melayani klien di seluruh dunia."
     },
+    "morph": {
+      "prefix": "Kami selalu",
+      "description": "Empat kebiasaan yang kami pegang saat merekrut, bekerja, dan saling mengingatkan.",
+      "listLabel": "Nilai-nilai kami",
+      "item1": {
+        "word": "penasaran.",
+        "name": "Penasaran",
+        "line": "Kami bertanya satu kali lagi sebelum membangun apa pun."
+      },
+      "item2": {
+        "word": "jujur.",
+        "name": "Jujur",
+        "line": "Kami menyampaikan hal sulit sejak awal, dengan baik dan langsung."
+      },
+      "item3": {
+        "word": "sabar.",
+        "name": "Sabar",
+        "line": "Kami lebih memilih mengirim yang benar daripada sekadar cepat."
+      },
+      "item4": {
+        "word": "baik.",
+        "name": "Baik",
+        "line": "Kami berprasangka baik dan meninggalkan segalanya lebih baik dari saat kami menemukannya."
+      }
+    },
     "team": {
       "heading": "Tim Kami",
       "description": "Studio senior yang ramping. Siapa pun yang Anda temui di panggilan pertama adalah yang merancang, membangun, dan mengirimkan karya Anda.",
@@ -338,9 +363,75 @@
       }
     }
   },
+  "Services": {
+    "hero": {
+      "eyebrow": "Layanan Kami",
+      "line1": "Perangkat lunak end-to-end",
+      "line2": "untuk setiap industri",
+      "description": "Dari sketsa pertama hingga skala besar — satu tim untuk perangkat lunak, pertumbuhan, dan brand Anda."
+    },
+    "morph": {
+      "prefix": "Kami",
+      "listLabel": "Yang kami kerjakan",
+      "item1": {
+        "word": "desain.",
+        "name": "Desain",
+        "line": "Antarmuka yang disukai pengguna, dari sketsa pertama hingga design system."
+      },
+      "item2": {
+        "word": "bangun.",
+        "name": "Bangun",
+        "line": "Engineering senior dan arsitektur bersih, dari ujung ke ujung."
+      },
+      "item3": {
+        "word": "luncurkan.",
+        "name": "Luncurkan",
+        "line": "Dari MVP hingga produksi dalam hitungan minggu, bukan kuartal."
+      },
+      "item4": {
+        "word": "tumbuh.",
+        "name": "Tumbuh",
+        "line": "Sistem dan brand yang tumbuh bersama bisnis Anda."
+      }
+    },
+    "industries": {
+      "label": "Industri yang kami layani",
+      "item1": "Layanan keuangan",
+      "item2": "Kesehatan dan ilmu hayati",
+      "item3": "Ritel dan konsumen",
+      "item4": "Manufaktur dan industri",
+      "item5": "Teknologi dan SaaS",
+      "item6": "Pendidikan",
+      "item7": "Logistik dan mobilitas",
+      "item8": "Energi dan utilitas",
+      "item9": "Sektor publik dan institusi",
+      "item10": "Startup dan scale-up",
+      "item11": "Layanan profesional",
+      "item12": "Media dan hospitalitas"
+    }
+  },
   "Works": {
     "heading": "Karya Pilihan",
     "subheading": "Proyek yang kami banggakan",
+    "morph": {
+      "prefix": "Karya",
+      "listLabel": "Yang kami buat",
+      "item1": {
+        "word": "identitas.",
+        "name": "Identitas",
+        "line": "Brand yang berpendirian — penamaan, logo, dan sistem."
+      },
+      "item2": {
+        "word": "kampanye.",
+        "name": "Kampanye",
+        "line": "Karya yang menarik perhatian — peluncuran, konten, dan performa."
+      },
+      "item3": {
+        "word": "produk.",
+        "name": "Produk",
+        "line": "Perangkat lunak yang diandalkan — web, mobile, dan platform."
+      }
+    },
     "filterLabel": "Filter",
     "all": "Semua",
     "viewCaseStudy": "Lihat studi kasus",
@@ -436,6 +527,25 @@
       "subtitle": "Sesuatu yang Hebat",
       "description": "Punya proyek dalam pikiran? Kami ingin mendengarnya. Bagikan visi Anda dan kami akan membantu mewujudkannya."
     },
+    "morph": {
+      "prefix": "Ceritakan",
+      "listLabel": "Cara memulai",
+      "item1": {
+        "word": "ide Anda.",
+        "name": "Ide Anda",
+        "line": "Satu paragraf sudah cukup — kami akan menanyakan hal yang tepat."
+      },
+      "item2": {
+        "word": "target Anda.",
+        "name": "Target Anda",
+        "line": "Seperti apa kesuksesan enam bulan dari sekarang?"
+      },
+      "item3": {
+        "word": "jadwal Anda.",
+        "name": "Jadwal Anda",
+        "line": "MVP dalam hitungan minggu atau mitra jangka panjang — Anda yang menentukan."
+      }
+    },
     "info": {
       "heading": "Hubungi Kami",
       "description": "Hubungi kami melalui kanal mana pun — kami akan merespons dalam 24 jam.",
@@ -503,6 +613,25 @@
   "News": {
     "heading": "Berita terbaru",
     "description": "Catatan proses, sudut pandang engineering, dan kabar studio dari tim Merai.",
+    "morph": {
+      "prefix": "Terkini",
+      "listLabel": "Yang kami tulis",
+      "item1": {
+        "word": "cerita.",
+        "name": "Cerita",
+        "line": "Catatan dari studio — proses, orang, dan karya."
+      },
+      "item2": {
+        "word": "wawasan.",
+        "name": "Wawasan",
+        "line": "Yang kami pelajari — teknologi, desain, dan strategi."
+      },
+      "item3": {
+        "word": "kabar.",
+        "name": "Kabar",
+        "line": "Peluncuran dan pengumuman dari Merai."
+      }
+    },
     "viewAll": "Lihat semua berita",
     "backToNews": "Kembali ke berita",
     "photoCredit": "Kredit foto",

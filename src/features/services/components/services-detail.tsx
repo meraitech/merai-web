@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
+import type { ReactNode } from "react";
 import { Link as UiLink } from "@/shared/components/ui/link";
 import { Container } from "@/shared/components/ui/container";
 import { SectionHeading } from "@/shared/components/ui/section-heading";
@@ -11,7 +12,6 @@ import { ServiceSubList } from "@/shared/components/ui/service-sub-list";
 const CARDS = [
   {
     image:
-      // "https://images.unsplash.com/photo-1672478384289-af60579cadd6?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://images.unsplash.com/photo-1574359587026-daf1bfd26baa?q=80&w=1740&auto=format&fit=crop",
   },
   {
@@ -24,7 +24,9 @@ const CARDS = [
   },
 ];
 
-export default function Features6() {
+// 1:1 copy of the landing services section (reads the same Home.services
+// copy) so the standalone page never drifts from the homepage.
+export function ServicesDetail(): ReactNode {
   const t = useTranslations("Home.services");
 
   const getItems = (index: number): string[] => {
@@ -49,7 +51,7 @@ export default function Features6() {
   });
 
   return (
-    <section className="w-full scroll-mt-20" id="services">
+    <section className="w-full">
       <Container spacing="generous">
         <SectionHeading
           title={t("headingLine1")}

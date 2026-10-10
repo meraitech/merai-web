@@ -1,4 +1,5 @@
-import { setRequestLocale } from "next-intl/server";
+import { setRequestLocale, getTranslations } from "next-intl/server";
+import { pageMetadata } from "@/i18n/metadata";
 import { Hero7 } from "./_components/hero-7";
 import { Brief } from "./_components/brief";
 import { TrustedBy } from "./_components/trusted-by";
@@ -15,6 +16,17 @@ type Props = {
   params: Promise<{ locale: string }>;
 };
 
+export async function generateMetadata({ params }: Props) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Home.hero" });
+  return pageMetadata({
+    locale,
+    path: "",
+    title: `${t("line1")} ${t("line2")}`,
+    description: t("description"),
+  });
+}
+
 export default async function page({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
@@ -23,12 +35,12 @@ export default async function page({ params }: Props) {
     <div>
       <Hero7 />
       <TrustedBy />
-      <Brief />
       <Features6 />
       <Showcase5 />
       <FeatureCards />
       <FeatureHighlight />
       <HowItWorksCarousel />
+      <Brief />
       <SocialProof5 />
       <News />
       <FAQ />

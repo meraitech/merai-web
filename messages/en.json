@@ -28,14 +28,14 @@
   },
   "Home": {
     "hero": {
-      "line1": "We Build Software",
-      "line2": "That Drives Growth",
-      "description": "From concept to launch, we engineer custom web and mobile solutions that help businesses scale faster, work smarter, and reach further.",
+      "line1": "Software, engineered",
+      "line2": "to grow your business.",
+      "description": "Custom web and mobile apps, designed and built to scale with you.",
       "cta": "Start Your Project"
     },
     "brief": {
       "label": "The brief",
-      "quote": "You bring the brief. We bring the engineers, the designers, and the obsession — and turn your idea into software people love to use.",
+      "quote": "You bring the brief. We design, build, and ship custom software.",
       "caption": "From brief to launch. In weeks, not quarters.",
       "imageAlt": "A product team collaborating around a table covered in sketches and laptops."
     },
@@ -273,6 +273,31 @@
       "line2": "Excellence",
       "description": "We are a team of engineers, designers, and problem-solvers passionate about building software that makes a difference. Based in Indonesia, serving clients worldwide."
     },
+    "morph": {
+      "prefix": "We stay",
+      "description": "Four habits we hire for, work by and hold each other to.",
+      "listLabel": "Our values",
+      "item1": {
+        "word": "curious.",
+        "name": "Curious",
+        "line": "We ask one more question before we build anything."
+      },
+      "item2": {
+        "word": "candid.",
+        "name": "Candid",
+        "line": "We say the hard thing early, kindly and in person."
+      },
+      "item3": {
+        "word": "patient.",
+        "name": "Patient",
+        "line": "We would rather ship it right than ship it on Friday."
+      },
+      "item4": {
+        "word": "kind.",
+        "name": "Kind",
+        "line": "We assume good intent and leave things better than we found them."
+      }
+    },
     "team": {
       "heading": "Meet the Team",
       "description": "A compact senior studio. Whoever you meet on the first call is who designs, builds, and ships your work.",
@@ -338,9 +363,75 @@
       }
     }
   },
+  "Services": {
+    "hero": {
+      "eyebrow": "Our Services",
+      "line1": "End-to-end software",
+      "line2": "for every industry",
+      "description": "From first sketch to scale — one team for your software, your growth, and your brand."
+    },
+    "morph": {
+      "prefix": "We",
+      "listLabel": "What we do",
+      "item1": {
+        "word": "design.",
+        "name": "Design",
+        "line": "Interfaces your users love, from first sketch to design system."
+      },
+      "item2": {
+        "word": "build.",
+        "name": "Build",
+        "line": "Senior engineering and clean architecture, end to end."
+      },
+      "item3": {
+        "word": "ship.",
+        "name": "Ship",
+        "line": "MVP to production in weeks, not quarters."
+      },
+      "item4": {
+        "word": "scale.",
+        "name": "Scale",
+        "line": "Systems and brands that grow with your business."
+      }
+    },
+    "industries": {
+      "label": "Industries we serve",
+      "item1": "Financial services",
+      "item2": "Healthcare and life sciences",
+      "item3": "Retail and consumer",
+      "item4": "Manufacturing and industrials",
+      "item5": "Technology and SaaS",
+      "item6": "Education",
+      "item7": "Logistics and mobility",
+      "item8": "Energy and utilities",
+      "item9": "Public sector and institutions",
+      "item10": "Startups and scale-ups",
+      "item11": "Professional services",
+      "item12": "Media and hospitality"
+    }
+  },
   "Works": {
     "heading": "Selected Work",
     "subheading": "Projects we are proud of",
+    "morph": {
+      "prefix": "Selected",
+      "listLabel": "What we make",
+      "item1": {
+        "word": "identities.",
+        "name": "Identity",
+        "line": "Brands with a point of view — naming, logo, and systems."
+      },
+      "item2": {
+        "word": "campaigns.",
+        "name": "Campaign",
+        "line": "Work that gets noticed — launches, content, and performance."
+      },
+      "item3": {
+        "word": "products.",
+        "name": "Product",
+        "line": "Software people rely on — web, mobile, and platforms."
+      }
+    },
     "filterLabel": "Filter",
     "all": "All",
     "viewCaseStudy": "View case study",
@@ -436,6 +527,25 @@
       "subtitle": "Great Together",
       "description": "Have a project in mind? We'd love to hear about it. Share your vision and we'll help you bring it to life."
     },
+    "morph": {
+      "prefix": "Tell us",
+      "listLabel": "How it starts",
+      "item1": {
+        "word": "your idea.",
+        "name": "Your idea",
+        "line": "A paragraph is enough — we'll ask the right questions."
+      },
+      "item2": {
+        "word": "your goals.",
+        "name": "Your goals",
+        "line": "What does success look like six months from now?"
+      },
+      "item3": {
+        "word": "your timeline.",
+        "name": "Your timeline",
+        "line": "MVP in weeks or a long-term partner — you decide."
+      }
+    },
     "info": {
       "heading": "Get in Touch",
       "description": "Reach us through any of these channels — we'll get back to you within 24 hours.",
@@ -503,6 +613,25 @@
   "News": {
     "heading": "Latest news",
     "description": "Process notes, engineering takes, and studio updates from the Merai team.",
+    "morph": {
+      "prefix": "Latest",
+      "listLabel": "What we write",
+      "item1": {
+        "word": "stories.",
+        "name": "Stories",
+        "line": "Notes from the studio — process, people, and craft."
+      },
+      "item2": {
+        "word": "insights.",
+        "name": "Insights",
+        "line": "What we're learning — technology, design, and strategy."
+      },
+      "item3": {
+        "word": "updates.",
+        "name": "Updates",
+        "line": "Launches and announcements from Merai."
+      }
+    },
     "viewAll": "View all news",
     "backToNews": "Back to news",
     "photoCredit": "Photo credit",

@@ -7,13 +7,19 @@ import { ArrowUpRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { works } from "@/features/works/data/works";
 import { Container } from "@/shared/components/ui/container";
-import { SectionHeading } from "@/shared/components/ui/section-heading";
+import { MorphHero, type MorphWord } from "@/shared/components/morph-words/morph-words";
 
 const filters = ["All", "Identity", "Campaign", "Product"] as const;
 
 export default function Showcase4() {
   const t = useTranslations("Works");
+  const tm = useTranslations("Works.morph");
   const [active, setActive] = useState<(typeof filters)[number]>("All");
+  const words: MorphWord[] = [1, 2, 3].map((i) => ({
+    word: tm(`item${i}.word`),
+    name: tm(`item${i}.name`),
+    line: tm(`item${i}.line`),
+  }));
 
   const visible =
     active === "All"
@@ -22,14 +28,14 @@ export default function Showcase4() {
 
   return (
     <section className="w-full min-h-screen bg-white dark:bg-neutral-950">
+      <h1 className="sr-only">{`${t("heading")} — ${t("subheading")}`}</h1>
+      <MorphHero
+        prefix={tm("prefix")}
+        words={words}
+        description={t("subheading")}
+        className="pb-10 lg:pb-16"
+      />
       <Container spacing="generous">
-        <SectionHeading
-          align="left"
-          eyebrow={t("heading")}
-          title={t("subheading")}
-          className="mb-10 sm:mb-14"
-        />
-
         <div className="flex flex-col sm:flex-row sm:items-center gap-4 pt-6 border-t border-neutral-200 dark:border-neutral-800">
           <span className="text-xs tracking-[0.2em] uppercase text-neutral-500 dark:text-neutral-500 font-medium shrink-0">
             {t("filterLabel")}

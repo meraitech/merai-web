@@ -5,6 +5,8 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
 const nextConfig: NextConfig = {
   output: "export",
+  // Allow dev access (incl. HMR websocket) via the LAN IP.
+  allowedDevOrigins: ["192.168.100.145"],
   experimental: {
     viewTransition: true,
   },

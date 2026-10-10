@@ -1,8 +1,8 @@
-import About1 from "@/features/about/components/about-1";
-import { AboutHero } from "@/features/about/components/about-hero";
-import React from "react";
 import { setRequestLocale, getTranslations } from "next-intl/server";
-import About6 from "@/features/about/components/about-6";
+import { ServicesHero } from "@/features/services/components/services-hero";
+import { ServicesDetail } from "@/features/services/components/services-detail";
+import CTA from "@/shared/components/common/cta";
+import FAQ from "@/shared/components/common/faq";
 import { pageMetadata } from "@/i18n/metadata";
 
 type Props = {
@@ -11,25 +11,25 @@ type Props = {
 
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "About.hero" });
+  const t = await getTranslations({ locale, namespace: "Services.hero" });
   return pageMetadata({
     locale,
-    path: "/about",
+    path: "/services",
     title: `${t("line1")} ${t("line2")}`,
     description: t("description"),
   });
 }
 
-export default async function AboutPage({ params }: Props) {
+export default async function ServicesPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
 
   return (
     <div>
-      <AboutHero />
-      <About6 />
-      {/*  <About1 />  */}
-      {/* <Features5 /> */}
+      <ServicesHero />
+      <ServicesDetail />
+      <CTA />
+      <FAQ />
     </div>
   );
 }

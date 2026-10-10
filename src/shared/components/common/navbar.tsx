@@ -59,7 +59,7 @@ interface NavLink {
 const LINKS: readonly NavLink[] = [
   {
     labelKey: "services",
-    href: "#services",
+    href: "/services",
     items: [
       {
         titleKey: "service1",
