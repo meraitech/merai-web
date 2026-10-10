@@ -1,9 +1,8 @@
 "use client";
 
-import { Mail } from "lucide-react";
 import { motion, type Variants } from "motion/react";
 import { useTranslations } from "next-intl";
-import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import { FaGithub, FaInstagram, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
 const container: Variants = {
   hidden: {},
@@ -26,11 +25,18 @@ const grid: Variants = {
 
 const MEMBER_IDS = [1, 2, 3];
 
-const SOCIALS = [
-  { label: "GitHub", icon: FaGithub },
-  { label: "LinkedIn", icon: FaLinkedin },
-  { label: "Email", icon: Mail },
-];
+const SOCIAL_LINKS: Record<number, { label: string; href: string; icon: typeof FaGithub }[]> = {
+  1: [
+    { label: "Instagram", href: "https://www.instagram.com/ysfhdrl", icon: FaInstagram },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/yusufhidral", icon: FaLinkedin },
+  ],
+  2: [
+    { label: "Instagram", href: "https://www.instagram.com/ranaufalm/", icon: FaInstagram },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/ranaufalmuha/", icon: FaLinkedin },
+    { label: "GitHub", href: "https://github.com/ranaufalmuha", icon: FaGithub },
+    { label: "X", href: "https://x.com/ranaufalmuha", icon: FaXTwitter },
+  ],
+};
 
 export default function About6() {
   const t = useTranslations("About");
@@ -112,13 +118,14 @@ export default function About6() {
                 </div>
 
                 <div className="mt-auto flex items-center gap-1 pt-4">
-                  {SOCIALS.map((link) => {
+                  {(SOCIAL_LINKS[id] ?? []).map((link) => {
                     const Icon = link.icon;
                     return (
                       <a
                         key={link.label}
-                        // ponytail: placeholder hrefs, wire real profiles when available
-                        href="#"
+                        href={link.href}
+                        target="_blank"
+                        rel="noreferrer"
                         aria-label={`${name} on ${link.label}`}
                         className="inline-flex h-9 w-9 items-center justify-center rounded-full text-neutral-500 transition-colors duration-200 hover:bg-neutral-100 hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900/30 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-white dark:focus-visible:ring-white/40"
                       >

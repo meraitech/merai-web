@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "@/shared/styles/globals.css";
 import { SmoothScroll } from "@/shared/components/smooth-scroll";
+import { SplashScreen } from "@/shared/components/splash-screen";
 import { SITE_URL } from "@/i18n/metadata";
 
 const geistSans = Geist({
@@ -52,6 +53,7 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-white dark:bg-neutral-950`}
       >
+        <SplashScreen />
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>

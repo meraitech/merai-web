@@ -4,6 +4,22 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+@theme {
+  --animate-breath: breath 2.4s ease-in-out infinite;
+
+  @keyframes breath {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.85;
+    }
+  }
+}
+
 html.lenis,
 html.lenis body {
   height: auto;

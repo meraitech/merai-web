@@ -1,7 +1,6 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { ServicesHero } from "@/features/services/components/services-hero";
 import { ServicesDetail } from "@/features/services/components/services-detail";
-import CTA from "@/shared/components/common/cta";
 import FAQ from "@/shared/components/common/faq";
 import { pageMetadata } from "@/i18n/metadata";
 
@@ -28,7 +27,6 @@ export default async function ServicesPage({ params }: Props) {
     <div>
       <ServicesHero />
       <ServicesDetail />
-      <CTA />
       <FAQ />
     </div>
   );
