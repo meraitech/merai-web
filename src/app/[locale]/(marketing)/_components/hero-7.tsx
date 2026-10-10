@@ -5,7 +5,6 @@ import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useEffect, useRef } from "react";
 import { Link } from "@/shared/components/ui/link";
-import { createSea } from "./sea";
 
 export function Hero7() {
   const t = useTranslations("Home.hero");
@@ -18,8 +17,16 @@ export function Hero7() {
     const stage = stageRef.current;
     const phrase = phraseRef.current;
     if (!section || !stage || !phrase) return;
-    const sea = createSea(section, stage, phrase);
-    return () => sea?.destroy();
+    let sea: { destroy: () => void } | null = null;
+    let cancelled = false;
+    void import("./sea").then((m) => {
+      if (cancelled) return;
+      sea = m.createSea(section, stage, phrase);
+    });
+    return () => {
+      cancelled = true;
+      sea?.destroy();
+    };
   }, []);
 
   return (

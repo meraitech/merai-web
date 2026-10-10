@@ -4,14 +4,7 @@ import { softEase } from "@/shared/utils/motion";
 import { Link } from "@/shared/components/ui/link";
 import { useLocale, useTranslations } from "next-intl";
 import { usePathname } from "@/i18n/navigation";
-import {
-  Building2,
-  ChevronDown,
-  CodeXml,
-  Megaphone,
-  TrendingUp,
-  Users,
-} from "lucide-react";
+import { Building2, ChevronDown, Users } from "lucide-react";
 import { AnimatePresence, motion, type Transition } from "motion/react";
 import { useReducedMotion } from "motion/react";
 import {
@@ -57,33 +50,7 @@ interface NavLink {
 }
 
 const LINKS: readonly NavLink[] = [
-  {
-    labelKey: "services",
-    href: "/services",
-    items: [
-      {
-        titleKey: "service1",
-        descKey: "service1desc",
-        href: "/contact",
-        icon: CodeXml,
-        tint: "sky",
-      },
-      {
-        titleKey: "service2",
-        descKey: "service2desc",
-        href: "/contact",
-        icon: TrendingUp,
-        tint: "mint",
-      },
-      {
-        titleKey: "service3",
-        descKey: "service3desc",
-        href: "/contact",
-        icon: Megaphone,
-        tint: "amber",
-      },
-    ],
-  },
+  { labelKey: "services", href: "/services" },
   { labelKey: "works", href: "/works" },
   {
     labelKey: "about",

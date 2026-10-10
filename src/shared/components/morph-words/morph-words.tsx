@@ -2,8 +2,9 @@
 
 import { motion, useReducedMotion, type Variants } from "motion/react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import * as THREE from "three";
+import type * as THREE from "three";
 import { cn } from "@/shared/utils/cn";
+import { onIdle } from "@/shared/utils/idle";
 
 export interface MorphWord {
   word: string;
@@ -314,7 +315,8 @@ const pairUp = (a: Glyph[], b: Glyph[], reach: number) => {
   return { pairs, taken };
 };
 
-function createMorph(root: HTMLElement, settingsRef: { current: Settings }): Morph | null {
+async function createMorph(root: HTMLElement, settingsRef: { current: Settings }): Promise<Morph | null> {
+  const THREE: typeof import("three") = await import("three");
   const doc = root.ownerDocument;
   const view = doc.defaultView ?? window;
   const canvas = doc.createElement("canvas");
@@ -812,7 +814,8 @@ function createMorph(root: HTMLElement, settingsRef: { current: Settings }): Mor
   colours();
   build(true);
   render(now());
-  if (doc.fonts && doc.fonts.ready) {
+  // Navigations usually land with fonts cached — skip the second rasterize.
+  if (doc.fonts && doc.fonts.ready && doc.fonts.status !== "loaded") {
     void doc.fonts.ready.then(() => {
       if (destroyed) return;
       build(true);
@@ -903,10 +906,24 @@ export function MorphHero({
   useEffect(() => {
     const root = wordRef.current;
     if (!root) return;
-    const morph = createMorph(root, settingsRef);
-    morphRef.current = morph;
+    let active: Morph | null = null;
+    let cancelled = false;
+    // Context creation + rasterization block the route transition — let the
+    // paint land first, then start the engine.
+    const cancelIdle = onIdle(() => {
+      void createMorph(root, settingsRef).then((morph) => {
+        if (cancelled) {
+          morph?.destroy();
+          return;
+        }
+        active = morph;
+        morphRef.current = morph;
+      });
+    });
     return () => {
-      morph?.destroy();
+      cancelIdle();
+      cancelled = true;
+      active?.destroy();
       morphRef.current = null;
     };
     // Engine binds to the mounted sizer spans; words are page-static.

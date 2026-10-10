@@ -1,12 +1,19 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import dynamic from "next/dynamic";
 import { Link as UiLink } from "@/shared/components/ui/link";
 import { DotField } from "@/shared/components/dot-field";
-import { ImageHelix } from "@/shared/components/image-helix";
 import { Reveal } from "@/shared/components/reveal";
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/shared/components/ui/container";
+
+// Decorative canvas only (renders an empty aria-hidden div) — split out so
+// three.js never lands in the initial page bundle.
+const ImageHelix = dynamic(
+  () => import("@/shared/components/image-helix").then((m) => m.ImageHelix),
+  { ssr: false },
+);
 
 export default function CTA() {
   const t = useTranslations("CTA");

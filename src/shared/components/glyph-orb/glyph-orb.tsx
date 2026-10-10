@@ -9,8 +9,9 @@ import {
   type CSSProperties,
   type ReactNode,
 } from "react";
-import * as THREE from "three";
+import type * as THREE from "three";
 import { cn } from "@/shared/utils/cn";
+import { onIdle } from "@/shared/utils/idle";
 
 export type GlyphOrbMode = "auto" | "glow" | "ink";
 
@@ -448,7 +449,7 @@ void main() {
 }
 `;
 
-const buildAtlas = (charset: string, fontFamily: string, cell: number) => {
+const buildAtlas = (charset: string, fontFamily: string, cell: number, THREE: typeof import("three")) => {
   const ramp = Array.from(new Set(Array.from(charset))).slice(0, 180);
   if (ramp.length < 2) ramp.push(".", "#");
   const measure = document.createElement("canvas");
@@ -503,7 +504,8 @@ const buildAtlas = (charset: string, fontFamily: string, cell: number) => {
   return { texture, count: list.length, rows };
 };
 
-const createOrb = (root: HTMLDivElement, settingsRef: { current: Settings }): Controller | null => {
+const createOrb = async (root: HTMLDivElement, settingsRef: { current: Settings }): Promise<Controller | null> => {
+  const THREE: typeof import("three") = await import("three");
   const canvas = document.createElement("canvas");
   canvas.setAttribute("aria-hidden", "true");
   canvas.style.position = "absolute";
@@ -674,7 +676,7 @@ const createOrb = (root: HTMLDivElement, settingsRef: { current: Settings }): Co
     if (key === atlasKey && atlas) return;
     atlasKey = key;
     atlas?.texture.dispose();
-    atlas = buildAtlas(charset, font, cell);
+    atlas = buildAtlas(charset, font, cell, THREE);
     glyphMaterial.uniforms.uAtlas.value = atlas.texture;
     glyphMaterial.uniforms.uAtlasGrid.value.set(ATLAS_COLUMNS, atlas.rows);
     glyphMaterial.uniforms.uCount.value = atlas.count;
@@ -1180,10 +1182,24 @@ const GlyphOrb = forwardRef<GlyphOrbHandle, GlyphOrbProps>(function GlyphOrb(
   useEffect(() => {
     const root = rootRef.current;
     if (!root) return;
-    const controller = createOrb(root, settingsRef);
-    controllerRef.current = controller;
+    let active: Controller | null = null;
+    let cancelled = false;
+    // Context creation + atlas rasterization block the route transition —
+    // let the paint land first, then start the engine.
+    const cancelIdle = onIdle(() => {
+      void createOrb(root, settingsRef).then((controller) => {
+        if (cancelled) {
+          controller?.destroy();
+          return;
+        }
+        active = controller;
+        controllerRef.current = controller;
+      });
+    });
     return () => {
-      controller?.destroy();
+      cancelIdle();
+      cancelled = true;
+      active?.destroy();
       controllerRef.current = null;
     };
   }, []);
