@@ -23,7 +23,7 @@ const grid: Variants = {
   visible: { transition: { staggerChildren: 0.07 } },
 };
 
-const MEMBER_IDS = [1, 2, 3];
+const MEMBER_IDS = [1, 2];
 
 const SOCIAL_LINKS: Record<number, { label: string; href: string; icon: typeof FaGithub }[]> = {
   1: [
@@ -67,13 +67,12 @@ export default function About6() {
 
         <motion.div
           variants={grid}
-          className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3"
+          className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:mt-16 lg:grid-cols-2"
         >
           {MEMBER_IDS.map((id) => {
             const name = t(`team.member${id}.name`);
             const role = t(`team.member${id}.role`);
             const image = t(`team.member${id}.image`);
-            const city = t(`team.member${id}.city`);
             const bio = t(`team.member${id}.bio`);
             const tags = t.raw(`team.member${id}.tags`) as string[];
 
@@ -85,15 +84,12 @@ export default function About6() {
                 transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
                 className="flex flex-col rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition-[box-shadow,border-color] duration-300 hover:shadow-lg hover:shadow-neutral-950/5 dark:border-neutral-800 dark:bg-neutral-900 dark:shadow-none dark:hover:border-neutral-700 dark:hover:shadow-none"
               >
-                <div className="flex items-start justify-between gap-3">
+                <div className="flex items-start gap-3">
                   <img
                     src={image}
                     alt={name}
                     className="h-16 w-16 rounded-full object-cover ring-1 ring-black/5 dark:ring-white/10"
                   />
-                  <span className="inline-flex items-center rounded-full border border-neutral-200 bg-neutral-50 px-2.5 py-1 text-xs font-medium text-neutral-600 dark:border-neutral-700 dark:bg-neutral-800/60 dark:text-neutral-300">
-                    {city}
-                  </span>
                 </div>
 
                 <h3 className="mt-5 text-base font-semibold text-neutral-900 dark:text-white">

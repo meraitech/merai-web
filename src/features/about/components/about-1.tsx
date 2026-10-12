@@ -30,18 +30,6 @@ const TEAM_MEMBERS: TeamMember[] = [
     github: "#",
     mail: "#",
   },
-  {
-    id: 3,
-    image: "/img/founders/ceo.jpg",
-    github: "#",
-    mail: "#",
-  },
-  {
-    id: 4,
-    image: "/img/founders/ceo.jpg",
-    github: "#",
-    mail: "#",
-  },
 ];
 
 const CAROUSEL_CONFIG = {

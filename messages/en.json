@@ -308,7 +308,6 @@
         "name": "Yusuf Hidral",
         "role": "CEO",
         "image": "/img/founders/ceo.jpeg",
-        "city": "Jakarta",
         "bio": "Operator turned builder, leading product vision and partnerships.",
         "tags": ["Strategy", "Leadership"]
       },
@@ -316,17 +315,8 @@
         "name": "Ranaufal Muha",
         "role": "CTO",
         "image": "/img/founders/cto.webp",
-        "city": "Padang",
         "bio": "Leads engineering with a taste for clean architecture and fast shipping.",
         "tags": ["Engineering", "Architecture"]
-      },
-      "member3": {
-        "name": "Fajri Annafi",
-        "role": "COO",
-        "image": "/img/founders/coo.jpeg",
-        "city": "Jakarta",
-        "bio": "Runs operations so product and engineering can ship without friction.",
-        "tags": ["Operations", "Growth"]
       }
     },
     "timeline": {
