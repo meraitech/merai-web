@@ -79,7 +79,6 @@ type Variant = "glass" | "solid";
 
 const HERO_ID = "hero";
 
-const DOCKED_COLUMN = "mx-auto max-w-[1400px]";
 const DESKTOP_QUERY = "(min-width: 768px)";
 
 // Named timing constants — no magic numbers in scroll/animation props.
@@ -814,7 +813,6 @@ export function Navbar() {
               panelId={panelId}
               toggleRef={toggleRef}
               onToggle={toggleMenu}
-              className={DOCKED_COLUMN}
             />
           </motion.header>
         )}

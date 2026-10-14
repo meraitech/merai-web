@@ -41,6 +41,10 @@ export function ServicesHero(): ReactNode {
     receiveLabel: td("receiveLabel"),
     changesLabel: td("changesLabel"),
     closeLabel: td("closeLabel"),
+    ctaTitle: td("ctaTitle", {
+      title: openIndex !== null ? (names[openIndex] ?? "") : "",
+    }),
+    ctaButton: td("ctaButton"),
   } satisfies ServiceDrawerLabels;
   const fallback = {
     intro: td("fallbackIntro"),

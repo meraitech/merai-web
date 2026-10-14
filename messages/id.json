@@ -113,8 +113,26 @@
         ],
         "drawers": [
           {
-            "intro": "Situs marketing dan web app yang cepat.",
-            "covers": "Dari situs perusahaan hingga portal pelanggan, Merai membangun dengan Next.js — server rendering dan optimasi gambar bawaan. Cepat di HP kelas menengah, mudah diupdate tim Anda.",
+            "intro": "Situs marketing dan web app yang cepat dan ranking dengan baik. Merai membangun situs perusahaan dan portal pelanggan dengan Next.js — server rendering dan optimasi gambar bawaan. Cepat di HP kelas menengah, mudah diupdate editor.",
+            "covers": "Halaman yang mengonversi pengunjung, fondasi SEO sejak hari pertama, dan CMS yang benar dinikmati tim Anda. Analitik terpasang sejak awal membuat setiap keputusan desain ulang berdasar bukti — dan satu pemilik menjaga seluruh situs tetap koheren saat tumbuh.",
+            "coversItems": [
+              {
+                "title": "Situs marketing",
+                "text": "Situs perusahaan dan kampanye dengan CMS yang disenangi editor — rilis cepat, update tanpa developer."
+              },
+              {
+                "title": "Landing page",
+                "text": "Halaman konversi terfokus dengan analitik sejak kunjungan pertama, diuji dan disetel dari traffic nyata."
+              },
+              {
+                "title": "Portal pelanggan",
+                "text": "Area login tempat klien melayani sendiri dokumen, permintaan, dan status tanpa menelepon Anda."
+              },
+              {
+                "title": "CMS build",
+                "text": "Model konten terstruktur yang dikelola editor dengan percaya diri, plus pratinjau sebelum tayang."
+              }
+            ],
             "receive": [
               "Situs responsif dan portal pelanggan",
               "CMS yang benar bisa dipakai editor",
@@ -128,8 +146,26 @@
             ]
           },
           {
-            "intro": "Aplikasi yang disimpan, bukan dihapus.",
-            "covers": "Aplikasi iOS dan Android dengan rasa native dan logika bersama di mana pas. Kami urus rilis, review toko, dan update OS jangka panjang.",
+            "intro": "Aplikasi yang disimpan, bukan dihapus setelah seminggu. Merai membangun aplikasi iOS dan Android yang native dengan perilaku offline bijak, notifikasi yang benar, dan manajemen rilis penuh — lewat review toko dan tahun-tahun update OS.",
+            "covers": "Rating toko yang bertahan, crash yang kami dengar sebelum Anda, dan update tanpa drama. Logika bersama di titik yang pas menjaga kedua platform konsisten, sementara rasa native membuat setiap ketukan instan — aplikasi layak mendapat slot home screen.",
+            "coversItems": [
+              {
+                "title": "Aplikasi iOS & Android",
+                "text": "Rilis native diurus lewat review toko dan seterusnya, dengan logika bersama di titik yang pas."
+              },
+              {
+                "title": "Alur offline-first",
+                "text": "Tugas inti yang tetap berjalan tanpa sinyal, sinkron diam-diam saat koneksi kembali."
+              },
+              {
+                "title": "Push & notifikasi",
+                "text": "Pesan lifecycle yang disetel relevansi dan waktunya — pengingat, bukan noise."
+              },
+              {
+                "title": "Manajemen rilis",
+                "text": "Versioning, rollout bertahap, dan triase crash tercakup jauh setelah hari peluncuran."
+              }
+            ],
             "receive": [
               "Aplikasi iOS dan Android yang native",
               "Offline-first di mana penting",
@@ -143,8 +179,26 @@
             ]
           },
           {
-            "intro": "Operasi Anda, sebagai perangkat lunak.",
-            "covers": "Tools internal, dasbor, dan SaaS multi-tenant mengikuti cara kerja tim Anda. Cakupan ketat, rilis bertahap.",
+            "intro": "Operasi Anda sebagai perangkat lunak yang pas seperti jahitan tailor. Merai membangun tools internal, dasbor, dan SaaS multi-tenant mengikuti cara kerja tim Anda — cakupan ketat, rilis bertahap, bisa dipakai sejak minggu pertama.",
+            "covers": "Workflow tanpa copy-paste, data di satu tempat, dan kontrol akses yang dihormati auditor. Setiap irisan menggantikan jalan pintas di hari ia rilis, integrasi menjaga stack tetap terhubung, dan sistem tumbuh bersama tim bukan melawannya.",
+            "coversItems": [
+              {
+                "title": "Tools internal",
+                "text": "Panel admin dan dasbor ops yang membunuh spreadsheet sejak minggu pertama pakai."
+              },
+              {
+                "title": "Platform SaaS",
+                "text": "Fondasi multi-tenant dengan arsitektur siap billing yang melewati v1."
+              },
+              {
+                "title": "Integrasi sistem",
+                "text": "API dan webhook yang menghubungkan stack Anda tanpa merusak yang berjalan."
+              },
+              {
+                "title": "Akses & audit",
+                "text": "Peran, izin, dan jejak sejak commit pertama, bukan ditempel belakangan."
+              }
+            ],
             "receive": [
               "Tools internal pengganti spreadsheet",
               "Fondasi SaaS multi-tenant",
@@ -158,9 +212,27 @@
             ]
           },
           {
-            "intro": "AI bersama pemilik bisnis, bukan demo reel",
+            "intro": "AI bersama pemilik bisnis, bukan demo reel yang tak pernah ship. Merai menanamkan kecerdasan mesin ke produk dan operasi Anda — dipilih dari nilai operasional, dievaluasi jujur, dan tak pernah dijual sebagai transformasi bila tak bisa berjalan.",
             "coversLabel": "Yang dicakup AI",
-            "covers": "Merai membangun AI ke dalam produk dan operasi. Use case dipilih dari nilai operasional — jika prototipe tidak bisa dijalankan, kami tidak akan menjualnya sebagai transformasi.",
+            "covers": "Use case yang ada pemiliknya, kegagalan aman saat model ragu, dan serah terima yang bisa dioperasikan tim Anda. Kami terintegrasi dengan sistem yang sudah berjalan, merancang privasi sejak awal, dan mendokumentasikan semua agar bisa diikuti karyawan non-spesialis.",
+            "coversItems": [
+              {
+                "title": "Fitur tertanam",
+                "text": "Asisten, pencarian, dan ringkasan yang hidup di dalam produk dan workflow Anda saat ini."
+              },
+              {
+                "title": "Suite evaluasi",
+                "text": "Pengujian yang membuktikan perilaku model sebelum menyentuh pengguna nyata."
+              },
+              {
+                "title": "Review manusia",
+                "text": "Fallback dan persetujuan di titik-titik yang taruhannya memang tinggi."
+              },
+              {
+                "title": "Serah terima model",
+                "text": "Dokumen dan pelatihan agar tim Anda mengoperasikan dan memantaunya mandiri."
+              }
+            ],
             "receive": [
               "Fitur AI di dalam produk dan workflow yang ada",
               "Evaluasi, fallback, dan review manusia di titik penting",
@@ -175,8 +247,26 @@
             ]
           },
           {
-            "intro": "Keamanan yang bisa ditunjukkan ke auditor.",
-            "covers": "Review, hardening, dan default aman untuk software yang kami kirim — dan sistem yang sudah berjalan. Temuan datang dengan perbaikan, bukan sekadar laporan.",
+            "intro": "Keamanan yang bisa ditunjukkan ke auditor tanpa keringat dingin. Merai me-review, mengeraskan, dan menetapkan default aman untuk software yang kami kirim dan sistem yang Anda jalankan — dan setiap temuan datang dengan perbaikan, bukan sekadar laporan menakutkan.",
+            "covers": "Temuan ditutup bukan diarsip, akses mantan karyawan dicabut hari pertama, dan jawaban siap untuk diligence. Auth, penanganan data, dan dasar insiden diurus dengan benar — keamanan menjadi kekuatan yang sunyi bukan risiko yang menghantui.",
+            "coversItems": [
+              {
+                "title": "Review keamanan",
+                "text": "Temuan dipasangkan dengan perbaikan, berperingkat risiko nyata — bukan sekadar PDF menakutkan."
+              },
+              {
+                "title": "Pengerasan auth",
+                "text": "Login, sesi, dan MFA dibawa ke standar terkini di seluruh aplikasi Anda."
+              },
+              {
+                "title": "Panduan data",
+                "text": "Aturan penanganan yang benar bisa diikuti tim dalam kerja harian."
+              },
+              {
+                "title": "Dasar insiden",
+                "text": "Playbook respons ditulis dan dilatih sebelum Anda membutuhkannya."
+              }
+            ],
             "receive": [
               "Review keamanan plus perbaikan",
               "Auth dan kontrol akses yang dikeraskan",
@@ -203,8 +293,26 @@
         ],
         "drawers": [
           {
-            "intro": "Keputusan yang ada pemiliknya.",
-            "covers": "Merai bergabung sebagai partner kerja: mendiagnosis bottleneck, mengukur taruhan, dan mengawal hingga implementasi. Bukan deck yang mati di laci.",
+            "intro": "Keputusan yang ada pemiliknya dan didukung angka. Merai bergabung sebagai partner kerja — mendiagnosis bottleneck, mengukur taruhan, dan mengawal hingga implementasi. Bukan deck yang mati di laci enam minggu kemudian.",
+            "covers": "Satu rencana bukan lima opini, taruhan diukur sebelum dipasang, dan eksekusi tuntas lewat serah terima. Metrik mingguan menjaga pemilik tetap jujur, roadmap tetap berbiaya dan prioritas, dan saran berubah menjadi realitas operasi.",
+            "coversItems": [
+              {
+                "title": "Diagnostik",
+                "text": "Analisis bottleneck berangka — agar debat selesai dan kerja dimulai."
+              },
+              {
+                "title": "Roadmap",
+                "text": "Rencana prioritas dan berbiaya dengan pemilik bernama di tiap baris."
+              },
+              {
+                "title": "Desain metrik",
+                "text": "Indikator mingguan yang benar dibuka dan ditindaklanjuti pemilik."
+              },
+              {
+                "title": "Implementasi",
+                "text": "Pendampingan langsung yang bertahan hingga perubahan melekat."
+              }
+            ],
             "receive": [
               "Diagnosis bottleneck dengan angka",
               "Roadmap prioritas dan berbiaya",
@@ -218,8 +326,26 @@
             ]
           },
           {
-            "intro": "Bunuh kerja copy-paste.",
-            "covers": "Approval, rekonsiliasi, dan pelaporan diotomasi di mana volumenya layak. Manusia memegang keputusan penting.",
+            "intro": "Bunuh kerja copy-paste yang memakan minggu tim Anda. Merai mengotomasi approval, rekonsiliasi, dan pelaporan di mana volume layak — dengan peringatan eksepsi, jalur fallback, dan manusia memegang setiap keputusan penting.",
+            "covers": "Jam kerja kembali tiap minggu, error ditangkap aturan bukan untung-untungan, dan jejak untuk setiap langkah otomatis. Noise jauh dari inbox, ketidaksepakatan antar sistem sampai ke manusia, dan kerja membosankan berhenti menjadi kerja.",
+            "coversItems": [
+              {
+                "title": "Alur approval",
+                "text": "Permintaan dirutekan ke orang tepat tanpa rantai email atau kejar-kejaran."
+              },
+              {
+                "title": "Rekonsiliasi",
+                "text": "Pekerjaan pencocokan yang membereskan rutinitas dan mengantre eksepsi untuk manusia."
+              },
+              {
+                "title": "Pekerjaan pelaporan",
+                "text": "Output terjadwal yang dibuka stakeholder karena mereka memercayainya."
+              },
+              {
+                "title": "Aturan peringatan",
+                "text": "Sinyal untuk eksepsi genuine — dan sunyi untuk sisanya."
+              }
+            ],
             "receive": [
               "Alur approval tanpa rantai email",
               "Otomasi rekonsiliasi dan pelaporan",
@@ -233,8 +359,26 @@
             ]
           },
           {
-            "intro": "Engineer senior, di dalam tim Anda.",
-            "covers": "Engineer Merai ikut standup, repo, dan konvensi Anda. Onboarding dalam hitungan hari, produktif di sprint pertama.",
+            "intro": "Engineer senior di dalam tim Anda sejak sprint pertama. Engineer Merai ikut standup, repo, dan konvensi Anda — onboarding hitungan hari, menaikkan standar di review, dan mentransfer pengetahuan sepanjang jalan.",
+            "covers": "Kecepatan tanpa risiko rekrutmen, standar yang bertahan setelah kami pergi, dan tanpa silo saat engagement selesai. Sesuai stack Anda dan produktif segera, mereka mengirim fitur nyata sambil membuat tim permanen Anda lebih kuat.",
+            "coversItems": [
+              {
+                "title": "Engineer tertanam",
+                "text": "Tangan senior di standup, repo, dan antrean review Anda sejak hari pertama."
+              },
+              {
+                "title": "Onboarding codebase",
+                "text": "Produktif di sprint pertama, fasih konvensi dalam hitungan minggu."
+              },
+              {
+                "title": "Budaya review",
+                "text": "Umpan balik yang mengangkat standar tim permanen, bukan sekadar kode."
+              },
+              {
+                "title": "Transfer pengetahuan",
+                "text": "Dokumen dan pairing sepanjang jalan — tak ada yang hilang saat keluar."
+              }
+            ],
             "receive": [
               "Engineer sesuai stack Anda",
               "Onboarding codebase dalam hitungan hari",
@@ -248,8 +392,26 @@
             ]
           },
           {
-            "intro": "Pasar baru, diukur jujur.",
-            "covers": "Validasi demand, uji channel, dan rencana launch untuk ekspansi. Kami ukur hadiahnya sebelum keluar biaya.",
+            "intro": "Pasar baru yang diukur jujur sebelum uang bergerak. Merai memvalidasi demand, menguji channel dengan budget nyata, dan merencanakan launch dengan pemilik dan kriteria berhenti — ekspansi berjalan sebagai eksperimen, bukan judi.",
+            "covers": "Belanja terikat bukti, go atau no-go yang jelas, dan kompetitor dipetakan sebelum komitmen. Uji channel mengungkap apa yang benar mengonversi, rencana launch menyebut setiap pemilik, dan aturan berhenti melindungi budget saat sinyal memburuk.",
+            "coversItems": [
+              {
+                "title": "Pemetaan demand",
+                "text": "Ukuran pasar dan cek realitas kompetitor sebelum satu rupiah bergerak."
+              },
+              {
+                "title": "Uji channel",
+                "text": "Pilot budget kecil yang mengungkap biaya akuisisi sejati per pasar."
+              },
+              {
+                "title": "Rencana launch",
+                "text": "Pemilik, timeline, dan budget dijabarkan per pasar yang dimasuki."
+              },
+              {
+                "title": "Kriteria berhenti",
+                "text": "Aturan berhenti prasetuju yang melindungi budget saat sinyal memburuk."
+              }
+            ],
             "receive": [
               "Pemetaan demand dan kompetitor",
               "Uji channel dengan budget nyata",
@@ -263,8 +425,26 @@
             ]
           },
           {
-            "intro": "Cara kerja kami, tertulis.",
-            "covers": "SOP, playbook, dan kadensi operasi yang benar dijalani tim. Ditulis bersama pelakunya, bukan dari atas.",
+            "intro": "Cara kerja kami yang tertulis di mana kerja terjadi. Merai membangun SOP, playbook, dan kadensi operasi bersama pelakunya — agar karyawan baru produktif dalam hitungan hari dan operasi bertahan lewat turnover.",
+            "covers": "Bottleneck “tanya Budi” berkurang, insiden ditangani dari playbook bukan ingatan, dan dokumen tetap hidup lewat review berkala. Workflow kritis mendapat pemilik dan metrik, onboarding berhenti bergantung pada hero, dan kualitas stabil.",
+            "coversItems": [
+              {
+                "title": "SOP workflow",
+                "text": "Standar langkah-demi-langkah untuk operasi yang tak boleh melenceng."
+              },
+              {
+                "title": "Playbook insiden",
+                "text": "Prosedur tenang untuk hari-hari terburuk, ditulis sebelum tiba."
+              },
+              {
+                "title": "Jalur onboarding",
+                "text": "Perjalanan karyawan baru terukur hari, bukan kuartal membayangi."
+              },
+              {
+                "title": "Review dokumen",
+                "text": "Kadensi yang menjaga setiap halaman akurat, bertuan, dan hidup."
+              }
+            ],
             "receive": [
               "SOP untuk workflow kritis",
               "Playbook insiden dan onboarding",
@@ -291,8 +471,26 @@
         ],
         "drawers": [
           {
-            "intro": "Traffic yang bisa diatribusi.",
-            "covers": "SEO teknis, struktur konten, dan search berbayar dikelola terhadap revenue — bukan ranking sia-sia. Laporan yang bisa dibaca tim finance.",
+            "intro": "Traffic yang bisa diatribusikan ke revenue, bukan ranking sia-sia. Merai menjalankan SEO teknis, struktur konten, dan search berbayar terhadap angka bisnis — dengan laporan bulanan yang benar bisa dibaca tim finance.",
+            "covers": "Ranking yang menggerakkan revenue, ad spend dengan pemilik bernama, dan tanpa invoice misterius. Hambatan crawling diperbaiki dulu, konten meraih posisinya, dan setiap rupiah budget search mempertanggungjawabkan return yang dibawa.",
+            "coversItems": [
+              {
+                "title": "Perbaikan teknis",
+                "text": "Error crawl, kecepatan, dan struktur dibuka sebelum satu kata ditulis."
+              },
+              {
+                "title": "Arsitektur konten",
+                "text": "Peta topik dan tautan internal yang meraih posisi bertahan lama."
+              },
+              {
+                "title": "Search berbayar",
+                "text": "Kampanye dikelola terhadap target revenue, bukan volume klik."
+              },
+              {
+                "title": "Pelaporan jelas",
+                "text": "Angka bulanan yang dibaca tim finance tanpa penerjemah."
+              }
+            ],
             "receive": [
               "Perbaikan teknis pembuka crawling",
               "Struktur konten yang ranking",
@@ -306,8 +504,26 @@
             ]
           },
           {
-            "intro": "Channel yang terdengar seperti Anda.",
-            "covers": "Kalender, kreatif, dan manajemen komunitas untuk channel brand Anda. Voice konsisten, respons terukur.",
+            "intro": "Channel yang terdengar seperti Anda di hari terbaik. Merai menjalankan kalender, kreatif, dan manajemen komunitas untuk brand Anda — voice konsisten yang Anda setujui tiap minggu, respons terukur, pertumbuhan dilaporkan bulanan.",
+            "covers": "Posting tanpa kejar-kejaran, followers yang menjadi pipeline, dan pengenalan yang terakumulasi. Kreatif sesuai tiap channel, komunitas dijawab dengan voice Anda, dan leadership melihat progres dalam angka bulanan yang jelas.",
+            "coversItems": [
+              {
+                "title": "Kalender konten",
+                "text": "Rencana yang disetujui tiap minggu, menjaga semua channel terisi dan on-message."
+              },
+              {
+                "title": "Kreatif channel",
+                "text": "Format yang pas native per platform — bukan satu crop untuk semua."
+              },
+              {
+                "title": "Perawatan komunitas",
+                "text": "Balasan dengan voice Anda, dengan jalur eskalasi yang jelas."
+              },
+              {
+                "title": "Laporan pertumbuhan",
+                "text": "Angka followers-ke-pipeline tiap bulan, bebas jargon."
+              }
+            ],
             "receive": [
               "Kalender yang Anda setujui tiap minggu",
               "Kreatif sesuai tiap channel",
@@ -321,8 +537,26 @@
             ]
           },
           {
-            "intro": "Brand yang punya pendirian.",
-            "covers": "Naming, identitas, dan sistem konten dari tim di balik brand Merai sendiri. Khas, terdokumentasi, bisa dipakai non-desainer.",
+            "intro": "Brand yang punya pendirian, dibangun untuk dipakai harian. Merai merancang naming, identitas, dan sistem konten — khas, terdokumentasi, dan cukup sederhana bagi non-desainer untuk mengirim kerja on-brand setiap hari.",
+            "covers": "Setiap touchpoint on-brand, konten rilis tanpa menunggu desainer, dan sistem yang diteruskan karyawan baru bukan dirusak. Template membawa voice, panduan menyelesaikan debat cepat, dan kampanye meluncur dari start berjalan.",
+            "coversItems": [
+              {
+                "title": "Sistem identitas",
+                "text": "Logo, voice, dan aturan dikemas satu kit yang benar dibuka tim."
+              },
+              {
+                "title": "Template",
+                "text": "Deck, dokumen, dan postingan yang dilayani mandiri tanpa tiket desain."
+              },
+              {
+                "title": "Aset launch",
+                "text": "Paket kampanye siap hari pertama, bukan dirakit saat launch."
+              },
+              {
+                "title": "Penjagaan brand",
+                "text": "Review ringan yang menjaga setiap touchpoint tetap jujur."
+              }
+            ],
             "receive": [
               "Panduan identitas dan voice",
               "Template konten yang dijalankan tim",
@@ -336,8 +570,26 @@
             ]
           },
           {
-            "intro": "Setiap rupiah ada tugasnya.",
-            "covers": "Paid social dan display dijalankan sebagai eksperimen: kreatif diuji, audiens dipersempit, yang kalah dimatikan cepat. Skala hanya yang terbukti.",
+            "intro": "Setiap rupiah ada tugas dan review performa. Merai menjalankan paid social dan display sebagai eksperimen — kreatif diuji tiap minggu, audiens dipersempit berdasar bukti, yang kalah dimatikan hitungan hari, pemenang diskala percaya diri.",
+            "covers": "CAC tren turun, budget mengalir ke pemenang terbukti, dan dasbor yang bisa dicek kapan saja. Tes berjalan terjadwal, belanja mengikuti data bukan firasat, dan scale-up hanya dilakukan saat angka memang layak diraih.",
+            "coversItems": [
+              {
+                "title": "Uji kreatif",
+                "text": "Varian mingguan berkompetisi berdasar merit, yang kalah disingkir tanpa upacara."
+              },
+              {
+                "title": "Setel audiens",
+                "text": "Segmen dipersempit berdasar bukti konversi, bukan deck persona."
+              },
+              {
+                "title": "Geser budget",
+                "text": "Belanja mengalir ke pemenang terbukti — tak ada budget sekarat."
+              },
+              {
+                "title": "Dasbor live",
+                "text": "Performa terlihat kapan saja, tanpa menunggu deck akhir bulan."
+              }
+            ],
             "receive": [
               "Varian kreatif diuji tiap minggu",
               "Audiens dipersempit berdasar bukti",
@@ -351,8 +603,26 @@
             ]
           },
           {
-            "intro": "Channel yang Anda miliki.",
-            "covers": "Email lifecycle dan alur CRM yang terakumulasi: sekuens welcome, win-back, dan pasca-pembelian terhubung ke data Anda.",
+            "intro": "Channel yang Anda miliki, terakumulasi saat Anda tidur. Merai membangun email lifecycle dan alur CRM — welcome, win-back, pasca-pembelian — terhubung ke data Anda, dikelola tim Anda, dan lembut pada deliverability.",
+            "covers": "Repeat revenue berjalan otomatis, list tetap sehat, dan kampanye tanpa kode. Segmen memperbarui diri, sekuens terpicu perilaku, dan setiap kiriman memperkuat hubungan langsung yang tak bisa diambil algoritma mana pun.",
+            "coversItems": [
+              {
+                "title": "Seri welcome",
+                "text": "Email onboarding yang mengubah pendaftar baru menjadi pengguna aktif."
+              },
+              {
+                "title": "Alur win-back",
+                "text": "Sentuhan terjadwal memulihkan pelanggan dorman sebelum hilang."
+              },
+              {
+                "title": "Segmentasi",
+                "text": "List berbasis perilaku yang dikelola tim tanpa SQL atau tiket."
+              },
+              {
+                "title": "Deliverability",
+                "text": "Kebersihan list dan pemanasan menjaga penempatan inbox tetap tinggi."
+              }
+            ],
             "receive": [
               "Sekuens welcome dan onboarding",
               "Alur win-back dan retensi",
@@ -633,8 +903,26 @@
       "item12": "Media dan hospitalitas",
       "drawers": [
         {
-          "intro": "Perangkat lunak yang bisa dibaca tim compliance.",
-          "covers": "Merai membangun portal klien, alur onboarding, dan tools internal untuk tim keuangan. Semua dilengkapi jejak audit, akses berbasis peran, dan dokumentasi yang bisa dipahami non-spesialis.",
+          "intro": "Perangkat lunak yang bisa dibaca, diaudit, dan dipercaya tim compliance. Merai membangun portal klien, alur onboarding, dan tools internal untuk tim keuangan — dengan jejak audit, akses berbasis peran, dan dokumentasi untuk non-spesialis sejak hari pertama.",
+          "covers": "Setiap rilis membawa perubahan tertelusur, akses terkontrol, dan laporan yang bisa diikuti auditor tanpa bantuan kami. Rekonsiliasi manual berkurang, drop-off onboarding menyusut, dan setiap angka di layar ada pemiliknya — peluncuran lolos review, bukan mandek di sana.",
+          "coversItems": [
+            {
+              "title": "Portal klien",
+              "text": "Dasbor aman dan layanan mandiri yang benar di-log-in klien — tanpa antre telepon."
+            },
+            {
+              "title": "Onboarding & KYC",
+              "text": "Cek identitas dan pembukaan akun yang menekan drop-off namun tetap bisa diaudit."
+            },
+            {
+              "title": "Otomasi rekonsiliasi",
+              "text": "Pencocokan malam hari plus laporan eksepsi yang menyusutkan tutup bulan dari hari ke jam."
+            },
+            {
+              "title": "Pelaporan compliance",
+              "text": "Laporan siap regulator dari data yang sudah dipercaya tim Anda."
+            }
+          ],
           "receive": [
             "Portal dan dasbor aman yang benar dipakai tim",
             "Alur KYC dan onboarding yang menekan drop-off",
@@ -648,8 +936,26 @@
           ]
         },
         {
-          "intro": "Sistem yang menghargai waktu klinis.",
-          "covers": "Penjadwalan janji, portal pasien, dan dasbor operasional untuk klinik dan penyedia layanan kesehatan. Sadar privasi sejak desain, dengan pengelolaan data yang bisa dijelaskan staf.",
+          "intro": "Sistem yang menghargai waktu klinis dan menjaga kepercayaan pasien. Merai membangun penjadwalan, portal pasien, dan dasbor operasional untuk klinik dan penyedia kesehatan — sadar privasi sejak desain, dengan pengelolaan data yang bisa dijelaskan staf.",
+          "covers": "No-show berkurang, beban front desk lebih ringan, dan kapasitas terlihat sekilas. Setiap alur mengikuti rutinitas klinis, terdokumentasi untuk rotasi staf, dan hati-hati pada data pasien — teknologi mengembalikan waktu untuk perawatan, bukan mengambilnya.",
+          "coversItems": [
+            {
+              "title": "Penjadwalan & pengingat",
+              "text": "Booking online dengan pengingat yang menekan no-show dan mengisi slot batal."
+            },
+            {
+              "title": "Portal pasien",
+              "text": "Rekam, resep, dan follow-up terjangkau tanpa menelepon front desk."
+            },
+            {
+              "title": "Dasbor kapasitas",
+              "text": "Tampilan live ruangan, dokter, dan antrean agar bottleneck beres hari itu juga."
+            },
+            {
+              "title": "Pengaman data",
+              "text": "Akses berbasis peran dan jejak audit yang menjaga data pasien terbukti privat."
+            }
+          ],
           "receive": [
             "Penjadwalan dan pengingat yang menekan no-show",
             "Portal pasien yang meringankan front desk",
@@ -663,8 +969,26 @@
           ]
         },
         {
-          "intro": "Toko yang mengonversi, online maupun offline.",
-          "covers": "E-commerce, katalog, dan pengalaman loyalitas untuk brand ritel. Cepat di HP kelas menengah dan terukur sejak hari pertama.",
+          "intro": "Toko yang mengonversi, online maupun offline, di semua perangkat. Merai membangun e-commerce, katalog, dan pengalaman loyalitas untuk brand ritel — cepat di HP kelas menengah, terukur sejak hari pertama, mudah dijalankan marketer.",
+          "covers": "Halaman yang terbuka sekejap, satu sumber kebenaran katalog, dan kampanye yang bisa diatribusikan ke revenue. Tim Anda terbit tanpa developer, membaca analitik tanpa penerjemah, dan memasuki setiap promo dengan tahu persis apa yang berhasil terakhir kali.",
+          "coversItems": [
+            {
+              "title": "Bangunan storefront",
+              "text": "Toko cepat yang mobile-first dan terasa instan bahkan di HP kelas menengah."
+            },
+            {
+              "title": "Tools katalog",
+              "text": "Satu tempat untuk produk, harga, dan stok di semua channel."
+            },
+            {
+              "title": "Promo & loyalitas",
+              "text": "Diskon, voucher, dan poin yang diluncurkan marketer sendiri."
+            },
+            {
+              "title": "Analitik penjualan",
+              "text": "Dasbor yang mengaitkan kampanye ke revenue dalam angka jelas."
+            }
+          ],
           "receive": [
             "Toko yang cepat di semua perangkat",
             "Tools katalog dan inventaris",
@@ -678,8 +1002,26 @@
           ]
         },
         {
-          "intro": "Kebenaran lantai pabrik, di layar.",
-          "covers": "Tools pelacakan, kualitas, dan pemeliharaan untuk operator pabrik dan industri. Dibuat untuk sarung tangan, silau, dan koneksi yang putus-putus.",
+          "intro": "Kebenaran lantai pabrik di layar, dibuat untuk sarung tangan dan silau. Merai membangun tools pelacakan, kualitas, dan pemeliharaan untuk operator pabrik dan industri — toleran terhadap koneksi putus dan terbaca sekilas dari seberang lantai.",
+          "covers": "Downtime yang terlihat sebelum terjadi, data kualitas tanpa clipboard, dan satu pemilik per metrik lini. Jadwal pemeliharaan, alur ketertelusuran, dan peringatan sampai ke tangan yang tepat dengan cepat — masalah kecil diperbaiki sebelum menjadi lini berhenti.",
+          "coversItems": [
+            {
+              "title": "Dasbor produksi",
+              "text": "Output, downtime, dan yield per lini — terbaca dari seberang lantai."
+            },
+            {
+              "title": "Cek kualitas",
+              "text": "Checklist digital dan ketertelusuran pengakhiri kejutan akhir shift."
+            },
+            {
+              "title": "Peringatan pemeliharaan",
+              "text": "Jadwal dan peringatan yang tiba sebelum breakdown, bukan sesudah."
+            },
+            {
+              "title": "Antarmuka lantai",
+              "text": "Layar ramah sarung tangan dan silau yang selamat dari koneksi putus-putus."
+            }
+          ],
           "receive": [
             "Dasbor produksi dan downtime",
             "Alur cek kualitas dan ketertelusuran",
@@ -693,8 +1035,26 @@
           ]
         },
         {
-          "intro": "Tim produk, diperkuat.",
-          "covers": "Design system, platform, dan integrasi untuk perusahaan teknologi. Kami masuk ke roadmap Anda, rilis di dalam stack Anda, dan meninggalkan codebase lebih baik.",
+          "intro": "Tim produk yang diperkuat tangan senior yang bisa ship. Merai masuk ke roadmap Anda, membangun di dalam stack Anda, dan meninggalkan codebase lebih baik — dengan design system, integrasi, dan review yang jadi pembelajaran tim.",
+          "covers": "Kecepatan tanpa kekacauan: fitur mendarat sesuai konvensi, API tahan beban nyata, dan karyawan baru bisa masuk codebase dalam hitungan hari. Item roadmap benar-benar selesai, standar bertahan setelah kami pergi, dan tak ada silo saat engagement berakhir.",
+          "coversItems": [
+            {
+              "title": "Pengiriman fitur",
+              "text": "Item roadmap yang rilis di dalam stack, konvensi, dan budaya review Anda."
+            },
+            {
+              "title": "Design system",
+              "text": "Library komponen dan token yang menjaga semua layar konsisten."
+            },
+            {
+              "title": "Integrasi API",
+              "text": "API pihak ketiga dan internal yang tersambung andal dan terdokumentasi."
+            },
+            {
+              "title": "Kesehatan codebase",
+              "text": "Refactor dan review yang menyambut karyawan baru, bukan menakutinya."
+            }
+          ],
           "receive": [
             "Fitur yang rilis di dalam stack Anda",
             "Design system yang bisa diskala",
@@ -708,8 +1068,26 @@
           ]
         },
         {
-          "intro": "Tools belajar yang diselesaikan siswa.",
-          "covers": "Alur pendaftaran, dasbor kursus, dan tools admin untuk sekolah dan penyedia kursus. Sederhana untuk siswa, waras untuk administrator.",
+          "intro": "Tools belajar yang diselesaikan siswa dan disenangi staf. Merai membangun alur pendaftaran, dasbor kursus, dan tools admin untuk sekolah dan penyedia kursus — sederhana untuk peserta, waras untuk administrator, dipercaya keduanya.",
+          "covers": "Tingkat penyelesaian lebih tinggi, admin lebih sedikit per angkatan, dan data pendaftaran yang bisa dipertahankan. Siswa melaju dari daftar ke sertifikat tanpa friksi, staf terbit dan melacak tanpa developer, dan setiap angkatan meninggalkan rekam yang memperbaiki berikutnya.",
+          "coversItems": [
+            {
+              "title": "Alur pendaftaran",
+              "text": "Daftar, bayar, dan penempatan dalam satu jalur mulus dari iklan ke kelas."
+            },
+            {
+              "title": "Dasbor kursus",
+              "text": "Progres, kehadiran, dan hasil terlihat siswa maupun pengajar."
+            },
+            {
+              "title": "Tools admin",
+              "text": "Penjadwalan, penagihan, dan sertifikat tanpa jungkir-balik spreadsheet."
+            },
+            {
+              "title": "Publikasi konten",
+              "text": "Materi dan pelajaran yang diterbitkan staf tanpa menyentuh kode."
+            }
+          ],
           "receive": [
             "Alur pendaftaran dan pembayaran",
             "Dasbor kursus dan progres",
@@ -723,8 +1101,26 @@
           ]
         },
         {
-          "intro": "Setiap kiriman, tercatat.",
-          "covers": "Portal pelacakan, dasbor armada, dan alur pemesanan untuk operator logistik. Real-time di mana penting, jujur di mana tidak.",
+          "intro": "Setiap kiriman tercatat, setiap eksepsi terlihat lebih awal. Merai membangun portal pelacakan, dasbor armada, dan alur pemesanan untuk operator logistik — real-time di mana penting, jujur di mana tidak.",
+          "covers": "Telepon “di mana paket saya” berkurang, keputusan dispatch dari data live, dan arsip pengiriman tanpa kertas. Pelanggan melacak mandiri, dispatcher melihat seluruh papan, dan bukti pengiriman mengalir langsung ke pembukuan Anda.",
+          "coversItems": [
+            {
+              "title": "Portal pelacakan",
+              "text": "Pelacakan kiriman untuk pelanggan pengakhiri telepon “di mana paket saya”."
+            },
+            {
+              "title": "Papan dispatch",
+              "text": "Armada, rute, dan muatan live untuk dispatcher yang memutuskan dalam hitungan menit."
+            },
+            {
+              "title": "Alur pemesanan",
+              "text": "Pemesanan kutipan-ke-jemput yang dipakai bersama tim sales dan klien."
+            },
+            {
+              "title": "Bukti kirim",
+              "text": "Tanda tangan, foto, dan stempel waktu mengalir langsung ke penagihan."
+            }
+          ],
           "receive": [
             "Portal pelacakan untuk pelanggan",
             "Dasbor armada dan rute",
@@ -738,8 +1134,26 @@
           ]
         },
         {
-          "intro": "Sistem kritis, antarmuka tenang.",
-          "covers": "Perangkat lunak monitoring, metering, dan operasi lapangan untuk penyedia energi dan utilitas. Andal, mudah dibaca, dibangun jangka panjang.",
+          "intro": "Sistem kritis dengan antarmuka tenang yang dipercaya operator. Merai membangun software monitoring, metering, dan operasi lapangan untuk penyedia energi dan utilitas — andal di bawah tekanan, terbaca pukul tiga pagi, dibangun jangka panjang.",
+          "covers": "Masalah terlihat sebelum padam, data lapangan tanpa estafet radio, dan riwayat pemeliharaan yang nilainya terakumulasi. Kru mendapat penugasan jelas, regulator mendapat laporan terbaca, dan setiap aset membawa rekam yang memudahkan keputusan berikutnya.",
+          "coversItems": [
+            {
+              "title": "Monitoring aset",
+              "text": "Meter dan peralatan melaporkan kesehatan sepanjang waktu."
+            },
+            {
+              "title": "Penugasan lapangan",
+              "text": "Penugasan kru, checklist, dan laporan dari genggaman tangan."
+            },
+            {
+              "title": "Log gangguan",
+              "text": "Rekam insiden dan timeline pemulihan di satu tempat tercari."
+            },
+            {
+              "title": "Laporan regulator",
+              "text": "Ekspor compliance dari data operasi yang sudah Anda pegang."
+            }
+          ],
           "receive": [
             "Monitoring aset dan meter",
             "Penugasan dan pelaporan kru lapangan",
@@ -753,8 +1167,26 @@
           ]
         },
         {
-          "intro": "Layanan publik yang bisa dipakai.",
-          "covers": "Portal, alur perizinan, dan sistem internal untuk institusi publik. Aksesibel, bisa diaudit, terdokumentasi untuk rotasi staf.",
+          "intro": "Layanan publik yang benar bisa dipakai, di perangkat apa pun. Merai membangun portal, alur perizinan, dan sistem internal untuk institusi publik — aksesibel, bisa diaudit, dan terdokumentasi untuk bertahan lewat rotasi staf.",
+          "covers": "Antrean pindah online, setiap kasus tetap tertelusur, dan sistem terus berjalan saat tim berganti. Warga menyelesaikan urusan tanpa ke loket, staf bekerja dari satu rekam kasus, dan auditor menemukan jejak yang dibutuhkan tanpa permintaan khusus.",
+          "coversItems": [
+            {
+              "title": "Portal layanan",
+              "text": "Layanan mandiri warga yang memindahkan antrean dari loket ke browser."
+            },
+            {
+              "title": "Alur perizinan",
+              "text": "Aplikasi, approval, dan perpanjangan dengan visibilitas status penuh."
+            },
+            {
+              "title": "Manajemen kasus",
+              "text": "Satu rekam per kasus, dari laporan pertama hingga resolusi final."
+            },
+            {
+              "title": "Aksesibilitas & audit",
+              "text": "Antarmuka bijak dengan jejak yang benar diterima auditor."
+            }
+          ],
           "receive": [
             "Portal layanan untuk warga",
             "Alur aplikasi dan perizinan",
@@ -768,8 +1200,26 @@
           ]
         },
         {
-          "intro": "MVP dalam hitungan minggu, bukan kuartal.",
-          "covers": "MVP terukur dari engineer senior dengan arsitektur bersih. Momentum sekarang, codebase yang lolos due diligence investor.",
+          "intro": "MVP dalam hitungan minggu, bukan kuartal — momentum yang bisa ditunjukkan ke investor. Merai menentukan cakupan ketat, mengirim software senior-built berarsitektur bersih, dan menyerahkan codebase yang lolos diligence saat Anda siap merekrut.",
+          "covers": "Diluncurkan, bukan mandek di desain: analitik sejak hari pertama, arsitektur yang melewati v1, dan burn untuk produk bukan rework. Anda dapat produk berjalan untuk dipelajari sekarang, dan fondasi yang bisa diteruskan tim masa depan dengan percaya diri.",
+          "coversItems": [
+            {
+              "title": "Scoping MVP",
+              "text": "Versi terkecil yang lovable, didefinisikan ketat hingga bisa ship mingguan."
+            },
+            {
+              "title": "Prototipe klikabel",
+              "text": "Alur teruji yang memvalidasi demand sebelum engineering dimulai."
+            },
+            {
+              "title": "Analitik launch",
+              "text": "Aktivasi, retensi, dan revenue terlacak sejak pengguna pertama."
+            },
+            {
+              "title": "Paket handover",
+              "text": "Dokumen, akses, dan walkthrough agar hire pertama mewarisi bersih."
+            }
+          ],
           "receive": [
             "MVP terukur dalam hitungan minggu",
             "Arsitektur yang melewati v1",
@@ -783,8 +1233,26 @@
           ]
         },
         {
-          "intro": "Keahlian Anda, dijadikan produk.",
-          "covers": "Portal klien, pelacakan engagement, dan alur proposal-to-invoice untuk firma. Admin minim, kerja billable maksimal.",
+          "intro": "Keahlian Anda yang diprodukkan menjadi alur yang dirasakan klien. Merai membangun portal klien, pelacakan engagement, dan alur proposal-to-invoice untuk firma — memangkas jam admin dan menjadikan delivery mesin penjualan yang sunyi.",
+          "covers": "Rapat status berkurang, penagihan tanpa spreadsheet, dan klien yang selalu merasa terinformasi. Engagement terlacak sendiri, pengetahuan tinggal di firma bukan di inbox, dan setiap proposal melaju ke invoice tanpa kejar-kejaran.",
+          "coversItems": [
+            {
+              "title": "Portal klien",
+              "text": "Ruang kerja bersama tempat klien melihat progres tanpa email status."
+            },
+            {
+              "title": "Waktu & engagement",
+              "text": "Pelacakan effort yang mengalir ke invoice, bukan spreadsheet."
+            },
+            {
+              "title": "Alur proposal",
+              "text": "Dari scope ke tanda tangan ke invoice tanpa mengetik ulang."
+            },
+            {
+              "title": "Knowledge base",
+              "text": "Playbook dan preseden yang bisa ditemukan dan dipakai seluruh firma."
+            }
+          ],
           "receive": [
             "Portal klien yang memangkas email status",
             "Pelacakan engagement dan waktu",
@@ -798,8 +1266,26 @@
           ]
         },
         {
-          "intro": "Pengalaman yang diingat tamu.",
-          "covers": "Alur pemesanan, situs konten, dan pengalaman loyalitas untuk brand media dan hospitalitas. Cepat, visual, mudah diupdate staf.",
+          "intro": "Pengalaman yang diingat tamu dan bisa dijalankan tim tanpa tiket. Merai membangun alur pemesanan, situs konten, dan pengalaman loyalitas untuk brand media dan hospitalitas — cepat, visual, dan bisa diupdate staf non-teknis.",
+          "covers": "Pemesanan langsung bertambah, konten live dalam hitungan jam, dan tamu yang kembali lagi. Halaman kampanye rilis tanpa antre developer, ulasan dan loyalitas terakumulasi otomatis, dan setiap halaman properti tetap segar dengan usaha minimal.",
+          "coversItems": [
+            {
+              "title": "Mesin pemesanan",
+              "text": "Reservasi dan tiket yang disetel untuk konversi langsung."
+            },
+            {
+              "title": "Situs konten",
+              "text": "Halaman editorial cepat yang diupdate tim tanpa developer."
+            },
+            {
+              "title": "Alur loyalitas",
+              "text": "Poin, perks, dan ulasan yang melipatgandakan kunjungan ulang."
+            },
+            {
+              "title": "Halaman kampanye",
+              "text": "Landing page siap launch yang rilis hitungan jam, bukan sprint."
+            }
+          ],
           "receive": [
             "Alur pemesanan dan reservasi",
             "Publikasi konten tanpa developer",
@@ -820,6 +1306,8 @@
       "receiveLabel": "Yang Anda terima",
       "changesLabel": "Yang berubah saat berhasil",
       "closeLabel": "Tutup panel",
+      "ctaTitle": "Siap brief tentang {title}?",
+      "ctaButton": "Hubungi kami",
       "fallbackIntro": "bersama pemilik bisnis, bukan sekadar demo",
       "fallbackCovers": "Ceritakan masalahnya — satu paragraf cukup. Kami menentukan cakupan versi terkecil yang berguna, menunjuk pemiliknya, dan mendampingi hingga berjalan di produksi.",
       "fallbackReceive": [

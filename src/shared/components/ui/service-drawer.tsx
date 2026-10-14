@@ -4,9 +4,10 @@ import {
   AnimatePresence,
   motion,
   useReducedMotion,
+  type Variants,
 } from "motion/react";
 import dynamic from "next/dynamic";
-import { ArrowRight, X } from "lucide-react";
+import { ArrowRight, Compass, Handshake, Layers3, Sparkles, X } from "lucide-react";
 import {
   useEffect,
   useId,
@@ -17,6 +18,7 @@ import {
 } from "react";
 import { softEase } from "@/shared/utils/motion";
 import { Container } from "@/shared/components/ui/container";
+import { SectionHeading } from "@/shared/components/ui/section-heading";
 import { Link as UiLink } from "@/shared/components/ui/link";
 
 // three.js stays out of the initial page bundle: this chunk only loads
@@ -26,10 +28,13 @@ const ChromaCurrent = dynamic(
   { ssr: false },
 );
 
+const COVER_ICONS = [Layers3, Compass, Sparkles, Handshake] as const;
+
 export type ServiceDrawerContent = {
   intro: string;
   coversLabel?: string;
   covers: string;
+  coversItems: { title: string; text: string }[];
   receive: string[];
   changes: string[];
 };
@@ -40,6 +45,8 @@ export type ServiceDrawerLabels = {
   receiveLabel: string;
   changesLabel: string;
   closeLabel: string;
+  ctaTitle: string;
+  ctaButton: string;
 };
 
 export type ServiceDrawerFallback = {
@@ -53,6 +60,17 @@ function asStrings(value: unknown): string[] {
   return Array.isArray(value)
     ? value.filter((v): v is string => typeof v === "string")
     : [];
+}
+
+function asCoverItems(value: unknown): { title: string; text: string }[] {
+  if (!Array.isArray(value)) return [];
+  return value.filter(
+    (v): v is { title: string; text: string } =>
+      typeof v === "object" &&
+      v !== null &&
+      typeof (v as { title?: unknown }).title === "string" &&
+      typeof (v as { text?: unknown }).text === "string",
+  );
 }
 
 // Drawer panel tokens live here (bg-white / dark:bg-neutral-900), so the
@@ -89,6 +107,7 @@ export function resolveDrawerContent(
     coversLabel:
       typeof entry.coversLabel === "string" ? entry.coversLabel : undefined,
     covers: typeof entry.covers === "string" ? entry.covers : fallback.covers,
+    coversItems: asCoverItems(entry.coversItems),
     receive:
       asStrings(entry.receive).length > 0
         ? asStrings(entry.receive)
@@ -118,12 +137,28 @@ export function ServiceDrawer({
   const reducedMotion = useReducedMotion() ?? false;
   const prefersDark = usePrefersDark();
   const panelId = useId();
+
+  const coverList: Variants = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.1 } },
+  };
+  const coverRow: Variants = {
+    hidden: { opacity: 0, y: reducedMotion ? 0 : 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.65, ease: softEase },
+    },
+  };
   const titleId = useId();
   const closeRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     if (!open) return;
+    const root = document.documentElement;
+    const previousRootOverflow = root.style.overflow;
     const previousOverflow = document.body.style.overflow;
+    root.style.overflow = "hidden";
     document.body.style.overflow = "hidden";
     const onKey = (e: KeyboardEvent): void => {
       if (e.key === "Escape") onClose();
@@ -131,6 +166,7 @@ export function ServiceDrawer({
     document.addEventListener("keydown", onKey);
     const focusTimer = window.setTimeout(() => closeRef.current?.focus(), 60);
     return () => {
+      root.style.overflow = previousRootOverflow;
       document.body.style.overflow = previousOverflow;
       document.removeEventListener("keydown", onKey);
       window.clearTimeout(focusTimer);
@@ -157,7 +193,7 @@ export function ServiceDrawer({
         <div key="service-drawer" className="fixed inset-0 z-[70]">
           <motion.div
             aria-hidden="true"
-            className="absolute inset-0 bg-neutral-950/45"
+            className="absolute inset-0 touch-none bg-neutral-950/45"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -170,7 +206,8 @@ export function ServiceDrawer({
               role="dialog"
               aria-modal="true"
               aria-labelledby={titleId}
-              className="pointer-events-auto max-h-[80dvh] w-full overflow-y-auto rounded-t-3xl rounded-b-none bg-white pb-[env(safe-area-inset-bottom)] text-neutral-900 shadow-2xl dark:bg-neutral-900 dark:text-white"
+              data-lenis-prevent
+              className="pointer-events-auto max-h-[90dvh] w-full overflow-y-auto overscroll-contain rounded-t-3xl rounded-b-none bg-white pb-[env(safe-area-inset-bottom)] text-neutral-900 shadow-2xl dark:bg-neutral-900 dark:text-white"
               {...panelMotion}
             >
               <div className="relative h-[400px] shrink-0 overflow-hidden rounded-t-3xl">
@@ -184,6 +221,27 @@ export function ServiceDrawer({
                     bloom={0}
                   />
                 </div>
+                <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
+                  <h1
+                    id={titleId}
+                    className="max-w-3xl font-serif text-4xl font-medium tracking-tight text-neutral-900 drop-shadow-sm sm:text-5xl dark:text-white"
+                  >
+                    {title}
+                  </h1>
+                  <p className="mt-3 max-w-2xl text-base text-neutral-600 drop-shadow-sm sm:text-lg dark:text-neutral-300">
+                    {content.intro.slice(0, 300)}
+                  </p>
+                  <UiLink
+                    href="/contact"
+                    className="group pointer-events-auto mt-7 inline-flex h-12 items-center justify-center gap-2.5 rounded-xl bg-neutral-900 pr-4 pl-5 text-[15px] font-medium text-white shadow-[0_1px_0_rgba(255,255,255,0.08)_inset,0_12px_32px_-14px_rgba(0,0,0,0.45)] transition-[transform,opacity] hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-400 active:scale-[0.98] dark:bg-white dark:text-neutral-900"
+                  >
+                    {labels.proposal}
+                    <ArrowRight
+                      className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                      aria-hidden
+                    />
+                  </UiLink>
+                </div>
                 <button
                   ref={closeRef}
                   type="button"
@@ -195,78 +253,111 @@ export function ServiceDrawer({
                 </button>
               </div>
               <Container className="py-6 sm:py-10">
-                <h2
-                  id={titleId}
-                  className="text-3xl font-semibold tracking-tight text-neutral-900 sm:text-4xl dark:text-white"
-                >
-                  {title}
-                </h2>
-                <p className="mt-2 max-w-2xl text-base text-neutral-600 sm:text-lg dark:text-neutral-400">
-                  {content.intro}
-                </p>
-                <UiLink
-                  href="/contact"
-                  className="group mt-6 inline-flex items-center gap-2 rounded-sm text-lg font-medium hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-400"
-                >
-                  {labels.proposal}
-                  <ArrowRight
-                    className="h-5 w-5 transition-transform group-hover:translate-x-0.5"
-                    aria-hidden
+                <div>
+                  <SectionHeading
+                    align="left"
+                    className="mb-6"
+                    title={content.coversLabel ?? labels.coversLabel}
                   />
-                </UiLink>
-
-                <div className="mt-8">
-                  <h3 className="text-sm font-medium tracking-[0.08em] uppercase opacity-70">
-                    {content.coversLabel ?? labels.coversLabel}
-                  </h3>
-                  <p className="mt-3 max-w-2xl text-base leading-relaxed text-neutral-600 dark:text-neutral-400">
-                    {content.covers}
-                  </p>
+                  <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_1.2fr] lg:gap-12">
+                    <div className="self-start lg:sticky lg:top-6">
+                      <motion.p
+                        initial={{ opacity: 0, y: reducedMotion ? 0 : 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-80px" }}
+                        transition={{ duration: 0.65, ease: softEase }}
+                        className="max-w-lg text-base leading-relaxed text-neutral-600 [text-wrap:pretty] dark:text-neutral-400 sm:text-lg"
+                      >
+                        {content.covers}
+                      </motion.p>
+                    </div>
+                    {content.coversItems.length > 0 && (
+                      <motion.div
+                        variants={coverList}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, margin: "-80px" }}
+                        className="border-y border-neutral-200 divide-y divide-neutral-200 dark:border-neutral-800 dark:divide-neutral-800"
+                      >
+                        {content.coversItems.map((sub, i) => {
+                          const Icon = COVER_ICONS[i % COVER_ICONS.length];
+                          return (
+                            <motion.article
+                              key={sub.title}
+                              variants={coverRow}
+                              className="grid grid-cols-[3.5rem_1fr] gap-4 py-8 sm:grid-cols-[5rem_1fr] sm:gap-6 sm:py-10"
+                            >
+                              <p className="pt-1 font-mono text-sm text-neutral-500 dark:text-neutral-500">
+                                {String(i + 1).padStart(2, "0")}
+                              </p>
+                              <div>
+                                <div className="flex items-start justify-between gap-6">
+                                  <h3 className="text-xl font-semibold tracking-tight text-neutral-950 sm:text-2xl dark:text-white">
+                                    {sub.title}
+                                  </h3>
+                                  <Icon
+                                    className="mt-1 h-5 w-5 shrink-0 text-neutral-500 dark:text-neutral-500"
+                                    aria-hidden
+                                  />
+                                </div>
+                                <p className="mt-3 max-w-lg text-base leading-relaxed text-neutral-600 [text-wrap:pretty] dark:text-neutral-400">
+                                  {sub.text}
+                                </p>
+                              </div>
+                            </motion.article>
+                          );
+                        })}
+                      </motion.div>
+                    )}
+                  </div>
                 </div>
 
-                <div className="mt-8 grid gap-8 sm:grid-cols-2">
-                  <div>
-                    <h3 className="text-sm font-medium tracking-[0.08em] uppercase opacity-70">
-                      {labels.receiveLabel}
-                    </h3>
-                    <ul className="mt-3 space-y-2.5">
-                      {content.receive.map((line) => (
+                <div className="mt-12">
+                    <SectionHeading
+                      align="left"
+                      className="mb-6"
+                      title={labels.changesLabel}
+                    />
+                    <ul className="mt-2 w-full">
+                      {content.changes.map((line, i) => (
                         <li
                           key={line}
-                          className="flex items-start gap-2.5 text-[15px] leading-relaxed text-neutral-700 dark:text-neutral-300"
+                          className="border-t border-neutral-200/60 dark:border-neutral-800/60"
                         >
-                          <span
-                            aria-hidden="true"
-                            className="mt-0.5 shrink-0 text-neutral-400 dark:text-neutral-500"
-                          >
-                            ∞
+                          <span className="flex min-w-0 items-baseline gap-3 px-1 py-3 sm:py-3.5">
+                            <span
+                              aria-hidden="true"
+                              className="shrink-0 font-serif text-sm italic text-neutral-400 dark:text-neutral-500"
+                            >
+                              {String(i + 1).padStart(2, "0")}
+                            </span>
+                            <span className="text-base font-medium tracking-tight text-neutral-700 sm:text-lg dark:text-neutral-300">
+                              {line}
+                            </span>
                           </span>
-                          {line}
                         </li>
                       ))}
+                      <li
+                        aria-hidden="true"
+                        className="border-t border-neutral-200/60 dark:border-neutral-800/60"
+                      />
                     </ul>
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-medium tracking-[0.08em] uppercase opacity-70">
-                      {labels.changesLabel}
-                    </h3>
-                    <ul className="mt-3 space-y-2.5">
-                      {content.changes.map((line) => (
-                        <li
-                          key={line}
-                          className="flex items-start gap-2.5 text-[15px] leading-relaxed text-neutral-700 dark:text-neutral-300"
-                        >
-                          <span
-                            aria-hidden="true"
-                            className="mt-0.5 shrink-0 text-neutral-400 dark:text-neutral-500"
-                          >
-                            ∞
-                          </span>
-                          {line}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                </div>
+
+                <div className="mt-12 rounded-2xl bg-neutral-100 px-6 py-10 text-center sm:px-10 dark:bg-neutral-800">
+                  <h2 className="mx-auto max-w-xl font-serif text-2xl font-medium tracking-tight text-balance text-neutral-900 sm:text-3xl dark:text-white">
+                    {labels.ctaTitle}
+                  </h2>
+                  <UiLink
+                    href="/contact"
+                    className="group mt-6 inline-flex h-12 items-center justify-center gap-2.5 rounded-xl bg-neutral-900 pr-4 pl-5 text-[15px] font-medium text-white shadow-[0_1px_0_rgba(255,255,255,0.08)_inset,0_12px_32px_-14px_rgba(0,0,0,0.45)] transition-[transform,opacity] hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-400 active:scale-[0.98] dark:bg-white dark:text-neutral-900"
+                  >
+                    {labels.ctaButton}
+                    <ArrowRight
+                      className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                      aria-hidden
+                    />
+                  </UiLink>
                 </div>
               </Container>
             </motion.div>

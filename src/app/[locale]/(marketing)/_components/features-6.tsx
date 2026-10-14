@@ -65,6 +65,13 @@ export default function Features6() {
     receiveLabel: td("receiveLabel"),
     changesLabel: td("changesLabel"),
     closeLabel: td("closeLabel"),
+    ctaTitle: td("ctaTitle", {
+      title:
+        openSel !== null
+          ? ((getItems(openSel.s)[openSel.i] as string | undefined) ?? "")
+          : "",
+    }),
+    ctaButton: td("ctaButton"),
   } satisfies ServiceDrawerLabels;
   const fallback = {
     intro: td("fallbackIntro"),

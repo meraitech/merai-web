@@ -113,8 +113,26 @@
         ],
         "drawers": [
           {
-            "intro": "Marketing sites and web apps that load fast.",
-            "covers": "From company sites to customer portals, Merai builds on Next.js with server rendering and image optimization built in. Fast on mid-range phones, easy for your team to update.",
+            "intro": "Marketing sites and web apps that load fast and rank well. Merai builds company sites and customer portals on Next.js with server rendering and image optimization built in — quick on mid-range phones and easy for editors to update.",
+            "covers": "Pages that convert visitors, SEO foundations from day one, and a CMS your team actually enjoys. Analytics wired in from the start means every redesign decision has evidence — and one owner keeps the whole site coherent as it grows.",
+            "coversItems": [
+              {
+                "title": "Marketing sites",
+                "text": "Company and campaign sites with CMS editing your team enjoys — launched fast, updated without developers."
+              },
+              {
+                "title": "Landing pages",
+                "text": "Focused conversion pages with analytics from the first visit, tested and tuned against real traffic."
+              },
+              {
+                "title": "Customer portals",
+                "text": "Login areas where clients self-serve documents, requests, and status without calling you."
+              },
+              {
+                "title": "CMS builds",
+                "text": "Structured content models your editors manage confidently, with previews before anything goes live."
+              }
+            ],
             "receive": [
               "Responsive sites and customer portals",
               "A CMS your editors can actually use",
@@ -128,8 +146,26 @@
             ]
           },
           {
-            "intro": "Apps users keep, not delete.",
-            "covers": "iOS and Android apps with native feel and shared logic where it counts. We handle release, store review, and the long tail of OS updates.",
+            "intro": "Apps users keep, not delete after a week. Merai builds native iOS and Android apps with thoughtful offline behavior, done-right notifications, and full release management — through store review and years of OS updates.",
+            "covers": "Store ratings that hold, crashes we hear about before you do, and updates without drama. Shared logic where it counts keeps both platforms consistent, while native feel keeps every tap instant — so the app earns its home-screen slot.",
+            "coversItems": [
+              {
+                "title": "iOS & Android apps",
+                "text": "Native releases handled through store review and beyond, with shared logic where it counts."
+              },
+              {
+                "title": "Offline-first flows",
+                "text": "Core tasks that keep working without signal, syncing quietly when connection returns."
+              },
+              {
+                "title": "Push & notifications",
+                "text": "Lifecycle messaging tuned for relevance and timing — reminders, not noise."
+              },
+              {
+                "title": "Release management",
+                "text": "Versioning, staged rollouts, and crash triage covered long after launch day."
+              }
+            ],
             "receive": [
               "Native iOS and Android apps",
               "Offline-first where it matters",
@@ -143,8 +179,26 @@
             ]
           },
           {
-            "intro": "Your operations, as software.",
-            "covers": "Internal tools, dashboards, and multi-tenant SaaS built around how your team actually works. Scoped tight, shipped in slices.",
+            "intro": "Your operations, as software that fits like tailored clothing. Merai builds internal tools, dashboards, and multi-tenant SaaS around how your team actually works — scoped tight, shipped in slices, usable from week one.",
+            "covers": "Workflows without copy-paste, data in one place, and access control auditors respect. Each slice replaces a workaround the day it ships, integrations keep your stack connected, and the system grows with the team instead of against it.",
+            "coversItems": [
+              {
+                "title": "Internal tools",
+                "text": "Admin panels and ops dashboards that kill spreadsheets from the first week of use."
+              },
+              {
+                "title": "SaaS platforms",
+                "text": "Multi-tenant foundations with billing-ready architecture that scales past v1."
+              },
+              {
+                "title": "System integrations",
+                "text": "APIs and webhooks connecting your existing stack without breaking what works."
+              },
+              {
+                "title": "Access & audit",
+                "text": "Roles, permissions, and trails in place from the first commit, not bolted on."
+              }
+            ],
             "receive": [
               "Internal tools that kill spreadsheets",
               "Multi-tenant SaaS foundations",
@@ -158,9 +212,27 @@
             ]
           },
           {
-            "intro": "AI with a business owner, not a demo reel",
+            "intro": "AI with a business owner, not a demo reel that never ships. Merai puts machine intelligence into your products and operations — chosen for operational value, evaluated honestly, and never sold as transformation when it cannot run.",
             "coversLabel": "What AI covers",
-            "covers": "Merai builds AI into products and operations. Use cases are chosen for operational value — if a prototype cannot be run, we will not sell it as transformation.",
+            "covers": "Use cases with owners, safe failure when the model is unsure, and handover your team can operate. We integrate with systems you already run, design privacy in from the start, and document everything so a non-specialist hire can follow it.",
+            "coversItems": [
+              {
+                "title": "Embedded features",
+                "text": "Assistants, search, and summaries living inside your current product and workflows."
+              },
+              {
+                "title": "Evaluation suites",
+                "text": "Tests that prove the model behaves before it ever touches a real user."
+              },
+              {
+                "title": "Human review",
+                "text": "Fallbacks and approvals at the points where stakes are genuinely high."
+              },
+              {
+                "title": "Model handover",
+                "text": "Docs and training so your team operates, monitors, and improves it solo."
+              }
+            ],
             "receive": [
               "AI features inside existing products and workflows",
               "Evaluation, fallback, and human review where it matters",
@@ -175,8 +247,26 @@
             ]
           },
           {
-            "intro": "Security you can show an auditor.",
-            "covers": "Reviews, hardening, and secure defaults for the software we ship — and the systems you already run. Findings come with fixes, not just reports.",
+            "intro": "Security you can show an auditor without breaking a sweat. Merai reviews, hardens, and sets secure defaults for software we ship and systems you run — and every finding arrives with a fix, not just a frightening report.",
+            "covers": "Findings closed instead of filed, ex-employee access revoked on day one, and answers ready for diligence. Auth, data handling, and incident basics get handled properly — so security becomes a quiet strength rather than a looming risk.",
+            "coversItems": [
+              {
+                "title": "Security reviews",
+                "text": "Findings paired with fixes, ranked by real risk — not a frightening PDF alone."
+              },
+              {
+                "title": "Auth hardening",
+                "text": "Login, sessions, and MFA brought up to current standards across your apps."
+              },
+              {
+                "title": "Data guidance",
+                "text": "Handling rules your team can actually follow in daily work."
+              },
+              {
+                "title": "Incident basics",
+                "text": "Response playbooks written and rehearsed before you ever need them."
+              }
+            ],
             "receive": [
               "Security reviews with fixes attached",
               "Hardened auth and access control",
@@ -203,8 +293,26 @@
         ],
         "drawers": [
           {
-            "intro": "Decisions with an owner.",
-            "covers": "Merai joins as a working partner: diagnosing bottlenecks, sizing bets, and staying through implementation. No decks that die in a drawer.",
+            "intro": "Decisions with an owner and numbers behind them. Merai joins as a working partner — diagnosing bottlenecks, sizing bets, and staying through implementation. No decks that die in a drawer six weeks later.",
+            "covers": "One plan instead of five opinions, bets sized before they're placed, and follow-through past the handoff. Weekly metrics keep owners honest, the roadmap stays costed and prioritized, and advice turns into operating reality.",
+            "coversItems": [
+              {
+                "title": "Diagnostics",
+                "text": "Bottleneck analysis with numbers attached — so debates end and work begins."
+              },
+              {
+                "title": "Roadmaps",
+                "text": "Prioritized, costed plans with a named owner on every line."
+              },
+              {
+                "title": "Metrics design",
+                "text": "Weekly indicators that owners actually open and act on."
+              },
+              {
+                "title": "Implementation",
+                "text": "Hands-on support that stays until the changes stick."
+              }
+            ],
             "receive": [
               "Bottleneck diagnosis with numbers",
               "A prioritized, costed roadmap",
@@ -218,8 +326,26 @@
             ]
           },
           {
-            "intro": "Kill the copy-paste work.",
-            "covers": "Approvals, reconciliations, and reporting automated where the volume justifies it. Humans keep the judgment calls.",
+            "intro": "Kill the copy-paste work eating your team's week. Merai automates approvals, reconciliations, and reporting where volume justifies it — with exception alerts, fallback paths, and humans keeping every judgment call.",
+            "covers": "Hours back every week, errors caught by rules instead of luck, and a trail for every automated step. Noise stays out of inboxes, disagreements between systems surface to people, and the boring work simply stops being work.",
+            "coversItems": [
+              {
+                "title": "Approval flows",
+                "text": "Requests routed to the right people without email chains or chasers."
+              },
+              {
+                "title": "Reconciliation",
+                "text": "Matching jobs that clear the routine and queue exceptions for humans."
+              },
+              {
+                "title": "Reporting jobs",
+                "text": "Scheduled outputs stakeholders open because they trust them."
+              },
+              {
+                "title": "Alert rules",
+                "text": "Signals for genuine exceptions — and silence for everything else."
+              }
+            ],
             "receive": [
               "Approval flows without email chains",
               "Reconciliation and reporting automation",
@@ -233,8 +359,26 @@
             ]
           },
           {
-            "intro": "Senior engineers, inside your team.",
-            "covers": "Merai engineers join your standups, your repo, your conventions. Onboarded in days, productive in the first sprint.",
+            "intro": "Senior engineers inside your team from the first sprint. Merai engineers join your standups, your repo, and your conventions — onboarded in days, raising the bar in reviews, and transferring knowledge the whole way.",
+            "covers": "Velocity without hiring risk, standards that stick after we leave, and no silo when the engagement ends. Matched to your stack and productive immediately, they ship real features while making your permanent team stronger.",
+            "coversItems": [
+              {
+                "title": "Embedded engineers",
+                "text": "Senior hands in your standups, repos, and review queues from day one."
+              },
+              {
+                "title": "Codebase onboarding",
+                "text": "Productive in the first sprint, fluent in your conventions within weeks."
+              },
+              {
+                "title": "Review culture",
+                "text": "Feedback that lifts the permanent team's standards, not just the code."
+              },
+              {
+                "title": "Knowledge transfer",
+                "text": "Docs and pairing throughout — nothing walks out the door at exit."
+              }
+            ],
             "receive": [
               "Engineers matched to your stack",
               "Codebase onboarding in days",
@@ -248,8 +392,26 @@
             ]
           },
           {
-            "intro": "New markets, sized honestly.",
-            "covers": "Demand validation, channel testing, and launch planning for expansion. We size the prize before spending to chase it.",
+            "intro": "New markets sized honestly before money moves. Merai validates demand, tests channels with real budgets, and plans launches with owners and kill criteria — so expansion runs as experiments, never gambles.",
+            "covers": "Spend tied to evidence, a clear go or no-go, and competitors mapped before you commit. Channel tests reveal what actually converts, launch plans name every owner, and agreed stop rules protect the budget when signals turn.",
+            "coversItems": [
+              {
+                "title": "Demand mapping",
+                "text": "Market size and competitor reality checks before a rupiah moves."
+              },
+              {
+                "title": "Channel tests",
+                "text": "Small-budget pilots that reveal true acquisition cost per market."
+              },
+              {
+                "title": "Launch plans",
+                "text": "Owners, timelines, and budgets spelled out per market entered."
+              },
+              {
+                "title": "Kill criteria",
+                "text": "Pre-agreed stop rules that protect the budget when signals turn."
+              }
+            ],
             "receive": [
               "Demand and competitor mapping",
               "Channel tests with real budgets",
@@ -263,8 +425,26 @@
             ]
           },
           {
-            "intro": "How we do things, written down.",
-            "covers": "SOPs, playbooks, and operating cadences your team actually follows. Written with the people doing the work, not above them.",
+            "intro": "How we do things, written down where work happens. Merai builds SOPs, playbooks, and operating cadences with the people doing the work — so new hires get productive in days and operations survive turnover.",
+            "covers": "Fewer “ask Budi” bottlenecks, incidents handled from playbooks instead of memory, and docs that stay alive through regular review. Critical workflows gain owners and metrics, onboarding stops depending on heroes, and quality holds steady.",
+            "coversItems": [
+              {
+                "title": "Workflow SOPs",
+                "text": "Step-by-step standards for the operations that must never drift."
+              },
+              {
+                "title": "Incident playbooks",
+                "text": "Calm procedures for the worst days, written before they arrive."
+              },
+              {
+                "title": "Onboarding paths",
+                "text": "New-hire journeys measured in days, not quarters of shadowing."
+              },
+              {
+                "title": "Doc reviews",
+                "text": "Cadences that keep every page accurate, owned, and alive."
+              }
+            ],
             "receive": [
               "SOPs for critical workflows",
               "Playbooks for incidents and onboarding",
@@ -291,8 +471,26 @@
         ],
         "drawers": [
           {
-            "intro": "Traffic you can attribute.",
-            "covers": "Technical SEO, content structure, and paid search managed against revenue — not vanity rankings. Reports your finance team can read.",
+            "intro": "Traffic you can attribute to revenue, not vanity rankings. Merai runs technical SEO, content structure, and paid search against business numbers — with monthly reports your finance team can actually read.",
+            "covers": "Rankings that move revenue, ad spend with a named owner, and no more mystery invoices. Crawling barriers get fixed first, content earns its positions, and every rupiah of search budget answers for the return it brings.",
+            "coversItems": [
+              {
+                "title": "Technical fixes",
+                "text": "Crawl errors, speed, and structure unblocked before a word is written."
+              },
+              {
+                "title": "Content architecture",
+                "text": "Topic maps and internal linking that earn lasting positions."
+              },
+              {
+                "title": "Paid search",
+                "text": "Campaigns managed against revenue targets, not click volume."
+              },
+              {
+                "title": "Plain reporting",
+                "text": "Monthly numbers your finance team reads without a translator."
+              }
+            ],
             "receive": [
               "Technical fixes that unblock crawling",
               "Content structure that ranks",
@@ -306,8 +504,26 @@
             ]
           },
           {
-            "intro": "Channels that sound like you.",
-            "covers": "Calendars, creative, and community management for your brand's channels. Consistent voice, measured response.",
+            "intro": "Channels that sound like you on your best day. Merai runs calendars, creative, and community management for your brand — a consistent voice you approve weekly, responses measured, growth reported monthly.",
+            "covers": "Posting without the scramble, followers that become pipeline, and recognition that compounds. Creative sized per channel, community answered in your voice, and leadership sees progress in plain monthly numbers.",
+            "coversItems": [
+              {
+                "title": "Content calendars",
+                "text": "Weekly-approved plans keeping every channel fed and on-message."
+              },
+              {
+                "title": "Channel creative",
+                "text": "Formats sized natively per platform — never one crop for all."
+              },
+              {
+                "title": "Community care",
+                "text": "Replies in your voice, with escalation paths clearly defined."
+              },
+              {
+                "title": "Growth reports",
+                "text": "Follower-to-pipeline numbers delivered monthly, jargon-free."
+              }
+            ],
             "receive": [
               "A calendar you approve weekly",
               "Creative sized for every channel",
@@ -321,8 +537,26 @@
             ]
           },
           {
-            "intro": "A brand with a point of view.",
-            "covers": "Naming, identity, and content systems from the team behind Merai's own brand. Distinctive, documented, and usable by non-designers.",
+            "intro": "A brand with a point of view, built to be used daily. Merai crafts naming, identity, and content systems — distinctive, documented, and simple enough for non-designers to ship on-brand work every day.",
+            "covers": "Every touchpoint on-brand, content shipped without waiting on designers, and a system new hires extend instead of breaking. Templates carry the voice, guidelines settle debates fast, and campaigns launch from a running start.",
+            "coversItems": [
+              {
+                "title": "Identity systems",
+                "text": "Logo, voice, and rules packed into one kit the team actually opens."
+              },
+              {
+                "title": "Templates",
+                "text": "Decks, docs, and posts your team self-serves without design tickets."
+              },
+              {
+                "title": "Launch assets",
+                "text": "Campaign packages ready on day one, not assembled mid-launch."
+              },
+              {
+                "title": "Brand guardianship",
+                "text": "Light-touch reviews keeping every touchpoint honest over time."
+              }
+            ],
             "receive": [
               "Identity and voice guidelines",
               "Content templates your team can run",
@@ -336,8 +570,26 @@
             ]
           },
           {
-            "intro": "Every rupiah has a job.",
-            "covers": "Paid social and display run as experiments: creative tested, audiences narrowed, losers killed fast. Scale only what proves out.",
+            "intro": "Every rupiah has a job and a performance review. Merai runs paid social and display as experiments — creative tested weekly, audiences narrowed by evidence, losers killed in days, winners scaled with confidence.",
+            "covers": "CAC trending down, budgets flowing to proven winners, and dashboards you can check anytime. Tests run on calendar, spending follows data instead of hunches, and scale-ups happen only when the numbers earn them.",
+            "coversItems": [
+              {
+                "title": "Creative testing",
+                "text": "Weekly variants competing on merit, losers cut without ceremony."
+              },
+              {
+                "title": "Audience tuning",
+                "text": "Segments narrowed by converting evidence, not persona decks."
+              },
+              {
+                "title": "Budget shifts",
+                "text": "Spend flows to proven winners fast — no budget left on life support."
+              },
+              {
+                "title": "Live dashboards",
+                "text": "Performance visible anytime, without waiting for month-end decks."
+              }
+            ],
             "receive": [
               "Creative variants tested weekly",
               "Audiences narrowed by evidence",
@@ -351,8 +603,26 @@
             ]
           },
           {
-            "intro": "The channel you own.",
-            "covers": "Lifecycle email and CRM flows that compound: welcome, win-back, and post-purchase sequences wired to your data.",
+            "intro": "The channel you own, compounding while you sleep. Merai builds lifecycle email and CRM flows — welcome, win-back, post-purchase — wired to your data, managed by your team, and gentle on deliverability.",
+            "covers": "Repeat revenue on autopilot, lists that stay healthy, and campaigns without code. Segments update themselves, sequences trigger on behavior, and every send strengthens a direct relationship no algorithm can take away.",
+            "coversItems": [
+              {
+                "title": "Welcome series",
+                "text": "Onboarding emails that turn fresh signups into active users."
+              },
+              {
+                "title": "Win-back flows",
+                "text": "Timed nudges recovering dormant customers before they're gone."
+              },
+              {
+                "title": "Segmentation",
+                "text": "Behavior-based lists your team manages without SQL or tickets."
+              },
+              {
+                "title": "Deliverability",
+                "text": "List hygiene and warmup keeping inbox placement consistently high."
+              }
+            ],
             "receive": [
               "Welcome and onboarding sequences",
               "Win-back and retention flows",
@@ -633,8 +903,26 @@
       "item12": "Media and hospitality",
       "drawers": [
         {
-          "intro": "Software your compliance team can read.",
-          "covers": "Merai builds client portals, onboarding flows, and internal tools for financial teams. Everything ships with audit trails, role-based access, and documentation a non-specialist can follow.",
+          "intro": "Software your compliance team can read, audit, and trust. Merai builds client portals, onboarding flows, and internal tools for financial teams — with audit trails, role-based access, and documentation written for non-specialists from day one.",
+          "covers": "Every release ships with traceable changes, controlled access, and reports your auditors can follow without our help. We cut manual reconciliations, shorten onboarding drop-off, and give every number on screen a clear owner — so launches pass review instead of stalling in it.",
+          "coversItems": [
+            {
+              "title": "Client portals",
+              "text": "Secure dashboards and self-service your clients actually log into — no phone queues."
+            },
+            {
+              "title": "Onboarding & KYC",
+              "text": "Identity checks and account opening that cut drop-off yet stay fully auditable."
+            },
+            {
+              "title": "Reconciliation automation",
+              "text": "Nightly matching and exception reports shrinking month-end from days to hours."
+            },
+            {
+              "title": "Compliance reporting",
+              "text": "Regulator-ready reports generated from data your team already trusts."
+            }
+          ],
           "receive": [
             "Secure portals and dashboards your team actually uses",
             "KYC and onboarding flows that cut drop-off",
@@ -648,8 +936,26 @@
           ]
         },
         {
-          "intro": "Systems that respect clinical time.",
-          "covers": "Appointment scheduling, patient portals, and operations dashboards for clinics and health providers. Privacy-aware by design, with data handling your staff can explain.",
+          "intro": "Systems that respect clinical time and protect patient trust. Merai builds scheduling, patient portals, and operations dashboards for clinics and health providers — privacy-aware by design, with data handling your staff can explain.",
+          "covers": "Fewer no-shows, lighter front-desk load, and capacity you can see at a glance. Every flow is designed around clinical routines, documented for staff turnover, and careful with patient data — so technology gives time back to care instead of taking it.",
+          "coversItems": [
+            {
+              "title": "Scheduling & reminders",
+              "text": "Online booking with reminders that cut no-shows and refill cancelled slots."
+            },
+            {
+              "title": "Patient portals",
+              "text": "Records, prescriptions, and follow-ups without calling the front desk."
+            },
+            {
+              "title": "Capacity dashboards",
+              "text": "Live views of rooms, doctors, and queues so bottlenecks fix same-day."
+            },
+            {
+              "title": "Data safeguards",
+              "text": "Role-based access and audit trails keeping patient data provably private."
+            }
+          ],
           "receive": [
             "Scheduling and reminders that cut no-shows",
             "Patient portals that reduce front-desk load",
@@ -663,8 +969,26 @@
           ]
         },
         {
-          "intro": "Storefronts that convert, online and off.",
-          "covers": "E-commerce, catalogs, and loyalty experiences for retail brands. Fast on mid-range phones and measurable from day one.",
+          "intro": "Storefronts that convert, online and off, on any device. Merai builds e-commerce, catalogs, and loyalty experiences for retail brands — fast on mid-range phones, measurable from day one, and easy for marketers to run.",
+          "covers": "Pages that load in a snap, one source of catalog truth, and campaigns you can attribute to revenue. Your team publishes without developers, checks analytics without translators, and walks into every promo knowing exactly what worked last time.",
+          "coversItems": [
+            {
+              "title": "Storefront builds",
+              "text": "Fast, mobile-first shops that feel instant even on mid-range phones."
+            },
+            {
+              "title": "Catalog tooling",
+              "text": "One place for products, prices, and stock across every channel."
+            },
+            {
+              "title": "Promotions & loyalty",
+              "text": "Discounts, vouchers, and points your marketers launch themselves."
+            },
+            {
+              "title": "Sales analytics",
+              "text": "Dashboards tying campaigns to revenue in numbers anyone can read."
+            }
+          ],
           "receive": [
             "Storefronts that load fast on any device",
             "Catalog and inventory tooling",
@@ -678,8 +1002,26 @@
           ]
         },
         {
-          "intro": "Shop-floor truth, on a screen.",
-          "covers": "Tracking, quality, and maintenance tooling for factories and industrial operators. Built for gloves, glare, and intermittent connectivity.",
+          "intro": "Shop-floor truth on a screen, built for gloves and glare. Merai builds tracking, quality, and maintenance tooling for factories and industrial operators — tolerant of offline gaps and readable at a glance from across the floor.",
+          "covers": "Downtime you can see coming, quality data without clipboards, and one owner per line metric. Maintenance schedules, traceability flows, and alerts reach the right hands fast — so small issues get fixed before they become stopped lines.",
+          "coversItems": [
+            {
+              "title": "Production dashboards",
+              "text": "Live output, downtime, and yield per line — readable from across the floor."
+            },
+            {
+              "title": "Quality checks",
+              "text": "Digital checklists and traceability ending end-of-shift surprises."
+            },
+            {
+              "title": "Maintenance alerts",
+              "text": "Schedules and warnings that arrive before breakdowns, not after."
+            },
+            {
+              "title": "Shop-floor interfaces",
+              "text": "Glove-friendly, glare-proof screens surviving patchy connectivity."
+            }
+          ],
           "receive": [
             "Production and downtime dashboards",
             "Quality-check and traceability flows",
@@ -693,8 +1035,26 @@
           ]
         },
         {
-          "intro": "Product teams, reinforced.",
-          "covers": "Design systems, platforms, and integrations for tech companies. We join your roadmap, ship inside your stack, and leave the codebase better than we found it.",
+          "intro": "Product teams, reinforced with senior hands that ship. Merai joins your roadmap, builds inside your stack, and leaves the codebase better than we found it — with design systems, integrations, and reviews your team learns from.",
+          "covers": "Velocity without the mess: features land in your conventions, APIs hold up under real load, and new hires can enter the codebase in days. Roadmap items actually close, standards stick after we leave, and no silo remains when the engagement ends.",
+          "coversItems": [
+            {
+              "title": "Feature delivery",
+              "text": "Roadmap items shipped inside your stack, conventions, and review culture."
+            },
+            {
+              "title": "Design systems",
+              "text": "Component libraries and tokens keeping every future screen consistent."
+            },
+            {
+              "title": "API integrations",
+              "text": "Third-party and internal APIs wired reliably and documented for your team."
+            },
+            {
+              "title": "Codebase health",
+              "text": "Refactors and reviews that welcome the next hire instead of warning them."
+            }
+          ],
           "receive": [
             "Features shipped inside your stack",
             "Design systems that scale",
@@ -708,8 +1068,26 @@
           ]
         },
         {
-          "intro": "Learning tools students finish.",
-          "covers": "Enrollment flows, course dashboards, and admin tooling for schools and course providers. Simple for students, sane for administrators.",
+          "intro": "Learning tools students finish and staff enjoy running. Merai builds enrollment flows, course dashboards, and admin tooling for schools and course providers — simple for learners, sane for administrators, trusted by both.",
+          "covers": "Higher completion rates, less admin per cohort, and enrollment data you can defend. Students move from signup to certificate without friction, staff publish and track without developers, and every cohort leaves a record that improves the next one.",
+          "coversItems": [
+            {
+              "title": "Enrollment flows",
+              "text": "Signup, payment, and placement in one smooth path from ad to classroom."
+            },
+            {
+              "title": "Course dashboards",
+              "text": "Progress, attendance, and outcomes visible to students and teachers alike."
+            },
+            {
+              "title": "Admin tooling",
+              "text": "Scheduling, billing, and certificates without spreadsheet gymnastics."
+            },
+            {
+              "title": "Content publishing",
+              "text": "Lessons and materials your staff publish without touching code."
+            }
+          ],
           "receive": [
             "Enrollment and payment flows",
             "Course and progress dashboards",
@@ -723,8 +1101,26 @@
           ]
         },
         {
-          "intro": "Every shipment, accounted for.",
-          "covers": "Tracking portals, fleet dashboards, and booking flows for logistics operators. Real-time where it matters, honest where it isn't.",
+          "intro": "Every shipment accounted for, every exception visible early. Merai builds tracking portals, fleet dashboards, and booking flows for logistics operators — real-time where it matters, honest about where it isn't.",
+          "covers": "Fewer “where is my order” calls, dispatch decisions from live data, and delivery records without paperwork. Customers track themselves, dispatchers see the whole board, and proof-of-delivery flows straight into your books.",
+          "coversItems": [
+            {
+              "title": "Tracking portals",
+              "text": "Customer-facing shipment tracking ending “where is my order” calls."
+            },
+            {
+              "title": "Dispatch boards",
+              "text": "Live fleet, routes, and loads for dispatchers deciding in minutes."
+            },
+            {
+              "title": "Booking flows",
+              "text": "Quote-to-pickup ordering shared by your sales team and clients."
+            },
+            {
+              "title": "Proof of delivery",
+              "text": "Signatures, photos, and timestamps flowing straight into billing."
+            }
+          ],
           "receive": [
             "Customer tracking portals",
             "Fleet and route dashboards",
@@ -738,8 +1134,26 @@
           ]
         },
         {
-          "intro": "Critical systems, calm interfaces.",
-          "covers": "Monitoring, metering, and field-operations software for energy and utility providers. Reliable, readable, and built for the long term.",
+          "intro": "Critical systems with calm interfaces operators trust. Merai builds monitoring, metering, and field-operations software for energy and utility providers — reliable under pressure, readable at 3 a.m., and built for the long term.",
+          "covers": "Issues spotted before outages, field data without the radio relay, and a maintenance history that compounds in value. Crews get clear tasking, regulators get readable reports, and every asset carries a record that makes the next decision easier.",
+          "coversItems": [
+            {
+              "title": "Asset monitoring",
+              "text": "Meters and equipment reporting health around the clock."
+            },
+            {
+              "title": "Field tasking",
+              "text": "Crew assignments, checklists, and reports from the palm of a hand."
+            },
+            {
+              "title": "Outage logs",
+              "text": "Incident records and restoration timelines in one searchable place."
+            },
+            {
+              "title": "Regulator reports",
+              "text": "Compliance exports generated from operations data you already hold."
+            }
+          ],
           "receive": [
             "Asset and meter monitoring",
             "Field-crew tasking and reporting",
@@ -753,8 +1167,26 @@
           ]
         },
         {
-          "intro": "Public services people can use.",
-          "covers": "Portals, permit flows, and internal systems for public institutions. Accessible, auditable, and documented for staff turnover.",
+          "intro": "Public services people can actually use, on any device. Merai builds portals, permit flows, and internal systems for public institutions — accessible, auditable, and documented to survive staff rotation.",
+          "covers": "Queues move online, every case stays traceable, and systems keep running when teams change. Citizens finish tasks without visiting counters, staff work from one case record, and auditors find the trail they need without special requests.",
+          "coversItems": [
+            {
+              "title": "Service portals",
+              "text": "Citizen self-service moving queues from counters to browsers."
+            },
+            {
+              "title": "Permit flows",
+              "text": "Applications, approvals, and renewals with full status visibility."
+            },
+            {
+              "title": "Case management",
+              "text": "One record per case, from first report to final resolution."
+            },
+            {
+              "title": "Accessibility & audit",
+              "text": "Thoughtful interfaces with trails auditors actually accept."
+            }
+          ],
           "receive": [
             "Citizen-facing service portals",
             "Application and permit flows",
@@ -768,8 +1200,26 @@
           ]
         },
         {
-          "intro": "MVP in weeks, not quarters.",
-          "covers": "Scoped MVPs from senior engineers with clean architecture. You get momentum now and a codebase investors can diligence.",
+          "intro": "MVP in weeks, not quarters — momentum you can show investors. Merai scopes tight, ships senior-built software with clean architecture, and hands over a codebase that passes diligence when you're ready to hire.",
+          "covers": "Launched, not stuck in design: analytics from day one, architecture that scales past v1, and burn spent on product instead of rework. You get a working product to learn from now, and a foundation a future team can extend with confidence.",
+          "coversItems": [
+            {
+              "title": "MVP scoping",
+              "text": "The smallest lovable version, defined tightly enough to ship in weeks."
+            },
+            {
+              "title": "Clickable prototypes",
+              "text": "Testable flows validating demand before engineering begins."
+            },
+            {
+              "title": "Launch analytics",
+              "text": "Activation, retention, and revenue tracked from the first user."
+            },
+            {
+              "title": "Handover package",
+              "text": "Docs, access, and walkthroughs so first hires inherit cleanly."
+            }
+          ],
           "receive": [
             "A scoped MVP in weeks",
             "Architecture that scales past v1",
@@ -783,8 +1233,26 @@
           ]
         },
         {
-          "intro": "Your expertise, productized.",
-          "covers": "Client portals, engagement tracking, and proposal-to-invoice flows for firms. Less admin, more billable work.",
+          "intro": "Your expertise, productized into flows clients feel. Merai builds client portals, engagement tracking, and proposal-to-invoice flows for firms — cutting admin hours and turning delivery into your quiet sales engine.",
+          "covers": "Fewer status meetings, billing without the spreadsheet, and clients who always feel informed. Engagements track themselves, knowledge stays in the firm instead of inboxes, and every proposal moves to invoice without chasing.",
+          "coversItems": [
+            {
+              "title": "Client portals",
+              "text": "Shared workspaces where clients see progress without status emails."
+            },
+            {
+              "title": "Time & engagement",
+              "text": "Effort tracking that feeds invoices instead of spreadsheets."
+            },
+            {
+              "title": "Proposal flows",
+              "text": "From scope to signature to invoice without retyping anything."
+            },
+            {
+              "title": "Knowledge bases",
+              "text": "Playbooks and precedents the whole firm can find and reuse."
+            }
+          ],
           "receive": [
             "Client portals that cut status emails",
             "Engagement and time tracking",
@@ -798,8 +1266,26 @@
           ]
         },
         {
-          "intro": "Experiences guests remember.",
-          "covers": "Booking flows, content sites, and loyalty experiences for media and hospitality brands. Fast, visual, and easy for staff to update.",
+          "intro": "Experiences guests remember and teams can run without tickets. Merai builds booking flows, content sites, and loyalty experiences for media and hospitality brands — fast, visual, and updatable by non-technical staff.",
+          "covers": "More direct bookings, content that goes live in hours, and guests who come back. Campaign pages ship without a developer queue, reviews and loyalty compound automatically, and every property page stays fresh with minimal effort.",
+          "coversItems": [
+            {
+              "title": "Booking engines",
+              "text": "Reservations and ticketing tuned for direct conversion."
+            },
+            {
+              "title": "Content sites",
+              "text": "Fast editorial pages your team updates without developers."
+            },
+            {
+              "title": "Loyalty flows",
+              "text": "Points, perks, and reviews compounding repeat visits."
+            },
+            {
+              "title": "Campaign pages",
+              "text": "Launch-ready landing pages shipped in hours, not sprints."
+            }
+          ],
           "receive": [
             "Booking and reservation flows",
             "Content publishing without developers",
@@ -820,6 +1306,8 @@
       "receiveLabel": "What you receive",
       "changesLabel": "What changes when it works",
       "closeLabel": "Close drawer",
+      "ctaTitle": "Ready to brief about {title}?",
+      "ctaButton": "Contact us",
       "fallbackIntro": "with a business owner, not a demo reel",
       "fallbackCovers": "Tell us where it hurts — a paragraph is enough. We scope the smallest useful version, put an owner on it, and stay until it runs in production.",
       "fallbackReceive": [
