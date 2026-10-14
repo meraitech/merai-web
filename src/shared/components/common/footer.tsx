@@ -25,7 +25,7 @@ const COMPANY_HREFS: Record<string, string> = {
   Kontak: "/contact",
 };
 
-const CONTACT_EMAIL = "info@orphicgavel.com";
+const CONTACT_EMAIL = "support@orphicgavel.com";
 
 function Newsletter(): ReactNode {
   const t = useTranslations("Footer");

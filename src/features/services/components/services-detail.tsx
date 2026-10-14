@@ -2,12 +2,18 @@
 
 import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
-import type { ReactNode } from "react";
+import { useRef, useState, type ReactNode } from "react";
 import { Link as UiLink } from "@/shared/components/ui/link";
 import { Container } from "@/shared/components/ui/container";
 import { SectionHeading } from "@/shared/components/ui/section-heading";
 import { ServiceCard } from "@/shared/components/ui/service-card";
 import { ServiceSubList } from "@/shared/components/ui/service-sub-list";
+import {
+  ServiceDrawer,
+  resolveDrawerContent,
+  type ServiceDrawerFallback,
+  type ServiceDrawerLabels,
+} from "@/shared/components/ui/service-drawer";
 
 const CARDS = [
   {
@@ -28,6 +34,10 @@ const CARDS = [
 // copy) so the standalone page never drifts from the homepage.
 export function ServicesDetail(): ReactNode {
   const t = useTranslations("Home.services");
+  const td = useTranslations("Services.drawer");
+
+  const [openSel, setOpenSel] = useState<{ s: number; i: number } | null>(null);
+  const triggerRef = useRef<HTMLElement | null>(null);
 
   const getItems = (index: number): string[] => {
     try {
@@ -50,6 +60,49 @@ export function ServicesDetail(): ReactNode {
     return { ...col, items, startIndex };
   });
 
+  const labels = {
+    proposal: td("proposal"),
+    coversLabel: td("coversLabel"),
+    receiveLabel: td("receiveLabel"),
+    changesLabel: td("changesLabel"),
+    closeLabel: td("closeLabel"),
+  } satisfies ServiceDrawerLabels;
+  const fallback = {
+    intro: td("fallbackIntro"),
+    covers: td("fallbackCovers"),
+    receive: td.raw("fallbackReceive") as string[],
+    changes: td.raw("fallbackChanges") as string[],
+  } satisfies ServiceDrawerFallback;
+
+  const getDrawers = (serviceIndex: number): unknown[] => {
+    try {
+      const raw = t.raw(`service${serviceIndex + 1}.drawers`) as unknown;
+      return Array.isArray(raw) ? raw : [];
+    } catch {
+      return [];
+    }
+  };
+
+  const onSelect =
+    (serviceIndex: number) =>
+    (_label: string, globalIndex: number, el: HTMLButtonElement) => {
+      // ServiceSubList passes a running global index; convert back to the
+      // item index within this service column.
+      const col = columnsWithOffset[serviceIndex];
+      const itemIndex = col ? globalIndex - col.startIndex : globalIndex;
+      triggerRef.current = el;
+      setOpenSel({ s: serviceIndex, i: itemIndex });
+    };
+
+  const openTitle =
+    openSel !== null
+      ? ((getItems(openSel.s)[openSel.i] as string | undefined) ?? "")
+      : "";
+  const openContent = resolveDrawerContent(
+    openSel !== null ? getDrawers(openSel.s)[openSel.i] : undefined,
+    fallback,
+  );
+
   return (
     <section className="w-full">
       <Container spacing="generous">
@@ -67,7 +120,11 @@ export function ServicesDetail(): ReactNode {
                 imageAlt={t(`service${i + 1}.imageAlt`)}
                 index={i}
               />
-              <ServiceSubList items={items} startIndex={startIndex} />
+              <ServiceSubList
+                items={items}
+                startIndex={startIndex}
+                onSelect={onSelect(i)}
+              />
             </div>
           ))}
         </div>
@@ -85,6 +142,14 @@ export function ServicesDetail(): ReactNode {
           </UiLink>
         </div>
       </Container>
+      <ServiceDrawer
+        open={openSel !== null}
+        title={openTitle}
+        content={openContent}
+        labels={labels}
+        onClose={() => setOpenSel(null)}
+        triggerRef={triggerRef}
+      />
     </section>
   );
 }

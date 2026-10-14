@@ -110,6 +110,85 @@
           "Custom Software & SaaS",
           "AI Solutions & Integration",
           "Cybersecurity"
+        ],
+        "drawers": [
+          {
+            "intro": "Marketing sites and web apps that load fast.",
+            "covers": "From company sites to customer portals, Merai builds on Next.js with server rendering and image optimization built in. Fast on mid-range phones, easy for your team to update.",
+            "receive": [
+              "Responsive sites and customer portals",
+              "A CMS your editors can actually use",
+              "SEO foundations from day one",
+              "Analytics wired in from the start"
+            ],
+            "changes": [
+              "Pages that rank and convert",
+              "Updates without developers",
+              "One owner for the whole site"
+            ]
+          },
+          {
+            "intro": "Apps users keep, not delete.",
+            "covers": "iOS and Android apps with native feel and shared logic where it counts. We handle release, store review, and the long tail of OS updates.",
+            "receive": [
+              "Native iOS and Android apps",
+              "Offline-first where it matters",
+              "Push and notifications done right",
+              "Release management handled"
+            ],
+            "changes": [
+              "Store ratings that hold",
+              "Crashes we hear about first",
+              "Updates without drama"
+            ]
+          },
+          {
+            "intro": "Your operations, as software.",
+            "covers": "Internal tools, dashboards, and multi-tenant SaaS built around how your team actually works. Scoped tight, shipped in slices.",
+            "receive": [
+              "Internal tools that kill spreadsheets",
+              "Multi-tenant SaaS foundations",
+              "Role-based access and audit logs",
+              "Integrations with your stack"
+            ],
+            "changes": [
+              "Workflows without copy-paste",
+              "Data in one place",
+              "Software that fits the team"
+            ]
+          },
+          {
+            "intro": "AI with a business owner, not a demo reel",
+            "coversLabel": "What AI covers",
+            "covers": "Merai builds AI into products and operations. Use cases are chosen for operational value — if a prototype cannot be run, we will not sell it as transformation.",
+            "receive": [
+              "AI features inside existing products and workflows",
+              "Evaluation, fallback, and human review where it matters",
+              "Privacy-aware design for customer and employee data",
+              "Integration with the systems you already run",
+              "Handover so your team can operate the models"
+            ],
+            "changes": [
+              "A use case with an owner, not a graveyard of notebooks",
+              "AI that fails safely when the model is unsure",
+              "Documentation a non-specialist hire can follow"
+            ]
+          },
+          {
+            "intro": "Security you can show an auditor.",
+            "covers": "Reviews, hardening, and secure defaults for the software we ship — and the systems you already run. Findings come with fixes, not just reports.",
+            "receive": [
+              "Security reviews with fixes attached",
+              "Hardened auth and access control",
+              "Data-handling and privacy guidance",
+              "Incident-response basics"
+            ],
+            "changes": [
+              "Findings closed, not filed",
+              "Access every ex-employee loses on day one",
+              "Answers ready for diligence"
+            ]
+          }
         ]
       },
       "service2": {
@@ -121,6 +200,83 @@
           "Team Augmentation",
           "Market Expansion Strategy",
           "Operations & SOP Advisory"
+        ],
+        "drawers": [
+          {
+            "intro": "Decisions with an owner.",
+            "covers": "Merai joins as a working partner: diagnosing bottlenecks, sizing bets, and staying through implementation. No decks that die in a drawer.",
+            "receive": [
+              "Bottleneck diagnosis with numbers",
+              "A prioritized, costed roadmap",
+              "Metrics an owner watches weekly",
+              "Implementation support, not just advice"
+            ],
+            "changes": [
+              "One plan instead of five opinions",
+              "Bets sized before they're placed",
+              "Follow-through, not handoffs"
+            ]
+          },
+          {
+            "intro": "Kill the copy-paste work.",
+            "covers": "Approvals, reconciliations, and reporting automated where the volume justifies it. Humans keep the judgment calls.",
+            "receive": [
+              "Approval flows without email chains",
+              "Reconciliation and reporting automation",
+              "Alerts for exceptions, not noise",
+              "Fallbacks when systems disagree"
+            ],
+            "changes": [
+              "Hours back every week",
+              "Errors caught by rules, not luck",
+              "A trail for every automated step"
+            ]
+          },
+          {
+            "intro": "Senior engineers, inside your team.",
+            "covers": "Merai engineers join your standups, your repo, your conventions. Onboarded in days, productive in the first sprint.",
+            "receive": [
+              "Engineers matched to your stack",
+              "Codebase onboarding in days",
+              "Reviews that raise the bar",
+              "Knowledge transfer throughout"
+            ],
+            "changes": [
+              "Velocity without hiring risk",
+              "Standards that stick after we leave",
+              "No silo when the engagement ends"
+            ]
+          },
+          {
+            "intro": "New markets, sized honestly.",
+            "covers": "Demand validation, channel testing, and launch planning for expansion. We size the prize before spending to chase it.",
+            "receive": [
+              "Demand and competitor mapping",
+              "Channel tests with real budgets",
+              "Launch plans with owners",
+              "Kill criteria agreed upfront"
+            ],
+            "changes": [
+              "Expansion as experiments, not gambles",
+              "Spend tied to evidence",
+              "A clear go or no-go"
+            ]
+          },
+          {
+            "intro": "How we do things, written down.",
+            "covers": "SOPs, playbooks, and operating cadences your team actually follows. Written with the people doing the work, not above them.",
+            "receive": [
+              "SOPs for critical workflows",
+              "Playbooks for incidents and onboarding",
+              "Cadences with owners and metrics",
+              "Reviews that keep docs alive"
+            ],
+            "changes": [
+              "New hires productive in days",
+              "Fewer “ask Budi” bottlenecks",
+              "Operations that survive turnover"
+            ]
+          }
         ]
       },
       "service3": {
@@ -132,6 +288,83 @@
           "Content & Branding",
           "Performance Ads",
           "Email & CRM Marketing"
+        ],
+        "drawers": [
+          {
+            "intro": "Traffic you can attribute.",
+            "covers": "Technical SEO, content structure, and paid search managed against revenue — not vanity rankings. Reports your finance team can read.",
+            "receive": [
+              "Technical fixes that unblock crawling",
+              "Content structure that ranks",
+              "Paid search tied to revenue",
+              "Monthly reports without jargon"
+            ],
+            "changes": [
+              "Rankings that move revenue",
+              "Ad spend with an owner",
+              "No more mystery invoices"
+            ]
+          },
+          {
+            "intro": "Channels that sound like you.",
+            "covers": "Calendars, creative, and community management for your brand's channels. Consistent voice, measured response.",
+            "receive": [
+              "A calendar you approve weekly",
+              "Creative sized for every channel",
+              "Community replies in your voice",
+              "Growth reports monthly"
+            ],
+            "changes": [
+              "Posting without the scramble",
+              "A voice customers recognize",
+              "Followers that become pipeline"
+            ]
+          },
+          {
+            "intro": "A brand with a point of view.",
+            "covers": "Naming, identity, and content systems from the team behind Merai's own brand. Distinctive, documented, and usable by non-designers.",
+            "receive": [
+              "Identity and voice guidelines",
+              "Content templates your team can run",
+              "Launch and campaign assets",
+              "A system, not a pile of files"
+            ],
+            "changes": [
+              "Every touchpoint on-brand",
+              "Content shipped without designers",
+              "A brand new hires can extend"
+            ]
+          },
+          {
+            "intro": "Every rupiah has a job.",
+            "covers": "Paid social and display run as experiments: creative tested, audiences narrowed, losers killed fast. Scale only what proves out.",
+            "receive": [
+              "Creative variants tested weekly",
+              "Audiences narrowed by evidence",
+              "Budgets shifted to winners",
+              "Dashboards you can check anytime"
+            ],
+            "changes": [
+              "CAC trending down",
+              "Losers killed in days",
+              "Scale with confidence"
+            ]
+          },
+          {
+            "intro": "The channel you own.",
+            "covers": "Lifecycle email and CRM flows that compound: welcome, win-back, and post-purchase sequences wired to your data.",
+            "receive": [
+              "Welcome and onboarding sequences",
+              "Win-back and retention flows",
+              "Segmentation your team manages",
+              "Deliverability kept clean"
+            ],
+            "changes": [
+              "Repeat revenue on autopilot",
+              "Lists that stay healthy",
+              "Campaigns without code"
+            ]
+          }
         ]
       },
       "description": "From first sketch to scale — one team for your software, your growth, and your brand.",
@@ -397,7 +630,209 @@
       "item9": "Public sector and institutions",
       "item10": "Startups and scale-ups",
       "item11": "Professional services",
-      "item12": "Media and hospitality"
+      "item12": "Media and hospitality",
+      "drawers": [
+        {
+          "intro": "Software your compliance team can read.",
+          "covers": "Merai builds client portals, onboarding flows, and internal tools for financial teams. Everything ships with audit trails, role-based access, and documentation a non-specialist can follow.",
+          "receive": [
+            "Secure portals and dashboards your team actually uses",
+            "KYC and onboarding flows that cut drop-off",
+            "Reconciliations and reporting, automated",
+            "Handover docs your auditors can trace"
+          ],
+          "changes": [
+            "Fewer manual reconciliations",
+            "An owner for every number on screen",
+            "Releases your auditors can follow"
+          ]
+        },
+        {
+          "intro": "Systems that respect clinical time.",
+          "covers": "Appointment scheduling, patient portals, and operations dashboards for clinics and health providers. Privacy-aware by design, with data handling your staff can explain.",
+          "receive": [
+            "Scheduling and reminders that cut no-shows",
+            "Patient portals that reduce front-desk load",
+            "Operations dashboards for capacity and follow-ups",
+            "Privacy-aware design for patient data"
+          ],
+          "changes": [
+            "Less admin per visit",
+            "Fewer missed appointments",
+            "Staff time back for care"
+          ]
+        },
+        {
+          "intro": "Storefronts that convert, online and off.",
+          "covers": "E-commerce, catalogs, and loyalty experiences for retail brands. Fast on mid-range phones and measurable from day one.",
+          "receive": [
+            "Storefronts that load fast on any device",
+            "Catalog and inventory tooling",
+            "Promotions and loyalty flows",
+            "Analytics your marketers can read"
+          ],
+          "changes": [
+            "Faster pages, better conversion",
+            "One place for catalog truth",
+            "Campaigns you can measure"
+          ]
+        },
+        {
+          "intro": "Shop-floor truth, on a screen.",
+          "covers": "Tracking, quality, and maintenance tooling for factories and industrial operators. Built for gloves, glare, and intermittent connectivity.",
+          "receive": [
+            "Production and downtime dashboards",
+            "Quality-check and traceability flows",
+            "Maintenance schedules and alerts",
+            "Offline-tolerant shop-floor interfaces"
+          ],
+          "changes": [
+            "Downtime you can see coming",
+            "Quality data without clipboards",
+            "One owner per line metric"
+          ]
+        },
+        {
+          "intro": "Product teams, reinforced.",
+          "covers": "Design systems, platforms, and integrations for tech companies. We join your roadmap, ship inside your stack, and leave the codebase better than we found it.",
+          "receive": [
+            "Features shipped inside your stack",
+            "Design systems that scale",
+            "API integrations that hold up",
+            "Reviews your team can learn from"
+          ],
+          "changes": [
+            "Velocity without the mess",
+            "A codebase new hires can enter",
+            "Roadmap items actually closed"
+          ]
+        },
+        {
+          "intro": "Learning tools students finish.",
+          "covers": "Enrollment flows, course dashboards, and admin tooling for schools and course providers. Simple for students, sane for administrators.",
+          "receive": [
+            "Enrollment and payment flows",
+            "Course and progress dashboards",
+            "Admin tooling for staff",
+            "Publishing without developers"
+          ],
+          "changes": [
+            "Higher completion rates",
+            "Less admin per cohort",
+            "Enrollment data you can trust"
+          ]
+        },
+        {
+          "intro": "Every shipment, accounted for.",
+          "covers": "Tracking portals, fleet dashboards, and booking flows for logistics operators. Real-time where it matters, honest where it isn't.",
+          "receive": [
+            "Customer tracking portals",
+            "Fleet and route dashboards",
+            "Booking and dispatch flows",
+            "Proof-of-delivery capture"
+          ],
+          "changes": [
+            "Fewer “where is my order” calls",
+            "Dispatch decisions from live data",
+            "Delivery records without paperwork"
+          ]
+        },
+        {
+          "intro": "Critical systems, calm interfaces.",
+          "covers": "Monitoring, metering, and field-operations software for energy and utility providers. Reliable, readable, and built for the long term.",
+          "receive": [
+            "Asset and meter monitoring",
+            "Field-crew tasking and reporting",
+            "Outage and maintenance logs",
+            "Reports regulators can read"
+          ],
+          "changes": [
+            "Issues spotted before outages",
+            "Field data without the radio relay",
+            "A maintenance history that compounds"
+          ]
+        },
+        {
+          "intro": "Public services people can use.",
+          "covers": "Portals, permit flows, and internal systems for public institutions. Accessible, auditable, and documented for staff turnover.",
+          "receive": [
+            "Citizen-facing service portals",
+            "Application and permit flows",
+            "Internal case management",
+            "Accessibility and audit compliance"
+          ],
+          "changes": [
+            "Queues moved online",
+            "Every case traceable",
+            "Systems that survive staff rotation"
+          ]
+        },
+        {
+          "intro": "MVP in weeks, not quarters.",
+          "covers": "Scoped MVPs from senior engineers with clean architecture. You get momentum now and a codebase investors can diligence.",
+          "receive": [
+            "A scoped MVP in weeks",
+            "Architecture that scales past v1",
+            "Analytics from day one",
+            "Handover when you're ready to hire"
+          ],
+          "changes": [
+            "Launched, not stuck in design",
+            "Burn spent on product, not rework",
+            "A codebase that passes diligence"
+          ]
+        },
+        {
+          "intro": "Your expertise, productized.",
+          "covers": "Client portals, engagement tracking, and proposal-to-invoice flows for firms. Less admin, more billable work.",
+          "receive": [
+            "Client portals that cut status emails",
+            "Engagement and time tracking",
+            "Proposal and invoicing flows",
+            "Knowledge bases your team keeps"
+          ],
+          "changes": [
+            "Fewer status meetings",
+            "Billing without the spreadsheet",
+            "Clients who feel informed"
+          ]
+        },
+        {
+          "intro": "Experiences guests remember.",
+          "covers": "Booking flows, content sites, and loyalty experiences for media and hospitality brands. Fast, visual, and easy for staff to update.",
+          "receive": [
+            "Booking and reservation flows",
+            "Content publishing without developers",
+            "Loyalty and review flows",
+            "Campaign pages in hours"
+          ],
+          "changes": [
+            "More direct bookings",
+            "Content live without a ticket queue",
+            "Guests who come back"
+          ]
+        }
+      ]
+    },
+    "drawer": {
+      "proposal": "Request a proposal",
+      "coversLabel": "What this covers",
+      "receiveLabel": "What you receive",
+      "changesLabel": "What changes when it works",
+      "closeLabel": "Close drawer",
+      "fallbackIntro": "with a business owner, not a demo reel",
+      "fallbackCovers": "Tell us where it hurts — a paragraph is enough. We scope the smallest useful version, put an owner on it, and stay until it runs in production.",
+      "fallbackReceive": [
+        "A scoped first version, not a slide deck",
+        "An owner on your side and ours",
+        "Documentation your team can follow",
+        "Handover so you can run it without us"
+      ],
+      "fallbackChanges": [
+        "One system doing the job, not five workarounds",
+        "Numbers you can check without asking us",
+        "A team that can operate what we built"
+      ]
     }
   },
   "Works": {
@@ -539,7 +974,7 @@
     "info": {
       "heading": "Get in Touch",
       "description": "Reach us through any of these channels — we'll get back to you within 24 hours.",
-      "email": "info@orphicgavel.com",
+      "email": "support@orphicgavel.com",
       "locationLabel": "Visit Us",
       "locationLines": [
         "Indonesia Stock Exchange, Tower 2",
@@ -576,8 +1011,8 @@
         "Jakarta 12190",
         "Indonesia"
     ],
-    "fax": "Fax",
-    "faxNumber": "+62 21 515 7799",
+    "fax": "WA Business Merai Tech",
+    "faxNumber": "0822 242 242 31",
     "parentCompany": "A subsidiary of",
     "parentCompanyName": "PT Orphic Gavel Corp.",
     "copyright": "© 2025 Orphic Gavel. All rights reserved.",

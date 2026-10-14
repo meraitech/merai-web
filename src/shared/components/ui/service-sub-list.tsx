@@ -31,11 +31,15 @@ function prefersReducedMotion(): boolean {
 function ServiceSubItem({
   label,
   href,
+  index,
   indexLabel,
+  onSelect,
 }: {
   label: string;
   href: "/contact";
+  index: number;
   indexLabel: string;
+  onSelect?: (label: string, index: number, el: HTMLButtonElement) => void;
 }): ReactNode {
   const itemRef = useRef<HTMLLIElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
@@ -106,7 +110,7 @@ function ServiceSubItem({
       );
   };
 
-  const handleMouseEnter = (ev: MouseEvent<HTMLAnchorElement>) => {
+  const handleMouseEnter = (ev: MouseEvent<Element>) => {
     if (!itemRef.current) return;
     const rect = itemRef.current.getBoundingClientRect();
     slideIn(
@@ -119,7 +123,7 @@ function ServiceSubItem({
     );
   };
 
-  const handleMouseLeave = (ev: MouseEvent<HTMLAnchorElement>) => {
+  const handleMouseLeave = (ev: MouseEvent<Element>) => {
     if (!itemRef.current) return;
     const rect = itemRef.current.getBoundingClientRect();
     slideOut(
@@ -145,33 +149,58 @@ function ServiceSubItem({
     </span>
   ));
 
+  const rowInner = (
+    <>
+      <span className="flex min-w-0 items-baseline gap-3">
+        <span
+          aria-hidden="true"
+          className="shrink-0 font-serif text-sm italic text-neutral-400 dark:text-neutral-500"
+        >
+          {indexLabel}
+        </span>
+        <span className="text-base font-medium tracking-tight text-neutral-700 sm:text-lg dark:text-neutral-300">
+          {label}
+        </span>
+      </span>
+      <ArrowUpRight className="h-4 w-4 shrink-0 text-neutral-400 transition-colors dark:text-neutral-500" />
+    </>
+  );
+
+  const rowClassName =
+    "flex w-full items-center justify-between gap-3 px-1 py-3 text-left sm:py-3.5";
+
   return (
     <li
       ref={itemRef}
       className="relative overflow-hidden border-t border-neutral-200/60 dark:border-neutral-800/60"
     >
-      <UiLink
-        href={href}
-        aria-label={label}
-        className="flex items-center justify-between gap-3 px-1 py-3 sm:py-3.5"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        onFocus={() => slideIn("bottom")}
-        onBlur={() => slideOut("bottom")}
-      >
-        <span className="flex min-w-0 items-baseline gap-3">
-          <span
-            aria-hidden="true"
-            className="shrink-0 font-serif text-sm italic text-neutral-400 dark:text-neutral-500"
-          >
-            {indexLabel}
-          </span>
-          <span className="text-base font-medium tracking-tight text-neutral-700 sm:text-lg dark:text-neutral-300">
-            {label}
-          </span>
-        </span>
-        <ArrowUpRight className="h-4 w-4 shrink-0 text-neutral-400 transition-colors dark:text-neutral-500" />
-      </UiLink>
+      {onSelect ? (
+        <button
+          type="button"
+          aria-haspopup="dialog"
+          aria-label={label}
+          className={`${rowClassName} cursor-pointer`}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          onFocus={() => slideIn("bottom")}
+          onBlur={() => slideOut("bottom")}
+          onClick={(ev) => onSelect(label, index, ev.currentTarget)}
+        >
+          {rowInner}
+        </button>
+      ) : (
+        <UiLink
+          href={href}
+          aria-label={label}
+          className="flex items-center justify-between gap-3 px-1 py-3 sm:py-3.5"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          onFocus={() => slideIn("bottom")}
+          onBlur={() => slideOut("bottom")}
+        >
+          {rowInner}
+        </UiLink>
+      )}
 
       <div
         ref={overlayRef}
@@ -206,10 +235,12 @@ export function ServiceSubList({
   items,
   contactHref = "/contact",
   startIndex = 0,
+  onSelect,
 }: {
   items: string[];
   contactHref?: "/contact";
   startIndex?: number;
+  onSelect?: (label: string, index: number, el: HTMLButtonElement) => void;
 }): ReactNode {
   if (items.length === 0) return null;
   return (
@@ -219,7 +250,9 @@ export function ServiceSubList({
           key={label}
           label={label}
           href={contactHref}
+          index={startIndex + i}
           indexLabel={String(startIndex + i + 1).padStart(2, "0")}
+          onSelect={onSelect}
         />
       ))}
       <li
