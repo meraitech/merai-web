@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { SPLASH_LOGO_SRC } from "@/shared/assets/splash-logo";
+import { isTransitionRoute } from "@/shared/utils/transition-routes";
 
 const MIN_DISPLAY_MS = 400;
 const MAX_WAIT_MS = 3500;
@@ -146,13 +147,19 @@ export function SplashScreen() {
       if (!(target instanceof Element)) return;
       const anchor = target.closest("a[href]");
       if (!(anchor instanceof HTMLAnchorElement)) return;
+      // Morph navigations carry their own transition — stay out of the way.
+      if (anchor.hasAttribute("data-morph-nav")) return;
       if (!isInternalNav(anchor, event)) return;
+      // Only cover navigations to transition routes (e.g. /works).
+      // Detail pages like /works/{slug} swap instantly.
+      if (!isTransitionRoute(anchor.pathname)) return;
       show();
       hideSequence(NAV_DISPLAY_MS);
       fallback(NAV_FALLBACK_MS);
     };
 
     const onPopState = () => {
+      if (!isTransitionRoute(window.location.pathname)) return;
       show();
       hideSequence(NAV_DISPLAY_MS);
       fallback(NAV_FALLBACK_MS);
@@ -170,11 +177,13 @@ export function SplashScreen() {
 
   // Route resolved: re-cover (no-op if intent already did) and fade on time.
   // Hash-only jumps don't change pathname, so they stay instant.
+  // Only transition routes get the cover; detail pages stay instant.
   useEffect(() => {
     if (firstRoute.current) {
       firstRoute.current = false;
       return;
     }
+    if (!isTransitionRoute(pathname)) return;
     show();
     hideSequence(NAV_DISPLAY_MS);
     fallback(NAV_FALLBACK_MS);

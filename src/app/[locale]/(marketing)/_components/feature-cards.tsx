@@ -3,7 +3,8 @@
 import { type ReactNode } from "react";
 import { ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
-import { useTranslations, useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
+import { MorphLink } from "@/features/works/components/morph-link";
 import { Container } from "@/shared/components/ui/container";
 import { SectionHeading } from "@/shared/components/ui/section-heading";
 
@@ -184,15 +185,18 @@ function FeatureCard({
   metricNote: string;
 }): ReactNode {
   return (
-    <motion.a
+    <MorphLink
       href={card.href}
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      whileHover={{ y: -4 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.6, delay: index * 0.1, ease }}
       className="group flex flex-col bg-neutral-50 dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-800 rounded-sm overflow-hidden hover:border-neutral-400 dark:hover:border-neutral-600 hover:shadow-lg transition-[border-color,box-shadow]"
     >
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        whileHover={{ y: -4 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6, delay: index * 0.1, ease }}
+        className="flex flex-col h-full"
+      >
       <div className="relative h-56 sm:h-64 bg-white dark:bg-neutral-950">
         {card.visual === "comparison" && (
           <ComparisonVisual
@@ -222,14 +226,14 @@ function FeatureCard({
           <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
         </div>
       </div>
-    </motion.a>
+      </motion.div>
+    </MorphLink>
   );
 }
 
 export function FeatureCards(): ReactNode {
   const t = useTranslations("Home.standard");
-  const locale = useLocale();
-  const worksHref = `/${locale}/works`;
+  const worksHref = "/works";
 
   const rows: ComparisonRow[] = [1, 2, 3].map((i) => ({
     name: t(`row${i}.name`),

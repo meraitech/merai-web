@@ -645,12 +645,7 @@
     },
     "works": {
       "label": "Karya Kami",
-      "heading": "Karya Pilihan Kami,\ndari kanvas, diwujudkan",
-      "tabs": {
-        "studios": "Web",
-        "creators": "Mobile",
-        "teams": "Desain"
-      }
+      "heading": "Karya Pilihan Kami,\ndari kanvas, diwujudkan"
     },
     "howItWorks": {
       "headingLine1": "Dari ide hingga desain jadi",
@@ -812,14 +807,20 @@
         "role": "CEO",
         "image": "/img/founders/ceo.jpeg",
         "bio": "Operator yang menjadi pembangun, memimpin visi produk dan kemitraan.",
-        "tags": ["Strategi", "Kepemimpinan"]
+        "tags": [
+          "Strategi",
+          "Kepemimpinan"
+        ]
       },
       "member2": {
         "name": "Ranaufal Muha",
         "role": "CTO",
         "image": "/img/founders/cto.webp",
         "bio": "Memimpin engineering dengan arsitektur bersih dan pengiriman cepat.",
-        "tags": ["Engineering", "Arsitektur"]
+        "tags": [
+          "Engineering",
+          "Arsitektur"
+        ]
       }
     },
     "timeline": {
@@ -1357,80 +1358,45 @@
       "Mobile": "Mobile"
     },
     "projects": {
-      "halcyon-type-foundry": {
-        "title": "Redesain Platform E-Commerce",
-        "client": "RetailCorp",
+      "soho-artist": {
+        "title": "Rizky Febian — Portofolio Artis",
+        "year": "2026",
+        "tags": [
+          "Web App"
+        ],
+        "image": "https://soho-artist.vercel.app/images/og-rizky-febian.jpg"
+      },
+      "icma-indonesia": {
+        "title": "ICMA Indonesia — Platform Sertifikasi CMA",
+        "year": "2026",
+        "tags": [
+          "Web App"
+        ],
+        "image": "https://soho-icma.vercel.app/assets/Indonesia_branch.jpg"
+      },
+      "wiatour": {
+        "title": "Wiatour — Pemesanan Tour & Travel",
+        "year": "2026",
+        "tags": [
+          "Web App"
+        ],
+        "image": "https://pub-bf8738c6955442ceb90aae770dea455a.r2.dev/list%20tour%20web%202-05.webp"
+      },
+      "orphic-gavel": {
+        "title": "Orphic Gavel — Profil Holding Company",
+        "year": "2026",
+        "tags": [
+          "Web App"
+        ],
+        "image": "https://www.orphicgavel.com/seo/og.png"
+      },
+      "merai-construction": {
+        "title": "Merai Construction — Dealer & Komersial",
         "year": "2025",
         "tags": [
           "Web App"
         ],
-        "image": "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&q=80"
-      },
-      "bloom-cold-brew": {
-        "title": "Aplikasi Mobile FinTech",
-        "client": "PayFlow",
-        "year": "2025",
-        "tags": [
-          "Mobile"
-        ],
-        "image": "https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?w=800&q=80"
-      },
-      "polaris-navigation-kit": {
-        "title": "Dashboard SaaS UI",
-        "client": "DataVista",
-        "year": "2024",
-        "tags": [
-          "Web App",
-          "Produk"
-        ],
-        "image": "https://images.unsplash.com/photo-1618004652321-13a63e576b80?w=800&q=80"
-      },
-      "northwind-commerce": {
-        "title": "Sistem Manajemen Logistik",
-        "client": "ShipPro",
-        "year": "2024",
-        "tags": [
-          "Web App",
-          "Mobile"
-        ],
-        "image": "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&q=80"
-      },
-      "quanta-dashboard": {
-        "title": "Platform Kesehatan",
-        "client": "MediCare",
-        "year": "2024",
-        "tags": [
-          "Produk"
-        ],
-        "image": "https://images.unsplash.com/photo-1617791160505-6f00504e3519?w=800&q=80"
-      },
-      "drift-outerwear": {
-        "title": "Website Brand & CMS",
-        "client": "UrbanStyle",
-        "year": "2024",
-        "tags": [
-          "Web App"
-        ],
-        "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80"
-      },
-      "orbital-summer-drop": {
-        "title": "Aplikasi Pemesanan Acara",
-        "client": "EventPro",
-        "year": "2023",
-        "tags": [
-          "Mobile",
-          "Produk"
-        ],
-        "image": "https://images.unsplash.com/photo-1618220179428-22790b461013?w=800&q=80"
-      },
-      "parsec-mobile-os": {
-        "title": "Suite Alat Internal",
-        "client": "CorpWare",
-        "year": "2023",
-        "tags": [
-          "Produk"
-        ],
-        "image": "https://images.unsplash.com/photo-1618220252344-8ec99ec624b1?w=800&q=80"
+        "image": "https://web-construction-seven.vercel.app/images/contents/hero.jpg"
       }
     }
   },
@@ -1474,7 +1440,10 @@
       "emailNote": "Untuk proyek, kemitraan & pers",
       "socialsLabel": "Ikuti Kami",
       "hoursLabel": "Jam Operasional",
-      "hoursLines": ["Senin – Jumat", "09.00 – 18.00 WIB"],
+      "hoursLines": [
+        "Senin – Jumat",
+        "09.00 – 18.00 WIB"
+      ],
       "responseNote": "Kami biasanya membalas dalam satu hari kerja."
     }
   },
@@ -1496,8 +1465,8 @@
     "addressLines": [
       "Bursa Efek Indonesia, Tower 2",
       "Lantai 17, Jl. Jend. Sudirman Kav. 52-53",
-        "Jakarta 12190",
-        "Indonesia"
+      "Jakarta 12190",
+      "Indonesia"
     ],
     "fax": "WA Business Merai Tech",
     "faxNumber": "0822 242 242 31",
@@ -1587,17 +1556,17 @@
   "WorkDetail": {
     "notFound": "Proyek tidak ditemukan",
     "backToWorks": "Kembali ke Karya",
-    "clientLabel": "Klien",
     "yearLabel": "Tahun",
     "caseStudyComing": "Studi kasus detail segera hadir",
+    "viewLive": "Lihat situs live",
     "photoCredit": "Kredit foto",
     "moreSources": "+6 sumber",
     "sections": {
-      "introduction": "Pendahuluan",
-      "overview": "Gambaran Platform",
-      "key-features": "Fitur Utama",
-      "use-cases": "Kasus Penggunaan Umum",
-      "conclusion": "Kesimpulan"
+      "brief": "Ringkasan",
+      "gallery": "Galeri",
+      "problem": "Masalah yang Diselesaikan",
+      "solution": "Yang Kami Bangun",
+      "summary": "Kesimpulan Proyek"
     }
   },
   "NotFound": {

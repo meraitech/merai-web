@@ -645,12 +645,7 @@
     },
     "works": {
       "label": "Our Works",
-      "heading": "Our Selected Works,\nthe canvas, made it to market",
-      "tabs": {
-        "studios": "Web Apps",
-        "creators": "Mobile",
-        "teams": "Design"
-      }
+      "heading": "Our Selected Works,\nthe canvas, made it to market"
     },
     "howItWorks": {
       "headingLine1": "From idea to finished design",
@@ -812,14 +807,20 @@
         "role": "CEO",
         "image": "/img/founders/ceo.jpeg",
         "bio": "Operator turned builder, leading product vision and partnerships.",
-        "tags": ["Strategy", "Leadership"]
+        "tags": [
+          "Strategy",
+          "Leadership"
+        ]
       },
       "member2": {
         "name": "Ranaufal Muha",
         "role": "CTO",
         "image": "/img/founders/cto.webp",
         "bio": "Leads engineering with a taste for clean architecture and fast shipping.",
-        "tags": ["Engineering", "Architecture"]
+        "tags": [
+          "Engineering",
+          "Architecture"
+        ]
       }
     },
     "timeline": {
@@ -1357,80 +1358,45 @@
       "Mobile": "Mobile"
     },
     "projects": {
-      "halcyon-type-foundry": {
-        "title": "E-Commerce Platform Redesign",
-        "client": "RetailCorp",
+      "soho-artist": {
+        "title": "Rizky Febian — Artist Portfolio",
+        "year": "2026",
+        "tags": [
+          "Web App"
+        ],
+        "image": "https://soho-artist.vercel.app/images/og-rizky-febian.jpg"
+      },
+      "icma-indonesia": {
+        "title": "ICMA Indonesia — CMA Certification Platform",
+        "year": "2026",
+        "tags": [
+          "Web App"
+        ],
+        "image": "https://soho-icma.vercel.app/assets/Indonesia_branch.jpg"
+      },
+      "wiatour": {
+        "title": "Wiatour — Tour & Travel Booking",
+        "year": "2026",
+        "tags": [
+          "Web App"
+        ],
+        "image": "https://pub-bf8738c6955442ceb90aae770dea455a.r2.dev/list%20tour%20web%202-05.webp"
+      },
+      "orphic-gavel": {
+        "title": "Orphic Gavel — Holding Company Profile",
+        "year": "2026",
+        "tags": [
+          "Web App"
+        ],
+        "image": "https://www.orphicgavel.com/seo/og.png"
+      },
+      "merai-construction": {
+        "title": "Merai Construction — Dealership & Commercial",
         "year": "2025",
         "tags": [
           "Web App"
         ],
-        "image": "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&q=80"
-      },
-      "bloom-cold-brew": {
-        "title": "FinTech Mobile App",
-        "client": "PayFlow",
-        "year": "2025",
-        "tags": [
-          "Mobile"
-        ],
-        "image": "https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?w=800&q=80"
-      },
-      "polaris-navigation-kit": {
-        "title": "SaaS Dashboard UI",
-        "client": "DataVista",
-        "year": "2024",
-        "tags": [
-          "Web App",
-          "Product"
-        ],
-        "image": "https://images.unsplash.com/photo-1618004652321-13a63e576b80?w=800&q=80"
-      },
-      "northwind-commerce": {
-        "title": "Logistics Management System",
-        "client": "ShipPro",
-        "year": "2024",
-        "tags": [
-          "Web App",
-          "Mobile"
-        ],
-        "image": "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&q=80"
-      },
-      "quanta-dashboard": {
-        "title": "Healthcare Platform",
-        "client": "MediCare",
-        "year": "2024",
-        "tags": [
-          "Product"
-        ],
-        "image": "https://images.unsplash.com/photo-1617791160505-6f00504e3519?w=800&q=80"
-      },
-      "drift-outerwear": {
-        "title": "Brand Website & CMS",
-        "client": "UrbanStyle",
-        "year": "2024",
-        "tags": [
-          "Web App"
-        ],
-        "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80"
-      },
-      "orbital-summer-drop": {
-        "title": "Event Booking App",
-        "client": "EventPro",
-        "year": "2023",
-        "tags": [
-          "Mobile",
-          "Product"
-        ],
-        "image": "https://images.unsplash.com/photo-1618220179428-22790b461013?w=800&q=80"
-      },
-      "parsec-mobile-os": {
-        "title": "Internal Tools Suite",
-        "client": "CorpWare",
-        "year": "2023",
-        "tags": [
-          "Product"
-        ],
-        "image": "https://images.unsplash.com/photo-1618220252344-8ec99ec624b1?w=800&q=80"
+        "image": "https://web-construction-seven.vercel.app/images/contents/hero.jpg"
       }
     }
   },
@@ -1474,7 +1440,10 @@
       "emailNote": "For projects, partnerships & press",
       "socialsLabel": "Follow Us",
       "hoursLabel": "Office Hours",
-      "hoursLines": ["Monday – Friday", "09.00 – 18.00 WIB"],
+      "hoursLines": [
+        "Monday – Friday",
+        "09.00 – 18.00 WIB"
+      ],
       "responseNote": "We usually reply within one business day."
     }
   },
@@ -1496,8 +1465,8 @@
     "addressLines": [
       "Indonesia Stock Exchange, Tower 2",
       "17th Floor, Jl. Jend. Sudirman Kav. 52-53",
-        "Jakarta 12190",
-        "Indonesia"
+      "Jakarta 12190",
+      "Indonesia"
     ],
     "fax": "WA Business Merai Tech",
     "faxNumber": "0822 242 242 31",
@@ -1587,17 +1556,17 @@
   "WorkDetail": {
     "notFound": "Project not found",
     "backToWorks": "Back to Works",
-    "clientLabel": "Client",
     "yearLabel": "Year",
     "caseStudyComing": "Detailed case study coming soon",
+    "viewLive": "View live site",
     "photoCredit": "Photo credit",
     "moreSources": "+6 sources",
     "sections": {
-      "introduction": "Introduction",
-      "overview": "Platform Overview",
-      "key-features": "Key Features",
-      "use-cases": "Common Use Cases",
-      "conclusion": "Conclusion"
+      "brief": "Brief",
+      "gallery": "Gallery",
+      "problem": "Problem We Solve",
+      "solution": "What We Built",
+      "summary": "Project Summary"
     }
   },
   "NotFound": {

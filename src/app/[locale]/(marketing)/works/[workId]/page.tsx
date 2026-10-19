@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return pageMetadata({
     locale,
     path: `/works/${workId}`,
-    title: `${work.title} — ${work.client}`,
-    description: `Case study: ${work.title} for ${work.client} (${work.year}).`,
+    title: work.title,
+    description: `Case study: ${work.title} (${work.year}).`,
   });
 }
 

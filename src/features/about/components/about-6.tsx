@@ -67,14 +67,13 @@ export default function About6() {
 
         <motion.div
           variants={grid}
-          className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:mt-16 lg:grid-cols-2"
+          className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3"
         >
           {MEMBER_IDS.map((id) => {
             const name = t(`team.member${id}.name`);
             const role = t(`team.member${id}.role`);
             const image = t(`team.member${id}.image`);
             const bio = t(`team.member${id}.bio`);
-            const tags = t.raw(`team.member${id}.tags`) as string[];
 
             return (
               <motion.article
@@ -82,38 +81,26 @@ export default function About6() {
                 variants={item}
                 whileHover={{ y: -3 }}
                 transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                className="flex flex-col rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition-[box-shadow,border-color] duration-300 hover:shadow-lg hover:shadow-neutral-950/5 dark:border-neutral-800 dark:bg-neutral-900 dark:shadow-none dark:hover:border-neutral-700 dark:hover:shadow-none"
+                className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-neutral-200 shadow-sm transition-[box-shadow,border-color] duration-300 hover:shadow-lg hover:shadow-neutral-950/5 dark:border-neutral-800 dark:shadow-none dark:hover:border-neutral-700 dark:hover:shadow-none"
               >
-                <div className="flex items-start gap-3">
-                  <img
-                    src={image}
-                    alt={name}
-                    className="h-16 w-16 rounded-full object-cover ring-1 ring-black/5 dark:ring-white/10"
-                  />
-                </div>
+                <img
+                  src={image}
+                  alt={name}
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
 
-                <h3 className="mt-5 text-base font-semibold text-neutral-900 dark:text-white">
-                  {name}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+
+                <div className="absolute inset-0 flex flex-1 flex-col justify-end p-6 sm:p-8">
+                <h3 className="text-xl font-semibold text-white sm:text-2xl">
+                  {name}{" "}
+                  <span className="font-normal text-white/80">({role})</span>
                 </h3>
-                <p className="mt-0.5 text-sm text-neutral-600 dark:text-neutral-400">
-                  {role}
-                </p>
-                <p className="mt-3 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+                <p className="mt-3 text-sm leading-relaxed text-white/80">
                   {bio}
                 </p>
 
-                <div className="mb-5 mt-4 flex flex-wrap gap-1.5">
-                  {tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full bg-neutral-100 px-2.5 py-1 text-xs font-medium text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="mt-auto flex items-center gap-1 pt-4">
+                <div className="mt-4 flex items-center gap-1">
                   {(SOCIAL_LINKS[id] ?? []).map((link) => {
                     const Icon = link.icon;
                     return (
@@ -123,16 +110,21 @@ export default function About6() {
                         target="_blank"
                         rel="noreferrer"
                         aria-label={`${name} on ${link.label}`}
-                        className="inline-flex h-9 w-9 items-center justify-center rounded-full text-neutral-500 transition-colors duration-200 hover:bg-neutral-100 hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900/30 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-white dark:focus-visible:ring-white/40"
+                        className="inline-flex h-9 w-9 items-center justify-center rounded-full text-white/70 transition-colors duration-200 hover:bg-white/20 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
                       >
                         <Icon className="h-4 w-4" />
                       </a>
                     );
                   })}
                 </div>
+                </div>
               </motion.article>
             );
           })}
+          <div
+            aria-hidden="true"
+            className="hidden aspect-[3/4] rounded-2xl border border-dashed border-neutral-200 dark:border-neutral-800 sm:block"
+          />
         </motion.div>
       </motion.div>
     </section>
