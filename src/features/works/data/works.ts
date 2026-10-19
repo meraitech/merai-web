@@ -24,7 +24,7 @@ export const works: Work[] = [
     title: "Rizky Febian — Artist Portfolio",
     year: "2026",
     tags: ["Web App"],
-    image: "https://soho-artist.vercel.app/images/og-rizky-febian.jpg",
+    image: "/img/works/rizkyfebian.webp",
     liveUrl: "https://soho-artist.vercel.app/",
     stack: ["Next.js", "React", "Tailwind CSS", "Framer Motion", "Vercel"],
     overview:
@@ -63,14 +63,14 @@ export const works: Work[] = [
     title: "ICMA Indonesia — CMA Certification Platform",
     year: "2026",
     tags: ["Web App"],
-    image: "https://soho-icma.vercel.app/assets/Indonesia_branch.jpg",
+    image: "/img/works/icma.webp",
     liveUrl: "https://soho-icma.vercel.app/",
     stack: ["Next.js", "React", "Tailwind CSS", "Three.js", "Vercel"],
     overview:
       "The digital home of the ICMA Indonesia branch — education programs (CMA, CGBA), CFO Award, membership, events, and announcements in one credible, mobile-first experience, backed by a global Asia-Pacific network.",
     images: [
       {
-        url: "https://soho-icma.vercel.app/assets/Indonesia_branch.jpg",
+        url: "/img/works/icma.webp",
         caption: "Hero — Become a CMA",
       },
       {
@@ -103,7 +103,7 @@ export const works: Work[] = [
     year: "2026",
     tags: ["Web App"],
     image:
-      "https://pub-bf8738c6955442ceb90aae770dea455a.r2.dev/list%20tour%20web%202-05.webp",
+      "/img/works/wiatour.webp",
     liveUrl: "https://www.wiatour.com/",
     stack: ["Next.js", "Payload CMS", "MongoDB", "Tailwind CSS", "GSAP"],
     overview:
@@ -143,7 +143,7 @@ export const works: Work[] = [
     title: "Orphic Gavel — Holding Company Profile",
     year: "2026",
     tags: ["Web App"],
-    image: "https://www.orphicgavel.com/seo/og.png",
+    image: "/img/works/orphic.webp",
     liveUrl: "https://www.orphicgavel.com/",
     stack: ["Next.js", "React", "Tailwind CSS", "Framer Motion", "Vercel"],
     overview:
@@ -179,7 +179,7 @@ export const works: Work[] = [
     year: "2025",
     tags: ["Web App"],
     image:
-      "https://web-construction-seven.vercel.app/images/contents/hero.jpg",
+      "/img/works/construction.webp",
     liveUrl: "https://web-construction-seven.vercel.app/",
     stack: ["Next.js", "React", "Tailwind CSS", "Drizzle", "GSAP"],
     overview:

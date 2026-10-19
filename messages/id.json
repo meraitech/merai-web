@@ -1364,7 +1364,7 @@
         "tags": [
           "Web App"
         ],
-        "image": "https://soho-artist.vercel.app/images/og-rizky-febian.jpg"
+        "image": "/img/works/rizkyfebian.webp"
       },
       "icma-indonesia": {
         "title": "ICMA Indonesia — Platform Sertifikasi CMA",
@@ -1372,7 +1372,7 @@
         "tags": [
           "Web App"
         ],
-        "image": "https://soho-icma.vercel.app/assets/Indonesia_branch.jpg"
+        "image": "/img/works/icma.webp"
       },
       "wiatour": {
         "title": "Wiatour — Pemesanan Tour & Travel",
@@ -1380,7 +1380,7 @@
         "tags": [
           "Web App"
         ],
-        "image": "https://pub-bf8738c6955442ceb90aae770dea455a.r2.dev/list%20tour%20web%202-05.webp"
+        "image": "/img/works/wiatour.webp"
       },
       "orphic-gavel": {
         "title": "Orphic Gavel — Profil Holding Company",
@@ -1388,7 +1388,7 @@
         "tags": [
           "Web App"
         ],
-        "image": "https://www.orphicgavel.com/seo/og.png"
+        "image": "/img/works/orphic.webp"
       },
       "merai-construction": {
         "title": "Merai Construction — Dealer & Komersial",
@@ -1396,7 +1396,7 @@
         "tags": [
           "Web App"
         ],
-        "image": "https://web-construction-seven.vercel.app/images/contents/hero.jpg"
+        "image": "/img/works/construction.webp"
       }
     }
   },
