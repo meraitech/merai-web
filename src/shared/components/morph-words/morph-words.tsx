@@ -321,7 +321,7 @@ async function createMorph(root: HTMLElement, settingsRef: { current: Settings }
   const view = doc.defaultView ?? window;
   const canvas = doc.createElement("canvas");
   canvas.setAttribute("aria-hidden", "true");
-  canvas.style.cssText = "position:absolute;pointer-events:none;display:block";
+  canvas.style.cssText = "position:absolute;pointer-events:none;display:block;opacity:0;transition:opacity 0.6s ease";
   let renderer: THREE.WebGLRenderer;
   try {
     renderer = new THREE.WebGLRenderer({ canvas, alpha: true, premultipliedAlpha: true, antialias: false });
@@ -814,6 +814,11 @@ async function createMorph(root: HTMLElement, settingsRef: { current: Settings }
   colours();
   build(true);
   render(now());
+  // Fade in on the first painted frame so the canvas never pops over the
+  // static fallback word.
+  view.requestAnimationFrame(() => {
+    if (!destroyed) canvas.style.opacity = "1";
+  });
   // Navigations usually land with fonts cached — skip the second rasterize.
   if (doc.fonts && doc.fonts.ready && doc.fonts.status !== "loaded") {
     void doc.fonts.ready.then(() => {
@@ -894,6 +899,10 @@ export function MorphHero({
     onChange: () => {},
   });
   const [active, setActive] = useState(0);
+  // Static-first-word fallback: the first word renders as plain text on the
+  // first paint, then the WebGL engine takes over when ready. Without this,
+  // navigations would show an empty giant-word gap before the engine boots.
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     settingsRef.current.reduced = Boolean(reduceMotion);
@@ -908,16 +917,22 @@ export function MorphHero({
     if (!root) return;
     let active: Morph | null = null;
     let cancelled = false;
-    // Context creation + rasterization block the route transition — let the
-    // paint land first, then start the engine.
+    // Engine boot (context + rasterization) is expensive — let the paint
+    // land first, then start it on idle.
     const cancelIdle = onIdle(() => {
       void createMorph(root, settingsRef).then((morph) => {
         if (cancelled) {
           morph?.destroy();
           return;
         }
+        // Engine failed (no WebGL2): leave the static first word in place.
+        if (!morph) return;
         active = morph;
         morphRef.current = morph;
+        // Hide the static word synchronously so it never double-draws with
+        // the canvas; state keeps React consistent on re-render.
+        root.querySelector("[data-morph-static]")?.classList.add("opacity-0");
+        setReady(true);
       });
     });
     return () => {
@@ -957,8 +972,17 @@ export function MorphHero({
                 wordClassName,
               )}
             >
-              {words.map((value) => (
-                <span key={value.word} data-morph-word="" className="invisible [grid-area:1/1] whitespace-pre">
+              {words.map((value, index) => (
+                <span
+                  key={value.word}
+                  data-morph-word=""
+                  data-morph-static={index === 0 ? "" : undefined}
+                  className={
+                    index === 0 && !ready
+                      ? "transition-opacity duration-500 [grid-area:1/1] whitespace-pre"
+                      : "invisible [grid-area:1/1] whitespace-pre"
+                  }
+                >
                   {value.word}
                 </span>
               ))}

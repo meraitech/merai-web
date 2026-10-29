@@ -12,11 +12,11 @@ import {
   useEffect,
   useId,
   useRef,
-  useState,
   type ReactNode,
   type RefObject,
 } from "react";
 import { softEase } from "@/shared/utils/motion";
+import { lockScroll } from "@/shared/utils/scroll-lock";
 import { Container } from "@/shared/components/ui/container";
 import { SectionHeading } from "@/shared/components/ui/section-heading";
 import { Link as UiLink } from "@/shared/components/ui/link";
@@ -73,23 +73,10 @@ function asCoverItems(value: unknown): { title: string; text: string }[] {
   );
 }
 
-// Drawer panel tokens live here (bg-white / dark:bg-neutral-900), so the
-// hero canvas is told the exact shade instead of sniffing the DOM — which
-// can resolve mid-animation and flash pure black.
+// Theme is statically dark (see `data-theme="dark"` on <html>), so the hero
+// canvas is told the dark shade directly instead of sniffing the OS.
 function usePrefersDark(): boolean {
-  const [dark, setDark] = useState<boolean>(() =>
-    typeof window !== "undefined" &&
-    typeof window.matchMedia === "function"
-      ? window.matchMedia("(prefers-color-scheme: dark)").matches
-      : false,
-  );
-  useEffect(() => {
-    const query = window.matchMedia("(prefers-color-scheme: dark)");
-    const onChange = (e: MediaQueryListEvent): void => setDark(e.matches);
-    query.addEventListener("change", onChange);
-    return () => query.removeEventListener("change", onChange);
-  }, []);
-  return dark;
+  return true;
 }
 
 // Message entries are optional: an absent or partial entry falls back to
@@ -157,9 +144,8 @@ export function ServiceDrawer({
     if (!open) return;
     const root = document.documentElement;
     const previousRootOverflow = root.style.overflow;
-    const previousOverflow = document.body.style.overflow;
+    const release = lockScroll();
     root.style.overflow = "hidden";
-    document.body.style.overflow = "hidden";
     const onKey = (e: KeyboardEvent): void => {
       if (e.key === "Escape") onClose();
     };
@@ -167,7 +153,7 @@ export function ServiceDrawer({
     const focusTimer = window.setTimeout(() => closeRef.current?.focus(), 60);
     return () => {
       root.style.overflow = previousRootOverflow;
-      document.body.style.overflow = previousOverflow;
+      release();
       document.removeEventListener("keydown", onKey);
       window.clearTimeout(focusTimer);
       triggerRef.current?.focus();

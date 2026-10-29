@@ -11,10 +11,8 @@ void main() {
 `;
 
 function readTheme(): number {
-  if (typeof document === "undefined" || typeof window === "undefined")
-    return 0;
-  if (document.documentElement.classList.contains("dark")) return 1;
-  return window.matchMedia("(prefers-color-scheme: dark)").matches ? 1 : 0;
+  // Theme is statically dark (`data-theme="dark"` on <html>).
+  return 1;
 }
 
 interface GlSurfaceProps {
@@ -217,12 +215,11 @@ export function GlSurface({
     };
     document.addEventListener("visibilitychange", onVis);
 
-    const mq = window.matchMedia("(prefers-color-scheme: dark)");
+    // Theme is static; kept so a future data-theme switch re-tints stills.
     const onTheme = (): void => {
       targetTheme = readTheme();
       if (reducedRef.current) renderStill();
     };
-    mq.addEventListener("change", onTheme);
     const mo = new MutationObserver(onTheme);
     mo.observe(document.documentElement, { attributeFilter: ["class"] });
 
@@ -234,7 +231,6 @@ export function GlSurface({
       ro.disconnect();
       io.disconnect();
       mo.disconnect();
-      mq.removeEventListener("change", onTheme);
       document.removeEventListener("visibilitychange", onVis);
       renderStillRef.current = null;
       gl.deleteBuffer(buffer);

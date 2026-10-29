@@ -4,6 +4,15 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+/* Static dark theme: `dark:` always applies under `data-theme="dark"` on
+   <html> and never follows the OS. This replaces Tailwind's default
+   `prefers-color-scheme` dark variant. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root {
+  color-scheme: dark;
+}
+
 @theme {
   --animate-breath: breath 2.4s ease-in-out infinite;
 

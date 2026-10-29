@@ -1,6 +1,7 @@
 "use client";
 
 import { softEase } from "@/shared/utils/motion";
+import { lockScroll } from "@/shared/utils/scroll-lock";
 import { Link } from "@/shared/components/ui/link";
 import { useLocale, useTranslations } from "next-intl";
 import { usePathname } from "@/i18n/navigation";
@@ -602,8 +603,7 @@ function MobileMenu({
 
   useEffect(() => {
     if (!open) return;
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+    const release = lockScroll();
     const onKey = (e: KeyboardEvent): void => {
       if (e.key === "Escape") onClose();
     };
@@ -613,7 +613,7 @@ function MobileMenu({
       reducedMotion ? 0 : 200
     );
     return () => {
-      document.body.style.overflow = previousOverflow;
+      release();
       document.removeEventListener("keydown", onKey);
       window.clearTimeout(focusTimer);
     };

@@ -58,6 +58,7 @@ export function SmoothScroll({ children }: { children: ReactNode }): ReactNode {
   }, []);
 
   useEffect(() => {
+    lenisRef.current?.resize();
     lenisRef.current?.scrollTo(0, { immediate: true });
   }, [pathname]);
 

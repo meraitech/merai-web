@@ -35,10 +35,8 @@ const smooth = (t: number): number => t * t * (3 - 2 * t);
 const clamp01 = (v: number): number => (v < 0 ? 0 : v > 1 ? 1 : v);
 
 function isDark(): boolean {
-  if (typeof document === "undefined" || typeof window === "undefined")
-    return false;
-  if (document.documentElement.classList.contains("dark")) return true;
-  return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  // Theme is statically dark (`data-theme="dark"` on <html>).
+  return true;
 }
 
 function readTheme(): { color: string; alpha: number } {
@@ -62,7 +60,7 @@ function createField(
   let cx = 0;
   let cy = 0;
   let fieldR = 1;
-  let theme = readTheme();
+  const theme = readTheme();
 
   let px = 0;
   let py = 0;
@@ -156,13 +154,6 @@ function createField(
   ro.observe(host);
   ro.observe(stage);
 
-  const mq = window.matchMedia("(prefers-color-scheme: dark)");
-  const onTheme = (): void => {
-    theme = readTheme();
-    if (reducedMotion) draw(0);
-  };
-  mq.addEventListener("change", onTheme);
-
   if (reducedMotion) {
     draw(0);
     const ro2 = new ResizeObserver(() => draw(0));
@@ -170,7 +161,6 @@ function createField(
     return () => {
       ro.disconnect();
       ro2.disconnect();
-      mq.removeEventListener("change", onTheme);
     };
   }
 
@@ -241,7 +231,6 @@ function createField(
     stop();
     ro.disconnect();
     io.disconnect();
-    mq.removeEventListener("change", onTheme);
     window.removeEventListener("pointermove", onMove);
     document.removeEventListener("pointerleave", onLeave);
     window.removeEventListener("blur", onLeave);

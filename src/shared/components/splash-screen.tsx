@@ -1,15 +1,11 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { SPLASH_LOGO_SRC } from "@/shared/assets/splash-logo";
-import { isTransitionRoute } from "@/shared/utils/transition-routes";
+import { lockScroll } from "@/shared/utils/scroll-lock";
 
 const MIN_DISPLAY_MS = 400;
 const MAX_WAIT_MS = 3500;
-// Fixed cover time for client-side navigations (no load event fires).
-const NAV_DISPLAY_MS = 500;
-const NAV_FALLBACK_MS = 2000;
 const FADE_MS = 300;
 
 type Phase = "cover" | "leaving" | "hidden";
@@ -28,78 +24,38 @@ const COVER_STYLE: React.CSSProperties = {
   justifyContent: "center",
 };
 
+// Covers the initial document load only (cold fonts + first WebGL frames).
+// Client-side navigations swap instantly with no overlay and no scroll lock:
+// App Router keeps the old page painted until the new route is ready, and
+// per-route heroes progressively enhance (static first word, canvas
+// fade-in), so there is nothing to hide — and nothing that can leak
+// `overflow: hidden` onto the next page.
 export function SplashScreen() {
-  const pathname = usePathname();
-  // Always mounted: showing is a class flip, so there is no DOM-insert gap
-  // between a navigation intent and the cover.
+  // Always mounted: showing is a class flip, so there is no DOM-insert gap.
   const [phase, setPhase] = useState<Phase>("cover");
-  const firstRoute = useRef(true);
   const timers = useRef<Array<ReturnType<typeof setTimeout>>>([]);
-  const savedOverflow = useRef<string | null>(null);
-
-  const clearAll = () => {
-    timers.current.forEach(clearTimeout);
-    timers.current = [];
-  };
-  const later = (fn: () => void, ms: number) => {
-    timers.current.push(setTimeout(fn, ms));
-  };
-
-  const lock = () => {
-    if (savedOverflow.current === null) {
-      savedOverflow.current = document.body.style.overflow;
-      document.body.style.overflow = "hidden";
-    }
-  };
-  const unlock = () => {
-    if (savedOverflow.current !== null) {
-      document.body.style.overflow = savedOverflow.current;
-      savedOverflow.current = null;
-    }
-  };
-
-  const show = () => {
-    clearAll();
-    lock();
-    setPhase("cover");
-  };
-  const hideSequence = (afterMs: number) => {
-    const reduced = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-    if (reduced) {
-      later(() => {
-        setPhase("hidden");
-        unlock();
-      }, afterMs);
-      return;
-    }
-    later(() => setPhase("leaving"), afterMs);
-    later(() => {
-      setPhase("hidden");
-      unlock();
-    }, afterMs + FADE_MS);
-  };
-  // Absolute fallback so no flow ever leaves a stuck overlay.
-  const fallback = (ms: number) => {
-    later(() => {
-      setPhase("hidden");
-      unlock();
-    }, ms);
-  };
+  const releaseRef = useRef<(() => void) | null>(null);
 
   // Initial full document load: wait for load + fonts, then fade.
   useEffect(() => {
-    lock();
+    releaseRef.current = lockScroll();
+    const release = (): void => {
+      releaseRef.current?.();
+      releaseRef.current = null;
+    };
     const start = performance.now();
 
     const ready =
       document.readyState === "complete"
         ? Promise.resolve()
         : new Promise<void>((resolve) => {
-            window.addEventListener("load", () => resolve(), { once: true });
+            const onLoad = (): void => {
+              window.removeEventListener("load", onLoad);
+              resolve();
+            };
+            window.addEventListener("load", onLoad, { once: true });
             // shortcut: never trap the user if load hangs on heavy WebGL/fonts.
-            later(resolve, MAX_WAIT_MS);
+            timers.current.push(setTimeout(onLoad, MAX_WAIT_MS));
           });
 
     const fonts =
@@ -110,89 +66,47 @@ export function SplashScreen() {
           )
         : Promise.resolve();
 
+    let done = false;
+    const finish = (afterMs: number): void => {
+      if (done) return;
+      done = true;
+      const reduced = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+      if (reduced) {
+        timers.current.push(
+          setTimeout(() => {
+            setPhase("hidden");
+            release();
+          }, afterMs),
+        );
+        return;
+      }
+      timers.current.push(setTimeout(() => setPhase("leaving"), afterMs));
+      timers.current.push(
+        setTimeout(() => {
+          setPhase("hidden");
+          release();
+        }, afterMs + FADE_MS),
+      );
+    };
+
     void Promise.all([ready, fonts]).then(() => {
       const elapsed = performance.now() - start;
-      hideSequence(Math.max(0, MIN_DISPLAY_MS - elapsed));
+      finish(Math.max(0, MIN_DISPLAY_MS - elapsed));
     });
-    fallback(MAX_WAIT_MS + MIN_DISPLAY_MS);
+    // Absolute fallback so no flow ever leaves a stuck overlay.
+    timers.current.push(
+      setTimeout(() => finish(0), MAX_WAIT_MS + MIN_DISPLAY_MS),
+    );
 
     return () => {
-      clearAll();
-      unlock();
+      timers.current.forEach(clearTimeout);
+      timers.current = [];
+      releaseRef.current?.();
+      releaseRef.current = null;
     };
-    // Mount-only: show/hide helpers are ref/state-stable.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  // Navigation intents: cover BEFORE the route swaps, not after it paints.
-  // Covers in-app link clicks (capture runs before Next's router handler and
-  // React flushes discrete-event updates before paint) and back/forward.
-  useEffect(() => {
-    const isInternalNav = (anchor: HTMLAnchorElement, event: MouseEvent) => {
-      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)
-        return false;
-      if (anchor.target === "_blank" || anchor.hasAttribute("download"))
-        return false;
-      const href = anchor.getAttribute("href");
-      if (!href || !href.startsWith("/") || href.startsWith("/#")) return false;
-      if (href.startsWith("#")) return false;
-      // Same-page anchor (e.g. /about -> /about#team): no route change.
-      if (anchor.pathname === window.location.pathname && anchor.hash)
-        return false;
-      return true;
-    };
-
-    const onClick = (event: MouseEvent) => {
-      const target = event.target;
-      if (!(target instanceof Element)) return;
-      const anchor = target.closest("a[href]");
-      if (!(anchor instanceof HTMLAnchorElement)) return;
-      // Morph navigations carry their own transition — stay out of the way.
-      if (anchor.hasAttribute("data-morph-nav")) return;
-      if (!isInternalNav(anchor, event)) return;
-      // Only cover navigations to transition routes (e.g. /works).
-      // Detail pages like /works/{slug} swap instantly.
-      if (!isTransitionRoute(anchor.pathname)) return;
-      show();
-      hideSequence(NAV_DISPLAY_MS);
-      fallback(NAV_FALLBACK_MS);
-    };
-
-    const onPopState = () => {
-      if (!isTransitionRoute(window.location.pathname)) return;
-      show();
-      hideSequence(NAV_DISPLAY_MS);
-      fallback(NAV_FALLBACK_MS);
-    };
-
-    document.addEventListener("click", onClick, true);
-    window.addEventListener("popstate", onPopState);
-    return () => {
-      document.removeEventListener("click", onClick, true);
-      window.removeEventListener("popstate", onPopState);
-    };
-    // Mount-only listeners; handlers only touch refs and setState.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  // Route resolved: re-cover (no-op if intent already did) and fade on time.
-  // Hash-only jumps don't change pathname, so they stay instant.
-  // Only transition routes get the cover; detail pages stay instant.
-  useEffect(() => {
-    if (firstRoute.current) {
-      firstRoute.current = false;
-      return;
-    }
-    if (!isTransitionRoute(pathname)) return;
-    show();
-    hideSequence(NAV_DISPLAY_MS);
-    fallback(NAV_FALLBACK_MS);
-
-    return () => {
-      clearAll();
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pathname]);
 
   return (
     <div

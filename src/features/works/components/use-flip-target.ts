@@ -2,6 +2,7 @@
 
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
+import { lockScroll } from "@/shared/utils/scroll-lock";
 import { peekFlip, clearFlip } from "@/features/works/data/flip-store";
 
 const DURATION = 0.65;
@@ -28,11 +29,8 @@ export function useFlipTarget(slug: string) {
     if (to.width === 0 || to.height === 0) return;
 
     const cleanups: Array<() => void> = [];
-    const restoreBody = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    cleanups.push(() => {
-      document.body.style.overflow = restoreBody;
-    });
+    const release = lockScroll();
+    cleanups.push(release);
 
     const flyClone = (
       source: HTMLElement,
