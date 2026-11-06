@@ -1,4 +1,24 @@
 {
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "merai.tech" }],
+      "destination": "https://merai.id/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.merai.tech" }],
+      "destination": "https://merai.id/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.merai.id" }],
+      "destination": "https://merai.id/:path*",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/__merai__/(.*)",

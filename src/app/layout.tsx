@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "@/shared/styles/globals.css";
 import { SmoothScroll } from "@/shared/components/smooth-scroll";
 import { SplashScreen } from "@/shared/components/splash-screen";
@@ -50,9 +51,21 @@ export default async function RootLayout({
   const locale = (await params)?.locale ?? "en";
   return (
     <html lang={locale} data-theme="dark">
+      <head>
+        <Script id="gtm-init" strategy="beforeInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());`}
+        </Script>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-white dark:bg-neutral-950`}
       >
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtm.js?id=GTM-MH5M7SM7"
+          strategy="afterInteractive"
+        />
         <SplashScreen />
         <SmoothScroll>{children}</SmoothScroll>
       </body>

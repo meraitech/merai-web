@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { routing } from "./routing";
 
 // Production origin — also referenced by public/robots.txt.
-export const SITE_URL = "https://merai.tech";
+export const SITE_URL = "https://merai.id";
 
 interface PageMetadataInput {
   locale: string;
