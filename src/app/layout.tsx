@@ -4,7 +4,7 @@ import Script from "next/script";
 import "@/shared/styles/globals.css";
 import { SmoothScroll } from "@/shared/components/smooth-scroll";
 import { SplashScreen } from "@/shared/components/splash-screen";
-import { SITE_URL } from "@/i18n/metadata";
+import { SITE_URL, SEO_IMAGE, SEO_IMAGE_ALT } from "@/i18n/metadata";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,6 +18,22 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  title: { default: "Merai — Software, engineered to grow your business.", template: "%s | Merai" },
+  description: "Custom web and mobile apps, designed and built to scale with you.",
+  openGraph: {
+    title: "Merai — Software, engineered to grow your business.",
+    description: "Custom web and mobile apps, designed and built to scale with you.",
+    url: SITE_URL,
+    siteName: "Merai",
+    type: "website",
+    images: [{ url: SEO_IMAGE, width: 1200, height: 630, alt: SEO_IMAGE_ALT }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Merai — Software, engineered to grow your business.",
+    description: "Custom web and mobile apps, designed and built to scale with you.",
+    images: [SEO_IMAGE],
+  },
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
